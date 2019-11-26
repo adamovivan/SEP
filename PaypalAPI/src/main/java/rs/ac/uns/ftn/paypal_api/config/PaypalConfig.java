@@ -1,4 +1,4 @@
-package com.example.demo;
+package rs.ac.uns.ftn.paypal_api.config;
 
 import java.util.HashMap;
 import java.util.Map;

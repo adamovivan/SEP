@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package rs.ac.uns.ftn.paypal_api.controller;
 
 import java.util.Map;
 
@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.model.Credencial;
-import com.example.demo.model.Order;
-import com.example.demo.service.PaypalService;
+import rs.ac.uns.ftn.paypal_api.model.Credencial;
+import rs.ac.uns.ftn.paypal_api.model.Order;
+import rs.ac.uns.ftn.paypal_api.service.PaypalService;
 import com.paypal.api.payments.Links;
 import com.paypal.api.payments.Payment;
 import com.paypal.base.rest.PayPalRESTException;

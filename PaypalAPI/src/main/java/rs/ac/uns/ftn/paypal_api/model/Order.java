@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package rs.ac.uns.ftn.paypal_api.model;
 
 public class Order {
 

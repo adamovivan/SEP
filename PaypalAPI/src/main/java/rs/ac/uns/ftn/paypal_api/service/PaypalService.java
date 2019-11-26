@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package rs.ac.uns.ftn.paypal_api.service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

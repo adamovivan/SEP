@@ -8,11 +8,10 @@
 		<version>2.2.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
+	<groupId>rs.ac.uns.ftn.paypal_api</groupId>
 	<artifactId>PaypalAPI</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>PaypalAPI</name>
-	<description>Demo project for Spring Boot</description>
 
 	<properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
