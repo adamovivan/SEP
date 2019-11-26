@@ -1,21 +1,13 @@
 package rs.ac.uns.ftn.paypal_api.model;
 
+import lombok.Data;
+
+@Data
 public class Order {
-
-	private double price;
+	private Double totalPrice;
 	private String intent;
-	
-	public double getPrice() {
-		return price;
-	}
-	public void setPrice(double price) {
-		this.price = price;
-	}
-	public String getIntent() {
-		return intent;
-	}
-	public void setIntent(String intent) {
-		this.intent = intent;
-	}
-
+	private String clientId;
+	private String clientSecret;
+	private String successUrl;
+	private String cancelUrl;
 }

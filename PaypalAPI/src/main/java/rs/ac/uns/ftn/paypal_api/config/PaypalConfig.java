@@ -11,35 +11,35 @@ import com.paypal.base.rest.APIContext;
 import com.paypal.base.rest.OAuthTokenCredential;
 import com.paypal.base.rest.PayPalRESTException;
 
-@Configuration
+//@Configuration
 public class PaypalConfig {
-	@Value("${paypal.client.id}")
-	private String clientId;
-	@Value("${paypal.client.secret}")
-	private String clientSecret;
-	//PayPal provides live and a sandbox environments for API calls.
-    //The live environment moves real money while the sandbox environment allows
-    //you to test your application with mock money before you go live. 
-    //You must set the mode property to either 'sandbox' or 'live'.
-	@Value("${paypal.mode}")
-	private String mode;
-
-	@Bean
-	public Map<String, String> paypalSdkConfig() {
-		Map<String, String> configMap = new HashMap<>();
-		configMap.put("mode", mode);
-		return configMap;
-	}
-
-	@Bean
-	public OAuthTokenCredential oAuthTokenCredential() {
-		return new OAuthTokenCredential(clientId, clientSecret, paypalSdkConfig());
-	}
-
-	@Bean
-	public APIContext apiContext() throws PayPalRESTException {
-		APIContext context = new APIContext(oAuthTokenCredential().getAccessToken());
-		context.setConfigurationMap(paypalSdkConfig());
-		return context;
-	}
+//	@Value("${paypal.client.id}")
+//	private String clientId;
+//	@Value("${paypal.client.secret}")
+//	private String clientSecret;
+//	//PayPal provides live and a sandbox environments for API calls.
+//    //The live environment moves real money while the sandbox environment allows
+//    //you to test your application with mock money before you go live.
+//    //You must set the mode property to either 'sandbox' or 'live'.
+//	@Value("${paypal.mode}")
+//	private String mode;
+//
+//	@Bean
+//	public Map<String, String> paypalSdkConfig() {
+//		Map<String, String> configMap = new HashMap<>();
+//		configMap.put("mode", mode);
+//		return configMap;
+//	}
+//
+//	@Bean
+//	public OAuthTokenCredential oAuthTokenCredential() {
+//		return new OAuthTokenCredential(clientId, clientSecret, paypalSdkConfig());
+//	}
+//
+//	@Bean
+//	public APIContext apiContext() throws PayPalRESTException {
+//		APIContext context = new APIContext(oAuthTokenCredential().getAccessToken());
+//		context.setConfigurationMap(paypalSdkConfig());
+//		return context;
+//	}
 }

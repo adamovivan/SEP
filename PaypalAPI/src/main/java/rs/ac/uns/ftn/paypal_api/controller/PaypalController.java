@@ -29,11 +29,9 @@ public class PaypalController {
 	 */
 	@PostMapping("/createPayment")
 	public String payment(@RequestBody Order order) {
-		System.out.println("Bla: " + order.getIntent() + order.getPrice());
+		System.out.println("Bla: " + order.getIntent() + " " + order.getTotalPrice());
 		try {
-			Payment payment = service.createPayment(order.getPrice(),order.getIntent(),
-					"http://localhost:4200/cancel",
-					"http://localhost:4200/success");
+			Payment payment = service.createPayment(order);
 			for(Links link:payment.getLinks()) {
 				if(link.getRel().equals("approval_url")) {
 					return link.getHref();
