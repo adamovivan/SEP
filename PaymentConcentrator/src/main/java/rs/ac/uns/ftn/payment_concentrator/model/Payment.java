@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package rs.ac.uns.ftn.payment_concentrator.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
