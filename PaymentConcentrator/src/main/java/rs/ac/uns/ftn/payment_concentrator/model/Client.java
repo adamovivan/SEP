@@ -19,10 +19,16 @@ public class Client {
 	private Long id;
 	
 	@Column(nullable=false,length=100)
-	private String name;
-	
+	private String firstName;
+
 	@Column(nullable=false,length=100)
+	private String lastName;
+	
+	@Column(length=100)
 	private String address;
+
+	@Column(nullable = false)
+	private Long magazineId;
 	
 	@OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
 	private Set<Payment> payment;
