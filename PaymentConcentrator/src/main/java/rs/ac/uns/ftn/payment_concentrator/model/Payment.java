@@ -1,5 +1,7 @@
 package rs.ac.uns.ftn.payment_concentrator.model;
 
+import lombok.Data;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+
+@Data
 @Entity
 public class Payment {
 
@@ -29,6 +33,11 @@ public class Payment {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "client_id")
 	private Client client;
-	
+
+	@Column(nullable=false)
+	private String successUrl;
+
+	@Column(nullable=false)
+	private String cancelUrl;
 	
 }

@@ -1,7 +1,10 @@
 package rs.ac.uns.ftn.payment_concentrator.model;
 
+import lombok.Data;
+
 import java.util.Set;
 
+import javax.annotation.sql.DataSourceDefinition;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+@Data
 @Entity
 public class Client {
 	
@@ -17,6 +21,9 @@ public class Client {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
 	private Long id;
+
+	@Column(nullable=false,length=100)
+	private String clientUsername;
 	
 	@Column(nullable=false,length=100)
 	private String firstName;
