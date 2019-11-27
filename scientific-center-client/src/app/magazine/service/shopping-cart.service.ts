@@ -17,6 +17,6 @@ export class ShoppingCartService {
   }
 
   public pay(PaymentRequest){
-    return this.http.post(environment.apiUrl + '/shopping-cart/pay', PaymentRequest);
+    return this.http.post(environment.zuulUrl + '/paypal-service/pay', PaymentRequest);
   }
 }

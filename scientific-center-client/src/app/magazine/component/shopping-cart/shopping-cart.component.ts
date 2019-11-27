@@ -50,8 +50,7 @@ export class ShoppingCartComponent implements OnInit {
   proceedToPayment(){
     let paymentRequest = new PaymentRequest();
     paymentRequest.totalPrice = this.totalPrice;
-    paymentRequest.magazineId = 1;
-    paymentRequest.paymentType = "PAYPAL";
+    paymentRequest.username = 'mikamikic';
 
     this.shoppingCartService.pay(paymentRequest).subscribe(res => {
       console.log(res);
