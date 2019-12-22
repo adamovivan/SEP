@@ -4,20 +4,16 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-<<<<<<< HEAD
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-=======
-import org.springframework.web.bind.annotation.*;
->>>>>>> 82c5019fc5102b23f5891e55fb4e170dad2d0843
 
 import rs.ac.uns.ftn.paypal_service.dto.request.PaymentCompleteRequest;
 import rs.ac.uns.ftn.paypal_service.dto.request.PaymentOrderRequest;
 import rs.ac.uns.ftn.paypal_service.dto.response.PaymentOrderResponse;
-import rs.ac.uns.ftn.paypal_service.model.Credencial;
 import rs.ac.uns.ftn.paypal_service.service.PaymentService;
 import rs.ac.uns.ftn.paypal_service.service.PaypalService;
 
