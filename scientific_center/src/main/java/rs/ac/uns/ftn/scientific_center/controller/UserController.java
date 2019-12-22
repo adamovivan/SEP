@@ -41,11 +41,12 @@ public class UserController {
 		return ResponseEntity.ok(new JwtTokenDTO(tokenUtils.generateToken(details)));
 	}
 
+	// TODO Delete
 	@RequestMapping("/secured")
 	public String secured(){
 		String fooResourceUrl
 				= "https://localhost:8765";
-		ResponseEntity<String> s = restTemplate.getForEntity(fooResourceUrl + "/zuultest", String.class);
+		ResponseEntity<String> s = restTemplate.getForEntity(fooResourceUrl + "/paypal-service/paypal-test", String.class);
 		System.out.println(s);
 
 		return s.getBody();

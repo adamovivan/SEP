@@ -2,10 +2,7 @@ package rs.ac.uns.ftn.paypal_service.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import rs.ac.uns.ftn.paypal_service.dto.request.PaymentOrderRequest;
 import rs.ac.uns.ftn.paypal_service.dto.response.PaymentOrderResponse;
@@ -21,6 +18,13 @@ public class PaymentController {
     public ResponseEntity<PaymentOrderResponse> createOrder(@RequestBody PaymentOrderRequest paymentOrderRequest){
         PaymentOrderResponse paymentOrderResponse = paymentService.createOrder(paymentOrderRequest);
         return ResponseEntity.ok().body(paymentOrderResponse);
+    }
+
+    // TODO Delete
+    @GetMapping("/paypal-test")
+    public String test(){
+        System.out.println("<<< In paypal >>>");
+        return "In paypal";
     }
     
     /**
