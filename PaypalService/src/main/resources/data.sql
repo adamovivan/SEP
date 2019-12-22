@@ -1,4 +1,4 @@
 insert into paypal_payment (id, payment_id, payment_secret, username, success_url, cancel_url) values (1,
-'AWure9h6GXJwJ3YEfVd5YPIpnqrldESUsElWx9B5Kr8Ykc4_cvz9QM5KaTv4Jh743W3B_PMEBtjFfuJd',
-'EBOgOZbYvvThwaeKGiPgTTjYs4NIxGuNZEcE6SPnshx_K-GgspvKhgQzBfbguYJ2ioq1kGMVfu6k7bc0', 'mikamikic',
-'http://localhost:4200/success', 'http://localhost:4200/cancel');
+'AYTXrB4RrSf7ReCEzoVdogjZ4uhEf7Si2xb0n-Ecxf54qOYQ5l6ayZPSnZuZOEH3SMxN0uHZxxtSDFfJ',
+'EJeL23ZRiaar46pgadI_IvlfD1mTUx_5zlXvQU5yxfaZ1IejGt6H6UxwXkJdwyJzw2Sg059ThZTy481K', 'mikamikic',
+'http://localhost:4201/success', 'http://localhost:4201/cancel');
