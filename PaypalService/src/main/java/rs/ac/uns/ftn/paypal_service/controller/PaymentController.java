@@ -40,7 +40,7 @@ public class PaymentController {
     }
     
     /**
-	 * Ovu medotu pozivamo kada se po povratku sa paypala na osnovu zadatih linkova pogodi http://localhost:4200/success ... gore opisano ...
+	 * Ovu medotu pozivamo kada se po povratku sa paypala
 	 * @param credencial
 	 * @return
 	 */
