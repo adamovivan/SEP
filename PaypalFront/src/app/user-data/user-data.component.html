@@ -1,0 +1,31 @@
+<body class="text-center">
+    <div class="row component">
+      <div class="col"></div>
+      <div class="col">
+          <h1 class="h3 mb-3 font-weight-normal">Secret information for PayPal</h1>
+          <form [formGroup]="SingIn" (ngSubmit)="onSubmit($event)" novalidate style="width: 40vh; margin-left: 41vw;">
+              <div class="form-group">
+                  <label>PayPal Id</label>
+                  <input type="text" formControlName="id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.id.errors }"/>
+                  <div *ngIf="submitted && f.id.errors">
+                      <div style="color:red;">Id is incorect!</div>
+                  </div>
+              </div>
+  
+              <div class="form-group">
+                  <label>PayPal secret</label>
+                  <input type="password" formControlName="secret" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.secret.errors }" />
+                  <div *ngIf="submitted && f.secret.errors">
+                      <div style="color:red;">Secret is incorect!</div>
+                  </div>
+              </div>
+  
+              <div class="form-group">
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">Confirm</button>
+              </div>
+        </form>
+      </div>
+      <div class="col"></div>
+    </div>
+    
+  </body>

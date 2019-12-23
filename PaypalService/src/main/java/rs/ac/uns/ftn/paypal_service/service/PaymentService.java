@@ -37,8 +37,8 @@ public class PaymentService {
 	        orderDTO.setTotalPrice(paymentOrderRequest.getTotalPrice());
 	        orderDTO.setClientId(payment.getPaymentId());
 	        orderDTO.setClientSecret(payment.getPaymentSecret());
-	        orderDTO.setSuccessUrl(payment.getSuccessUrl());
-	        orderDTO.setCancelUrl(payment.getCancelUrl());
+	        orderDTO.setSuccessUrl("http://localhost:4201/success");
+	        orderDTO.setCancelUrl("http://localhost:4201/cancel");
 	
 			try {
 				return paypalService.createPayment(orderDTO);

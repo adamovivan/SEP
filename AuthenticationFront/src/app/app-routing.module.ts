@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { TypePaymentsComponent } from './type-payments/type-payments.component';
+import { ChosePaymentsComponent } from './chose-payments/chose-payments.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'typePayments',
     component: TypePaymentsComponent
+  },
+  {
+    path: 'chosePayments',
+    component: ChosePaymentsComponent
   }
 ];
 

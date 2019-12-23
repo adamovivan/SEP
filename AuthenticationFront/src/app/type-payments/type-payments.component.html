@@ -1,1 +1,40 @@
-<p>type-payments works!</p>
+<h1 style="text-align: center; margin-top: 10vh;">Chose payments you want to allow!</h1>
+<div class="row">
+    <div class="col"></div>
+    <div class="col">
+        <table class="table ml-2 mt-2" >
+            <thead style="background-color: #0074E1;">
+              <tr>
+                <th scope="col" colspan="8" style="text-align: center; color: white">
+                  Type of payments
+                </th>
+              </tr>
+              <tr style="color: white">
+                <th scope="col">Name</th>
+                <th scope="col">Manipulation</th>
+              </tr>
+            </thead>
+            <tbody style="color: #0074E1">
+            <tr *ngFor="let item of chosen">
+                <td>{{item}}</td>
+                <td>
+                    <a class="active">
+                        <p>Approved</p>
+                    </a>
+                    </td>
+                </tr>
+              <tr *ngFor="let item of payments">
+                <td>{{item}}</td>
+                <td>
+                    <a class="active" (click)="aprove(item)">
+                      <img class="mr-2" src="/assets/img/approval-32.png">
+                    </a>
+                  </td>
+              </tr>
+              
+            </tbody>
+          </table>
+    </div>
+    <div class="col"></div>
+</div>
+

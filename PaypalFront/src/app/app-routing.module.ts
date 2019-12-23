@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CancelComponent } from './cancel/cancel.component';
 import { SuccessComponent } from './success/success.component';
+import { UserDataComponent } from './user-data/user-data.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'cancel',
     component: CancelComponent
+  },
+  {
+    path: 'input/:username',
+    component: UserDataComponent
   }
 ];
 

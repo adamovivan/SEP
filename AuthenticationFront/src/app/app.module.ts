@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Shared } from './services/token';
 import { TypePaymentsComponent } from './type-payments/type-payments.component';
+import { ChosePaymentsComponent } from './chose-payments/chose-payments.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TypePaymentsComponent } from './type-payments/type-payments.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    TypePaymentsComponent
+    TypePaymentsComponent,
+    ChosePaymentsComponent
   ],
   imports: [
     BrowserModule,
