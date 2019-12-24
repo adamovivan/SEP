@@ -24,6 +24,8 @@ export class UserDataComponent implements OnInit {
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+      
+
       this.SingIn = this.formBuilder.group({
         id:['',Validators.compose([Validators.required, Validators.pattern('[a-zA-Z 0-9!]+')])],
         secret:['',Validators.compose([Validators.required, Validators.pattern('[a-zA-Z 0-9!]+')])]

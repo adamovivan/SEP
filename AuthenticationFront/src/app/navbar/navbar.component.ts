@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logout(){
-    localStorage.setItem('token', 'undefined');   
+    localStorage.setItem('username', 'undefined');   
     this.token.username = 'undefined';
     
   }

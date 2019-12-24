@@ -12,22 +12,18 @@ export class SellerService {
   }
 
   register(user:any){
-    
     return this.http.post(SERVER_URL + '/authentication-service/registerClient',user,{responseType: 'text'});
   }
 
   login(user:any){
-    
     return this.http.post(SERVER_URL + '/authentication-service/loginClient',user,);
   }
 
   fetchNames(){
-    
     return this.http.get(SERVER_URL + '/authentication-service/discovere');
   }
   
   frontedPort(type:any){
-
     return this.http.get(SERVER_URL + '/api-' + type.toLowerCase() + '/frontendPort');
   }
 
@@ -37,6 +33,10 @@ export class SellerService {
 
   getPayments(tip:any){
     return this.http.get(SERVER_URL + '/authentication-service/getPayments/'+tip,);
+  }
+
+  getTypePayments(email:any){
+    return this.http.get(SERVER_URL + '/authentication-service/getTypePayments/'+email,);
   }
   
 }

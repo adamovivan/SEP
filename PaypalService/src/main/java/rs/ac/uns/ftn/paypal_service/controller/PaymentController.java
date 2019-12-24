@@ -39,6 +39,7 @@ public class PaymentController {
 
     @RequestMapping(value = "/pay", method = RequestMethod.POST)
     public ResponseEntity<PaymentOrderResponse> createOrder(@RequestBody PaymentOrderRequest paymentOrderRequest){
+    	System.out.println(paymentOrderRequest.getUsername());
         PaymentOrderResponse paymentOrderResponse = paymentService.createOrder(paymentOrderRequest);
         return ResponseEntity.ok().body(paymentOrderResponse);
     }

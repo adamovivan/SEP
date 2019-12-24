@@ -8,7 +8,7 @@ import { UserDataComponent } from './user-data/user-data.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'pay/:username/:total',
     component: HomeComponent
   },
   {

@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { TypePaymentsComponent } from './type-payments/type-payments.component';
-import { ChosePaymentsComponent } from './chose-payments/chose-payments.component';
+import { PayingTypeComponent } from './paying-type/paying-type.component';
 
 
 const routes: Routes = [
@@ -25,8 +25,8 @@ const routes: Routes = [
     component: TypePaymentsComponent
   },
   {
-    path: 'chosePayments',
-    component: ChosePaymentsComponent
+    path: 'payingType/:email/:total',
+    component: PayingTypeComponent
   }
 ];
 

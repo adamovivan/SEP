@@ -12,14 +12,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import rs.ac.uns.ftn.authentication_service.model.Client;
 import rs.ac.uns.ftn.authentication_service.request.LoginRequest;
 import rs.ac.uns.ftn.authentication_service.request.PaymentRequest;
-import rs.ac.uns.ftn.authentication_service.request.UserPaymentsRequest;
 import rs.ac.uns.ftn.authentication_service.response.LoginResponse;
+import rs.ac.uns.ftn.authentication_service.response.PaymentResponse;
 import rs.ac.uns.ftn.authentication_service.service.LoginService;
 import rs.ac.uns.ftn.authentication_service.service.PaymentsService;
 import rs.ac.uns.ftn.authentication_service.service.RegistrationService;
@@ -49,15 +48,20 @@ public class ClientController {
 		return new ResponseEntity<LoginResponse>(loginService.login(loginRequest), HttpStatus.OK);
 	}
 	
-
+	//seller
 	@PostMapping(value = "/addPayments")
 	public ResponseEntity<Boolean> addPayments(@RequestBody PaymentRequest paymentRequest) {
 		return new ResponseEntity<Boolean>(paymentsService.addPayments(paymentRequest), HttpStatus.OK);
 	}
-	
+	//seller
 	@GetMapping(value = "/getPayments/{username}")
 	public ResponseEntity<List<String>> getPayments(@PathVariable String username) {
 		return new ResponseEntity<List<String>>(paymentsService.getPayments(username), HttpStatus.OK);
 	}
 
+	//buyer
+	@GetMapping(value = "/getTypePayments/{email}")
+	public ResponseEntity<PaymentResponse> getTypePayments(@PathVariable String email) {
+		return new ResponseEntity<PaymentResponse>(paymentsService.getTypePayments(email), HttpStatus.OK);
+	}
 }

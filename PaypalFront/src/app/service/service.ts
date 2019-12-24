@@ -14,4 +14,8 @@ import { SERVER_URL } from '../app.constant';
     saveUserData(user:any){
         return this.http.post(SERVER_URL + '/api-paypal/saveData',user,{responseType: 'text'});
     }
+
+    createOrder(user:any){
+      return this.http.post(SERVER_URL + '/api-paypal/pay',user);
+  }
 }

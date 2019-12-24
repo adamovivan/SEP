@@ -7,11 +7,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Shared } from './services/token';
 import { TypePaymentsComponent } from './type-payments/type-payments.component';
-import { ChosePaymentsComponent } from './chose-payments/chose-payments.component';
+import { PayingTypeComponent } from './paying-type/paying-type.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +21,13 @@ import { ChosePaymentsComponent } from './chose-payments/chose-payments.componen
     RegisterComponent,
     HomeComponent,
     TypePaymentsComponent,
-    ChosePaymentsComponent
+    PayingTypeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [Shared],
