@@ -1,15 +1,12 @@
 package rs.ac.uns.ftn.paypal_service.model;
 
-import lombok.Data;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+
+import lombok.Data;
 
 
 @Data
@@ -26,13 +23,6 @@ public class PaypalPayment {
 	
 	@Column(nullable=false,length=100)
 	private String paymentSecret;
-
-	//videti sa sa ovim urlovima.. da li ce svaki user imati drugi url? (za sad nulable=true)
-	@Column(nullable=true)
-	private String successUrl;
-
-	@Column(nullable=true)
-	private String cancelUrl;
 	
 	@Column(nullable=true)
 	private String username;

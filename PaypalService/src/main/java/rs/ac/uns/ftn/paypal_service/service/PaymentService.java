@@ -29,25 +29,26 @@ public class PaymentService {
     private String zuulUrl;
 
     public PaymentOrderResponse createOrder(PaymentOrderRequest paymentOrderRequest){
-        if(paymentOrderRequest.getUsername() == null){
-            throw new NullPointerException();
+    	
+        if(paymentOrderRequest.getUsername() != null){
+        
+	        PaypalPayment payment = paymentRepository.findByUsername(paymentOrderRequest.getUsername());
+	        Order orderDTO = new Order();
+	        orderDTO.setTotalPrice(paymentOrderRequest.getTotalPrice());
+	        orderDTO.setClientId(payment.getPaymentId());
+	        orderDTO.setClientSecret(payment.getPaymentSecret());
+	        orderDTO.setSuccessUrl("http://localhost:4201/success");
+	        orderDTO.setCancelUrl("http://localhost:4201/cancel");
+	
+			try {
+				return paypalService.createPayment(orderDTO);
+			} catch (PayPalRESTException e) {
+				e.printStackTrace();
+			}
+			
         }
-        PaypalPayment payment = paymentRepository.findByUsername(paymentOrderRequest.getUsername());
-        Order orderDTO = new Order();
-        orderDTO.setTotalPrice(paymentOrderRequest.getTotalPrice());
-        orderDTO.setIntent("sale");
-        orderDTO.setClientId(payment.getPaymentId());
-        orderDTO.setClientSecret(payment.getPaymentSecret());
-        orderDTO.setSuccessUrl(payment.getSuccessUrl());
-        orderDTO.setCancelUrl(payment.getCancelUrl());
-
-        String responseUrl = "";
-		try {
-			responseUrl = paypalService.createPayment(orderDTO);
-		} catch (PayPalRESTException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        return new PaymentOrderResponse(true, responseUrl);
+        	
+        return new PaymentOrderResponse(false, "");
+        
     }
 }
