@@ -4,12 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rs.ac.uns.ftn.scientific_center.dto.PricelistItemDTO;
-import rs.ac.uns.ftn.scientific_center.dto.request.PaymentOrderRequest;
 import rs.ac.uns.ftn.scientific_center.dto.response.PaymentOrderResponse;
 import rs.ac.uns.ftn.scientific_center.dto.response.SimpleResponse;
 import rs.ac.uns.ftn.scientific_center.service.ShoppingCartService;
-
-import java.util.Set;
 
 
 @RequestMapping(value = "/shopping-cart")
@@ -30,10 +27,10 @@ public class ShoppingCartController {
         return ResponseEntity.ok(new SimpleResponse("Item successfully added."));
     }
 
-    @RequestMapping(value = "/items", method = RequestMethod.GET)
-    public ResponseEntity<Set<PricelistItemDTO>> getItems(){
+    @RequestMapping(value = "/item", method = RequestMethod.GET)
+    public ResponseEntity<PricelistItemDTO> getItems(){
         try{
-            return ResponseEntity.ok(shoppingCartService.getItems());
+            return ResponseEntity.ok(shoppingCartService.getItem());
         }
         catch (NullPointerException e){
             return ResponseEntity.badRequest().body(null);
@@ -42,9 +39,8 @@ public class ShoppingCartController {
     }
 
     @RequestMapping(value = "/pay", method = RequestMethod.POST)
-    public ResponseEntity<PaymentOrderResponse> pay(@RequestBody PaymentOrderRequest paymentOrderRequest){
-        PaymentOrderResponse paymentOrderResponse = shoppingCartService.pay(paymentOrderRequest);
-        return ResponseEntity.ok().body(paymentOrderResponse);
+    public ResponseEntity<PaymentOrderResponse> pay(){
+        return ResponseEntity.ok().body(shoppingCartService.pay());
     }
 
 }
