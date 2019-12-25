@@ -1,0 +1,15 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+   <a [routerLink]="'/'" class="my-0 mr-md-auto font-weight-normal" style="color:black;">
+        <h5>Payment concentrator</h5>
+   </a>
+  
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a *ngIf="token.username != 'undefined'" class="p-2 text-dark" href="#" [routerLink]="'/typePayments'">
+      Type of payments</a>
+  </nav>
+  <a *ngIf="token.username == 'undefined'" class="btn btn-outline-primary" href="#" [routerLink]="'/login'">Sign in</a>
+  <a *ngIf="token.username != 'undefined'" class="nav-link inline ml-3 mt-3">
+    <p> {{token.username}} <img src="/assets/img/user-24.png" height="24" width="24"></p>
+  </a>
+  <a *ngIf="token.username != 'undefined'" class="btn btn-outline-primary" href="#" [routerLink]="'/'" (click)="logout()">Log out</a>
+</div>
