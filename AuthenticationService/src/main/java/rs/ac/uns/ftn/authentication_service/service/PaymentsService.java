@@ -21,7 +21,7 @@ public class PaymentsService {
 	
 	@Autowired
 	private ClientRepository clientRepository;
-	
+	//dodavanje paymenta za prodavca
 	public Boolean addPayments(PaymentRequest paymentRequest) {
 		Payments payments = new Payments();
 		payments = paymentsRepository.findByUsername(paymentRequest.getUsername());
@@ -39,7 +39,7 @@ public class PaymentsService {
 			return true;
 		}
 	}
-	
+	//dobavljanje liste odabranih nacina placanja prodavca
 	public List<String> getPayments(String username) {
 		List<String> lista = new ArrayList<String>();
 		Payments payments = new Payments();
@@ -55,7 +55,7 @@ public class PaymentsService {
 			return lista;
 		}
 	}
-	
+	//dobavljanje liste odabranih nacina placanja prodavca sa usernamom
 	public PaymentResponse getTypePayments(String email) {
 		List<String> lista = new ArrayList<>();
 		

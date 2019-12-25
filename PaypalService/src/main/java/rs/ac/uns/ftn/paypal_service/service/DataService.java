@@ -13,6 +13,7 @@ public class DataService {
 	@Autowired
     private PaymentRepository paymentRepository;
 	
+	//cuvanje podataka vezanih za prodavca .....
 	public Boolean saveInfo(UserDataRequest userDataRequest) {
 		PaypalPayment payment = new PaypalPayment();
 		payment.setPaymentId(userDataRequest.getId());

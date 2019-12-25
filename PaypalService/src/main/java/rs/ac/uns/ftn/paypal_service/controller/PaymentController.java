@@ -36,7 +36,7 @@ public class PaymentController {
     
     @Autowired
     private DataService dataService;
-
+    //kreiranje url za paypal
     @RequestMapping(value = "/pay", method = RequestMethod.POST)
     public ResponseEntity<PaymentOrderResponse> createOrder(@RequestBody PaymentOrderRequest paymentOrderRequest){
     	System.out.println(paymentOrderRequest.getUsername());
@@ -52,7 +52,7 @@ public class PaymentController {
     }
     
     /**
-	 * Ovu medotu pozivamo kada se po povratku sa paypala
+	 * Ovu medotu pozivamo kada se po povratku sa paypala ona potvrdjuje izvrsenu uplatu
 	 * @param credencial
 	 * @return
 	 */

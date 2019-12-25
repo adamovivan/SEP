@@ -17,5 +17,9 @@ import { SERVER_URL } from '../app.constant';
 
     createOrder(user:any){
       return this.http.post(SERVER_URL + '/api-paypal/pay',user);
-  }
+    }
+
+    completePayment(complete:any){
+      return this.http.post(SERVER_URL + '/api-paypal/complete',complete);
+    }
 }

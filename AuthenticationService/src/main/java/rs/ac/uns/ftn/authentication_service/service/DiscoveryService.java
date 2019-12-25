@@ -18,7 +18,7 @@ public class DiscoveryService {
 	
 	 @Autowired
 	 private RestTemplate restTemplate;
-	
+	//pribavlja sve trenutno registrovane servise na eureci
 	public List<String> discover(){
 		ResponseEntity<String[]> responseEntity = restTemplate.getForEntity("http://localhost:8761/fetchNames", String[].class);
 		List<String> object = Arrays.asList(responseEntity.getBody());

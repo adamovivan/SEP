@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit {
     this.service.createOrder(this.user).subscribe(
       data => {
          this.url = data;
+         localStorage.setItem('username',this.user.username);
          window.location.href = this.url.url;
     });
   }

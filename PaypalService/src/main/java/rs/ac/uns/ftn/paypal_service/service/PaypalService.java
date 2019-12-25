@@ -107,9 +107,14 @@ public class PaypalService {
 			context.setConfigurationMap(configMap);
 			
 	        Payment createdPayment = payment.execute(context, paymentExecution); // TODO context
+	        
 	        if(createdPayment!=null){
 	            response.put("status", "success");
 	            response.put("payment", createdPayment);
+	            
+	            //nacin da se preuzme ime od kupca....
+	            //createdPayment.getPayer().getPayerInfo().getShippingAddress().getRecipientName();
+	            
 	        }
 	    } catch (PayPalRESTException e) {
 	        System.err.println(e.getDetails());

@@ -21,7 +21,7 @@ public class EurekaStatusService {
 	
 	@Autowired
 	PeerAwareInstanceRegistry registry;
-
+	//pribavlja sve trenutno registrovane servise za placanje ... (sa eureke)
 	@GetMapping("/fetchNames")
 	public List<String> eurekaApplications() {
 	    Applications applications = registry.getApplications();
@@ -30,7 +30,7 @@ public class EurekaStatusService {
 	    
 	    for (Application application : list) {
 	    	String[] s = application.getName().split("-");
-	    	if(s[0].equals("API")) {
+	    	if(s[0].equals("API") && !imena.contains(s[1].substring(0, 1) + s[1].substring(1).toLowerCase())) {
 	    		imena.add(s[1].substring(0, 1) + s[1].substring(1).toLowerCase());
 	    	}
 	    	

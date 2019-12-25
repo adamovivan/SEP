@@ -20,7 +20,7 @@ public class DiscoveryController {
 	
 	@Autowired
 	private DiscoveryService discoveryService;
-	
+	//pribavlja trenutno subscribovane servise na eureci
 	@GetMapping("/discovere")
 	public ResponseEntity<List<String>> saveKorisnik(){
 		return new ResponseEntity<List<String>>(discoveryService.discover(), HttpStatus.OK);
