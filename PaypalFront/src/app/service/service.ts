@@ -22,4 +22,8 @@ import { SERVER_URL } from '../app.constant';
     completePayment(complete:any){
       return this.http.post(SERVER_URL + '/api-paypal/complete',complete);
     }
+
+    cancelPayment(username:any){
+      return this.http.get(SERVER_URL + '/api-paypal/cancelData/'+username);
+    }
 }

@@ -25,7 +25,9 @@ import rs.ac.uns.ftn.paypal_service.dto.request.PaymentCompleteRequest;
 import rs.ac.uns.ftn.paypal_service.dto.response.PaymentOrderResponse;
 import rs.ac.uns.ftn.paypal_service.model.Order;
 import rs.ac.uns.ftn.paypal_service.model.PaypalPayment;
+import rs.ac.uns.ftn.paypal_service.model.TransactionData;
 import rs.ac.uns.ftn.paypal_service.repository.PaymentRepository;
+import rs.ac.uns.ftn.paypal_service.repository.TransactionRepository;
 
 /**
  * @author Dejan
@@ -36,6 +38,9 @@ public class PaypalService {
 	
 	@Autowired
     private PaymentRepository paymentRepository;
+	
+	@Autowired
+    private TransactionRepository transactionRepository;
 
 	public PaymentOrderResponse createPayment(Order order) throws PayPalRESTException{
 		//potrebne info vezane za paypall
@@ -111,16 +116,29 @@ public class PaypalService {
 	        if(createdPayment!=null){
 	            response.put("status", "success");
 	            response.put("payment", createdPayment);
-	            
-	            //nacin da se preuzme ime od kupca....
-	            //createdPayment.getPayer().getPayerInfo().getShippingAddress().getRecipientName();
-	            
+	            TransactionData transaction = new TransactionData();
+	            transaction = transactionRepository.findByUsername(paymentCompleteRequest.getUsername());
+	            transaction.setStatus("completed");
+	            transaction.setBuyer(createdPayment.getPayer().getPayerInfo().getShippingAddress().getRecipientName());
+	            transaction = transactionRepository.save(transaction);
 	        }
 	    } catch (PayPalRESTException e) {
 	        System.err.println(e.getDetails());
 	    }
 	    return response;
 	}
+	
+	/*public Boolean cancelPayment(String username) {
+		TransactionData transaction = new TransactionData();
+        transaction = transactionRepository.findByUsername(username);
+        transaction.setStatus("canceled");
+        transaction.setBuyer("//");
+        transaction = transactionRepository.save(transaction);
+        if(transaction != null) {
+        	 return true;
+        }
+        return false;
+	}*/
 	
 	
 }

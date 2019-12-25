@@ -25,7 +25,7 @@ const routes: Routes = [
     component: TypePaymentsComponent
   },
   {
-    path: 'payingType/:email/:total',
+    path: 'payingType/:token',
     component: PayingTypeComponent
   }
 ];

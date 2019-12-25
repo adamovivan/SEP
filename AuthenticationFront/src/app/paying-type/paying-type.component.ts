@@ -11,8 +11,9 @@ import { SellerService } from '../services/services';
 })
 export class PayingTypeComponent implements OnInit {
 
-  email:any;
-  total:any;
+  token:any;
+  url:any;
+  request:any;
   payments:any;
   SingIn:FormGroup;
   submitted = false;
@@ -28,9 +29,10 @@ export class PayingTypeComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(
     params => {
-        this.email = params.get('email');
-        this.total = params.get('total');
-        this.service.getTypePayments(this.email).subscribe(
+        this.token = params.get('token');
+
+
+        this.service.getTypePayments(this.token).subscribe(
           data => {
                   this.payments = data;
         });
@@ -45,13 +47,16 @@ export class PayingTypeComponent implements OnInit {
   onSubmit(event:any) {
     this.submitted = true;
     this.payment = this.SingIn.getRawValue();
-    this.service.frontedPort(this.payment.payment).subscribe(
+    this.token = {
+      token: this.token,
+      type: this.payment.payment
+    }
+    this.service.getPaymentLink(this.token).subscribe(
       data => {
-        this.port = data;
-        window.location.href = 'http://localhost:' + this.port + '/pay/'+ this.payments.username + '/' + this.total;
-        
+              this.url = data;
+              console.log(this.url);
+              window.location.href = this.url.url;
     });
-    
   }
 
 }
