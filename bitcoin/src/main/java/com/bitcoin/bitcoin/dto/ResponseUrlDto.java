@@ -3,6 +3,7 @@ package com.bitcoin.bitcoin.dto;
 import java.io.Serializable;
 
 public class ResponseUrlDto implements Serializable {
+	
 	private boolean success;
 	private String url;
 
