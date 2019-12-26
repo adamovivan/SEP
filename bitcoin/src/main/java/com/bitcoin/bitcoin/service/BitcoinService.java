@@ -2,11 +2,12 @@ package com.bitcoin.bitcoin.service;
 
 import com.bitcoin.bitcoin.dto.PaymentDto;
 import com.bitcoin.bitcoin.dto.PaymentResponseDto;
+import com.bitcoin.bitcoin.dto.ResponseUrlDto;
 import com.bitcoin.bitcoin.model.Merchant;
 
 public interface BitcoinService {
 
-	String pay(PaymentDto pdt, String username);
+	ResponseUrlDto pay(PaymentDto pdt, String username);
 	
 	void saveMerchant(Merchant m);
 	

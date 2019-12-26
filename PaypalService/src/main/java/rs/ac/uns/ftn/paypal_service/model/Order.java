@@ -15,12 +15,6 @@ public class Order {
 	public void setTotalPrice(Double totalPrice) {
 		this.totalPrice = totalPrice;
 	}
-	public String getIntent() {
-		return intent;
-	}
-	public void setIntent(String intent) {
-		this.intent = intent;
-	}
 	public String getClientId() {
 		return clientId;
 	}

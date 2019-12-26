@@ -16,6 +16,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.bitcoin.bitcoin.dto.PaymentDto;
 import com.bitcoin.bitcoin.dto.PaymentResponseDto;
+import com.bitcoin.bitcoin.dto.ResponseUrlDto;
 import com.bitcoin.bitcoin.exception.BadRequestException;
 import com.bitcoin.bitcoin.exception.BitcoinUserNotExistException;
 import com.bitcoin.bitcoin.exception.OrderNotExistException;
@@ -40,7 +41,7 @@ public class BitcoinServiceImpl implements BitcoinService{
 	
 	
 	@Override
-	public String pay(PaymentDto pdt, String username) {
+	public ResponseUrlDto pay(PaymentDto pdt, String username) {
 		// TODO Auto-generated method stub
 		Merchant u = this.userRepository.findByUsername(username).orElseThrow(() -> new BitcoinUserNotExistException("User with that username does not exist!"));
 		
@@ -52,7 +53,7 @@ public class BitcoinServiceImpl implements BitcoinService{
 		String randomToken = UUID.randomUUID().toString();
 		
 		MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
-		map.add("order_id", pdt.getSellerId());
+		map.add("order_id", "nc-1");
 		map.add("price_amount",  Double.toString(pdt.getAmount()));
 		map.add("price_currency", pdt.getCurrency().toString());
 		map.add("receive_currency", pdt.getCurrency().toString());
@@ -62,17 +63,19 @@ public class BitcoinServiceImpl implements BitcoinService{
 		
 		
 		HttpEntity<MultiValueMap<String, String>> request =  new HttpEntity<MultiValueMap<String,String>>(map, headers);
-		String returnResponse = "";
+		ResponseUrlDto returnResponse = new ResponseUrlDto();
 		try {
 			ResponseEntity<PaymentResponseDto> response = rest.postForEntity("https://api-sandbox.coingate.com/v2/orders", request, PaymentResponseDto.class);
 			System.out.println("obratio se api-u");
 			Order o = convertToOrder(response.getBody(), username, pdt.getCallbackUrl() + pdt.getSellerId(), randomToken);
 			this.orderRepository.save(o);
-			returnResponse = response.getBody().getPayment_url();
-			System.out.println(returnResponse);
+			returnResponse.setUrl(response.getBody().getPayment_url());
+			returnResponse.setSuccess(true);
 		}catch(HttpStatusCodeException e) {
 			System.out.println("ERROR WHILE CALLING APPLICATION!");
 			System.out.println(e.getMessage());
+			returnResponse.setUrl("");
+			returnResponse.setSuccess(false);
 		}
 		
 		

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bitcoin.bitcoin.dto.PaymentDto;
 import com.bitcoin.bitcoin.dto.PaymentResponseDto;
+import com.bitcoin.bitcoin.dto.ResponseUrlDto;
 import com.bitcoin.bitcoin.dto.UserDto;
 import com.bitcoin.bitcoin.model.Currency;
 import com.bitcoin.bitcoin.model.Merchant;
@@ -28,10 +29,10 @@ public class BitcoinController {
 	
 	//pay
 	@PostMapping(path="/pay", consumes = MediaType.APPLICATION_JSON_VALUE, produces= MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity pay(@RequestBody PaymentDto pdto) {
+	public ResponseEntity<ResponseUrlDto> pay(@RequestBody PaymentDto pdto) {
 		System.out.println("Porudzbina koja je stigla: " + pdto.getAmount() + " " + pdto.getUsername() );
 		pdto.setCurrency(Currency.USD);
-		String returnUrl = this.bitcoinService.pay(pdto, pdto.getUsername());
+		ResponseUrlDto returnUrl = this.bitcoinService.pay(pdto, pdto.getUsername());
 		System.out.println(returnUrl);
 		return new ResponseEntity(returnUrl, HttpStatus.OK);
 		
@@ -42,6 +43,13 @@ public class BitcoinController {
 	public ResponseEntity success(@PathVariable("token") String token) {
 		String returnUrl = this.bitcoinService.completePayment(token);
 		return new ResponseEntity("Success payment", HttpStatus.FOUND);
+	}
+	
+	//metoda koja govori na kom portu radi front od paypala
+	@GetMapping(value = "/frontendPort")
+	public Long frontendPort(){
+		long port = 4202;
+	    return port;
 	}
 	
 	//cancel

@@ -8,7 +8,7 @@ import com.bitcoin.bitcoin.model.Currency;
 public class PaymentDto implements Serializable {
 	private String sellerId;
 	private Date timestamp;
-	private double amount;
+	private double totalPrice;
 	private String redirectUrl;
 	private String callbackUrl;
 	private Currency currency;
@@ -23,7 +23,7 @@ public class PaymentDto implements Serializable {
 		this();
 		this.sellerId = sellerId;
 		this.timestamp = timestamp;
-		this.amount = amount;
+		this.totalPrice = amount;
 		this.redirectUrl = redirectUrl;
 		this.callbackUrl = callbackUrl;
 		this.currency = currency;
@@ -55,11 +55,11 @@ public class PaymentDto implements Serializable {
 	}
 
 	public double getAmount() {
-		return amount;
+		return totalPrice;
 	}
 
 	public void setAmount(double amount) {
-		this.amount = amount;
+		this.totalPrice = amount;
 	}
 
 	public String getRedirectUrl() {

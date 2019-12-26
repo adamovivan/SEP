@@ -51,21 +51,6 @@ public class PaypalPayment {
 		this.paymentSecret = paymentSecret;
 	}
 
-	public String getSuccessUrl() {
-		return successUrl;
-	}
-
-	public void setSuccessUrl(String successUrl) {
-		this.successUrl = successUrl;
-	}
-
-	public String getCancelUrl() {
-		return cancelUrl;
-	}
-
-	public void setCancelUrl(String cancelUrl) {
-		this.cancelUrl = cancelUrl;
-	}
 
 	public String getUsername() {
 		return username;
