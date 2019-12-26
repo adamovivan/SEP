@@ -61,16 +61,16 @@ public class PaymentService {
             throw new BadRequestException("Payment id is already used.");
         }
         if(!isValidPAN(paymentCardDTO.getPan())){
-            throw new BadRequestException("Invalid PAN.");
+            throw new BadRequestException("Invalid data.");
         }
         if(!isValidCardhoderName(paymentCardDTO.getCardholderName())){
-            throw new BadRequestException("Invalid CardholderName.");
+            throw new BadRequestException("Invalid data.");
         }
         if(!isValidCVV(paymentCardDTO.getCvv())){
-            throw new BadRequestException("Invalid CVV.");
+            throw new BadRequestException("Invalid data.");
         }
         if(!isValidExpiryDate(paymentCardDTO.getExpiryDate())){
-            throw new BadRequestException("Invalid expiry date.");
+            throw new BadRequestException("Invalid data.");
         }
         if(isCardExpired(paymentCardDTO.getExpiryDate())){
             throw new BadRequestException("Card expired.");

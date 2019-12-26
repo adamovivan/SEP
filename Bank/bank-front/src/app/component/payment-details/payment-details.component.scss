@@ -1,0 +1,41 @@
+.payment-details {
+    width: 400px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .pd-width {
+    width: 95%;
+  }
+
+  .pd-width-month {
+    width: 90%;
+  }
+
+  .pd-month-td {
+    width: 80%
+  }
+
+  .pd-width-year {
+    width: 90%;
+  }
+
+  .pd-year-td {
+    width: 80%
+  }
+  
+  .pd-head {
+    width: 300px;
+  }
+
+  .pd-card {
+    width: 368px;
+  }
+
+  .submit-button {
+    float: right;
+  }
+

@@ -1,5 +1,6 @@
 package rs.ac.uns.ftn.bank.exception;
 
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -11,6 +12,7 @@ public class ExceptionResolver {
 
     @ExceptionHandler(NotFoundException.class)
     public final ResponseEntity notFoundException(NotFoundException exception) {
+
         return buildResponseEntity(new ApiError(HttpStatus.NOT_FOUND, exception.getMessage()));
     }
 
@@ -27,4 +29,5 @@ public class ExceptionResolver {
     private ResponseEntity buildResponseEntity(ApiError apiError) {
         return new ResponseEntity<>(apiError, apiError.getStatus());
     }
+
 }

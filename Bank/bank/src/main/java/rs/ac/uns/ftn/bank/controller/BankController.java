@@ -2,10 +2,7 @@ package rs.ac.uns.ftn.bank.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import rs.ac.uns.ftn.bank.dto.PaymentCardDTO;
 import rs.ac.uns.ftn.bank.dto.PaymentRequestDTO;
 import rs.ac.uns.ftn.bank.dto.PaymentResponseDTO;
@@ -15,7 +12,7 @@ import rs.ac.uns.ftn.bank.service.PaymentRequestService;
 
 import javax.validation.Valid;
 
-
+@CrossOrigin(origins = "/*")
 @RestController
 public class BankController {
 

@@ -1,0 +1,64 @@
+<div class="payment-details">
+<mat-toolbar color="primary">
+    <mat-toolbar-row class="pd-head">
+    <span>Payment Details</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-card class="pd-card">
+<mat-card-content>
+<form [formGroup]="paymentDetailsForm" (ngSubmit)="submit()">
+    <table class="pd-year-td">
+        <tr>
+            <td colspan="2">
+                <mat-form-field class="pd-width">
+                <input matInput formControlName="pan" placeholder="PAN" type="text" name="pan">
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <mat-form-field class="pd-width">
+                    <input matInput formControlName="cardholderName" placeholder="Cardholder Name" type="text" name="cardholder">
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <mat-form-field class="pd-width">
+                    <input matInput formControlName="cvv" placeholder="CVV" type="text" name="cvv">
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field class="pd-width-month">
+                        <select matNativeControl formControlName="expiryMonth" placeholder="Month">
+                            <option *ngFor="let month of months" [value]="month">
+                                {{month}}
+                            </option>
+                        </select>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="pd-width-year">
+                        <select matNativeControl formControlName="expiryYear" placeholder="Year">
+                            <option *ngFor="let year of years" [value]="year">
+                                {{year}}
+                            </option>
+                        </select>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button mat-button id="submit" color="primary" type="submit" class="submit-button">
+                    Submit
+                </button>
+            </td>
+        </tr>
+    </table>
+  </form>
+</mat-card-content>
+</mat-card>
+</div>
