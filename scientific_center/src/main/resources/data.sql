@@ -1,9 +1,9 @@
 -- users
-insert into user (id, first_name, last_name, username, password)
-values (1, 'Pera', 'Peric', 'peraperic', '$2a$10$kx6ymttdiBQ/3NAz1ssxoeOF8Vwm3LSKFnEkSADPc5x8kgaj/vKnC'); -- 12345
+insert into user (id, first_name, last_name, username, email, password)
+values (1, 'Pera', 'Peric', 'peraperic', 'peraperic@gmail.com', '$2a$10$kx6ymttdiBQ/3NAz1ssxoeOF8Vwm3LSKFnEkSADPc5x8kgaj/vKnC'); -- 12345
 
-insert into user (id, first_name, last_name, username, password)
-values (2, 'Mika', 'Mikic', 'mikamikic', '$2a$10$kx6ymttdiBQ/3NAz1ssxoeOF8Vwm3LSKFnEkSADPc5x8kgaj/vKnC'); -- 12345
+insert into user (id, first_name, last_name, username, email, password)
+values (2, 'Mika', 'Mikic', 'mikamikic', 'mikamikic@gmail.com', '$2a$10$kx6ymttdiBQ/3NAz1ssxoeOF8Vwm3LSKFnEkSADPc5x8kgaj/vKnC'); -- 12345
 
 -- shopping carts
 insert into shopping_cart (id, user_id) values (1, 1);
@@ -31,10 +31,10 @@ insert into magazine (id, title, issn, scientific_field_id) values (3, 'Current 
 -- editorial boards
 insert into editorial_board(id, main_editor_id, magazine_id) values (1, 2, 1);
 
--- memberships (TODO add: 1 mouth, 6 months, 1 year)
-insert into membership (id, subscription_type, magazine_id) values (1, 'READER_PAYS', 1);
-insert into membership (id, subscription_type, magazine_id) values (2, 'READER_PAYS', 2);
-insert into membership (id, subscription_type, magazine_id) values (3, 'OPEN_ACCESS', 3);
+-- memberships
+insert into membership (id, subscription_type, magazine_id, user_id) values (1, 'READER_PAYS', 1, 2);
+-- insert into membership (id, subscription_type, magazine_id) values (2, 'READER_PAYS', 2);
+-- insert into membership (id, subscription_type, magazine_id) values (3, 'OPEN_ACCESS', 3);
 
 -- insert into membership_magazines(magazines_id, membership_id) values (1, 1);
 
