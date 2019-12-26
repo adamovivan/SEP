@@ -1,16 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 import { CancelComponent } from './cancel/cancel.component';
 import { SuccessComponent } from './success/success.component';
 import { UserDataComponent } from './user-data/user-data.component';
 
 
 const routes: Routes = [
-  {
-    path: 'pay/:username/:total',
-    component: HomeComponent
-  },
   {
     path: 'success',
     component: SuccessComponent

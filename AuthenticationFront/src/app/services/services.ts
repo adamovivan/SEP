@@ -35,8 +35,12 @@ export class SellerService {
     return this.http.get(SERVER_URL + '/authentication-service/getPayments/'+tip,);
   }
 
-  getTypePayments(email:any){
-    return this.http.get(SERVER_URL + '/authentication-service/getTypePayments/'+email,);
+  getTypePayments(token:any){
+    return this.http.get(SERVER_URL + '/authentication-service/getTypePayments/'+token,);
+  }
+
+  getPaymentLink(request:any){
+    return this.http.post(SERVER_URL + '/authentication-service/getPaymentLink',request);
   }
   
 }

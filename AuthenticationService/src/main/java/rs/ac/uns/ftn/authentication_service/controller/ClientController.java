@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import rs.ac.uns.ftn.authentication_service.model.Client;
 import rs.ac.uns.ftn.authentication_service.request.LoginRequest;
+import rs.ac.uns.ftn.authentication_service.request.PaymentLinkRequest;
 import rs.ac.uns.ftn.authentication_service.request.PaymentRequest;
+import rs.ac.uns.ftn.authentication_service.request.TransactionRequest;
 import rs.ac.uns.ftn.authentication_service.response.LoginResponse;
 import rs.ac.uns.ftn.authentication_service.response.PaymentResponse;
 import rs.ac.uns.ftn.authentication_service.service.LoginService;
@@ -39,7 +41,6 @@ public class ClientController {
 
 	@PostMapping("/registerClient")
 	public ResponseEntity<Client> saveKorisnik(@RequestBody Client client) throws Exception{
-		System.out.println("USAO SAM : " + client.getFirstName());
 		return new ResponseEntity<Client>(registrationService.save(client), HttpStatus.OK);
 	}
 	
@@ -53,6 +54,7 @@ public class ClientController {
 	public ResponseEntity<Boolean> addPayments(@RequestBody PaymentRequest paymentRequest) {
 		return new ResponseEntity<Boolean>(paymentsService.addPayments(paymentRequest), HttpStatus.OK);
 	}
+	
 	//seller
 	@GetMapping(value = "/getPayments/{username}")
 	public ResponseEntity<List<String>> getPayments(@PathVariable String username) {
@@ -60,8 +62,18 @@ public class ClientController {
 	}
 
 	//buyer
-	@GetMapping(value = "/getTypePayments/{email}")
-	public ResponseEntity<PaymentResponse> getTypePayments(@PathVariable String email) {
-		return new ResponseEntity<PaymentResponse>(paymentsService.getTypePayments(email), HttpStatus.OK);
+	@GetMapping(value = "/getTypePayments/{token}")
+	public ResponseEntity<PaymentResponse> getTypePayments(@PathVariable String token) {
+		return new ResponseEntity<PaymentResponse>(paymentsService.getTypePayments(token), HttpStatus.OK);
+	}
+	
+	@PostMapping(value = "/getTransactionLink")
+	public ResponseEntity<String> getTransactionLink(@RequestBody TransactionRequest transactionRequest) {
+		return new ResponseEntity<String>(paymentsService.getTransactionLink(transactionRequest), HttpStatus.OK);
+	}
+	
+	@PostMapping(value = "/getPaymentLink")
+	public ResponseEntity<String> getPaymentLink(@RequestBody PaymentLinkRequest paymentLinkRequest) {
+		return new ResponseEntity<String>(paymentsService.getPaymentLink(paymentLinkRequest), HttpStatus.OK);
 	}
 }

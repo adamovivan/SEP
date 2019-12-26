@@ -22,7 +22,7 @@ export class ShoppingCartComponent implements OnInit {
   ngOnInit() {
     this.shoppingCartService.getShoppingCartItems().subscribe(
       res => {
-        this.magazineItems = res;
+        this.magazineItems = [res];
         this.totalPrice = this.calculateTotalPrice();
       },
       err => {
@@ -48,11 +48,7 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   proceedToPayment(){
-    let paymentRequest = new PaymentRequest();
-    paymentRequest.totalPrice = this.totalPrice;
-    paymentRequest.username = 'mikamikic';
-
-    this.shoppingCartService.pay(paymentRequest).subscribe(res => {
+    this.shoppingCartService.pay().subscribe(res => {
       console.log(res);
     })
   }

@@ -1,7 +1,7 @@
 package rs.ac.uns.ftn.scientific_center.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
@@ -12,11 +12,10 @@ import rs.ac.uns.ftn.scientific_center.dto.response.PaymentOrderResponse;
 import rs.ac.uns.ftn.scientific_center.mapper.PricelistItemMapper;
 import rs.ac.uns.ftn.scientific_center.model.PricelistItem;
 import rs.ac.uns.ftn.scientific_center.model.ShoppingCart;
+import rs.ac.uns.ftn.scientific_center.repository.MembershipRepository;
 import rs.ac.uns.ftn.scientific_center.repository.PricelistItemRepository;
 import rs.ac.uns.ftn.scientific_center.repository.ShoppingCartRepository;
 
-import java.util.List;
-import java.util.Set;
 
 @Service
 public class ShoppingCartService {
@@ -28,10 +27,16 @@ public class ShoppingCartService {
     private PricelistItemRepository pricelistItemRepository;
 
     @Autowired
+    private MembershipRepository membershipRepository;
+
+    @Autowired
     private PricelistItemMapper pricelistItemMapper;
 
     @Autowired
     private RestTemplate restTemplate;
+
+    @Value("${payment.url}")
+    private String paymentUrl;
 
     public ShoppingCart addItem(Long magazineId) throws NullPointerException {
         PricelistItem pricelistItem = pricelistItemRepository.findByMagazineId(magazineId);
@@ -42,13 +47,13 @@ public class ShoppingCartService {
 
         ShoppingCart shoppingCart = getAuthenticatedUserShoppingCart();
 
-        shoppingCart.getItems().add(pricelistItem);
+        shoppingCart.setItem(pricelistItem);
         return shoppingCartRepository.save(shoppingCart);
     }
 
-    public Set<PricelistItemDTO> getItems() {
+    public PricelistItemDTO getItem() {
         ShoppingCart shoppingCart = getAuthenticatedUserShoppingCart();
-        return pricelistItemMapper.pricelistItemsToPricelistItemDTOs(shoppingCart.getItems());
+        return pricelistItemMapper.pricelistItemToPricelistItemDTO(shoppingCart.getItem());
     }
 
     private ShoppingCart getAuthenticatedUserShoppingCart() throws NullPointerException {
@@ -67,7 +72,17 @@ public class ShoppingCartService {
         return shoppingCart;
     }
 
-    public PaymentOrderResponse pay(PaymentOrderRequest paymentOrderRequest){
-        return restTemplate.postForObject("http://localhost:8002/pay", paymentOrderRequest, PaymentOrderResponse.class);
+    public PaymentOrderResponse pay() {
+        ShoppingCart shoppingCart = getAuthenticatedUserShoppingCart();
+
+        PricelistItem shoppingCartItem = shoppingCart.getItem();
+        Double totalPrice = shoppingCartItem.getPrice();
+        String email = membershipRepository.findByMagazineId(shoppingCartItem
+                    .getMagazine()
+                    .getId())
+                            .getUser()
+                            .getEmail();
+        return restTemplate.postForObject(paymentUrl, new PaymentOrderRequest(totalPrice, email),
+                PaymentOrderResponse.class);
     }
 }

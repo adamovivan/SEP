@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PayPalService } from '../service/service';
+import { FormBuilder } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cancel',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CancelComponent implements OnInit {
 
-  constructor() { }
+  username:any;
+
+  constructor(
+    private payPalService:PayPalService,
+    private formBuilder:FormBuilder,
+    private router:Router,
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+          this.username = localStorage.getItem('username');
+          console.log(this.username);
+  }
+
+  cancel(){
   }
 
 }

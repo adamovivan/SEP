@@ -1,10 +1,11 @@
 package rs.ac.uns.ftn.scientific_center.dto.request;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class PaymentOrderRequest {
     private Double totalPrice;
-    private Long magazineId;
-    private String paymentType;
+    private String email;
 }

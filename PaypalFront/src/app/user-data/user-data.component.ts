@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpHeaders } from '@angular/common/http';
-import { HomeComponent } from '../home/home.component';
 import { PayPalService } from '../service/service';
 
 @Component({
@@ -24,8 +23,6 @@ export class UserDataComponent implements OnInit {
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-      
-
       this.SingIn = this.formBuilder.group({
         id:['',Validators.compose([Validators.required, Validators.pattern('[a-zA-Z 0-9!]+')])],
         secret:['',Validators.compose([Validators.required, Validators.pattern('[a-zA-Z 0-9!]+')])]

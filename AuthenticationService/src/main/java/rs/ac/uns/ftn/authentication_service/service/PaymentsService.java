@@ -2,15 +2,23 @@ package rs.ac.uns.ftn.authentication_service.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import rs.ac.uns.ftn.authentication_service.model.Client;
 import rs.ac.uns.ftn.authentication_service.model.Payments;
+import rs.ac.uns.ftn.authentication_service.model.Transaction;
 import rs.ac.uns.ftn.authentication_service.repository.ClientRepository;
 import rs.ac.uns.ftn.authentication_service.repository.PaymentsRepository;
+import rs.ac.uns.ftn.authentication_service.repository.TransactionRepository;
+import rs.ac.uns.ftn.authentication_service.request.PaymentLinkRequest;
+import rs.ac.uns.ftn.authentication_service.request.PaymentOrderRequest;
 import rs.ac.uns.ftn.authentication_service.request.PaymentRequest;
+import rs.ac.uns.ftn.authentication_service.request.TransactionRequest;
 import rs.ac.uns.ftn.authentication_service.response.PaymentResponse;
 
 @Service
@@ -21,6 +29,13 @@ public class PaymentsService {
 	
 	@Autowired
 	private ClientRepository clientRepository;
+	
+	@Autowired
+	private TransactionRepository transactionRepository;
+	
+	@Autowired
+	 private RestTemplate restTemplate;
+	
 	//dodavanje paymenta za prodavca
 	public Boolean addPayments(PaymentRequest paymentRequest) {
 		Payments payments = new Payments();
@@ -55,12 +70,15 @@ public class PaymentsService {
 			return lista;
 		}
 	}
-	//dobavljanje liste odabranih nacina placanja prodavca sa usernamom
-	public PaymentResponse getTypePayments(String email) {
+	//dobavljanje liste odabranih nacina placanja prodavca sa username-om
+	public PaymentResponse getTypePayments(String token) {
 		List<String> lista = new ArrayList<>();
 		
+		Transaction transaction = new Transaction();
+		transaction = transactionRepository.findByUuid(token);
+		
 		Client client = new Client();
-		client = clientRepository.findByEmail(email);
+		client = clientRepository.findByEmail(transaction.getEmail());
 		PaymentResponse payment;
 		Payments payments = new Payments();
 		payments = paymentsRepository.findByUsername(client.getUsername());
@@ -76,6 +94,36 @@ public class PaymentsService {
 		
 		
 		return payment;
+	}
+	
+	//cuvanje podataka vezanih za uplatu od strane kupca....
+	public String getTransactionLink(TransactionRequest transactionRequest) {
+		
+		Transaction transaction = new Transaction();
+		transaction.setEmail(transactionRequest.getEmail());
+		transaction.setTotalPrice(transactionRequest.getTotalPrice());
+		transaction.setUuid(UUID.randomUUID().toString());
+		transaction = transactionRepository.save(transaction);
+		if(transaction != null)
+			return "http://localhost:4200/payingType/"+ transaction.getUuid();
+		else
+			return "";
+	}
+	
+	public String getPaymentLink(PaymentLinkRequest paymentLinkRequest) {
+		Transaction transaction = new Transaction();
+		transaction = transactionRepository.findByUuid(paymentLinkRequest.getToken());
+		Client client = new Client();
+		client = clientRepository.findByEmail(transaction.getEmail());
+		PaymentOrderRequest order = new PaymentOrderRequest();
+		order.setTotalPrice(transaction.getTotalPrice());
+		order.setUsername(client.getUsername());
+		
+		ResponseEntity<String> response = restTemplate.postForEntity("http://localhost:8765/api-"+paymentLinkRequest.getType().toLowerCase()+"/pay", order, String.class);
+		String url = response.getBody();
+		
+		return url;
+		
 	}
 	
 }

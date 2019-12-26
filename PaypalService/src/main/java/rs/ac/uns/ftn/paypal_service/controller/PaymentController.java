@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -72,6 +73,12 @@ public class PaymentController {
 	public Boolean saveData(@RequestBody UserDataRequest userDataRequest){
 	    return dataService.saveInfo(userDataRequest);
 	}
+	
+	/*@GetMapping(value = "/cancelData/{username}")
+	public Boolean cancelData(@PathVariable String username){
+		System.out.println(" >>>>>> " +  username + " >>>>>>");
+	    return paypalService.cancelPayment(username);
+	}*/
 	
 	
 }
