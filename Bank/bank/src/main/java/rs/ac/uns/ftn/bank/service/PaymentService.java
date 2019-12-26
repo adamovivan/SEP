@@ -3,6 +3,7 @@ package rs.ac.uns.ftn.bank.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import rs.ac.uns.ftn.bank.dto.CallbackUrlsDTO;
 import rs.ac.uns.ftn.bank.dto.PaymentCardDTO;
 import rs.ac.uns.ftn.bank.dto.PaymentStatusDTO;
 import rs.ac.uns.ftn.bank.exception.BadRequestException;
@@ -52,7 +53,7 @@ public class PaymentService {
 
     private void validate(PaymentCardDTO paymentCardDTO){
         if(!paymentRequestExist(paymentCardDTO.getPaymentId())){
-            throw new BadRequestException("Unknown payment id.");
+            throw new NotFoundException("Unknown payment id.");
         }
         if(isPaymentRequestExpired(paymentCardDTO.getPaymentId())){
             throw new BadRequestException("Payment request expired.");
@@ -152,4 +153,17 @@ public class PaymentService {
         return pan.startsWith(bankIIN);
     }
 
+    public CallbackUrlsDTO getCallbackUrls(String paymentId){
+        PaymentRequest paymentRequest = paymentRequestRepository.findByPaymentId(paymentId);
+
+        if(paymentRequest == null){
+            throw new NotFoundException("Payment id not found.");
+        }
+
+        CallbackUrlsDTO callbackUrlsDTO = new CallbackUrlsDTO();
+        callbackUrlsDTO.setSuccessUrl(paymentRequest.getSuccessUrl());
+        callbackUrlsDTO.setFailedUrl(paymentRequest.getFailedUrl());
+        callbackUrlsDTO.setErrorUrl(paymentRequest.getErrorUrl());
+        return callbackUrlsDTO;
+    }
 }
