@@ -54,6 +54,7 @@ public class ClientController {
 	public ResponseEntity<Boolean> addPayments(@RequestBody PaymentRequest paymentRequest) {
 		return new ResponseEntity<Boolean>(paymentsService.addPayments(paymentRequest), HttpStatus.OK);
 	}
+	
 	//seller
 	@GetMapping(value = "/getPayments/{username}")
 	public ResponseEntity<List<String>> getPayments(@PathVariable String username) {
