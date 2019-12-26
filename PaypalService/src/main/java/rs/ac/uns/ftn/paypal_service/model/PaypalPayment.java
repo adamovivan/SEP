@@ -26,5 +26,39 @@ public class PaypalPayment {
 	
 	@Column(nullable=true)
 	private String username;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getPaymentId() {
+		return paymentId;
+	}
+
+	public void setPaymentId(String paymentId) {
+		this.paymentId = paymentId;
+	}
+
+	public String getPaymentSecret() {
+		return paymentSecret;
+	}
+
+	public void setPaymentSecret(String paymentSecret) {
+		this.paymentSecret = paymentSecret;
+	}
+
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	
 	
 }
