@@ -7,6 +7,7 @@ public class TransactionRequest {
 
 	private Double totalPrice;
 	private String email;
+	
 	public Double getTotalPrice() {
 		return totalPrice;
 	}

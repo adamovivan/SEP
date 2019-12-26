@@ -98,17 +98,23 @@ public class PaymentsService {
 	}
 	
 	//cuvanje podataka vezanih za uplatu od strane kupca....
-	public String getTransactionLink(TransactionRequest transactionRequest) {
+	public PaymentLinkResponse getTransactionLink(TransactionRequest transactionRequest) {
 		
 		Transaction transaction = new Transaction();
 		transaction.setEmail(transactionRequest.getEmail());
 		transaction.setTotalPrice(transactionRequest.getTotalPrice());
 		transaction.setUuid(UUID.randomUUID().toString());
 		transaction = transactionRepository.save(transaction);
-		if(transaction != null)
-			return "http://localhost:4200/payingType/"+ transaction.getUuid();
-		else
-			return "";
+		PaymentLinkResponse response = new PaymentLinkResponse();
+		if(transaction != null) {
+			response.setSuccess(true);
+			response.setUrl("http://localhost:4200/payingType/"+ transaction.getUuid());
+			return response;
+		}else {
+			response.setSuccess(false);
+			response.setUrl("");
+			return response;
+		}
 	}
 	
 	public PaymentLinkResponse getPaymentLink(PaymentLinkRequest paymentLinkRequest) {
