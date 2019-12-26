@@ -1,1 +1,0 @@
-insert into merchant (id, username, token) values (1,'mikamikic', 'aHsn1zYw5SEiNBhQHx7TdH__wsBibYQtFs6BbWGh');

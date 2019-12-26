@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,6 +22,8 @@ import com.bitcoin.bitcoin.model.Merchant;
 import com.bitcoin.bitcoin.service.BitcoinService;
 
 @RestController
+@CrossOrigin(origins = "", allowedHeaders = "", maxAge = 3600)
+@RequestMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
 public class BitcoinController {
 
 	
@@ -30,8 +33,7 @@ public class BitcoinController {
 	//pay
 	@PostMapping(path="/pay", consumes = MediaType.APPLICATION_JSON_VALUE, produces= MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<ResponseUrlDto> pay(@RequestBody PaymentDto pdto) {
-		System.out.println("Porudzbina koja je stigla: " + pdto.getAmount() + " " + pdto.getUsername() );
-		pdto.setCurrency(Currency.USD);
+		System.out.println("Porudzbina koja je stigla: " + pdto.getTotalPrice() + " " + pdto.getUsername() );
 		ResponseUrlDto returnUrl = this.bitcoinService.pay(pdto, pdto.getUsername());
 		System.out.println(returnUrl);
 		return new ResponseEntity(returnUrl, HttpStatus.OK);
