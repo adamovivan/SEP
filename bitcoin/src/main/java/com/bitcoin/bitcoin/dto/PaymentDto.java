@@ -6,6 +6,7 @@ import java.util.Date;
 import com.bitcoin.bitcoin.model.Currency;
 
 public class PaymentDto implements Serializable {
+
 	private double totalPrice;
 	private String username;
 
