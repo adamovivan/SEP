@@ -30,8 +30,6 @@ public class BitcoinController {
 	//pay
 	@PostMapping(path="/pay", consumes = MediaType.APPLICATION_JSON_VALUE, produces= MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<ResponseUrlDto> pay(@RequestBody PaymentDto pdto) {
-		System.out.println("Porudzbina koja je stigla: " + pdto.getAmount() + " " + pdto.getUsername() );
-		pdto.setCurrency(Currency.USD);
 		ResponseUrlDto returnUrl = this.bitcoinService.pay(pdto, pdto.getUsername());
 		System.out.println(returnUrl);
 		return new ResponseEntity(returnUrl, HttpStatus.OK);

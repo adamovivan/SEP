@@ -49,14 +49,15 @@ public class BitcoinServiceImpl implements BitcoinService{
 		RestTemplate rest = new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Authorization", "Token " + u.getToken());
+		System.out.println(u.getToken());
 		
 		String randomToken = UUID.randomUUID().toString();
 		
 		MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
 		map.add("order_id", "nc-1");
-		map.add("price_amount",  Double.toString(pdt.getAmount()));
-		map.add("price_currency", pdt.getCurrency().toString());
-		map.add("receive_currency", pdt.getCurrency().toString());
+		map.add("price_amount",  Double.toString(pdt.getTotalPrice()));
+		map.add("price_currency", Currency.USD.toString());
+		map.add("receive_currency", Currency.USD.toString());
 		map.add("cancel_url", this.address + "4202/cancel/" + randomToken);
 		map.add("success_url", this.address + "4202/success/" + randomToken);
 		map.add("token", randomToken);
@@ -67,7 +68,7 @@ public class BitcoinServiceImpl implements BitcoinService{
 		try {
 			ResponseEntity<PaymentResponseDto> response = rest.postForEntity("https://api-sandbox.coingate.com/v2/orders", request, PaymentResponseDto.class);
 			System.out.println("obratio se api-u");
-			Order o = convertToOrder(response.getBody(), username, pdt.getCallbackUrl() + pdt.getSellerId(), randomToken);
+			Order o = convertToOrder(response.getBody(), username, "", randomToken);
 			this.orderRepository.save(o);
 			returnResponse.setUrl(response.getBody().getPayment_url());
 			returnResponse.setSuccess(true);
