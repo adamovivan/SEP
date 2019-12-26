@@ -19,6 +19,7 @@ import rs.ac.uns.ftn.authentication_service.request.PaymentLinkRequest;
 import rs.ac.uns.ftn.authentication_service.request.PaymentOrderRequest;
 import rs.ac.uns.ftn.authentication_service.request.PaymentRequest;
 import rs.ac.uns.ftn.authentication_service.request.TransactionRequest;
+import rs.ac.uns.ftn.authentication_service.response.PaymentLinkResponse;
 import rs.ac.uns.ftn.authentication_service.response.PaymentResponse;
 
 @Service
@@ -110,7 +111,7 @@ public class PaymentsService {
 			return "";
 	}
 	
-	public String getPaymentLink(PaymentLinkRequest paymentLinkRequest) {
+	public PaymentLinkResponse getPaymentLink(PaymentLinkRequest paymentLinkRequest) {
 		Transaction transaction = new Transaction();
 		transaction = transactionRepository.findByUuid(paymentLinkRequest.getToken());
 		Client client = new Client();
@@ -119,10 +120,10 @@ public class PaymentsService {
 		order.setTotalPrice(transaction.getTotalPrice());
 		order.setUsername(client.getUsername());
 		
-		ResponseEntity<String> response = restTemplate.postForEntity("http://localhost:8765/api-"+paymentLinkRequest.getType().toLowerCase()+"/pay", order, String.class);
-		String url = response.getBody();
+		ResponseEntity<PaymentLinkResponse> response = restTemplate.postForEntity("http://localhost:8765/api-"+paymentLinkRequest.getType().toLowerCase()+"/pay", order, PaymentLinkResponse.class);
 		
-		return url;
+		
+		return response.getBody();
 		
 	}
 	

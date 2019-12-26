@@ -20,6 +20,7 @@ import rs.ac.uns.ftn.authentication_service.request.PaymentLinkRequest;
 import rs.ac.uns.ftn.authentication_service.request.PaymentRequest;
 import rs.ac.uns.ftn.authentication_service.request.TransactionRequest;
 import rs.ac.uns.ftn.authentication_service.response.LoginResponse;
+import rs.ac.uns.ftn.authentication_service.response.PaymentLinkResponse;
 import rs.ac.uns.ftn.authentication_service.response.PaymentResponse;
 import rs.ac.uns.ftn.authentication_service.service.LoginService;
 import rs.ac.uns.ftn.authentication_service.service.PaymentsService;
@@ -73,7 +74,7 @@ public class ClientController {
 	}
 	
 	@PostMapping(value = "/getPaymentLink")
-	public ResponseEntity<String> getPaymentLink(@RequestBody PaymentLinkRequest paymentLinkRequest) {
-		return new ResponseEntity<String>(paymentsService.getPaymentLink(paymentLinkRequest), HttpStatus.OK);
+	public ResponseEntity<PaymentLinkResponse> getPaymentLink(@RequestBody PaymentLinkRequest paymentLinkRequest) {
+		return new ResponseEntity<PaymentLinkResponse>(paymentsService.getPaymentLink(paymentLinkRequest), HttpStatus.OK);
 	}
 }
