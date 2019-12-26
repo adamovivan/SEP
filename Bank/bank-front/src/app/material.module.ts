@@ -4,7 +4,8 @@ import {
     MatButtonModule,
     MatCardModule,
     MatInputModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSnackBarModule
 } from '@angular/material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material';
@@ -18,7 +19,8 @@ import { MatFormFieldModule } from '@angular/material';
         MatFormFieldModule,
         MatInputModule,
         MatToolbarModule,
-        MatCardModule
+        MatCardModule,
+        MatSnackBarModule
     ],
     exports: [
         MatButtonModule,
@@ -28,7 +30,8 @@ import { MatFormFieldModule } from '@angular/material';
         MatFormFieldModule,
         MatInputModule,
         MatToolbarModule,
-        MatCardModule
+        MatCardModule,
+        MatSnackBarModule
     ]
 })
 export class MaterialModule { }

@@ -8,6 +8,7 @@ import { PaymentDetailsComponent } from './component/payment-details/payment-det
 import { MaterialModule } from './material.module';
 import { PaymentService } from './service/payment.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material';
 
 @NgModule({
   declarations: [
