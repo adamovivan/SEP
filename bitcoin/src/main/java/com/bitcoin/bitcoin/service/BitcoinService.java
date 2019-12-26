@@ -6,7 +6,7 @@ import com.bitcoin.bitcoin.model.Merchant;
 
 public interface BitcoinService {
 
-	PaymentResponseDto pay(PaymentDto pdt, String username);
+	String pay(PaymentDto pdt, String username);
 	
 	void saveMerchant(Merchant m);
 	

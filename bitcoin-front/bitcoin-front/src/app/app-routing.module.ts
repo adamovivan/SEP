@@ -8,11 +8,11 @@ import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
   {
-    path : 'success',
+    path : 'success/:token',
     component : SuccessComponent
   },
   {
-    path : 'cancel', 
+    path : 'cancel/:token', 
     component : CancelComponent
   },
   {

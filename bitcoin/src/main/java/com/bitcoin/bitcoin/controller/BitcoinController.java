@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bitcoin.bitcoin.dto.PaymentDto;
 import com.bitcoin.bitcoin.dto.PaymentResponseDto;
 import com.bitcoin.bitcoin.dto.UserDto;
+import com.bitcoin.bitcoin.model.Currency;
 import com.bitcoin.bitcoin.model.Merchant;
 import com.bitcoin.bitcoin.service.BitcoinService;
 
@@ -28,8 +29,10 @@ public class BitcoinController {
 	//pay
 	@PostMapping(path="/pay", consumes = MediaType.APPLICATION_JSON_VALUE, produces= MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity pay(@RequestBody PaymentDto pdto) {
-		PaymentResponseDto returnUrl = this.bitcoinService.pay(pdto, pdto.getUsername());
-		System.out.println(returnUrl.getPayment_url());
+		System.out.println("Porudzbina koja je stigla: " + pdto.getAmount() + " " + pdto.getUsername() );
+		pdto.setCurrency(Currency.USD);
+		String returnUrl = this.bitcoinService.pay(pdto, pdto.getUsername());
+		System.out.println(returnUrl);
 		return new ResponseEntity(returnUrl, HttpStatus.OK);
 		
 	}
@@ -37,12 +40,14 @@ public class BitcoinController {
 	//success 
 	@GetMapping(path="success/{token}", produces=MediaType.TEXT_PLAIN_VALUE)
 	public ResponseEntity success(@PathVariable("token") String token) {
+		String returnUrl = this.bitcoinService.completePayment(token);
 		return new ResponseEntity("Success payment", HttpStatus.FOUND);
 	}
 	
 	//cancel
 	@GetMapping(path="cancel/{token}", produces=MediaType.TEXT_PLAIN_VALUE)
 	public ResponseEntity cancel(@PathVariable("token") String token) {
+		String returnUrl = this.bitcoinService.cancelPayment(token);
 		return new ResponseEntity("Cancel payment", HttpStatus.FOUND);
 	}
  	

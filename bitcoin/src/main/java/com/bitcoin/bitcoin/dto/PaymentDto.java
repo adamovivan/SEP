@@ -1,10 +1,11 @@
 package com.bitcoin.bitcoin.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import com.bitcoin.bitcoin.model.Currency;
 
-public class PaymentDto {
+public class PaymentDto implements Serializable {
 	private String sellerId;
 	private Date timestamp;
 	private double amount;

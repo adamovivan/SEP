@@ -30,6 +30,7 @@ export class MainComponent implements OnInit {
 
 
   pay(){
+    alert(this.order);
     this.service.createOrder(this.order).subscribe(
       data => {
         this.url = data;

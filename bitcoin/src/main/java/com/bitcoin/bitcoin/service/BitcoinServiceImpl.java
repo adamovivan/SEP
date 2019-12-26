@@ -40,7 +40,7 @@ public class BitcoinServiceImpl implements BitcoinService{
 	
 	
 	@Override
-	public PaymentResponseDto pay(PaymentDto pdt, String username) {
+	public String pay(PaymentDto pdt, String username) {
 		// TODO Auto-generated method stub
 		Merchant u = this.userRepository.findByUsername(username).orElseThrow(() -> new BitcoinUserNotExistException("User with that username does not exist!"));
 		
@@ -62,14 +62,14 @@ public class BitcoinServiceImpl implements BitcoinService{
 		
 		
 		HttpEntity<MultiValueMap<String, String>> request =  new HttpEntity<MultiValueMap<String,String>>(map, headers);
-		PaymentResponseDto returnResponse = null;
+		String returnResponse = "";
 		try {
 			ResponseEntity<PaymentResponseDto> response = rest.postForEntity("https://api-sandbox.coingate.com/v2/orders", request, PaymentResponseDto.class);
 			System.out.println("obratio se api-u");
 			Order o = convertToOrder(response.getBody(), username, pdt.getCallbackUrl() + pdt.getSellerId(), randomToken);
 			this.orderRepository.save(o);
-			returnResponse = response.getBody();
-			System.out.println(returnResponse.getPayment_url());
+			returnResponse = response.getBody().getPayment_url();
+			System.out.println(returnResponse);
 		}catch(HttpStatusCodeException e) {
 			System.out.println("ERROR WHILE CALLING APPLICATION!");
 			System.out.println(e.getMessage());
@@ -162,7 +162,7 @@ Order order = this.orderRepository.findByRandomToken(token).orElseThrow(() -> ne
 			ResponseEntity<PaymentResponseDto> response = rest.exchange("https://api-sandbox.coingate.com/v2/orders/"+order.getPaymentId(), HttpMethod.GET,
 					new HttpEntity<Object>(headers), PaymentResponseDto.class);
 			
-			if(response.getBody().getStatus().equals("canceled")) {
+			if(!response.getBody().getStatus().equals("paid")) {
 				order.setState(PaymentState.CANCELED);
 				order.setUpdateTime(new Date());
 				this.orderRepository.save(order);
