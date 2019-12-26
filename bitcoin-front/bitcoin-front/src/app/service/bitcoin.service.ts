@@ -26,4 +26,8 @@ export class BitcoinService {
   cancel(token:string){
 
   }
+
+  saveUserData(user:any){
+    return this.http.post(this.SERVER_URL + '/api-bitcoin/save', user, {responseType:'text'});
+  }
 }

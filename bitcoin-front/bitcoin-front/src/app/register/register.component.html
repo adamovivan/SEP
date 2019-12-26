@@ -1,13 +1,13 @@
 <div class="row component">
     <div class="col"></div>
     <div class="col">
-        <h1 class="h3 mb-3 font-weight-normal">Secret information for PayPal</h1>
+        <h1 class="h3 mb-3 font-weight-normal">Secret information for Bitcoin</h1>
         <form [formGroup]="SingIn" (ngSubmit)="onSubmit($event)" novalidate style="width: 40vh; margin-left: 41vw;">
             <div class="form-group">
                 <label>Marchant API Id</label>
-                <input type="text" formControlName="id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.id.errors }"/>
-                <div *ngIf="submitted && f.id.errors">
-                    <div style="color:red;">Id is incorect!</div>
+                <input type="text" formControlName="token" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.token.errors }"/>
+                <div *ngIf="submitted && f.token.errors">
+                    <div style="color:red;">Token is incorect!</div>
                 </div>
             </div>
 
