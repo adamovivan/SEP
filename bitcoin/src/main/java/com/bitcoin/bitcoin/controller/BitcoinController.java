@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bitcoin.bitcoin.dto.OrderResponseDto;
 import com.bitcoin.bitcoin.dto.PaymentDto;
 import com.bitcoin.bitcoin.dto.PaymentResponseDto;
 import com.bitcoin.bitcoin.dto.ResponseUrlDto;
@@ -39,8 +40,9 @@ public class BitcoinController {
 	//success 
 	@GetMapping(path="success/{token}", produces=MediaType.TEXT_PLAIN_VALUE)
 	public ResponseEntity success(@PathVariable("token") String token) {
-		String returnUrl = this.bitcoinService.completePayment(token);
-		return new ResponseEntity("Success payment", HttpStatus.FOUND);
+		System.out.println(">> success");
+		String response = this.bitcoinService.completePayment(token);
+		return new ResponseEntity(response, HttpStatus.OK);
 	}
 	
 	//metoda koja govori na kom portu radi front od paypala
@@ -53,8 +55,8 @@ public class BitcoinController {
 	//cancel
 	@GetMapping(path="cancel/{token}", produces=MediaType.TEXT_PLAIN_VALUE)
 	public ResponseEntity cancel(@PathVariable("token") String token) {
-		String returnUrl = this.bitcoinService.cancelPayment(token);
-		return new ResponseEntity("Cancel payment", HttpStatus.FOUND);
+		String response = this.bitcoinService.cancelPayment(token);
+		return new ResponseEntity(response, HttpStatus.OK);
 	}
  	
 	//save new merchant
