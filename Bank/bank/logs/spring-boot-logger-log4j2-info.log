@@ -1,48 +1,23 @@
-[2019-12-27 05:58:45] [INFO] Starting BankApplication on DESKTOP-9RN4Q95 with PID 10808 (started by Dejan in C:\Users\Dejan\Desktop\Master\Sistemi elektronskog placanja (SEP)\Projekat\SEP\Bank\bank)
-[2019-12-27 05:58:45] [INFO] No active profile set, falling back to default profiles: default
-[2019-12-27 05:58:46] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[2019-12-27 05:58:46] [INFO] Finished Spring Data repository scanning in 74ms. Found 4 JPA repository interfaces.
-[2019-12-27 05:58:46] [INFO] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-[2019-12-27 05:58:46] [INFO] Tomcat initialized with port(s): 8500 (http)
-[2019-12-27 05:58:46] [INFO] Initializing ProtocolHandler ["http-nio-8500"]
-[2019-12-27 05:58:46] [INFO] Starting service [Tomcat]
-[2019-12-27 05:58:46] [INFO] Starting Servlet engine: [Apache Tomcat/9.0.29]
-[2019-12-27 05:58:46] [INFO] Initializing Spring embedded WebApplicationContext
-[2019-12-27 05:58:46] [INFO] Root WebApplicationContext: initialization completed in 1387 ms
-[2019-12-27 05:58:47] [INFO] HikariPool-1 - Starting...
-[2019-12-27 05:58:47] [INFO] HikariPool-1 - Start completed.
-[2019-12-27 05:58:47] [INFO] H2 console available at '/h2'. Database available at 'jdbc:h2:mem:db'
-[2019-12-27 05:58:47] [INFO] HHH000412: Hibernate Core {5.4.9.Final}
-[2019-12-27 05:58:47] [INFO] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-[2019-12-27 05:58:47] [INFO] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-[2019-12-27 05:58:48] [INFO] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-[2019-12-27 05:58:48] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
-[2019-12-27 05:58:49] [WARN] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bankController': Unsatisfied dependency expressed through field 'paymentRequestService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'paymentRequestService': Unsatisfied dependency expressed through field 'paymentRequestMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'rs.ac.uns.ftn.bank.mapper.PaymentRequestMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-[2019-12-27 05:58:49] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
-[2019-12-27 05:58:49] [INFO] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-[2019-12-27 05:58:49] [ERROR] HHH000478: Unsuccessful: drop table bank_account if exists
-[2019-12-27 05:58:49] [ERROR] HHH000478: Unsuccessful: drop table business if exists
-[2019-12-27 05:58:49] [ERROR] HHH000478: Unsuccessful: drop table card if exists
-[2019-12-27 05:58:49] [ERROR] HHH000478: Unsuccessful: drop table client if exists
-[2019-12-27 05:58:49] [ERROR] HHH000478: Unsuccessful: drop table merchant if exists
-[2019-12-27 05:58:49] [INFO] HikariPool-1 - Shutdown initiated...
-[2019-12-27 05:58:49] [INFO] HikariPool-1 - Shutdown completed.
-[2019-12-27 05:58:49] [INFO] Stopping service [Tomcat]
-[2019-12-27 05:58:49] [ERROR] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field paymentRequestMapper in rs.ac.uns.ftn.bank.service.PaymentRequestService required a bean of type 'rs.ac.uns.ftn.bank.mapper.PaymentRequestMapper' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'rs.ac.uns.ftn.bank.mapper.PaymentRequestMapper' in your configuration.
-
+[2019-12-27 10:10:10] [INFO] Starting BankApplication on pc with PID 10126 (/home/pc/Documents/FAKS/SEP/Projekat/SEP/Bank/bank/target/classes started by pc in /home/pc/Documents/FAKS/SEP/Projekat/SEP/Bank/bank)
+[2019-12-27 10:10:10] [INFO] No active profile set, falling back to default profiles: default
+[2019-12-27 10:10:12] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2019-12-27 10:10:13] [INFO] Finished Spring Data repository scanning in 214ms. Found 4 JPA repository interfaces.
+[2019-12-27 10:10:14] [INFO] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2019-12-27 10:10:14] [INFO] Tomcat initialized with port(s): 8200 (http)
+[2019-12-27 10:10:14] [INFO] Initializing ProtocolHandler ["http-nio-8200"]
+[2019-12-27 10:10:14] [INFO] Starting service [Tomcat]
+[2019-12-27 10:10:14] [INFO] Starting Servlet engine: [Apache Tomcat/9.0.29]
+[2019-12-27 10:10:15] [INFO] Initializing Spring embedded WebApplicationContext
+[2019-12-27 10:10:15] [INFO] Root WebApplicationContext: initialization completed in 4054 ms
+[2019-12-27 10:10:15] [INFO] HikariPool-1 - Starting...
+[2019-12-27 10:10:15] [INFO] HikariPool-1 - Start completed.
+[2019-12-27 10:10:15] [INFO] H2 console available at '/h2'. Database available at 'jdbc:h2:mem:db'
+[2019-12-27 10:10:16] [INFO] HHH000412: Hibernate Core {5.4.9.Final}
+[2019-12-27 10:10:16] [INFO] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+[2019-12-27 10:10:17] [INFO] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2019-12-27 10:10:19] [INFO] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2019-12-27 10:10:19] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2019-12-27 10:10:21] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2019-12-27 10:10:22] [INFO] Starting ProtocolHandler ["http-nio-8200"]
+[2019-12-27 10:10:22] [INFO] Tomcat started on port(s): 8200 (http) with context path ''
+[2019-12-27 10:10:22] [INFO] Started BankApplication in 12.856 seconds (JVM running for 14.71)

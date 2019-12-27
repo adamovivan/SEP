@@ -6,9 +6,9 @@ import { PaymentErrorComponent } from './component/payment-error/payment-error.c
 
 
 const routes: Routes = [
-  { path: 'payment-success', component: PaymentSuccessComponent },
-  { path: 'payment-failed', component: PaymentFailedComponent },
-  { path: 'payment-error', component: PaymentErrorComponent }
+  { path: 'payment-success/:transaction-id', component: PaymentSuccessComponent },
+  { path: 'payment-failed/:transaction-id', component: PaymentFailedComponent },
+  { path: 'payment-error/:transaction-id', component: PaymentErrorComponent }
 ];
 
 @NgModule({
