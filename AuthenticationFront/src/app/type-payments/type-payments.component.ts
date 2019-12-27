@@ -13,7 +13,7 @@ import { SERVER_URL } from '../app.constant';
 export class TypePaymentsComponent implements OnInit {
 
   paymentsNew:any;
-  payments: any;
+  private payments = new Array<String>();
   port:any;
   chosen:any;
   addPayment:any;
@@ -33,9 +33,14 @@ export class TypePaymentsComponent implements OnInit {
         this.service.getPayments(this.token.username).subscribe(
           data => {
             this.chosen = data;
+            console.log("Odabrani od strane usera " + this.chosen);
+            console.log("Svi u sistemu " + this.paymentsNew);
             let p = false;
-              for (let prvi of this.chosen) {
-                for (let drugi of this.paymentsNew) {
+            if(this.chosen.length == 0){
+              this.payments = this.paymentsNew;
+            }else{
+              for (let prvi of this.paymentsNew) {
+                for (let drugi of this.chosen) {
                     if(prvi == drugi){
                       p = true;
                       break;
@@ -46,9 +51,7 @@ export class TypePaymentsComponent implements OnInit {
                 }
                 p = false
               }
-              if(this.chosen.length == 0){
-                this.payments = this.paymentsNew;
-              }
+            }
             
         });
     });

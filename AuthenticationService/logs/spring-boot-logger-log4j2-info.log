@@ -51,3 +51,34 @@
 [2019-12-27 10:52:43] [INFO] Tomcat started on port(s): 8001 (http) with context path ''
 [2019-12-27 10:52:43] [INFO] Updating port to 8001
 [2019-12-27 10:52:43] [INFO] Started AuthenticationServiceApplication in 11.326 seconds (JVM running for 13.331)
+[2019-12-27 10:57:43] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 11:02:43] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 11:07:43] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 11:11:46] [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2019-12-27 11:11:46] [INFO] Initializing Servlet 'dispatcherServlet'
+[2019-12-27 11:11:46] [INFO] Completed initialization in 8 ms
+[2019-12-27 11:11:46] [INFO] Successfully registered new usermikamikic.
+[2019-12-27 11:11:51] [INFO] Successfully saved payment information of user mikamikic
+[2019-12-27 11:11:53] [INFO] Successfully completed delivery of all currently registered payment services
+[2019-12-27 11:11:53] [ERROR] Selected payment methods for mikamikic users have not been received
+[2019-12-27 11:12:31] [INFO] Successfully completed delivery of all currently registered payment services
+[2019-12-27 11:12:31] [INFO] Successfully obtained selected payment methods for the mikamikic user
+[2019-12-27 11:12:43] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 11:12:45] [INFO] Successfully completed delivery of all currently registered payment services
+[2019-12-27 11:12:45] [INFO] Successfully obtained selected payment methods for the mikamikic user
+[2019-12-27 11:16:13] [INFO] Successfully completed delivery of all currently registered payment services
+[2019-12-27 11:16:13] [INFO] Successfully obtained selected payment methods for the mikamikic user
+[2019-12-27 11:17:31] [INFO] Successfully completed delivery of all currently registered payment services
+[2019-12-27 11:17:31] [INFO] Successfully obtained selected payment methods for the mikamikic user
+[2019-12-27 11:17:43] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 11:17:44] [INFO] Successfully completed delivery of all currently registered payment services
+[2019-12-27 11:17:44] [INFO] Successfully obtained selected payment methods for the mikamikic user
+[2019-12-27 11:19:06] [INFO] Successfully completed delivery of all currently registered payment services
+[2019-12-27 11:19:06] [INFO] Successfully obtained selected payment methods for the mikamikic user
+[2019-12-27 11:21:22] [INFO] Successfully completed delivery of all currently registered payment services
+[2019-12-27 11:21:22] [INFO] Successfully obtained selected payment methods for the mikamikic user
+[2019-12-27 11:22:43] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 11:23:09] [INFO] Successfully completed delivery of all currently registered payment services
+[2019-12-27 11:23:09] [INFO] Successfully obtained selected payment methods for the mikamikic user
+[2019-12-27 11:23:33] [INFO] Successfully completed delivery of all currently registered payment services
+[2019-12-27 11:23:33] [INFO] Successfully obtained selected payment methods for the mikamikic user

@@ -54,3 +54,78 @@
 [2019-12-27 10:52:37] [INFO] Tomcat started on port(s): 8002 (http) with context path ''
 [2019-12-27 10:52:37] [INFO] Updating port to 8002
 [2019-12-27 10:52:37] [INFO] Started PaypalServiceApplication in 13.231 seconds (JVM running for 14.912)
+[2019-12-27 10:57:37] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 11:02:25] [INFO] Unregistering application API-PAYPAL with eureka with status DOWN
+[2019-12-27 11:02:25] [WARN] Saw local status change event StatusChangeEvent [timestamp=1577466145032, current=DOWN, previous=UP]
+[2019-12-27 11:02:25] [INFO] DiscoveryClient_API-PAYPAL/DESKTOP-9RN4Q95:api-paypal:8002: registering service...
+[2019-12-27 11:02:25] [INFO] Shutting down ExecutorService 'applicationTaskExecutor'
+[2019-12-27 11:02:25] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2019-12-27 11:02:25] [INFO] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[2019-12-27 11:02:25] [INFO] DiscoveryClient_API-PAYPAL/DESKTOP-9RN4Q95:api-paypal:8002 - registration status: 204
+[2019-12-27 11:02:25] [INFO] Shutting down DiscoveryClient ...
+[2019-12-27 11:02:28] [INFO] Unregistering ...
+[2019-12-27 11:02:28] [INFO] DiscoveryClient_API-PAYPAL/DESKTOP-9RN4Q95:api-paypal:8002 - deregister  status: 200
+[2019-12-27 11:02:28] [INFO] Completed shut down of DiscoveryClient
+[2019-12-27 11:02:28] [INFO] HikariPool-1 - Shutdown initiated...
+[2019-12-27 11:02:28] [INFO] HikariPool-1 - Shutdown completed.
+[2019-12-27 11:02:28] [INFO] Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$701a73bb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2019-12-27 11:02:28] [INFO] No active profile set, falling back to default profiles: default
+[2019-12-27 11:02:29] [INFO] Bootstrapping Spring Data repositories in DEFAULT mode.
+[2019-12-27 11:02:29] [INFO] Finished Spring Data repository scanning in 12ms. Found 2 repository interfaces.
+[2019-12-27 11:02:29] [INFO] BeanFactory id=34c48c7c-b15b-3e14-865b-dfa9f3c3eb31
+[2019-12-27 11:02:29] [INFO] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2019-12-27 11:02:29] [INFO] Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$701a73bb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2019-12-27 11:02:29] [WARN] The MBean registry cannot be disabled because it has already been initialised
+[2019-12-27 11:02:29] [INFO] Tomcat initialized with port(s): 8002 (http)
+[2019-12-27 11:02:29] [INFO] Initializing ProtocolHandler ["http-nio-8002"]
+[2019-12-27 11:02:29] [INFO] Starting service [Tomcat]
+[2019-12-27 11:02:29] [INFO] Starting Servlet engine: [Apache Tomcat/9.0.27]
+[2019-12-27 11:02:29] [INFO] Initializing Spring embedded WebApplicationContext
+[2019-12-27 11:02:29] [INFO] Root WebApplicationContext: initialization completed in 392 ms
+[2019-12-27 11:02:29] [INFO] HikariPool-2 - Starting...
+[2019-12-27 11:02:29] [INFO] HikariPool-2 - Start completed.
+[2019-12-27 11:02:29] [INFO] H2 console available at '/h2'. Database available at 'jdbc:h2:file:~/paypal'
+[2019-12-27 11:02:29] [INFO] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2019-12-27 11:02:29] [INFO] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2019-12-27 11:02:29] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2019-12-27 11:02:29] [INFO] LiveReload server is running on port 35729
+[2019-12-27 11:02:29] [WARN] No URLs will be polled as dynamic configuration sources.
+[2019-12-27 11:02:29] [INFO] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+[2019-12-27 11:02:29] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2019-12-27 11:02:29] [INFO] Initializing ExecutorService 'applicationTaskExecutor'
+[2019-12-27 11:02:30] [INFO] Setting initial instance status as: STARTING
+[2019-12-27 11:02:30] [INFO] Initializing Eureka in region us-east-1
+[2019-12-27 11:02:30] [INFO] Using JSON encoding codec LegacyJacksonJson
+[2019-12-27 11:02:30] [INFO] Using JSON decoding codec LegacyJacksonJson
+[2019-12-27 11:02:30] [INFO] Using XML encoding codec XStreamXml
+[2019-12-27 11:02:30] [INFO] Using XML decoding codec XStreamXml
+[2019-12-27 11:02:30] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 11:02:30] [INFO] Disable delta property : false
+[2019-12-27 11:02:30] [INFO] Single vip registry refresh property : null
+[2019-12-27 11:02:30] [INFO] Force full registry fetch : false
+[2019-12-27 11:02:30] [INFO] Application is null : false
+[2019-12-27 11:02:30] [INFO] Registered Applications size is zero : true
+[2019-12-27 11:02:30] [INFO] Application version is -1: true
+[2019-12-27 11:02:30] [INFO] Getting all instance registry info from the eureka server
+[2019-12-27 11:02:30] [INFO] The response status is 200
+[2019-12-27 11:02:30] [INFO] Starting heartbeat executor: renew interval is: 30
+[2019-12-27 11:02:30] [INFO] InstanceInfoReplicator onDemand update allowed rate per min is 4
+[2019-12-27 11:02:30] [INFO] Discovery Client initialized at timestamp 1577466150142 with initial instances count: 3
+[2019-12-27 11:02:30] [INFO] Registering application API-PAYPAL with eureka with status UP
+[2019-12-27 11:02:30] [INFO] Saw local status change event StatusChangeEvent [timestamp=1577466150143, current=UP, previous=STARTING]
+[2019-12-27 11:02:30] [INFO] DiscoveryClient_API-PAYPAL/DESKTOP-9RN4Q95:api-paypal:8002: registering service...
+[2019-12-27 11:02:30] [INFO] DiscoveryClient_API-PAYPAL/DESKTOP-9RN4Q95:api-paypal:8002 - registration status: 204
+[2019-12-27 11:02:30] [INFO] Starting ProtocolHandler ["http-nio-8002"]
+[2019-12-27 11:02:30] [INFO] Tomcat started on port(s): 8002 (http) with context path ''
+[2019-12-27 11:02:30] [INFO] Updating port to 8002
+[2019-12-27 11:02:30] [INFO] Started PaypalServiceApplication in 1.784 seconds (JVM running for 607.144)
+[2019-12-27 11:02:30] [INFO] Condition evaluation unchanged
+[2019-12-27 11:07:30] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 11:12:22] [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2019-12-27 11:12:22] [INFO] Initializing Servlet 'dispatcherServlet'
+[2019-12-27 11:12:22] [INFO] Completed initialization in 6 ms
+[2019-12-27 11:12:30] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 11:12:30] [INFO] Seller mikamikic successfully saved his payment information. 
+[2019-12-27 11:17:30] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 11:22:30] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 11:27:30] [INFO] Resolving eureka endpoints via configuration
