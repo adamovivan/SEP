@@ -5,6 +5,8 @@ import { CommonService } from './service/common.service';
 import { MatIconModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatToolbarModule, MatCardModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginRoutingModule } from './login-routing.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthTokenInterceptor } from './interceptors/auth-token.interceptor';
 
 
 @NgModule({
@@ -21,8 +23,13 @@ import { LoginRoutingModule } from './login-routing.module';
     MatCardModule
   ],
   providers: [
+    CommonService,
     AuthenticationService,
-    CommonService
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthTokenInterceptor,
+      multi: true
+    },
   ]
 })
 export class LoginModule { }
