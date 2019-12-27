@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { PaymentService } from 'src/app/service/payment.service';
 
 @Component({
   selector: 'app-payment-failed',
@@ -8,9 +10,15 @@ import { Location } from '@angular/common';
 })
 export class PaymentFailedComponent implements OnInit {
 
-  constructor(private _location: Location) { }
+  transactionId: string;
+
+  constructor(private route: ActivatedRoute,
+              private paymentService: PaymentService,
+              private _location: Location) { }
 
   ngOnInit() {
+    this.transactionId = this.route.snapshot.paramMap.get("transaction-id");
+    this.paymentService.paymentFailed().subscribe();
   }
 
   goBack(){

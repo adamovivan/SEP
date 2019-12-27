@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PaymentService } from 'src/app/service/payment.service';
 
 @Component({
   selector: 'app-payment-success',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentSuccessComponent implements OnInit {
 
-  constructor() { }
+  transactionId: string;
+
+  constructor(private route: ActivatedRoute,
+              private paymentService: PaymentService) { }
 
   ngOnInit() {
+    this.transactionId = this.route.snapshot.paramMap.get("transaction-id");
+    this.paymentService.paymentSuccess().subscribe();
   }
 
   ok(){
