@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import rs.ac.uns.ftn.bank.dto.CallbackUrlsDTO;
 import rs.ac.uns.ftn.bank.dto.PaymentCardDTO;
 import rs.ac.uns.ftn.bank.dto.PaymentStatusDTO;
 import rs.ac.uns.ftn.bank.exception.BadRequestException;
@@ -56,7 +57,7 @@ public class PaymentService {
 
     private void validate(PaymentCardDTO paymentCardDTO){
         if(!paymentRequestExist(paymentCardDTO.getPaymentId())){
-            throw new BadRequestException("Unknown payment id.");
+            throw new NotFoundException("Unknown payment id.");
         }
         if(isPaymentRequestExpired(paymentCardDTO.getPaymentId())){
             throw new BadRequestException("Payment request expired.");
@@ -65,16 +66,16 @@ public class PaymentService {
             throw new BadRequestException("Payment id is already used.");
         }
         if(!isValidPAN(paymentCardDTO.getPan())){
-            throw new BadRequestException("Invalid PAN.");
+            throw new BadRequestException("Invalid data.");
         }
         if(!isValidCardhoderName(paymentCardDTO.getCardholderName())){
-            throw new BadRequestException("Invalid CardholderName.");
+            throw new BadRequestException("Invalid data.");
         }
         if(!isValidCVV(paymentCardDTO.getCvv())){
-            throw new BadRequestException("Invalid CVV.");
+            throw new BadRequestException("Invalid data.");
         }
         if(!isValidExpiryDate(paymentCardDTO.getExpiryDate())){
-            throw new BadRequestException("Invalid expiry date.");
+            throw new BadRequestException("Invalid data.");
         }
         if(isCardExpired(paymentCardDTO.getExpiryDate())){
             throw new BadRequestException("Card expired.");
@@ -156,4 +157,17 @@ public class PaymentService {
         return pan.startsWith(bankIIN);
     }
 
+    public CallbackUrlsDTO getCallbackUrls(String paymentId){
+        PaymentRequest paymentRequest = paymentRequestRepository.findByPaymentId(paymentId);
+
+        if(paymentRequest == null){
+            throw new NotFoundException("Payment id not found.");
+        }
+
+        CallbackUrlsDTO callbackUrlsDTO = new CallbackUrlsDTO();
+        callbackUrlsDTO.setSuccessUrl(paymentRequest.getSuccessUrl());
+        callbackUrlsDTO.setFailedUrl(paymentRequest.getFailedUrl());
+        callbackUrlsDTO.setErrorUrl(paymentRequest.getErrorUrl());
+        return callbackUrlsDTO;
+    }
 }

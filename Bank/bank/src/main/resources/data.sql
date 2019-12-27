@@ -1,6 +1,6 @@
 -- clients
 insert into client (id, first_name, last_name, date_of_birth, address, city, id_card_number)
-values (1, 'Pera', 'Peric', '1985-04-11', 'Nikole Tesle 98', 'Novi Sad', '1104858540301');
+values (1, 'Mika', 'Mikic', '1985-04-11', 'Nikole Tesle 98', 'Novi Sad', '1104858540301');
 
 insert into client (id, first_name, last_name, date_of_birth, address, city, id_card_number)
 values (2, 'Stefan', 'Stefanovic', '1975-04-21', 'Bulevar Oslobodjenja 2', 'Novi Sad', '2104758562301');
@@ -18,7 +18,7 @@ values (1, 'c0d179c0-25c7-11ea-978f-2e728ce88125', 'ca371c40-25c7-11ea-978f-2e72
 
 -- cards
 insert into card (id, card_brand, pan, cardholder_name, cvv, expiry_date, blocked)
-values (1, 'VISA', '4123450118636944', 'Pera Peric', '567', '2021-06-01', false);
+values (1, 'VISA', '4123450118636944', 'Mika Mikic', '567', '2021-06-01', false);
 
 insert into card (id, card_brand, pan, cardholder_name, cvv, expiry_date, blocked)
 values (2, 'VISA', '4123450128636942', 'Stefan Stefanovic', '345', '2021-05-01', false);

@@ -9,6 +9,9 @@ import javax.validation.constraints.Positive;
 public class CardPaymentRequestDTO {
     @NotNull
     private String merchantUsername;
+    @NotNull
+    private String merchantOrderId;
     @Positive
     private Double amount;
+
 }

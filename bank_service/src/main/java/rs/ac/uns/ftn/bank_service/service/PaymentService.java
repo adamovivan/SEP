@@ -16,7 +16,6 @@ import rs.ac.uns.ftn.bank_service.model.Merchant;
 import rs.ac.uns.ftn.bank_service.repository.MerchantRepository;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Service
 public class PaymentService {
@@ -35,6 +34,15 @@ public class PaymentService {
     @Value("${bank.create.payment.request.api}")
     private String createPaymentRequestApi;
 
+    @Value("${bank.service.success.url}")
+    private String successUrl;
+
+    @Value("${bank.service.failed.url}")
+    private String failedUrl;
+
+    @Value("${bank.service.error.url}")
+    private String errorUrl;
+
     public CardPaymentResponseDTO createPaymentRequest(CardPaymentRequestDTO cardPaymentRequestDTO){
         Merchant merchant = merchantRepository.findByUsername(cardPaymentRequestDTO.getMerchantUsername());
 
@@ -46,12 +54,13 @@ public class PaymentService {
         paymentRequestDTO.setMerchantId(merchant.getMerchantId());
         paymentRequestDTO.setMerchantPassword(merchant.getMerchantPassword());
         paymentRequestDTO.setAmount(cardPaymentRequestDTO.getAmount());
-        paymentRequestDTO.setMerchantOrderId(UUID.randomUUID().toString());
+        paymentRequestDTO.setMerchantOrderId(cardPaymentRequestDTO.getMerchantOrderId());
         paymentRequestDTO.setMerchantTimestamp(LocalDateTime.now());
-        paymentRequestDTO.setSuccessUrl("successURL");
-        paymentRequestDTO.setFailedUrl("failedURL");
-        paymentRequestDTO.setErrorUrl("errorURL");
+        paymentRequestDTO.setSuccessUrl(successUrl);
+        paymentRequestDTO.setFailedUrl(failedUrl);
+        paymentRequestDTO.setErrorUrl(errorUrl);
         logger.info("Payment request is succesfully created for user " + cardPaymentRequestDTO.getMerchantUsername() + ".");
+        
         return restTemplate.postForObject(bankUrl+createPaymentRequestApi, paymentRequestDTO, CardPaymentResponseDTO.class);
     }
 }

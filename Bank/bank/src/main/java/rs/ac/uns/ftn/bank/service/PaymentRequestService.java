@@ -43,8 +43,9 @@ public class PaymentRequestService {
             throw new BadRequestException("Wrong merchant id or password.");
         }
 
-        String paymentUrl = generatePaymentUrl();
         String paymentId = generatePaymentId();
+        String paymentUrl = getPaymentUrl(paymentId);
+
 
         PaymentRequest paymentRequest = paymentRequestMapper.paymentRequestDTOtoPaymentRequest(paymentRequestDTO);
         paymentRequest.setPaymentUrl(paymentUrl);
@@ -62,8 +63,8 @@ public class PaymentRequestService {
         return merchant != null;
     }
 
-    private String generatePaymentUrl(){
-        return bankPaymentUrl + "/" + UUID.randomUUID().toString();
+    private String getPaymentUrl(String paymentId){
+        return bankPaymentUrl + "/" + paymentId;
     }
 
     private String generatePaymentId(){

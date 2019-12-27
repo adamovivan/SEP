@@ -37,4 +37,5 @@ public class ExceptionResolver {
     	logger.error("Api EROR:> " + apiError.getMessage());
         return new ResponseEntity<>(apiError, apiError.getStatus());
     }
+
 }
