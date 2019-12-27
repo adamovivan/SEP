@@ -9582,3 +9582,315 @@ Unconditional classes:
 [2019-12-27 12:55:55] [DEBUG] The total number of instances fetched by the delta processor : 0
 [2019-12-27 12:55:55] [DEBUG] The total number of all instances in the client now is 3
 [2019-12-27 12:55:55] [DEBUG] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_3_, is fetching remote regions? false 
+[2019-12-27 12:56:18] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2019-12-27 12:56:24] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 12:56:24] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 12:56:25] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 12:56:25] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 12:56:25] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 12:56:25] [DEBUG] Stale connection check
+[2019-12-27 12:56:25] [DEBUG] CookieSpec selected: default
+[2019-12-27 12:56:25] [DEBUG] Auth cache not set in the context
+[2019-12-27 12:56:25] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 12:56:25] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 12:56:25] [DEBUG] Attempt 1 to execute request
+[2019-12-27 12:56:25] [DEBUG] Sending request: PUT /eureka/apps/API-BITCOIN/DESKTOP-QUS8GTH:api-bitcoin:8003?status=UP&lastDirtyTimestamp=1577471004124 HTTP/1.1
+[2019-12-27 12:56:25] [DEBUG]  >> "PUT /eureka/apps/API-BITCOIN/DESKTOP-QUS8GTH:api-bitcoin:8003?status=UP&lastDirtyTimestamp=1577471004124 HTTP/1.1[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.8.101[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  >> "Content-Length: 0[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.13[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG] >> PUT /eureka/apps/API-BITCOIN/DESKTOP-QUS8GTH:api-bitcoin:8003?status=UP&lastDirtyTimestamp=1577471004124 HTTP/1.1
+[2019-12-27 12:56:25] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 12:56:25] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 12:56:25] [DEBUG] >> DiscoveryIdentity-Id: 192.168.8.101
+[2019-12-27 12:56:25] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 12:56:25] [DEBUG] >> Content-Length: 0
+[2019-12-27 12:56:25] [DEBUG] >> Host: localhost:8761
+[2019-12-27 12:56:25] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 12:56:25] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.13
+[2019-12-27 12:56:25] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  << "Content-Type: application/xml[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  << "Content-Length: 0[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  << "Date: Fri, 27 Dec 2019 18:56:25 GMT[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  << "[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 12:56:25] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 12:56:25] [DEBUG] << Content-Type: application/xml
+[2019-12-27 12:56:25] [DEBUG] << Content-Length: 0
+[2019-12-27 12:56:25] [DEBUG] << Date: Fri, 27 Dec 2019 18:56:25 GMT
+[2019-12-27 12:56:25] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 12:56:25] [DEBUG] Released connection is reusable.
+[2019-12-27 12:56:25] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 12:56:25] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 12:56:25] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 12:56:25] [DEBUG] Jersey HTTP PUT http://localhost:8761/eureka//apps/API-BITCOIN/DESKTOP-QUS8GTH:api-bitcoin:8003; statusCode=200
+[2019-12-27 12:56:25] [DEBUG] DiscoveryClient_API-BITCOIN/DESKTOP-QUS8GTH:api-bitcoin:8003 - Heartbeat status: 200
+[2019-12-27 12:56:25] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 12:56:25] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 12:56:25] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 12:56:25] [DEBUG] Stale connection check
+[2019-12-27 12:56:25] [DEBUG] CookieSpec selected: default
+[2019-12-27 12:56:25] [DEBUG] Auth cache not set in the context
+[2019-12-27 12:56:25] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 12:56:25] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 12:56:25] [DEBUG] Attempt 1 to execute request
+[2019-12-27 12:56:25] [DEBUG] Sending request: GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 12:56:25] [DEBUG]  >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  >> "Accept: application/json[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.8.101[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.13[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG] >> GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 12:56:25] [DEBUG] >> Accept: application/json
+[2019-12-27 12:56:25] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 12:56:25] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 12:56:25] [DEBUG] >> DiscoveryIdentity-Id: 192.168.8.101
+[2019-12-27 12:56:25] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 12:56:25] [DEBUG] >> Host: localhost:8761
+[2019-12-27 12:56:25] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 12:56:25] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.13
+[2019-12-27 12:56:25] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  << "Content-Encoding: gzip[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  << "Content-Type: application/json[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  << "Content-Length: 86[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  << "Date: Fri, 27 Dec 2019 18:56:25 GMT[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG]  << "[\r][\n]"
+[2019-12-27 12:56:25] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 12:56:25] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 12:56:25] [DEBUG] << Content-Encoding: gzip
+[2019-12-27 12:56:25] [DEBUG] << Content-Type: application/json
+[2019-12-27 12:56:25] [DEBUG] << Content-Length: 86
+[2019-12-27 12:56:25] [DEBUG] << Date: Fri, 27 Dec 2019 18:56:25 GMT
+[2019-12-27 12:56:25] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 12:56:25] [DEBUG]  << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0xab]VJ,([0xc8][0xc9]LN,[0xc9][0xcc][0xcf]+V[0xb2][0xaa]V*K-*[0x6][0xb1][0xe3][0xe3]SRsJ[0x12][0x95][0xac][0x94][0xc][\r][0x95]t@[0xca][0x80]B[0x19][0x89][0xc5][0x19][0xc9][0xf9])[0xa9]@[0xd1][0xd0][0x80]x[0xe3]x[0x88][0x4]L[0xbf][0x92]Utlm-[0x0][0xb9][0x4]TTS[0x0][0x0][0x0]"
+[2019-12-27 12:56:25] [DEBUG] Released connection is reusable.
+[2019-12-27 12:56:25] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 12:56:25] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 12:56:25] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 12:56:25] [DEBUG] clearing global-level cache with size 0
+[2019-12-27 12:56:25] [DEBUG] clearing app-level serialization cache with size 0
+[2019-12-27 12:56:25] [DEBUG] Jersey HTTP GET http://localhost:8761/eureka//apps/delta?; statusCode=200
+[2019-12-27 12:56:25] [DEBUG] Got delta update with apps hashcode UP_3_
+[2019-12-27 12:56:25] [DEBUG] The total number of instances fetched by the delta processor : 0
+[2019-12-27 12:56:25] [DEBUG] The total number of all instances in the client now is 3
+[2019-12-27 12:56:25] [DEBUG] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_3_, is fetching remote regions? false 
+[2019-12-27 12:56:48] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2019-12-27 12:56:54] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 12:56:54] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 12:56:55] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 12:56:55] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 12:56:55] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 12:56:55] [DEBUG] Stale connection check
+[2019-12-27 12:56:55] [DEBUG] CookieSpec selected: default
+[2019-12-27 12:56:55] [DEBUG] Auth cache not set in the context
+[2019-12-27 12:56:55] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 12:56:55] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 12:56:55] [DEBUG] Attempt 1 to execute request
+[2019-12-27 12:56:55] [DEBUG] Sending request: PUT /eureka/apps/API-BITCOIN/DESKTOP-QUS8GTH:api-bitcoin:8003?status=UP&lastDirtyTimestamp=1577471004124 HTTP/1.1
+[2019-12-27 12:56:55] [DEBUG]  >> "PUT /eureka/apps/API-BITCOIN/DESKTOP-QUS8GTH:api-bitcoin:8003?status=UP&lastDirtyTimestamp=1577471004124 HTTP/1.1[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.8.101[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  >> "Content-Length: 0[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.13[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG] >> PUT /eureka/apps/API-BITCOIN/DESKTOP-QUS8GTH:api-bitcoin:8003?status=UP&lastDirtyTimestamp=1577471004124 HTTP/1.1
+[2019-12-27 12:56:55] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 12:56:55] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 12:56:55] [DEBUG] >> DiscoveryIdentity-Id: 192.168.8.101
+[2019-12-27 12:56:55] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 12:56:55] [DEBUG] >> Content-Length: 0
+[2019-12-27 12:56:55] [DEBUG] >> Host: localhost:8761
+[2019-12-27 12:56:55] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 12:56:55] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.13
+[2019-12-27 12:56:55] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  << "Content-Type: application/xml[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  << "Content-Length: 0[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  << "Date: Fri, 27 Dec 2019 18:56:55 GMT[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  << "[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 12:56:55] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 12:56:55] [DEBUG] << Content-Type: application/xml
+[2019-12-27 12:56:55] [DEBUG] << Content-Length: 0
+[2019-12-27 12:56:55] [DEBUG] << Date: Fri, 27 Dec 2019 18:56:55 GMT
+[2019-12-27 12:56:55] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 12:56:55] [DEBUG] Released connection is reusable.
+[2019-12-27 12:56:55] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 12:56:55] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 12:56:55] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 12:56:55] [DEBUG] Jersey HTTP PUT http://localhost:8761/eureka//apps/API-BITCOIN/DESKTOP-QUS8GTH:api-bitcoin:8003; statusCode=200
+[2019-12-27 12:56:55] [DEBUG] DiscoveryClient_API-BITCOIN/DESKTOP-QUS8GTH:api-bitcoin:8003 - Heartbeat status: 200
+[2019-12-27 12:56:55] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 12:56:55] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 12:56:55] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 12:56:55] [DEBUG] Stale connection check
+[2019-12-27 12:56:55] [DEBUG] CookieSpec selected: default
+[2019-12-27 12:56:55] [DEBUG] Auth cache not set in the context
+[2019-12-27 12:56:55] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 12:56:55] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 12:56:55] [DEBUG] Attempt 1 to execute request
+[2019-12-27 12:56:55] [DEBUG] Sending request: GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 12:56:55] [DEBUG]  >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  >> "Accept: application/json[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.8.101[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.13[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG] >> GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 12:56:55] [DEBUG] >> Accept: application/json
+[2019-12-27 12:56:55] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 12:56:55] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 12:56:55] [DEBUG] >> DiscoveryIdentity-Id: 192.168.8.101
+[2019-12-27 12:56:55] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 12:56:55] [DEBUG] >> Host: localhost:8761
+[2019-12-27 12:56:55] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 12:56:55] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.13
+[2019-12-27 12:56:55] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  << "Content-Encoding: gzip[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  << "Content-Type: application/json[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  << "Content-Length: 86[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  << "Date: Fri, 27 Dec 2019 18:56:55 GMT[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG]  << "[\r][\n]"
+[2019-12-27 12:56:55] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 12:56:55] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 12:56:55] [DEBUG] << Content-Encoding: gzip
+[2019-12-27 12:56:55] [DEBUG] << Content-Type: application/json
+[2019-12-27 12:56:55] [DEBUG] << Content-Length: 86
+[2019-12-27 12:56:55] [DEBUG] << Date: Fri, 27 Dec 2019 18:56:55 GMT
+[2019-12-27 12:56:55] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 12:56:55] [DEBUG]  << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0xab]VJ,([0xc8][0xc9]LN,[0xc9][0xcc][0xcf]+V[0xb2][0xaa]V*K-*[0x6][0xb1][0xe3][0xe3]SRsJ[0x12][0x95][0xac][0x94][0xc][\r][0x95]t@[0xca][0x80]B[0x19][0x89][0xc5][0x19][0xc9][0xf9])[0xa9]@[0xd1][0xd0][0x80]x[0xe3]x[0x88][0x4]L[0xbf][0x92]Utlm-[0x0][0xb9][0x4]TTS[0x0][0x0][0x0]"
+[2019-12-27 12:56:55] [DEBUG] Released connection is reusable.
+[2019-12-27 12:56:55] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 12:56:55] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 12:56:55] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 12:56:55] [DEBUG] clearing global-level cache with size 0
+[2019-12-27 12:56:55] [DEBUG] clearing app-level serialization cache with size 0
+[2019-12-27 12:56:55] [DEBUG] Jersey HTTP GET http://localhost:8761/eureka//apps/delta?; statusCode=200
+[2019-12-27 12:56:55] [DEBUG] Got delta update with apps hashcode UP_3_
+[2019-12-27 12:56:55] [DEBUG] The total number of instances fetched by the delta processor : 0
+[2019-12-27 12:56:55] [DEBUG] The total number of all instances in the client now is 3
+[2019-12-27 12:56:55] [DEBUG] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_3_, is fetching remote regions? false 
+[2019-12-27 12:57:18] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2019-12-27 12:57:24] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 12:57:24] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 12:57:25] [DEBUG] Ending a session and starting anew
+[2019-12-27 12:57:25] [DEBUG] Created client for url: http://localhost:8761/eureka/
+[2019-12-27 12:57:25] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 12:57:25] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 12:57:25] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 12:57:25] [DEBUG] Stale connection check
+[2019-12-27 12:57:25] [DEBUG] CookieSpec selected: default
+[2019-12-27 12:57:25] [DEBUG] Auth cache not set in the context
+[2019-12-27 12:57:25] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 12:57:25] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 12:57:25] [DEBUG] Attempt 1 to execute request
+[2019-12-27 12:57:25] [DEBUG] Sending request: PUT /eureka/apps/API-BITCOIN/DESKTOP-QUS8GTH:api-bitcoin:8003?status=UP&lastDirtyTimestamp=1577471004124 HTTP/1.1
+[2019-12-27 12:57:25] [DEBUG]  >> "PUT /eureka/apps/API-BITCOIN/DESKTOP-QUS8GTH:api-bitcoin:8003?status=UP&lastDirtyTimestamp=1577471004124 HTTP/1.1[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.8.101[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  >> "Content-Length: 0[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.13[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG] >> PUT /eureka/apps/API-BITCOIN/DESKTOP-QUS8GTH:api-bitcoin:8003?status=UP&lastDirtyTimestamp=1577471004124 HTTP/1.1
+[2019-12-27 12:57:25] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 12:57:25] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 12:57:25] [DEBUG] >> DiscoveryIdentity-Id: 192.168.8.101
+[2019-12-27 12:57:25] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 12:57:25] [DEBUG] >> Content-Length: 0
+[2019-12-27 12:57:25] [DEBUG] >> Host: localhost:8761
+[2019-12-27 12:57:25] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 12:57:25] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.13
+[2019-12-27 12:57:25] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  << "Content-Type: application/xml[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  << "Content-Length: 0[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  << "Date: Fri, 27 Dec 2019 18:57:25 GMT[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  << "[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 12:57:25] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 12:57:25] [DEBUG] << Content-Type: application/xml
+[2019-12-27 12:57:25] [DEBUG] << Content-Length: 0
+[2019-12-27 12:57:25] [DEBUG] << Date: Fri, 27 Dec 2019 18:57:25 GMT
+[2019-12-27 12:57:25] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 12:57:25] [DEBUG] Released connection is reusable.
+[2019-12-27 12:57:25] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 12:57:25] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 12:57:25] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 12:57:25] [DEBUG] Jersey HTTP PUT http://localhost:8761/eureka//apps/API-BITCOIN/DESKTOP-QUS8GTH:api-bitcoin:8003; statusCode=200
+[2019-12-27 12:57:25] [DEBUG] Pinning to endpoint null
+[2019-12-27 12:57:25] [DEBUG] DiscoveryClient_API-BITCOIN/DESKTOP-QUS8GTH:api-bitcoin:8003 - Heartbeat status: 200
+[2019-12-27 12:57:25] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 12:57:25] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 12:57:25] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 12:57:25] [DEBUG] Stale connection check
+[2019-12-27 12:57:25] [DEBUG] CookieSpec selected: default
+[2019-12-27 12:57:25] [DEBUG] Auth cache not set in the context
+[2019-12-27 12:57:25] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 12:57:25] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 12:57:25] [DEBUG] Attempt 1 to execute request
+[2019-12-27 12:57:25] [DEBUG] Sending request: GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 12:57:25] [DEBUG]  >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  >> "Accept: application/json[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.8.101[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.13[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG] >> GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 12:57:25] [DEBUG] >> Accept: application/json
+[2019-12-27 12:57:25] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 12:57:25] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 12:57:25] [DEBUG] >> DiscoveryIdentity-Id: 192.168.8.101
+[2019-12-27 12:57:25] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 12:57:25] [DEBUG] >> Host: localhost:8761
+[2019-12-27 12:57:25] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 12:57:25] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.13
+[2019-12-27 12:57:25] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  << "Content-Encoding: gzip[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  << "Content-Type: application/json[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  << "Content-Length: 86[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  << "Date: Fri, 27 Dec 2019 18:57:25 GMT[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG]  << "[\r][\n]"
+[2019-12-27 12:57:25] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 12:57:25] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 12:57:25] [DEBUG] << Content-Encoding: gzip
+[2019-12-27 12:57:25] [DEBUG] << Content-Type: application/json
+[2019-12-27 12:57:25] [DEBUG] << Content-Length: 86
+[2019-12-27 12:57:25] [DEBUG] << Date: Fri, 27 Dec 2019 18:57:25 GMT
+[2019-12-27 12:57:25] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 12:57:25] [DEBUG]  << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0xab]VJ,([0xc8][0xc9]LN,[0xc9][0xcc][0xcf]+V[0xb2][0xaa]V*K-*[0x6][0xb1][0xe3][0xe3]SRsJ[0x12][0x95][0xac][0x94][0xc][\r][0x95]t@[0xca][0x80]B[0x19][0x89][0xc5][0x19][0xc9][0xf9])[0xa9]@[0xd1][0xd0][0x80]x[0xe3]x[0x88][0x4]L[0xbf][0x92]Utlm-[0x0][0xb9][0x4]TTS[0x0][0x0][0x0]"
+[2019-12-27 12:57:25] [DEBUG] Released connection is reusable.
+[2019-12-27 12:57:25] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 12:57:25] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 12:57:25] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 12:57:25] [DEBUG] clearing global-level cache with size 0
+[2019-12-27 12:57:25] [DEBUG] clearing app-level serialization cache with size 0
+[2019-12-27 12:57:25] [DEBUG] Jersey HTTP GET http://localhost:8761/eureka//apps/delta?; statusCode=200
+[2019-12-27 12:57:25] [DEBUG] Got delta update with apps hashcode UP_3_
+[2019-12-27 12:57:25] [DEBUG] The total number of instances fetched by the delta processor : 0
+[2019-12-27 12:57:25] [DEBUG] The total number of all instances in the client now is 3
+[2019-12-27 12:57:25] [DEBUG] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_3_, is fetching remote regions? false 
