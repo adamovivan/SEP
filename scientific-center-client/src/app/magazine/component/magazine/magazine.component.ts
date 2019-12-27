@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MagazineService } from '../../service/magazine.service';
-import { CommonService } from '../../service/common.service';
 import { Router } from '@angular/router';
+import { CommonService } from '../../service/common.service';
 
 @Component({
   selector: 'app-magazine',

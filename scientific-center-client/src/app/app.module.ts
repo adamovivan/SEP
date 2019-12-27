@@ -6,8 +6,7 @@ import { AppComponent } from './app.component';
 import { MagazineModule } from './magazine/magazine.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material.module';
-import { MatTableModule } from '@angular/material';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +16,7 @@ import { MatTableModule } from '@angular/material';
     BrowserModule,
     AppRoutingModule,
     MagazineModule,
+    LoginModule,
     HttpClientModule,
     BrowserAnimationsModule
   ],
