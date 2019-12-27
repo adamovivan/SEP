@@ -54,7 +54,7 @@ public class PaymentService {
     private String errorUrl;
 
     public CardPaymentResponseDTO createPaymentRequest(CardPaymentRequestDTO cardPaymentRequestDTO){
-        Merchant merchant = merchantRepository.findByUsername(cardPaymentRequestDTO.getMerchantUsername());
+        Merchant merchant = merchantRepository.findByUsername(cardPaymentRequestDTO.getUsername());
 
         if(merchant == null){
             throw new NotFoundException("Merchant doesn't exist.");
@@ -64,15 +64,16 @@ public class PaymentService {
         transaction.setTransactionId(UUID.randomUUID().toString());
         transaction.setMerchantId(merchant.getMerchantId());
         transaction.setMerchantPassword(merchant.getMerchantPassword());
-        transaction.setAmount(cardPaymentRequestDTO.getAmount());
-        transaction.setMerchantOrderId(cardPaymentRequestDTO.getMerchantOrderId());
+        transaction.setAmount(cardPaymentRequestDTO.getTotalPrice());
+        //transaction.setMerchantOrderId(cardPaymentRequestDTO.getMerchantOrderId());
+        transaction.setMerchantOrderId(UUID.randomUUID().toString());
         transaction.setMerchantTimestamp(LocalDateTime.now());
         transaction.setTransactionStatus(TransactionStatus.CREATED);
 
         Transaction savedTransaction = transactionRepository.save(transaction);
         PaymentRequestDTO paymentRequestDTO = transactionToPaymentRequestDTO(savedTransaction);
 
-        logger.info("Payment request is successfully created for user " + cardPaymentRequestDTO.getMerchantUsername() + ".");
+        logger.info("Payment request is successfully created for user " + cardPaymentRequestDTO.getUsername() + ".");
 
         return restTemplate.postForObject(bankUrl+createPaymentRequestApi, paymentRequestDTO, CardPaymentResponseDTO.class);
     }
@@ -84,9 +85,9 @@ public class PaymentService {
         paymentRequestDTO.setAmount(transaction.getAmount());
         paymentRequestDTO.setMerchantOrderId(transaction.getMerchantOrderId());
         paymentRequestDTO.setMerchantTimestamp(LocalDateTime.now());
-        paymentRequestDTO.setSuccessUrl(successUrl + "/" + transaction.getId());
-        paymentRequestDTO.setFailedUrl(failedUrl + "/" + transaction.getId());
-        paymentRequestDTO.setErrorUrl(errorUrl + "/" + transaction.getId());
+        paymentRequestDTO.setSuccessUrl(successUrl + "/" + transaction.getTransactionId());
+        paymentRequestDTO.setFailedUrl(failedUrl + "/" + transaction.getTransactionId());
+        paymentRequestDTO.setErrorUrl(errorUrl + "/" + transaction.getTransactionId());
         return paymentRequestDTO;
     }
 
@@ -96,6 +97,7 @@ public class PaymentService {
             throw new NotFoundException("Transaction doesn't exist.");
         }
         transaction.setTransactionStatus(TransactionStatus.SUCCESS);
+        transactionRepository.save(transaction);
         return new SimpleResponseDTO("Success.");
     }
 
@@ -105,6 +107,7 @@ public class PaymentService {
             throw new NotFoundException("Transaction doesn't exist.");
         }
         transaction.setTransactionStatus(TransactionStatus.FAILED);
+        transactionRepository.save(transaction);
         return new SimpleResponseDTO("Success.");
     }
 
@@ -114,12 +117,13 @@ public class PaymentService {
             throw new NotFoundException("Transaction doesn't exist.");
         }
         transaction.setTransactionStatus(TransactionStatus.ERROR);
+        transactionRepository.save(transaction);
         return new SimpleResponseDTO("Success.");
     }
     
     public SimpleResponseDTO paymentRegistration(PaymentRegistrationDTO paymentRegistationDTO) {
     	Merchant merchant = new Merchant();
-    	marchant.setUsernme(paymentRegistationDTO.getUsername());
+    	merchant.setUsername(paymentRegistationDTO.getUsername());
     	merchant.setMerchantId(paymentRegistationDTO.getMerchantId());
     	merchant.setMerchantPassword(paymentRegistationDTO.getMerchantPassword());
     	merchantRepository.save(merchant);

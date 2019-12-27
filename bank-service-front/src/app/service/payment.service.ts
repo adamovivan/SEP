@@ -9,19 +9,20 @@ export class PaymentService {
 
   constructor(private http: HttpClient) { }
 
-  public paymentSuccess() {
-    return this.http.put(environment.zuulUrl + "/payment-success", {});
+  public paymentSuccess(transactionId: string) {
+    return this.http.put(environment.zuulUrl + "/api-bank/payment-success/" + transactionId, {});
   }
 
-  public paymentFailed() {
-    return this.http.put(environment.zuulUrl + "/payment-failed", {});
+  public paymentFailed(transactionId: string) {
+    return this.http.put(environment.zuulUrl + "/api-bank/payment-failed/" + transactionId, {});
   }
 
-  public paymentError() {
-    return this.http.put(environment.zuulUrl + "/payment-error", {});
+  public paymentError(transactionId: string) {
+    return this.http.put(environment.zuulUrl + "/api-bank/payment-error/" + transactionId, {});
   }
 
   public saveUserData(userInfo){
-    return this.http.post(environment.zuulUrl + "/payment-registration", userInfo);
+    return this.http.post(environment.zuulUrl + "/api-bank/payment-registration", userInfo);
   }
+  
 }

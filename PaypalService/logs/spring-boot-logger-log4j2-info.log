@@ -225,3 +225,295 @@ javax.persistence.NonUniqueResultException: query did not return a unique result
 [2019-12-27 12:22:30] [INFO] Resolving eureka endpoints via configuration
 [2019-12-27 12:27:30] [INFO] Resolving eureka endpoints via configuration
 [2019-12-27 12:32:30] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 12:37:30] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 12:39:35] [INFO] Unregistering application API-PAYPAL with eureka with status DOWN
+[2019-12-27 12:39:35] [WARN] Saw local status change event StatusChangeEvent [timestamp=1577471975455, current=DOWN, previous=UP]
+[2019-12-27 12:39:35] [INFO] DiscoveryClient_API-PAYPAL/DESKTOP-9RN4Q95:api-paypal:8002: registering service...
+[2019-12-27 12:39:35] [INFO] Shutting down ExecutorService 'applicationTaskExecutor'
+[2019-12-27 12:39:35] [INFO] DiscoveryClient_API-PAYPAL/DESKTOP-9RN4Q95:api-paypal:8002 - registration status: 204
+[2019-12-27 12:39:35] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2019-12-27 12:39:35] [INFO] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[2019-12-27 12:39:35] [INFO] Shutting down DiscoveryClient ...
+[2019-12-27 12:39:38] [INFO] Unregistering ...
+[2019-12-27 12:39:38] [INFO] DiscoveryClient_API-PAYPAL/DESKTOP-9RN4Q95:api-paypal:8002 - deregister  status: 200
+[2019-12-27 12:39:38] [INFO] Completed shut down of DiscoveryClient
+[2019-12-27 12:39:38] [INFO] HikariPool-2 - Shutdown initiated...
+[2019-12-27 12:39:38] [INFO] HikariPool-2 - Shutdown completed.
+[2019-12-27 12:39:39] [INFO] Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$701a73bb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2019-12-27 12:39:39] [INFO] No active profile set, falling back to default profiles: default
+[2019-12-27 12:39:39] [INFO] Bootstrapping Spring Data repositories in DEFAULT mode.
+[2019-12-27 12:39:39] [INFO] Finished Spring Data repository scanning in 11ms. Found 2 repository interfaces.
+[2019-12-27 12:39:39] [INFO] BeanFactory id=34c48c7c-b15b-3e14-865b-dfa9f3c3eb31
+[2019-12-27 12:39:39] [INFO] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2019-12-27 12:39:39] [INFO] Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$701a73bb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2019-12-27 12:39:39] [WARN] The MBean registry cannot be disabled because it has already been initialised
+[2019-12-27 12:39:39] [INFO] Tomcat initialized with port(s): 8002 (http)
+[2019-12-27 12:39:39] [INFO] Initializing ProtocolHandler ["http-nio-8002"]
+[2019-12-27 12:39:39] [INFO] Starting service [Tomcat]
+[2019-12-27 12:39:39] [INFO] Starting Servlet engine: [Apache Tomcat/9.0.27]
+[2019-12-27 12:39:39] [INFO] Initializing Spring embedded WebApplicationContext
+[2019-12-27 12:39:39] [INFO] Root WebApplicationContext: initialization completed in 426 ms
+[2019-12-27 12:39:39] [INFO] HikariPool-3 - Starting...
+[2019-12-27 12:39:39] [INFO] HikariPool-3 - Start completed.
+[2019-12-27 12:39:39] [INFO] H2 console available at '/h2'. Database available at 'jdbc:h2:file:~/paypal'
+[2019-12-27 12:39:39] [INFO] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2019-12-27 12:39:39] [INFO] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2019-12-27 12:39:39] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2019-12-27 12:39:39] [INFO] LiveReload server is running on port 35729
+[2019-12-27 12:39:39] [WARN] No URLs will be polled as dynamic configuration sources.
+[2019-12-27 12:39:39] [INFO] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+[2019-12-27 12:39:40] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2019-12-27 12:39:40] [INFO] Initializing ExecutorService 'applicationTaskExecutor'
+[2019-12-27 12:39:40] [INFO] Setting initial instance status as: STARTING
+[2019-12-27 12:39:40] [INFO] Initializing Eureka in region us-east-1
+[2019-12-27 12:39:40] [INFO] Using JSON encoding codec LegacyJacksonJson
+[2019-12-27 12:39:40] [INFO] Using JSON decoding codec LegacyJacksonJson
+[2019-12-27 12:39:40] [INFO] Using XML encoding codec XStreamXml
+[2019-12-27 12:39:40] [INFO] Using XML decoding codec XStreamXml
+[2019-12-27 12:39:40] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 12:39:40] [INFO] Disable delta property : false
+[2019-12-27 12:39:40] [INFO] Single vip registry refresh property : null
+[2019-12-27 12:39:40] [INFO] Force full registry fetch : false
+[2019-12-27 12:39:40] [INFO] Application is null : false
+[2019-12-27 12:39:40] [INFO] Registered Applications size is zero : true
+[2019-12-27 12:39:40] [INFO] Application version is -1: true
+[2019-12-27 12:39:40] [INFO] Getting all instance registry info from the eureka server
+[2019-12-27 12:39:40] [INFO] The response status is 200
+[2019-12-27 12:39:40] [INFO] Starting heartbeat executor: renew interval is: 30
+[2019-12-27 12:39:40] [INFO] InstanceInfoReplicator onDemand update allowed rate per min is 4
+[2019-12-27 12:39:40] [INFO] Discovery Client initialized at timestamp 1577471980570 with initial instances count: 5
+[2019-12-27 12:39:40] [INFO] Registering application API-PAYPAL with eureka with status UP
+[2019-12-27 12:39:40] [INFO] Saw local status change event StatusChangeEvent [timestamp=1577471980572, current=UP, previous=STARTING]
+[2019-12-27 12:39:40] [INFO] DiscoveryClient_API-PAYPAL/DESKTOP-9RN4Q95:api-paypal:8002: registering service...
+[2019-12-27 12:39:40] [INFO] DiscoveryClient_API-PAYPAL/DESKTOP-9RN4Q95:api-paypal:8002 - registration status: 204
+[2019-12-27 12:39:40] [INFO] Starting ProtocolHandler ["http-nio-8002"]
+[2019-12-27 12:39:40] [INFO] Tomcat started on port(s): 8002 (http) with context path ''
+[2019-12-27 12:39:40] [INFO] Updating port to 8002
+[2019-12-27 12:39:40] [INFO] Started PaypalServiceApplication in 1.709 seconds (JVM running for 6437.555)
+[2019-12-27 12:39:40] [INFO] Condition evaluation unchanged
+[2019-12-27 12:40:16] [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2019-12-27 12:40:16] [INFO] Initializing Servlet 'dispatcherServlet'
+[2019-12-27 12:40:16] [INFO] Completed initialization in 5 ms
+[2019-12-27 12:44:40] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 12:49:40] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 12:54:40] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 12:59:40] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 13:04:40] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 13:09:40] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 13:14:40] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 13:19:40] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 13:22:39] [WARN] SQL Error: 23505, SQLState: 23505
+[2019-12-27 13:22:39] [ERROR] Unique index or primary key violation: "UK_EQJBBXHRDS2DGM2DW3RUP25Q6_INDEX_E ON PUBLIC.PAYPAL_PAYMENT(USERNAME) VALUES ('mikamikic', 1)"; SQL statement:
+insert into paypal_payment (id, payment_id, payment_secret, username) values (null, ?, ?, ?) [23505-196]
+[2019-12-27 13:22:39] [ERROR] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint ["UK_EQJBBXHRDS2DGM2DW3RUP25Q6_INDEX_E ON PUBLIC.PAYPAL_PAYMENT(USERNAME) VALUES ('mikamikic', 1)"; SQL statement:
+insert into paypal_payment (id, payment_id, payment_secret, username) values (null, ?, ?, ?) [23505-196]]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
+org.h2.jdbc.JdbcSQLException: Unique index or primary key violation: "UK_EQJBBXHRDS2DGM2DW3RUP25Q6_INDEX_E ON PUBLIC.PAYPAL_PAYMENT(USERNAME) VALUES ('mikamikic', 1)"; SQL statement:
+insert into paypal_payment (id, payment_id, payment_secret, username) values (null, ?, ?, ?) [23505-196]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345) ~[h2-1.4.196.jar:1.4.196]
+	at org.h2.message.DbException.get(DbException.java:179) ~[h2-1.4.196.jar:1.4.196]
+	at org.h2.message.DbException.get(DbException.java:155) ~[h2-1.4.196.jar:1.4.196]
+	at org.h2.index.BaseIndex.getDuplicateKeyException(BaseIndex.java:103) ~[h2-1.4.196.jar:1.4.196]
+	at org.h2.mvstore.db.MVSecondaryIndex.checkUnique(MVSecondaryIndex.java:231) ~[h2-1.4.196.jar:1.4.196]
+	at org.h2.mvstore.db.MVSecondaryIndex.add(MVSecondaryIndex.java:190) ~[h2-1.4.196.jar:1.4.196]
+	at org.h2.mvstore.db.MVTable.addRow(MVTable.java:705) ~[h2-1.4.196.jar:1.4.196]
+	at org.h2.command.dml.Insert.insertRows(Insert.java:156) ~[h2-1.4.196.jar:1.4.196]
+	at org.h2.command.dml.Insert.update(Insert.java:114) ~[h2-1.4.196.jar:1.4.196]
+	at org.h2.command.CommandContainer.update(CommandContainer.java:101) ~[h2-1.4.196.jar:1.4.196]
+	at org.h2.command.Command.executeUpdate(Command.java:260) ~[h2-1.4.196.jar:1.4.196]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:164) ~[h2-1.4.196.jar:1.4.196]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:150) ~[h2-1.4.196.jar:1.4.196]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.4.1.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.1.jar:?]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.dialect.identity.GetGeneratedKeysDelegate.executeAndExtract(GetGeneratedKeysDelegate.java:57) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.id.insert.AbstractReturningDelegate.performInsert(AbstractReturningDelegate.java:43) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3106) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3699) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:84) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:645) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:282) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:263) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:317) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:335) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:292) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:198) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:128) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:192) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:135) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:62) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:108) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:702) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:688) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_231]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_231]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_231]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_231]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:368) ~[spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at com.sun.proxy.$Proxy166.persist(Unknown Source) ~[?:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_231]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_231]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_231]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_231]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:314) ~[spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at com.sun.proxy.$Proxy166.persist(Unknown Source) ~[?:?]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:554) ~[spring-data-jpa-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_231]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_231]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_231]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_231]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:371) ~[spring-data-commons-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:204) ~[spring-data-commons-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:657) ~[spring-data-commons-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:621) ~[spring-data-commons-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:605) ~[spring-data-commons-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366) ~[spring-tx-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99) ~[spring-tx-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:178) ~[spring-data-jpa-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at com.sun.proxy.$Proxy168.save(Unknown Source) ~[?:?]
+	at rs.ac.uns.ftn.paypal_service.service.DataService.saveInfo(DataService.java:27) ~[classes/:?]
+	at rs.ac.uns.ftn.paypal_service.controller.PaymentController.saveData(PaymentController.java:74) ~[classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_231]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_231]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_231]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_231]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_231]
+[2019-12-27 13:23:42] [INFO] Seller a successfully saved his payment information. 
+[2019-12-27 13:24:40] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 13:29:40] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 13:34:40] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 13:39:40] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 13:44:40] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 13:49:40] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 13:54:31] [INFO] Unregistering application API-PAYPAL with eureka with status DOWN
+[2019-12-27 13:54:31] [WARN] Saw local status change event StatusChangeEvent [timestamp=1577476471059, current=DOWN, previous=UP]
+[2019-12-27 13:54:31] [INFO] DiscoveryClient_API-PAYPAL/DESKTOP-9RN4Q95:api-paypal:8002: registering service...
+[2019-12-27 13:54:31] [INFO] Shutting down ExecutorService 'applicationTaskExecutor'
+[2019-12-27 13:54:31] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2019-12-27 13:54:31] [INFO] DiscoveryClient_API-PAYPAL/DESKTOP-9RN4Q95:api-paypal:8002 - registration status: 204
+[2019-12-27 13:54:31] [INFO] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[2019-12-27 13:54:31] [INFO] Shutting down DiscoveryClient ...
+[2019-12-27 13:54:34] [INFO] Unregistering ...
+[2019-12-27 13:54:34] [INFO] DiscoveryClient_API-PAYPAL/DESKTOP-9RN4Q95:api-paypal:8002 - deregister  status: 200
+[2019-12-27 13:54:34] [INFO] Completed shut down of DiscoveryClient
+[2019-12-27 13:54:34] [INFO] HikariPool-3 - Shutdown initiated...
+[2019-12-27 13:54:34] [INFO] HikariPool-3 - Shutdown completed.
+[2019-12-27 13:54:34] [INFO] Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$701a73bb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2019-12-27 13:54:35] [INFO] No active profile set, falling back to default profiles: default
+[2019-12-27 13:54:35] [INFO] Bootstrapping Spring Data repositories in DEFAULT mode.
+[2019-12-27 13:54:35] [INFO] Finished Spring Data repository scanning in 11ms. Found 2 repository interfaces.
+[2019-12-27 13:54:35] [INFO] BeanFactory id=34c48c7c-b15b-3e14-865b-dfa9f3c3eb31
+[2019-12-27 13:54:35] [INFO] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2019-12-27 13:54:35] [INFO] Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$701a73bb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2019-12-27 13:54:35] [WARN] The MBean registry cannot be disabled because it has already been initialised
+[2019-12-27 13:54:35] [INFO] Tomcat initialized with port(s): 8002 (http)
+[2019-12-27 13:54:35] [INFO] Initializing ProtocolHandler ["http-nio-8002"]
+[2019-12-27 13:54:35] [INFO] Starting service [Tomcat]
+[2019-12-27 13:54:35] [INFO] Starting Servlet engine: [Apache Tomcat/9.0.27]
+[2019-12-27 13:54:35] [INFO] Initializing Spring embedded WebApplicationContext
+[2019-12-27 13:54:35] [INFO] Root WebApplicationContext: initialization completed in 436 ms
+[2019-12-27 13:54:35] [INFO] HikariPool-4 - Starting...
+[2019-12-27 13:54:35] [INFO] HikariPool-4 - Start completed.
+[2019-12-27 13:54:35] [INFO] H2 console available at '/h2'. Database available at 'jdbc:h2:file:~/paypal'
+[2019-12-27 13:54:35] [INFO] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2019-12-27 13:54:35] [INFO] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2019-12-27 13:54:35] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2019-12-27 13:54:35] [INFO] LiveReload server is running on port 35729
+[2019-12-27 13:54:35] [WARN] No URLs will be polled as dynamic configuration sources.
+[2019-12-27 13:54:35] [INFO] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+[2019-12-27 13:54:35] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2019-12-27 13:54:35] [INFO] Initializing ExecutorService 'applicationTaskExecutor'
+[2019-12-27 13:54:36] [INFO] Setting initial instance status as: STARTING
+[2019-12-27 13:54:36] [INFO] Initializing Eureka in region us-east-1
+[2019-12-27 13:54:36] [INFO] Using JSON encoding codec LegacyJacksonJson
+[2019-12-27 13:54:36] [INFO] Using JSON decoding codec LegacyJacksonJson
+[2019-12-27 13:54:36] [INFO] Using XML encoding codec XStreamXml
+[2019-12-27 13:54:36] [INFO] Using XML decoding codec XStreamXml
+[2019-12-27 13:54:36] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 13:54:36] [INFO] Disable delta property : false
+[2019-12-27 13:54:36] [INFO] Single vip registry refresh property : null
+[2019-12-27 13:54:36] [INFO] Force full registry fetch : false
+[2019-12-27 13:54:36] [INFO] Application is null : false
+[2019-12-27 13:54:36] [INFO] Registered Applications size is zero : true
+[2019-12-27 13:54:36] [INFO] Application version is -1: true
+[2019-12-27 13:54:36] [INFO] Getting all instance registry info from the eureka server
+[2019-12-27 13:54:36] [INFO] The response status is 200
+[2019-12-27 13:54:36] [INFO] Starting heartbeat executor: renew interval is: 30
+[2019-12-27 13:54:36] [INFO] InstanceInfoReplicator onDemand update allowed rate per min is 4
+[2019-12-27 13:54:36] [INFO] Discovery Client initialized at timestamp 1577476476243 with initial instances count: 5
+[2019-12-27 13:54:36] [INFO] Registering application API-PAYPAL with eureka with status UP
+[2019-12-27 13:54:36] [INFO] Saw local status change event StatusChangeEvent [timestamp=1577476476243, current=UP, previous=STARTING]
+[2019-12-27 13:54:36] [INFO] DiscoveryClient_API-PAYPAL/DESKTOP-9RN4Q95:api-paypal:8002: registering service...
+[2019-12-27 13:54:36] [INFO] DiscoveryClient_API-PAYPAL/DESKTOP-9RN4Q95:api-paypal:8002 - registration status: 204
+[2019-12-27 13:54:36] [INFO] Starting ProtocolHandler ["http-nio-8002"]
+[2019-12-27 13:54:36] [INFO] Tomcat started on port(s): 8002 (http) with context path ''
+[2019-12-27 13:54:36] [INFO] Updating port to 8002
+[2019-12-27 13:54:36] [INFO] Started PaypalServiceApplication in 1.704 seconds (JVM running for 10933.121)
+[2019-12-27 13:54:36] [INFO] Condition evaluation unchanged
+[2019-12-27 13:59:36] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 14:04:36] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 14:09:36] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 14:14:36] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 14:19:36] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 14:24:36] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 14:29:36] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 14:34:36] [INFO] Resolving eureka endpoints via configuration

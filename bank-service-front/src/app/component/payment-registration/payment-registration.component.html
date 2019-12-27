@@ -3,7 +3,7 @@
       <div class="col"></div>
       <div class="col">
           <h1 class="h3 mb-3 font-weight-normal">Secret information for Bank</h1>
-          <form [formGroup]="SingIn" (ngSubmit)="onSubmit($event)" novalidate >
+          <form [formGroup]="signIn" (ngSubmit)="onSubmit($event)" novalidate >
               <div class="form-group">
                   <label>Merchant Id</label>
                   <input type="text" formControlName="merchantId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.merchantId.errors }"/>

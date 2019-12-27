@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rs.ac.uns.ftn.bank_service.dto.CardPaymentRequestDTO;
 import rs.ac.uns.ftn.bank_service.dto.CardPaymentResponseDTO;
+import rs.ac.uns.ftn.bank_service.dto.PaymentRegistrationDTO;
 import rs.ac.uns.ftn.bank_service.dto.SimpleResponseDTO;
 import rs.ac.uns.ftn.bank_service.service.PaymentService;
 
@@ -19,7 +20,7 @@ public class PaymentController {
     @Value("${client.port}")
     private Long clientPort;
 
-    @RequestMapping(value = "/create-payment-request", method = RequestMethod.POST)
+    @RequestMapping(value = "/pay", method = RequestMethod.POST)
     public ResponseEntity<CardPaymentResponseDTO> createPaymentRequest(@RequestBody CardPaymentRequestDTO cardPaymentRequestDTO){
         return ResponseEntity.ok(paymentService.createPaymentRequest(cardPaymentRequestDTO));
     }
@@ -37,6 +38,11 @@ public class PaymentController {
     @RequestMapping(value = "/payment-error/{transaction-id}", method = RequestMethod.PUT)
     public ResponseEntity<SimpleResponseDTO> paymentError(@PathVariable("transaction-id") String transactionId){
         return ResponseEntity.ok().body(paymentService.transactionError(transactionId));
+    }
+    
+    @RequestMapping(value = "/payment-registration", method = RequestMethod.POST)
+    public ResponseEntity<SimpleResponseDTO> paymentRegistration(@RequestBody PaymentRegistrationDTO paymentRegistrationDTO){
+        return ResponseEntity.ok().body(paymentService.paymentRegistration(paymentRegistrationDTO));
     }
 
     @RequestMapping(value = "/frontendPort", method = RequestMethod.GET)
