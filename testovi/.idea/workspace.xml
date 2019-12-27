@@ -2,189 +2,65 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18dac4a2-0eda-4134-8352-d5a23afe2e1f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../AuthenticationService/hs_err_pid9490.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AuthenticationService/logs/spring-boot-logger-log4j2-debug.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AuthenticationService/logs/spring-boot-logger-log4j2-error.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AuthenticationService/logs/spring-boot-logger-log4j2-fatal.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AuthenticationService/logs/spring-boot-logger-log4j2-info.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AuthenticationService/src/main/resources/log4j2-spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Bank/bank/logs/spring-boot-logger-log4j2-debug.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Bank/bank/logs/spring-boot-logger-log4j2-error.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Bank/bank/logs/spring-boot-logger-log4j2-fatal.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Bank/bank/logs/spring-boot-logger-log4j2-info.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Bank/bank/src/main/resources/log4j2-spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PaypalService/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-1.log.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PaypalService/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-2.log.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PaypalService/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-1.log.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PaypalService/logs/spring-boot-logger-log4j2-debug.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PaypalService/logs/spring-boot-logger-log4j2-error.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PaypalService/logs/spring-boot-logger-log4j2-fatal.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PaypalService/logs/spring-boot-logger-log4j2-info.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PaypalService/src/main/resources/log4j2-spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bank_service/logs/spring-boot-logger-log4j2-debug.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bank_service/logs/spring-boot-logger-log4j2-error.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bank_service/logs/spring-boot-logger-log4j2-fatal.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bank_service/logs/spring-boot-logger-log4j2-info.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bank_service/src/main/resources/log4j2-spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bitcoin/logs/spring-boot-logger-log4j2-debug.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bitcoin/logs/spring-boot-logger-log4j2-error.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bitcoin/logs/spring-boot-logger-log4j2-fatal.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bitcoin/logs/spring-boot-logger-log4j2-info.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bitcoin/src/main/resources/log4j2-spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../scientific-center-client/browserslist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../scientific-center-client/src/app/login/component/login/login.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../scientific-center-client/src/app/login/component/login/login.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../scientific-center-client/src/app/login/component/login/login.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../scientific-center-client/src/app/login/component/login/login.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../scientific-center-client/src/app/login/dto/login.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../scientific-center-client/src/app/login/interceptors/auth-token.interceptor.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../scientific-center-client/src/app/login/login-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../scientific-center-client/src/app/login/login.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../scientific-center-client/src/app/login/service/authentication.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../scientific-center-client/src/app/login/service/common.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../scientific-center-client/tsconfig.app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../scientific-center-client/tsconfig.spec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cglib_cglib_nodep_3_2_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_beust_jcommander_1_48.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_codeborne_phantomjsdriver_1_3_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_19_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_3_5_7_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_4_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_platform_4_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_jcip_jcip_annotations_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_cssparser_cssparser_0_9_18.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_htmlunit_htmlunit_2_21.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_htmlunit_htmlunit_core_js_2_17.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_htmlunit_neko_htmlunit_2_21.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_exec_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpmime_4_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_beanshell_bsh_2_0b4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_io_9_2_15_v20160210.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_util_9_2_15_v20160210.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_api_9_2_15_v20160210.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_client_9_2_15_v20160210.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_common_9_2_15_v20160210.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_htmlunit_driver_2_21.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_jetty_repacked_9_2_13_v20160825.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_api_3_0_0_beta3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_chrome_driver_3_0_0_beta3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_edge_driver_3_0_0_beta3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_firefox_driver_3_0_0_beta3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_ie_driver_3_0_0_beta3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_java_3_0_0_beta3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_opera_driver_3_0_0_beta3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_remote_driver_3_0_0_beta3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_safari_driver_3_0_0_beta3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_server_3_0_0_beta3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_support_3_0_0_beta3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_testng_testng_6_9_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_w3c_css_sac_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_15.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xalan_serializer_2_7_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xalan_xalan_2_7_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xerces_xercesImpl_2_11_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_4_01.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/scientificPage/LoginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/scientificPage/ViewMagazinPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/authentification/AuthentificationLoginTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/scientific/LoginAndChoosenMagazineTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/SEP.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthenticationService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthenticationService/src/main/java/rs/ac/uns/ftn/authentication_service/service/DiscoveryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/src/main/java/rs/ac/uns/ftn/authentication_service/service/DiscoveryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthenticationService/src/main/java/rs/ac/uns/ftn/authentication_service/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/src/main/java/rs/ac/uns/ftn/authentication_service/service/LoginService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthenticationService/src/main/java/rs/ac/uns/ftn/authentication_service/service/PaymentsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/src/main/java/rs/ac/uns/ftn/authentication_service/service/PaymentsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthenticationService/src/main/java/rs/ac/uns/ftn/authentication_service/service/RegistrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/src/main/java/rs/ac/uns/ftn/authentication_service/service/RegistrationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthenticationService/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bank/bank-front/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Bank/bank-front/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bank/bank/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Bank/bank/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bank/bank/src/main/java/rs/ac/uns/ftn/bank/exception/ExceptionResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Bank/bank/src/main/java/rs/ac/uns/ftn/bank/exception/ExceptionResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bank/bank/src/main/java/rs/ac/uns/ftn/bank/service/PaymentRequestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Bank/bank/src/main/java/rs/ac/uns/ftn/bank/service/PaymentRequestService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bank/bank/src/main/java/rs/ac/uns/ftn/bank/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Bank/bank/src/main/java/rs/ac/uns/ftn/bank/service/PaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PaypalFront/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../PaypalFront/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PaypalService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PaypalService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PaypalService/src/main/java/rs/ac/uns/ftn/paypal_service/PaypalServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PaypalService/src/main/java/rs/ac/uns/ftn/paypal_service/PaypalServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PaypalService/src/main/java/rs/ac/uns/ftn/paypal_service/service/DataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PaypalService/src/main/java/rs/ac/uns/ftn/paypal_service/service/DataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PaypalService/src/main/java/rs/ac/uns/ftn/paypal_service/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PaypalService/src/main/java/rs/ac/uns/ftn/paypal_service/service/PaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PaypalService/src/main/java/rs/ac/uns/ftn/paypal_service/service/PaypalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PaypalService/src/main/java/rs/ac/uns/ftn/paypal_service/service/PaypalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bank/bank/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-1.log.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bank/bank/logs/2019-12/spring-boot-logger-log4j2-error--27-December-2019-1.log.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Bank/bank/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-1.log.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PaypalService/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-3.log.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PaypalService/logs/2019-12/spring-boot-logger-log4j2-error--27-December-2019-1.log.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PaypalService/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-2.log.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bank-service-front/src/app/component/payment-registration/payment-registration.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bank-service-front/src/app/component/payment-registration/payment-registration.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bank-service-front/src/app/component/payment-registration/payment-registration.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bank-service-front/src/app/component/payment-registration/payment-registration.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bank-service-front/src/app/service/payment.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bank_service/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-1.log.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bank_service/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-2.log.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bank_service/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-1.log.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bank_service/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-2.log.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bank_service/src/main/java/rs/ac/uns/ftn/bank_service/dto/PaymentRegistrationDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bank_service/src/main/java/rs/ac/uns/ftn/bank_service/dto/SimpleResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bank_service/src/main/java/rs/ac/uns/ftn/bank_service/model/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bank_service/src/main/java/rs/ac/uns/ftn/bank_service/model/TransactionStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bank_service/src/main/java/rs/ac/uns/ftn/bank_service/repository/TransactionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationFront/src/app/type-payments/type-payments.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationFront/src/app/type-payments/type-payments.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-1.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-2.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-error--27-December-2019-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-error--27-December-2019-1.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-2.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/spring-boot-logger-log4j2-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/spring-boot-logger-log4j2-debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/spring-boot-logger-log4j2-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/spring-boot-logger-log4j2-error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/spring-boot-logger-log4j2-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/spring-boot-logger-log4j2-info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bank/bank/logs/spring-boot-logger-log4j2-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Bank/bank/logs/spring-boot-logger-log4j2-debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bank/bank/logs/spring-boot-logger-log4j2-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Bank/bank/logs/spring-boot-logger-log4j2-error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bank/bank/logs/spring-boot-logger-log4j2-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Bank/bank/logs/spring-boot-logger-log4j2-info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PaypalService/logs/spring-boot-logger-log4j2-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/../PaypalService/logs/spring-boot-logger-log4j2-debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PaypalService/logs/spring-boot-logger-log4j2-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/../PaypalService/logs/spring-boot-logger-log4j2-error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PaypalService/logs/spring-boot-logger-log4j2-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/../PaypalService/logs/spring-boot-logger-log4j2-info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PaypalService/src/main/java/rs/ac/uns/ftn/paypal_service/model/PaypalPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PaypalService/src/main/java/rs/ac/uns/ftn/paypal_service/model/PaypalPayment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bank-service-front/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../bank-service-front/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bank_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bank_service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bank_service/src/main/java/rs/ac/uns/ftn/bank_service/exception/ExceptionResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bank_service/src/main/java/rs/ac/uns/ftn/bank_service/exception/ExceptionResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank-service-front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../bank-service-front/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank-service-front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../bank-service-front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank-service-front/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../bank-service-front/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank-service-front/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../bank-service-front/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank-service-front/src/app/component/payment-error/payment-error.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../bank-service-front/src/app/component/payment-error/payment-error.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank-service-front/src/app/component/payment-failed/payment-failed.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../bank-service-front/src/app/component/payment-failed/payment-failed.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank-service-front/src/app/component/payment-success/payment-success.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../bank-service-front/src/app/component/payment-success/payment-success.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank-service-front/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../bank-service-front/src/environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank_service/logs/spring-boot-logger-log4j2-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/../bank_service/logs/spring-boot-logger-log4j2-debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank_service/logs/spring-boot-logger-log4j2-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/../bank_service/logs/spring-boot-logger-log4j2-info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank_service/src/main/java/rs/ac/uns/ftn/bank_service/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bank_service/src/main/java/rs/ac/uns/ftn/bank_service/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank_service/src/main/java/rs/ac/uns/ftn/bank_service/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bank_service/src/main/java/rs/ac/uns/ftn/bank_service/controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank_service/src/main/java/rs/ac/uns/ftn/bank_service/model/Merchant.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bank_service/src/main/java/rs/ac/uns/ftn/bank_service/model/Merchant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bank_service/src/main/java/rs/ac/uns/ftn/bank_service/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bank_service/src/main/java/rs/ac/uns/ftn/bank_service/service/PaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bitcoin-front/bitcoin-front/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin-front/bitcoin-front/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bitcoin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bitcoin/src/main/java/com/bitcoin/bitcoin/service/BitcoinServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin/src/main/java/com/bitcoin/bitcoin/service/BitcoinServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../e2e-testovi/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../e2e-testovi/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../e2e-testovi/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../e2e-testovi/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../e2e-testovi/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../e2e-testovi/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../e2e-testovi/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../e2e-testovi/src/main/java/com/sep/e2etestovi/E2eTestoviApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../e2e-testovi/src/main/java/com/sep/e2etestovi/authentificationPage/LoginPageAuthentification.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../e2e-testovi/src/main/java/com/sep/e2etestovi/bitcoin/BitcoinMarkPayment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../e2e-testovi/src/main/java/com/sep/e2etestovi/bitcoin/BitcoinPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../e2e-testovi/src/main/java/com/sep/e2etestovi/bitcoin/BitcoinSuccessCancelPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../e2e-testovi/src/main/java/com/sep/e2etestovi/bitcoin/ScientificPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../e2e-testovi/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../e2e-testovi/src/test/java/bitcoinTest/BitcoinPaymentTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../e2e-testovi/src/test/java/com/sep/e2etestovi/E2eTestoviApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific-center-client/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific-center-client/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific-center-client/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/e2e/protractor.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific-center-client/e2e/protractor.conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/e2e/src/app.e2e-spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific-center-client/e2e/src/app.e2e-spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/e2e/src/app.po.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific-center-client/e2e/src/app.po.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/e2e/tsconfig.e2e.json" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific-center-client/e2e/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific-center-client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific-center-client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific-center-client/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific-center-client/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/src/app/magazine/component/magazine/magazine.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific-center-client/src/app/magazine/component/magazine/magazine.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bitcoin-front/bitcoin-front/src/app/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin-front/bitcoin-front/src/app/register/register.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-1.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-2.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-error--27-December-2019-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-error--27-December-2019-1.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-2.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bitcoin/logs/spring-boot-logger-log4j2-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin/logs/spring-boot-logger-log4j2-debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bitcoin/logs/spring-boot-logger-log4j2-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin/logs/spring-boot-logger-log4j2-info.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../scientific-center-client/src/app/magazine/component/shopping-cart/shopping-cart.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific-center-client/src/app/magazine/component/shopping-cart/shopping-cart.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/src/app/magazine/magazine.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific-center-client/src/app/magazine/magazine.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/src/app/magazine/service/common.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/src/app/magazine/service/magazine.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/src/app/magazine/service/magazine.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific-center-client/src/app/magazine/service/magazine.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/src/app/magazine/service/shopping-cart.service.spec.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../scientific-center-client/src/app/magazine/service/shopping-cart.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific-center-client/src/app/magazine/service/shopping-cart.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/src/browserslist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/src/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific-center-client/src/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific-center-client/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/src/karma.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific-center-client/karma.conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/src/polyfills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific-center-client/src/polyfills.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/src/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/src/tsconfig.spec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/src/tslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific-center-client/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific-center-client/tslint.json" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific-center-client/tslint.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific_center/src/main/java/rs/ac/uns/ftn/scientific_center/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific_center/src/main/java/rs/ac/uns/ftn/scientific_center/security/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scientific_center/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../scientific_center/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/authentificationPage/LoginPageAuthentification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/authentificationPage/LoginPageAuthentification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/scientificPage/ScientificPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bitcoinTest/BitcoinPaymentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/bitcoinTest/BitcoinPaymentTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testovi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/testovi.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

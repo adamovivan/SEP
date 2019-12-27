@@ -49,8 +49,11 @@ export class ShoppingCartComponent implements OnInit {
 
   proceedToPayment(){
     this.shoppingCartService.pay().subscribe(res => {
-      console.log(res);
-    })
+      window.location.href = res.url;
+    },
+    err => {
+      console.log(err)
+    });
   }
 
 }

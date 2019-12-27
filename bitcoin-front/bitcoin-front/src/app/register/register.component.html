@@ -2,7 +2,7 @@
     <div class="col"></div>
     <div class="col">
         <h1 class="h3 mb-3 font-weight-normal">Secret information for Bitcoin</h1>
-        <form [formGroup]="SingIn" (ngSubmit)="onSubmit($event)" novalidate style="width: 40vh; margin-left: 41vw;">
+        <form [formGroup]="SingIn" (ngSubmit)="onSubmit($event)" novalidate>
             <div class="form-group">
                 <label>Marchant API Id</label>
                 <input type="text" formControlName="token" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.token.errors }"/>

@@ -1,29 +1,62 @@
-[2019-12-27 05:58:26] [INFO] Starting BankServiceApplication on DESKTOP-9RN4Q95 with PID 12120 (started by Dejan in C:\Users\Dejan\Desktop\Master\Sistemi elektronskog placanja (SEP)\Projekat\SEP\bank_service)
-[2019-12-27 05:58:26] [INFO] No active profile set, falling back to default profiles: default
-[2019-12-27 05:58:27] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[2019-12-27 05:58:27] [INFO] Finished Spring Data repository scanning in 61ms. Found 1 JPA repository interfaces.
-[2019-12-27 05:58:27] [INFO] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-[2019-12-27 05:58:28] [INFO] Tomcat initialized with port(s): 8600 (http)
-[2019-12-27 05:58:28] [INFO] Initializing ProtocolHandler ["http-nio-8600"]
-[2019-12-27 05:58:28] [INFO] Starting service [Tomcat]
-[2019-12-27 05:58:28] [INFO] Starting Servlet engine: [Apache Tomcat/9.0.29]
-[2019-12-27 05:58:28] [INFO] Initializing Spring embedded WebApplicationContext
-[2019-12-27 05:58:28] [INFO] Root WebApplicationContext: initialization completed in 1476 ms
-[2019-12-27 05:58:28] [INFO] HikariPool-1 - Starting...
-[2019-12-27 05:58:28] [INFO] HikariPool-1 - Start completed.
-[2019-12-27 05:58:28] [INFO] H2 console available at '/h2'. Database available at 'jdbc:h2:mem:db'
-[2019-12-27 05:58:28] [INFO] HHH000412: Hibernate Core {5.4.9.Final}
-[2019-12-27 05:58:29] [INFO] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-[2019-12-27 05:58:29] [INFO] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-[2019-12-27 05:58:29] [INFO] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-[2019-12-27 05:58:29] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
-[2019-12-27 05:58:30] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[2019-12-27 05:58:30] [INFO] Initializing ExecutorService 'applicationTaskExecutor'
-[2019-12-27 05:58:30] [INFO] Starting ProtocolHandler ["http-nio-8600"]
-[2019-12-27 05:58:30] [INFO] Tomcat started on port(s): 8600 (http) with context path ''
-[2019-12-27 05:58:30] [INFO] Started BankServiceApplication in 4.575 seconds (JVM running for 5.824)
-[2019-12-27 06:01:42] [INFO] Application shutdown requested.
-[2019-12-27 06:01:42] [INFO] Shutting down ExecutorService 'applicationTaskExecutor'
-[2019-12-27 06:01:42] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
-[2019-12-27 06:01:42] [INFO] HikariPool-1 - Shutdown initiated...
-[2019-12-27 06:01:42] [INFO] HikariPool-1 - Shutdown completed.
+[2019-12-27 11:58:31] [INFO] Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6ca2739e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2019-12-27 11:58:31] [INFO] No active profile set, falling back to default profiles: default
+[2019-12-27 11:58:32] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2019-12-27 11:58:32] [INFO] Finished Spring Data repository scanning in 41ms. Found 2 JPA repository interfaces.
+[2019-12-27 11:58:32] [INFO] BeanFactory id=c7eaf502-a9cb-3fd5-b884-1d1148a89962
+[2019-12-27 11:58:32] [INFO] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2019-12-27 11:58:32] [INFO] Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6ca2739e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2019-12-27 11:58:32] [INFO] Tomcat initialized with port(s): 8004 (http)
+[2019-12-27 11:58:32] [INFO] Initializing ProtocolHandler ["http-nio-8004"]
+[2019-12-27 11:58:32] [INFO] Starting service [Tomcat]
+[2019-12-27 11:58:32] [INFO] Starting Servlet engine: [Apache Tomcat/9.0.29]
+[2019-12-27 11:58:32] [INFO] Initializing Spring embedded WebApplicationContext
+[2019-12-27 11:58:32] [INFO] Root WebApplicationContext: initialization completed in 997 ms
+[2019-12-27 11:58:33] [INFO] HikariPool-1 - Starting...
+[2019-12-27 11:58:33] [INFO] HikariPool-1 - Start completed.
+[2019-12-27 11:58:33] [INFO] H2 console available at '/h2'. Database available at 'jdbc:h2:mem:db'
+[2019-12-27 11:58:33] [INFO] HHH000412: Hibernate Core {5.4.9.Final}
+[2019-12-27 11:58:33] [INFO] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+[2019-12-27 11:58:34] [INFO] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2019-12-27 11:58:34] [INFO] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2019-12-27 11:58:34] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2019-12-27 11:58:35] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2019-12-27 11:58:35] [WARN] No URLs will be polled as dynamic configuration sources.
+[2019-12-27 11:58:35] [INFO] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+[2019-12-27 11:58:35] [WARN] No URLs will be polled as dynamic configuration sources.
+[2019-12-27 11:58:35] [INFO] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+[2019-12-27 11:58:36] [INFO] Setting initial instance status as: STARTING
+[2019-12-27 11:58:36] [INFO] Initializing Eureka in region us-east-1
+[2019-12-27 11:58:36] [INFO] Using JSON encoding codec LegacyJacksonJson
+[2019-12-27 11:58:36] [INFO] Using JSON decoding codec LegacyJacksonJson
+[2019-12-27 11:58:36] [INFO] Using XML encoding codec XStreamXml
+[2019-12-27 11:58:36] [INFO] Using XML decoding codec XStreamXml
+[2019-12-27 11:58:36] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 11:58:36] [INFO] Disable delta property : false
+[2019-12-27 11:58:36] [INFO] Single vip registry refresh property : null
+[2019-12-27 11:58:36] [INFO] Force full registry fetch : false
+[2019-12-27 11:58:36] [INFO] Application is null : false
+[2019-12-27 11:58:36] [INFO] Registered Applications size is zero : true
+[2019-12-27 11:58:36] [INFO] Application version is -1: true
+[2019-12-27 11:58:36] [INFO] Getting all instance registry info from the eureka server
+[2019-12-27 11:58:36] [INFO] The response status is 200
+[2019-12-27 11:58:36] [INFO] Starting heartbeat executor: renew interval is: 30
+[2019-12-27 11:58:36] [INFO] InstanceInfoReplicator onDemand update allowed rate per min is 4
+[2019-12-27 11:58:36] [INFO] Discovery Client initialized at timestamp 1577469516803 with initial instances count: 4
+[2019-12-27 11:58:36] [INFO] Registering application API-BANK with eureka with status UP
+[2019-12-27 11:58:36] [INFO] Saw local status change event StatusChangeEvent [timestamp=1577469516806, current=UP, previous=STARTING]
+[2019-12-27 11:58:36] [INFO] DiscoveryClient_API-BANK/DESKTOP-9RN4Q95:api-bank:8004: registering service...
+[2019-12-27 11:58:36] [INFO] Starting ProtocolHandler ["http-nio-8004"]
+[2019-12-27 11:58:36] [INFO] DiscoveryClient_API-BANK/DESKTOP-9RN4Q95:api-bank:8004 - registration status: 204
+[2019-12-27 11:58:36] [INFO] Tomcat started on port(s): 8004 (http) with context path ''
+[2019-12-27 11:58:36] [INFO] Updating port to 8004
+[2019-12-27 11:58:36] [INFO] Started BankServiceApplication in 5.908 seconds (JVM running for 6.683)
+[2019-12-27 12:03:36] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 12:08:36] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 12:13:36] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 12:18:06] [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2019-12-27 12:18:06] [INFO] Initializing Servlet 'dispatcherServlet'
+[2019-12-27 12:18:06] [INFO] Completed initialization in 5 ms
+[2019-12-27 12:18:36] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 12:23:36] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 12:28:36] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 12:33:36] [INFO] Resolving eureka endpoints via configuration
