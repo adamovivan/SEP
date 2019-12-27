@@ -19554,3 +19554,6 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
 	at java.lang.Thread.run(Thread.java:834) [?:?]
 [2019-12-27 14:44:37] [DEBUG] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_4_, is fetching remote regions? false 
+[2019-12-27 14:44:48] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2019-12-27 14:44:50] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:44:50] [DEBUG] Closing connections idle longer than 30000 SECONDS
