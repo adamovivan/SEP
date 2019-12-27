@@ -3,6 +3,8 @@ package com.bitcoin.bitcoin.service;
 import java.util.Date;
 import java.util.UUID;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -20,8 +22,8 @@ import com.bitcoin.bitcoin.dto.ResponseUrlDto;
 import com.bitcoin.bitcoin.exception.BadRequestException;
 import com.bitcoin.bitcoin.exception.BitcoinUserNotExistException;
 import com.bitcoin.bitcoin.exception.OrderNotExistException;
-import com.bitcoin.bitcoin.model.Merchant;
 import com.bitcoin.bitcoin.model.Currency;
+import com.bitcoin.bitcoin.model.Merchant;
 import com.bitcoin.bitcoin.model.NotificationState;
 import com.bitcoin.bitcoin.model.Order;
 import com.bitcoin.bitcoin.model.PaymentState;
@@ -31,6 +33,7 @@ import com.bitcoin.bitcoin.repository.UserBitcoinRepository;
 @Service
 public class BitcoinServiceImpl implements BitcoinService{
 
+	private static final Logger logger = LoggerFactory.getLogger(BitcoinService.class);
 	
 	@Autowired
 	private UserBitcoinRepository userRepository; 
@@ -72,11 +75,15 @@ public class BitcoinServiceImpl implements BitcoinService{
 			this.orderRepository.save(o);
 			returnResponse.setUrl(response.getBody().getPayment_url());
 			returnResponse.setSuccess(true);
+			logger.info("Redirect url for bitcoin payment to user account " + username + " was"
+					+ " successfully created.");
 		}catch(HttpStatusCodeException e) {
 			System.out.println("ERROR WHILE CALLING APPLICATION!");
 			System.out.println(e.getMessage());
 			returnResponse.setUrl("");
 			returnResponse.setSuccess(false);
+			logger.error("Redirect url for bitcoin payment to user account " + username + " was"
+					+ " not created.");
 		}
 		
 		
@@ -111,7 +118,14 @@ public class BitcoinServiceImpl implements BitcoinService{
 			find.setUsername(m.getUsername());
 			find.setToken(m.getToken());
 		}
-		this.userRepository.save(find);
+		try {
+			this.userRepository.save(find);
+			logger.info("Merchant id for user " + m.getUsername() + "was succesfully saved.");
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.info("Merchant id for user " + m.getUsername() + "was not saved.");
+		}
+		
 	}
 
 
@@ -139,9 +153,11 @@ public class BitcoinServiceImpl implements BitcoinService{
 				order.setUpdateTime(new Date());
 				this.orderRepository.save(order);
 			}
+			logger.info("Successfully created bitcoin order!");
 		}catch(HttpStatusCodeException e)
 		{
 			System.out.println("Error while checking bitcoin order!");
+			logger.error("Error while checking bitcoin order!");
 		}
 		return this.address + "4202/bitcoin/details" + order.getId();
 	}
@@ -171,9 +187,11 @@ Order order = this.orderRepository.findByRandomToken(token).orElseThrow(() -> ne
 				order.setUpdateTime(new Date());
 				this.orderRepository.save(order);
 			}
+			logger.info("Payment was successfuly canceled!");
 		}catch(HttpStatusCodeException e)
 		{
 			System.out.println("Error while checking bitcoin order!");
+			logger.error("Problem while trying to cancel payment.");
 		}
 		return this.address + "4202/bitcoin/details" + order.getId();
 	}

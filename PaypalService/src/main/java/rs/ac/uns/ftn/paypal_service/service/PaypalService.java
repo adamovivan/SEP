@@ -7,6 +7,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,6 +37,8 @@ import rs.ac.uns.ftn.paypal_service.repository.TransactionRepository;
  */
 @Service
 public class PaypalService {
+	
+	private static final Logger logger = LoggerFactory.getLogger(PaypalService.class);
 	
 	@Autowired
     private PaymentRepository paymentRepository;
@@ -122,7 +126,10 @@ public class PaypalService {
 	            transaction.setBuyer(createdPayment.getPayer().getPayerInfo().getShippingAddress().getRecipientName());
 	            transaction = transactionRepository.save(transaction);
 	        }
+	        logger.info("The payment to "+paymentCompleteRequest.getUsername()+"'s account has been successfully verified by " + 
+	        		createdPayment.getPayer().getPayerInfo().getShippingAddress().getRecipientName());
 	    } catch (PayPalRESTException e) {
+	    	logger.error("The payment to "+paymentCompleteRequest.getUsername()+"'s account has not been verified");
 	        System.err.println(e.getDetails());
 	    }
 	    return response;
