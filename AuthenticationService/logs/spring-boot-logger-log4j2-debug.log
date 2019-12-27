@@ -17766,3 +17766,1791 @@ Unconditional classes:
 [2019-12-27 14:37:21] [DEBUG] The total number of instances fetched by the delta processor : 0
 [2019-12-27 14:37:21] [DEBUG] The total number of all instances in the client now is 5
 [2019-12-27 14:37:21] [DEBUG] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_5_, is fetching remote regions? false 
+[2019-12-27 14:37:48] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2019-12-27 14:37:50] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:37:50] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:37:51] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:37:51] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:37:51] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:37:51] [DEBUG] Stale connection check
+[2019-12-27 14:37:51] [DEBUG] CookieSpec selected: default
+[2019-12-27 14:37:51] [DEBUG] Auth cache not set in the context
+[2019-12-27 14:37:51] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 14:37:51] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 14:37:51] [DEBUG] Attempt 1 to execute request
+[2019-12-27 14:37:51] [DEBUG] Sending request: PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1
+[2019-12-27 14:37:51] [DEBUG]  >> "PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.43.6[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  >> "Content-Length: 0[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG] >> PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1
+[2019-12-27 14:37:51] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 14:37:51] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 14:37:51] [DEBUG] >> DiscoveryIdentity-Id: 192.168.43.6
+[2019-12-27 14:37:51] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 14:37:51] [DEBUG] >> Content-Length: 0
+[2019-12-27 14:37:51] [DEBUG] >> Host: localhost:8761
+[2019-12-27 14:37:51] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 14:37:51] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2019-12-27 14:37:51] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  << "Content-Type: application/xml[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  << "Content-Length: 0[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  << "Date: Fri, 27 Dec 2019 20:37:51 GMT[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  << "[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 14:37:51] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 14:37:51] [DEBUG] << Content-Type: application/xml
+[2019-12-27 14:37:51] [DEBUG] << Content-Length: 0
+[2019-12-27 14:37:51] [DEBUG] << Date: Fri, 27 Dec 2019 20:37:51 GMT
+[2019-12-27 14:37:51] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 14:37:51] [DEBUG] Released connection is reusable.
+[2019-12-27 14:37:51] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:37:51] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 14:37:51] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:37:51] [DEBUG] Jersey HTTP PUT http://localhost:8761/eureka//apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001; statusCode=200
+[2019-12-27 14:37:51] [DEBUG] DiscoveryClient_AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001 - Heartbeat status: 200
+[2019-12-27 14:37:51] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:37:51] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:37:51] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:37:51] [DEBUG] Stale connection check
+[2019-12-27 14:37:51] [DEBUG] CookieSpec selected: default
+[2019-12-27 14:37:51] [DEBUG] Auth cache not set in the context
+[2019-12-27 14:37:51] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 14:37:51] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 14:37:51] [DEBUG] Attempt 1 to execute request
+[2019-12-27 14:37:51] [DEBUG] Sending request: GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 14:37:51] [DEBUG]  >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  >> "Accept: application/json[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.43.6[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG] >> GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 14:37:51] [DEBUG] >> Accept: application/json
+[2019-12-27 14:37:51] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 14:37:51] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 14:37:51] [DEBUG] >> DiscoveryIdentity-Id: 192.168.43.6
+[2019-12-27 14:37:51] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 14:37:51] [DEBUG] >> Host: localhost:8761
+[2019-12-27 14:37:51] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 14:37:51] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2019-12-27 14:37:51] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  << "Content-Encoding: gzip[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  << "Content-Type: application/json[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  << "Content-Length: 86[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  << "Date: Fri, 27 Dec 2019 20:37:51 GMT[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG]  << "[\r][\n]"
+[2019-12-27 14:37:51] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 14:37:51] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 14:37:51] [DEBUG] << Content-Encoding: gzip
+[2019-12-27 14:37:51] [DEBUG] << Content-Type: application/json
+[2019-12-27 14:37:51] [DEBUG] << Content-Length: 86
+[2019-12-27 14:37:51] [DEBUG] << Date: Fri, 27 Dec 2019 20:37:51 GMT
+[2019-12-27 14:37:51] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 14:37:51] [DEBUG]  << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0xab]VJ,([0xc8][0xc9]LN,[0xc9][0xcc][0xcf]+V[0xb2][0xaa]V*K-*[0x6][0xb1][0xe3][0xe3]SRsJ[0x12][0x95][0xac][0x94],[\r][0x95]t@[0xca][0x80]B[0x19][0x89][0xc5][0x19][0xc9][0xf9])[0xa9]@[0xd1][0xd0][0x80]x[0xd3]x[0x88][0x4]L[0xbf][0x92]Utlm-[0x0][0x93][0x9][0x8f][0xdb]S[0x0][0x0][0x0]"
+[2019-12-27 14:37:51] [DEBUG] Released connection is reusable.
+[2019-12-27 14:37:51] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:37:51] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 14:37:51] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:37:51] [DEBUG] clearing global-level cache with size 0
+[2019-12-27 14:37:51] [DEBUG] clearing app-level serialization cache with size 0
+[2019-12-27 14:37:51] [DEBUG] Jersey HTTP GET http://localhost:8761/eureka//apps/delta?; statusCode=200
+[2019-12-27 14:37:51] [DEBUG] Got delta update with apps hashcode UP_5_
+[2019-12-27 14:37:51] [DEBUG] The total number of instances fetched by the delta processor : 0
+[2019-12-27 14:37:51] [DEBUG] The total number of all instances in the client now is 5
+[2019-12-27 14:37:51] [DEBUG] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_5_, is fetching remote regions? false 
+[2019-12-27 14:38:18] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2019-12-27 14:38:20] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:38:20] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:38:21] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:38:21] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:38:21] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:38:21] [DEBUG] Stale connection check
+[2019-12-27 14:38:21] [DEBUG] CookieSpec selected: default
+[2019-12-27 14:38:21] [DEBUG] Auth cache not set in the context
+[2019-12-27 14:38:21] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 14:38:21] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 14:38:21] [DEBUG] Attempt 1 to execute request
+[2019-12-27 14:38:21] [DEBUG] Sending request: PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1
+[2019-12-27 14:38:21] [DEBUG]  >> "PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.43.6[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  >> "Content-Length: 0[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG] >> PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1
+[2019-12-27 14:38:21] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 14:38:21] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 14:38:21] [DEBUG] >> DiscoveryIdentity-Id: 192.168.43.6
+[2019-12-27 14:38:21] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 14:38:21] [DEBUG] >> Content-Length: 0
+[2019-12-27 14:38:21] [DEBUG] >> Host: localhost:8761
+[2019-12-27 14:38:21] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 14:38:21] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2019-12-27 14:38:21] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  << "Content-Type: application/xml[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  << "Content-Length: 0[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  << "Date: Fri, 27 Dec 2019 20:38:21 GMT[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  << "[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 14:38:21] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 14:38:21] [DEBUG] << Content-Type: application/xml
+[2019-12-27 14:38:21] [DEBUG] << Content-Length: 0
+[2019-12-27 14:38:21] [DEBUG] << Date: Fri, 27 Dec 2019 20:38:21 GMT
+[2019-12-27 14:38:21] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 14:38:21] [DEBUG] Released connection is reusable.
+[2019-12-27 14:38:21] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:38:21] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 14:38:21] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:38:21] [DEBUG] Jersey HTTP PUT http://localhost:8761/eureka//apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001; statusCode=200
+[2019-12-27 14:38:21] [DEBUG] DiscoveryClient_AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001 - Heartbeat status: 200
+[2019-12-27 14:38:21] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:38:21] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:38:21] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:38:21] [DEBUG] Stale connection check
+[2019-12-27 14:38:21] [DEBUG] CookieSpec selected: default
+[2019-12-27 14:38:21] [DEBUG] Auth cache not set in the context
+[2019-12-27 14:38:21] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 14:38:21] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 14:38:21] [DEBUG] Attempt 1 to execute request
+[2019-12-27 14:38:21] [DEBUG] Sending request: GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 14:38:21] [DEBUG]  >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  >> "Accept: application/json[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.43.6[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG] >> GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 14:38:21] [DEBUG] >> Accept: application/json
+[2019-12-27 14:38:21] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 14:38:21] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 14:38:21] [DEBUG] >> DiscoveryIdentity-Id: 192.168.43.6
+[2019-12-27 14:38:21] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 14:38:21] [DEBUG] >> Host: localhost:8761
+[2019-12-27 14:38:21] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 14:38:21] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2019-12-27 14:38:21] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  << "Content-Encoding: gzip[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  << "Content-Type: application/json[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  << "Content-Length: 86[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  << "Date: Fri, 27 Dec 2019 20:38:21 GMT[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG]  << "[\r][\n]"
+[2019-12-27 14:38:21] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 14:38:21] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 14:38:21] [DEBUG] << Content-Encoding: gzip
+[2019-12-27 14:38:21] [DEBUG] << Content-Type: application/json
+[2019-12-27 14:38:21] [DEBUG] << Content-Length: 86
+[2019-12-27 14:38:21] [DEBUG] << Date: Fri, 27 Dec 2019 20:38:21 GMT
+[2019-12-27 14:38:21] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 14:38:21] [DEBUG]  << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0xab]VJ,([0xc8][0xc9]LN,[0xc9][0xcc][0xcf]+V[0xb2][0xaa]V*K-*[0x6][0xb1][0xe3][0xe3]SRsJ[0x12][0x95][0xac][0x94],[\r][0x95]t@[0xca][0x80]B[0x19][0x89][0xc5][0x19][0xc9][0xf9])[0xa9]@[0xd1][0xd0][0x80]x[0xd3]x[0x88][0x4]L[0xbf][0x92]Utlm-[0x0][0x93][0x9][0x8f][0xdb]S[0x0][0x0][0x0]"
+[2019-12-27 14:38:21] [DEBUG] Released connection is reusable.
+[2019-12-27 14:38:21] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:38:21] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 14:38:21] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:38:21] [DEBUG] clearing global-level cache with size 0
+[2019-12-27 14:38:21] [DEBUG] clearing app-level serialization cache with size 0
+[2019-12-27 14:38:21] [DEBUG] Jersey HTTP GET http://localhost:8761/eureka//apps/delta?; statusCode=200
+[2019-12-27 14:38:21] [DEBUG] Got delta update with apps hashcode UP_5_
+[2019-12-27 14:38:21] [DEBUG] The total number of instances fetched by the delta processor : 0
+[2019-12-27 14:38:21] [DEBUG] The total number of all instances in the client now is 5
+[2019-12-27 14:38:21] [DEBUG] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_5_, is fetching remote regions? false 
+[2019-12-27 14:38:48] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2019-12-27 14:38:50] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:38:50] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:38:51] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:38:51] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:38:51] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:38:51] [DEBUG] Stale connection check
+[2019-12-27 14:38:51] [DEBUG] CookieSpec selected: default
+[2019-12-27 14:38:51] [DEBUG] Auth cache not set in the context
+[2019-12-27 14:38:51] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 14:38:51] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 14:38:51] [DEBUG] Attempt 1 to execute request
+[2019-12-27 14:38:51] [DEBUG] Sending request: PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1
+[2019-12-27 14:38:51] [DEBUG]  >> "PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.43.6[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  >> "Content-Length: 0[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG] >> PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1
+[2019-12-27 14:38:51] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 14:38:51] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 14:38:51] [DEBUG] >> DiscoveryIdentity-Id: 192.168.43.6
+[2019-12-27 14:38:51] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 14:38:51] [DEBUG] >> Content-Length: 0
+[2019-12-27 14:38:51] [DEBUG] >> Host: localhost:8761
+[2019-12-27 14:38:51] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 14:38:51] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2019-12-27 14:38:51] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  << "Content-Type: application/xml[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  << "Content-Length: 0[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  << "Date: Fri, 27 Dec 2019 20:38:51 GMT[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  << "[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 14:38:51] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 14:38:51] [DEBUG] << Content-Type: application/xml
+[2019-12-27 14:38:51] [DEBUG] << Content-Length: 0
+[2019-12-27 14:38:51] [DEBUG] << Date: Fri, 27 Dec 2019 20:38:51 GMT
+[2019-12-27 14:38:51] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 14:38:51] [DEBUG] Released connection is reusable.
+[2019-12-27 14:38:51] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:38:51] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 14:38:51] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:38:51] [DEBUG] Jersey HTTP PUT http://localhost:8761/eureka//apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001; statusCode=200
+[2019-12-27 14:38:51] [DEBUG] DiscoveryClient_AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001 - Heartbeat status: 200
+[2019-12-27 14:38:51] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:38:51] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:38:51] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:38:51] [DEBUG] Stale connection check
+[2019-12-27 14:38:51] [DEBUG] CookieSpec selected: default
+[2019-12-27 14:38:51] [DEBUG] Auth cache not set in the context
+[2019-12-27 14:38:51] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 14:38:51] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 14:38:51] [DEBUG] Attempt 1 to execute request
+[2019-12-27 14:38:51] [DEBUG] Sending request: GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 14:38:51] [DEBUG]  >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  >> "Accept: application/json[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.43.6[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG] >> GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 14:38:51] [DEBUG] >> Accept: application/json
+[2019-12-27 14:38:51] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 14:38:51] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 14:38:51] [DEBUG] >> DiscoveryIdentity-Id: 192.168.43.6
+[2019-12-27 14:38:51] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 14:38:51] [DEBUG] >> Host: localhost:8761
+[2019-12-27 14:38:51] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 14:38:51] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2019-12-27 14:38:51] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  << "Content-Encoding: gzip[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  << "Content-Type: application/json[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  << "Content-Length: 86[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  << "Date: Fri, 27 Dec 2019 20:38:51 GMT[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG]  << "[\r][\n]"
+[2019-12-27 14:38:51] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 14:38:51] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 14:38:51] [DEBUG] << Content-Encoding: gzip
+[2019-12-27 14:38:51] [DEBUG] << Content-Type: application/json
+[2019-12-27 14:38:51] [DEBUG] << Content-Length: 86
+[2019-12-27 14:38:51] [DEBUG] << Date: Fri, 27 Dec 2019 20:38:51 GMT
+[2019-12-27 14:38:51] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 14:38:51] [DEBUG]  << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0xab]VJ,([0xc8][0xc9]LN,[0xc9][0xcc][0xcf]+V[0xb2][0xaa]V*K-*[0x6][0xb1][0xe3][0xe3]SRsJ[0x12][0x95][0xac][0x94],[\r][0x95]t@[0xca][0x80]B[0x19][0x89][0xc5][0x19][0xc9][0xf9])[0xa9]@[0xd1][0xd0][0x80]x[0xd3]x[0x88][0x4]L[0xbf][0x92]Utlm-[0x0][0x93][0x9][0x8f][0xdb]S[0x0][0x0][0x0]"
+[2019-12-27 14:38:51] [DEBUG] Released connection is reusable.
+[2019-12-27 14:38:51] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:38:51] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 14:38:51] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:38:51] [DEBUG] clearing global-level cache with size 0
+[2019-12-27 14:38:51] [DEBUG] clearing app-level serialization cache with size 0
+[2019-12-27 14:38:51] [DEBUG] Jersey HTTP GET http://localhost:8761/eureka//apps/delta?; statusCode=200
+[2019-12-27 14:38:51] [DEBUG] Got delta update with apps hashcode UP_5_
+[2019-12-27 14:38:51] [DEBUG] The total number of instances fetched by the delta processor : 0
+[2019-12-27 14:38:51] [DEBUG] The total number of all instances in the client now is 5
+[2019-12-27 14:38:51] [DEBUG] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_5_, is fetching remote regions? false 
+[2019-12-27 14:39:18] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2019-12-27 14:39:20] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:39:20] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:39:20] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 14:39:20] [DEBUG] The availability zone for the given region us-east-1 are [defaultZone]
+[2019-12-27 14:39:20] [DEBUG] Config resolved to [AwsEndpoint{ serviceUrl='http://localhost:8761/eureka/', region='us-east-1', zone='defaultZone'}]
+[2019-12-27 14:39:20] [DEBUG] Local zone=defaultZone; resolved to: [AwsEndpoint{ serviceUrl='http://localhost:8761/eureka/', region='us-east-1', zone='defaultZone'}]
+[2019-12-27 14:39:20] [DEBUG] Resolved to [AwsEndpoint{ serviceUrl='http://localhost:8761/eureka/', region='us-east-1', zone='defaultZone'}]
+[2019-12-27 14:39:21] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:39:21] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:39:21] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:39:21] [DEBUG] Stale connection check
+[2019-12-27 14:39:21] [DEBUG] CookieSpec selected: default
+[2019-12-27 14:39:21] [DEBUG] Auth cache not set in the context
+[2019-12-27 14:39:21] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 14:39:21] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 14:39:21] [DEBUG] Attempt 1 to execute request
+[2019-12-27 14:39:21] [DEBUG] Sending request: PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1
+[2019-12-27 14:39:21] [DEBUG]  >> "PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.43.6[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  >> "Content-Length: 0[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG] >> PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1
+[2019-12-27 14:39:21] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 14:39:21] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 14:39:21] [DEBUG] >> DiscoveryIdentity-Id: 192.168.43.6
+[2019-12-27 14:39:21] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 14:39:21] [DEBUG] >> Content-Length: 0
+[2019-12-27 14:39:21] [DEBUG] >> Host: localhost:8761
+[2019-12-27 14:39:21] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 14:39:21] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2019-12-27 14:39:21] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  << "Content-Type: application/xml[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  << "Content-Length: 0[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  << "Date: Fri, 27 Dec 2019 20:39:21 GMT[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  << "[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 14:39:21] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 14:39:21] [DEBUG] << Content-Type: application/xml
+[2019-12-27 14:39:21] [DEBUG] << Content-Length: 0
+[2019-12-27 14:39:21] [DEBUG] << Date: Fri, 27 Dec 2019 20:39:21 GMT
+[2019-12-27 14:39:21] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 14:39:21] [DEBUG] Released connection is reusable.
+[2019-12-27 14:39:21] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:39:21] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 14:39:21] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:39:21] [DEBUG] Jersey HTTP PUT http://localhost:8761/eureka//apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001; statusCode=200
+[2019-12-27 14:39:21] [DEBUG] DiscoveryClient_AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001 - Heartbeat status: 200
+[2019-12-27 14:39:21] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:39:21] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:39:21] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:39:21] [DEBUG] Stale connection check
+[2019-12-27 14:39:21] [DEBUG] CookieSpec selected: default
+[2019-12-27 14:39:21] [DEBUG] Auth cache not set in the context
+[2019-12-27 14:39:21] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 14:39:21] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 14:39:21] [DEBUG] Attempt 1 to execute request
+[2019-12-27 14:39:21] [DEBUG] Sending request: GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 14:39:21] [DEBUG]  >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  >> "Accept: application/json[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.43.6[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG] >> GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 14:39:21] [DEBUG] >> Accept: application/json
+[2019-12-27 14:39:21] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 14:39:21] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 14:39:21] [DEBUG] >> DiscoveryIdentity-Id: 192.168.43.6
+[2019-12-27 14:39:21] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 14:39:21] [DEBUG] >> Host: localhost:8761
+[2019-12-27 14:39:21] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 14:39:21] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2019-12-27 14:39:21] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  << "Content-Encoding: gzip[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  << "Content-Type: application/json[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  << "Content-Length: 86[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  << "Date: Fri, 27 Dec 2019 20:39:21 GMT[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG]  << "[\r][\n]"
+[2019-12-27 14:39:21] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 14:39:21] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 14:39:21] [DEBUG] << Content-Encoding: gzip
+[2019-12-27 14:39:21] [DEBUG] << Content-Type: application/json
+[2019-12-27 14:39:21] [DEBUG] << Content-Length: 86
+[2019-12-27 14:39:21] [DEBUG] << Date: Fri, 27 Dec 2019 20:39:21 GMT
+[2019-12-27 14:39:21] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 14:39:21] [DEBUG]  << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0xab]VJ,([0xc8][0xc9]LN,[0xc9][0xcc][0xcf]+V[0xb2][0xaa]V*K-*[0x6][0xb1][0xe3][0xe3]SRsJ[0x12][0x95][0xac][0x94],[0x8d][0x94]t@[0xca][0x80]B[0x19][0x89][0xc5][0x19][0xc9][0xf9])[0xa9]@[0xd1][0xd0][0x80]x[0xd3]x[0x88][0x4]L[0xbf][0x92]Utlm-[0x0]&[0xa5][0xd5][S[0x0][0x0][0x0]"
+[2019-12-27 14:39:21] [DEBUG] Released connection is reusable.
+[2019-12-27 14:39:21] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:39:21] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 14:39:21] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:39:21] [DEBUG] clearing global-level cache with size 0
+[2019-12-27 14:39:21] [DEBUG] clearing app-level serialization cache with size 0
+[2019-12-27 14:39:21] [DEBUG] Jersey HTTP GET http://localhost:8761/eureka//apps/delta?; statusCode=200
+[2019-12-27 14:39:21] [DEBUG] Got delta update with apps hashcode UP_5_
+[2019-12-27 14:39:21] [DEBUG] The total number of instances fetched by the delta processor : 0
+[2019-12-27 14:39:21] [DEBUG] The total number of all instances in the client now is 5
+[2019-12-27 14:39:21] [DEBUG] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_5_, is fetching remote regions? false 
+[2019-12-27 14:39:48] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2019-12-27 14:39:50] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:39:50] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:39:51] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:39:51] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:39:51] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:39:51] [DEBUG] Stale connection check
+[2019-12-27 14:39:51] [DEBUG] CookieSpec selected: default
+[2019-12-27 14:39:51] [DEBUG] Auth cache not set in the context
+[2019-12-27 14:39:51] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 14:39:51] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 14:39:51] [DEBUG] Attempt 1 to execute request
+[2019-12-27 14:39:51] [DEBUG] Sending request: PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1
+[2019-12-27 14:39:51] [DEBUG]  >> "PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.43.6[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  >> "Content-Length: 0[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG] >> PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1
+[2019-12-27 14:39:51] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 14:39:51] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 14:39:51] [DEBUG] >> DiscoveryIdentity-Id: 192.168.43.6
+[2019-12-27 14:39:51] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 14:39:51] [DEBUG] >> Content-Length: 0
+[2019-12-27 14:39:51] [DEBUG] >> Host: localhost:8761
+[2019-12-27 14:39:51] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 14:39:51] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2019-12-27 14:39:51] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  << "Content-Type: application/xml[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  << "Content-Length: 0[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  << "Date: Fri, 27 Dec 2019 20:39:51 GMT[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  << "[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 14:39:51] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 14:39:51] [DEBUG] << Content-Type: application/xml
+[2019-12-27 14:39:51] [DEBUG] << Content-Length: 0
+[2019-12-27 14:39:51] [DEBUG] << Date: Fri, 27 Dec 2019 20:39:51 GMT
+[2019-12-27 14:39:51] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 14:39:51] [DEBUG] Released connection is reusable.
+[2019-12-27 14:39:51] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:39:51] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 14:39:51] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:39:51] [DEBUG] Jersey HTTP PUT http://localhost:8761/eureka//apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001; statusCode=200
+[2019-12-27 14:39:51] [DEBUG] DiscoveryClient_AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001 - Heartbeat status: 200
+[2019-12-27 14:39:51] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:39:51] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:39:51] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:39:51] [DEBUG] Stale connection check
+[2019-12-27 14:39:51] [DEBUG] CookieSpec selected: default
+[2019-12-27 14:39:51] [DEBUG] Auth cache not set in the context
+[2019-12-27 14:39:51] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 14:39:51] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 14:39:51] [DEBUG] Attempt 1 to execute request
+[2019-12-27 14:39:51] [DEBUG] Sending request: GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 14:39:51] [DEBUG]  >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  >> "Accept: application/json[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.43.6[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG] >> GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 14:39:51] [DEBUG] >> Accept: application/json
+[2019-12-27 14:39:51] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 14:39:51] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 14:39:51] [DEBUG] >> DiscoveryIdentity-Id: 192.168.43.6
+[2019-12-27 14:39:51] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 14:39:51] [DEBUG] >> Host: localhost:8761
+[2019-12-27 14:39:51] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 14:39:51] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2019-12-27 14:39:51] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  << "Content-Encoding: gzip[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  << "Content-Type: application/json[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  << "Content-Length: 551[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  << "Date: Fri, 27 Dec 2019 20:39:51 GMT[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG]  << "[\r][\n]"
+[2019-12-27 14:39:51] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 14:39:51] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 14:39:51] [DEBUG] << Content-Encoding: gzip
+[2019-12-27 14:39:51] [DEBUG] << Content-Type: application/json
+[2019-12-27 14:39:51] [DEBUG] << Content-Length: 551
+[2019-12-27 14:39:51] [DEBUG] << Date: Fri, 27 Dec 2019 20:39:51 GMT
+[2019-12-27 14:39:51] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 14:39:51] [DEBUG]  << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0x95]S][0x8f][0x9a]@[0x14][0xfd]/[0x93]}T[0xc4][0x5]V[0xe0]i[0xad][0xf8]`lY[0xbb]j[0xfb][0xd0]4fv[0xb8][0xca]da 3[0x83][c[0xfc][0xef]{[0x87])[0xb6]j[0x9b][0xb4][0xf1][0x1]9[0xf7][0xdc][0xaf]s[0xf]GB[0xeb][0xba][0xe0][0x8c]j^[0x9]E[0xe2]#[0xd9][0x83]T[0xe6][0xff]f[0x93]A[0xa1])[0x89]I[0xe4][0x91][0x9e][0xa1]![0x94]S[0x95][0xb3]*[0x3]D[0xd7][0x8b][0x8d][0xbf][0xb1][0x81].[0x9f][0xc4][0xdf][0x8e]D[0xd0][0xd2][0x84][0xc7][0x8b]Y[0xff][0xc3]8[0x9d]#[0x83][0xb][0xa5][0xa9]`[0xd0][0x86][0xbb][0x97]Y[0x86][0xa4]d[0xba][0x9c][0xaf][0x9e][0x16][0xfd][0xe8]9[0xf5]?GALk[0xde][0xa1][0xe2]5[0xe]][0xd7][0xc7][0xcc][0xbc]R:[0xb5][0xf5][0xae][0xa8][0xb6][0xf1]U[0x9f]z[0x9c]e[0x12][0xb1]at[0xef][0xc][0x1f]B[0xc7][0xf7][0x9c][0x7][0xc4][0xb1][0xa1]nT;2[0xbe]U[0xb8][0xa0][0xe4]Y[0x6]by[0xc6][0xd3]y[0xfa][0xf4]5[0xc5]`]ImD[0xb8]#[0xed][0x8]=[0xf2][0x8][0x82][0xbe][0x14]`[0x86][0xd5][0xb2][0x1]r[0xc2]r[0xc0][0x1a][0x9][0x8b]_L[0xdf][0xf7].[0x88][Z[0xa8][0x96][0xc9][0xaa]Fhy0[0xab][0xe]{$[0xa3][0x9a]N@h[0x90]3[0xb1][0xad]L[0xee]#+[0xa8]2[0x3][0xb0][0xaa]t[0x4][0xe8]m[0xc1]8[0xb8][0x16][0xc7][0xb8]3[0xeb][0x84][0xc2][0x97][0xbb][0x4][0xb6][0xb4])trY[0xa2][0xd7][0x89][0xfd][0xe9][0xf0][0xf4]&L[0xc7][0x2][0xa8][0x82][0xae][0xbc][0x4][0x1]o[0xb4][0x98][0x19][0xfe][0xde]<[0x97][0xc0][0xb0][0x9b][0xe7][0xe2],[0x8d]l/[0xd6]a[0x11]b[0x12]v\i[0x8b][0xaf]x[0x9][0xd8][0xbe]D[0x85][0x87][0xc1]h[0xe4][0x8f][0xc2] [0xc][0xfd][0x8][0xb7][0xc0][0x89][0xf5][0xb3]-|C[0x8a]\/[0xc]\[0x14][0x3][0xf6][0x9c][0xfd][0xb1]L4[0xf4][0xc3][0xc0][0xb][0x8d][0x88][0x12]9[0xb0][0xae]o(#/[0x18][0x5][0xf7]..S[0x82][0xa6]F4[0xb3]KI[0x5][0xdd]A[0x89][0xbb];[0xf6]F[0xa4][0xb5][0xc8][0xc9]x[0xa4][0x84][0x5][0xc6][0xd6][0xb2]@4[0xd7][0xba][0x8e][0x7][0x83]kc[0x19][0xf2][0xe0]l[0x85][0xa3]S[0xa6][0x1b][0xaa]+9[0xe0]V[0xeb][0x1c]h[0xa1][0xf3]I[0xe][0xec][0xf5]?[0x92]m[0x16][0xa6][0xef][0xad]=[0xa1]=xgt[0xd2][0xd9][0xe9][0xcb]_[0xa2]\M[0xaa]Jf\[0xe0]Y[0xc4].[0xe1][0x8a][0x19][0xff][0x1e][0x96]([0x1f][0xc8][0xb3][0xd7][0xec]Y[0xd6]5[0xaa][0x5][0xd9]o[0x8a][0x92][0xb][0xd5][0xd2][0x12].[0xf5][0xe1][0x96][0x84][0x17][0x1e]E~d>,{[0xbb]Cm[0xbf][0xbb][0x8f][0xd3][0xd5]4![0xa7][0xef][0xf8];[0xbd][0x3][0xa0]'k[0xb2]/[0x4][0x0][0x0]"
+[2019-12-27 14:39:51] [DEBUG] Released connection is reusable.
+[2019-12-27 14:39:51] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:39:51] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 14:39:51] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:39:51] [DEBUG] clearing global-level cache with size 1
+[2019-12-27 14:39:51] [DEBUG] clearing app-level serialization cache with size 9
+[2019-12-27 14:39:51] [DEBUG] Jersey HTTP GET http://localhost:8761/eureka//apps/delta?; statusCode=200
+[2019-12-27 14:39:51] [DEBUG] Got delta update with apps hashcode UP_4_
+[2019-12-27 14:39:51] [DEBUG] Deleted instance DESKTOP-9RN4Q95:api-bank:8004 to the existing apps 
+[2019-12-27 14:39:51] [DEBUG] The total number of instances fetched by the delta processor : 1
+[2019-12-27 14:39:51] [DEBUG] The total number of all instances in the client now is 4
+[2019-12-27 14:39:51] [DEBUG] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_4_, is fetching remote regions? false 
+[2019-12-27 14:40:18] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2019-12-27 14:40:20] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:40:20] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:40:21] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:40:21] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:40:21] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:40:21] [DEBUG] Stale connection check
+[2019-12-27 14:40:21] [DEBUG] CookieSpec selected: default
+[2019-12-27 14:40:21] [DEBUG] Auth cache not set in the context
+[2019-12-27 14:40:21] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 14:40:21] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 14:40:21] [DEBUG] Attempt 1 to execute request
+[2019-12-27 14:40:21] [DEBUG] Sending request: PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1
+[2019-12-27 14:40:21] [DEBUG]  >> "PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.43.6[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  >> "Content-Length: 0[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG] >> PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1
+[2019-12-27 14:40:21] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 14:40:21] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 14:40:21] [DEBUG] >> DiscoveryIdentity-Id: 192.168.43.6
+[2019-12-27 14:40:21] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 14:40:21] [DEBUG] >> Content-Length: 0
+[2019-12-27 14:40:21] [DEBUG] >> Host: localhost:8761
+[2019-12-27 14:40:21] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 14:40:21] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2019-12-27 14:40:21] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  << "Content-Type: application/xml[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  << "Content-Length: 0[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  << "Date: Fri, 27 Dec 2019 20:40:21 GMT[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  << "[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 14:40:21] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 14:40:21] [DEBUG] << Content-Type: application/xml
+[2019-12-27 14:40:21] [DEBUG] << Content-Length: 0
+[2019-12-27 14:40:21] [DEBUG] << Date: Fri, 27 Dec 2019 20:40:21 GMT
+[2019-12-27 14:40:21] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 14:40:21] [DEBUG] Released connection is reusable.
+[2019-12-27 14:40:21] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:40:21] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 14:40:21] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:40:21] [DEBUG] Jersey HTTP PUT http://localhost:8761/eureka//apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001; statusCode=200
+[2019-12-27 14:40:21] [DEBUG] DiscoveryClient_AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001 - Heartbeat status: 200
+[2019-12-27 14:40:21] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:40:21] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:40:21] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:40:21] [DEBUG] Stale connection check
+[2019-12-27 14:40:21] [DEBUG] CookieSpec selected: default
+[2019-12-27 14:40:21] [DEBUG] Auth cache not set in the context
+[2019-12-27 14:40:21] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 14:40:21] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 14:40:21] [DEBUG] Attempt 1 to execute request
+[2019-12-27 14:40:21] [DEBUG] Sending request: GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 14:40:21] [DEBUG]  >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  >> "Accept: application/json[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.43.6[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG] >> GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 14:40:21] [DEBUG] >> Accept: application/json
+[2019-12-27 14:40:21] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 14:40:21] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 14:40:21] [DEBUG] >> DiscoveryIdentity-Id: 192.168.43.6
+[2019-12-27 14:40:21] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 14:40:21] [DEBUG] >> Host: localhost:8761
+[2019-12-27 14:40:21] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 14:40:21] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2019-12-27 14:40:21] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  << "Content-Encoding: gzip[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  << "Content-Type: application/json[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  << "Content-Length: 551[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  << "Date: Fri, 27 Dec 2019 20:40:21 GMT[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG]  << "[\r][\n]"
+[2019-12-27 14:40:21] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 14:40:21] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 14:40:21] [DEBUG] << Content-Encoding: gzip
+[2019-12-27 14:40:21] [DEBUG] << Content-Type: application/json
+[2019-12-27 14:40:21] [DEBUG] << Content-Length: 551
+[2019-12-27 14:40:21] [DEBUG] << Date: Fri, 27 Dec 2019 20:40:21 GMT
+[2019-12-27 14:40:21] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 14:40:21] [DEBUG]  << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0x95]S][0x8f][0x9a]@[0x14][0xfd]/[0x93]}T[0xc4][0x5]V[0xe0]i[0xad][0xf8]`lY[0xbb]j[0xfb][0xd0]4fv[0xb8][0xca]da 3[0x83][c[0xfc][0xef]{[0x87])[0xb6]j[0x9b][0xb4][0xf1][0x1]9[0xf7][0xdc][0xaf]s[0xf]GB[0xeb][0xba][0xe0][0x8c]j^[0x9]E[0xe2]#[0xd9][0x83]T[0xe6][0xff]f[0x93]A[0xa1])[0x89]I[0xe4][0x91][0x9e][0xa1]![0x94]S[0x95][0xb3]*[0x3]D[0xd7][0x8b][0x8d][0xbf][0xb1][0x81].[0x9f][0xc4][0xdf][0x8e]D[0xd0][0xd2][0x84][0xc7][0x8b]Y[0xff][0xc3]8[0x9d]#[0x83][0xb][0xa5][0xa9]`[0xd0][0x86][0xbb][0x97]Y[0x86][0xa4]d[0xba][0x9c][0xaf][0x9e][0x16][0xfd][0xe8]9[0xf5]?GALk[0xde][0xa1][0xe2]5[0xe]][0xd7][0xc7][0xcc][0xbc]R:[0xb5][0xf5][0xae][0xa8][0xb6][0xf1]U[0x9f]z[0x9c]e[0x12][0xb1]at[0xef][0xc][0x1f]B[0xc7][0xf7][0x9c][0x7][0xc4][0xb1][0xa1]nT;2[0xbe]U[0xb8][0xa0][0xe4]Y[0x6]by[0xc6][0xd3]y[0xfa][0xf4]5[0xc5]`]ImD[0xb8]#[0xed][0x8]=[0xf2][0x8][0x82][0xbe][0x14]`[0x86][0xd5][0xb2][0x1]r[0xc2]r[0xc0][0x1a][0x9][0x8b]_L[0xdf][0xf7].[0x88][Z[0xa8][0x96][0xc9][0xaa]Fhy0[0xab][0xe]{$[0xa3][0x9a]N@h[0x90]3[0xb1][0xad]L[0xee]#+[0xa8]2[0x3][0xb0][0xaa]t[0x4][0xe8]m[0xc1]8[0xb8][0x16][0xc7][0xb8]3[0xeb][0x84][0xc2][0x97][0xbb][0x4][0xb6][0xb4])trY[0xa2][0xd7][0x89][0xfd][0xe9][0xf0][0xf4]&L[0xc7][0x2][0xa8][0x82][0xae][0xbc][0x4][0x1]o[0xb4][0x98][0x19][0xfe][0xde]<[0x97][0xc0][0xb0][0x9b][0xe7][0xe2],[0x8d]l/[0xd6]a[0x11]b[0x12]v\i[0x8b][0xaf]x[0x9][0xd8][0xbe]D[0x85][0x87][0xc1]h[0xe4][0x8f][0xc2] [0xc][0xfd][0x8][0xb7][0xc0][0x89][0xf5][0xb3]-|C[0x8a]\/[0xc]\[0x14][0x3][0xf6][0x9c][0xfd][0xb1]L4[0xf4][0xc3][0xc0][0xb][0x8d][0x88][0x12]9[0xb0][0xae]o(#/[0x18][0x5][0xf7]..S[0x82][0xa6]F4[0xb3]KI[0x5][0xdd]A[0x89][0xbb];[0xf6]F[0xa4][0xb5][0xc8][0xc9]x[0xa4][0x84][0x5][0xc6][0xd6][0xb2]@4[0xd7][0xba][0x8e][0x7][0x83]kc[0x19][0xf2][0xe0]l[0x85][0xa3]S[0xa6][0x1b][0xaa]+9[0xe0]V[0xeb][0x1c]h[0xa1][0xf3]I[0xe][0xec][0xf5]?[0x92]m[0x16][0xa6][0xef][0xad]=[0xa1]=xgt[0xd2][0xd9][0xe9][0xcb]_[0xa2]\M[0xaa]Jf\[0xe0]Y[0xc4].[0xe1][0x8a][0x19][0xff][0x1e][0x96]([0x1f][0xc8][0xb3][0xd7][0xec]Y[0xd6]5[0xaa][0x5][0xd9]o[0x8a][0x92][0xb][0xd5][0xd2][0x12].[0xf5][0xe1][0x96][0x84][0x17][0x1e]E~d>,{[0xbb]Cm[0xbf][0xbb][0x8f][0xd3][0xd5]4![0xa7][0xef][0xf8];[0xbd][0x3][0xa0]'k[0xb2]/[0x4][0x0][0x0]"
+[2019-12-27 14:40:21] [DEBUG] Released connection is reusable.
+[2019-12-27 14:40:21] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:40:21] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 14:40:21] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:40:21] [DEBUG] clearing global-level cache with size 1
+[2019-12-27 14:40:21] [DEBUG] clearing app-level serialization cache with size 9
+[2019-12-27 14:40:21] [DEBUG] Jersey HTTP GET http://localhost:8761/eureka//apps/delta?; statusCode=200
+[2019-12-27 14:40:21] [DEBUG] Got delta update with apps hashcode UP_4_
+[2019-12-27 14:40:21] [DEBUG] The total number of instances fetched by the delta processor : 1
+[2019-12-27 14:40:21] [DEBUG] The total number of all instances in the client now is 4
+[2019-12-27 14:40:21] [DEBUG] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_4_, is fetching remote regions? false 
+[2019-12-27 14:40:48] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2019-12-27 14:40:50] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:40:50] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:40:51] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:40:51] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:40:51] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:40:51] [DEBUG] Stale connection check
+[2019-12-27 14:40:51] [DEBUG] CookieSpec selected: default
+[2019-12-27 14:40:51] [DEBUG] Auth cache not set in the context
+[2019-12-27 14:40:51] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 14:40:51] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 14:40:51] [DEBUG] Attempt 1 to execute request
+[2019-12-27 14:40:51] [DEBUG] Sending request: PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1
+[2019-12-27 14:40:51] [DEBUG]  >> "PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.43.6[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  >> "Content-Length: 0[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG] >> PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1
+[2019-12-27 14:40:51] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 14:40:51] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 14:40:51] [DEBUG] >> DiscoveryIdentity-Id: 192.168.43.6
+[2019-12-27 14:40:51] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 14:40:51] [DEBUG] >> Content-Length: 0
+[2019-12-27 14:40:51] [DEBUG] >> Host: localhost:8761
+[2019-12-27 14:40:51] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 14:40:51] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2019-12-27 14:40:51] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  << "Content-Type: application/xml[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  << "Content-Length: 0[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  << "Date: Fri, 27 Dec 2019 20:40:51 GMT[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  << "[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 14:40:51] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 14:40:51] [DEBUG] << Content-Type: application/xml
+[2019-12-27 14:40:51] [DEBUG] << Content-Length: 0
+[2019-12-27 14:40:51] [DEBUG] << Date: Fri, 27 Dec 2019 20:40:51 GMT
+[2019-12-27 14:40:51] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 14:40:51] [DEBUG] Released connection is reusable.
+[2019-12-27 14:40:51] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:40:51] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 14:40:51] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:40:51] [DEBUG] Jersey HTTP PUT http://localhost:8761/eureka//apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001; statusCode=200
+[2019-12-27 14:40:51] [DEBUG] DiscoveryClient_AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001 - Heartbeat status: 200
+[2019-12-27 14:40:51] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:40:51] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:40:51] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:40:51] [DEBUG] Stale connection check
+[2019-12-27 14:40:51] [DEBUG] CookieSpec selected: default
+[2019-12-27 14:40:51] [DEBUG] Auth cache not set in the context
+[2019-12-27 14:40:51] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 14:40:51] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 14:40:51] [DEBUG] Attempt 1 to execute request
+[2019-12-27 14:40:51] [DEBUG] Sending request: GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 14:40:51] [DEBUG]  >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  >> "Accept: application/json[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.43.6[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG] >> GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 14:40:51] [DEBUG] >> Accept: application/json
+[2019-12-27 14:40:51] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 14:40:51] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 14:40:51] [DEBUG] >> DiscoveryIdentity-Id: 192.168.43.6
+[2019-12-27 14:40:51] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 14:40:51] [DEBUG] >> Host: localhost:8761
+[2019-12-27 14:40:51] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 14:40:51] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2019-12-27 14:40:51] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  << "Content-Encoding: gzip[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  << "Content-Type: application/json[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  << "Content-Length: 551[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  << "Date: Fri, 27 Dec 2019 20:40:51 GMT[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG]  << "[\r][\n]"
+[2019-12-27 14:40:51] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 14:40:51] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 14:40:51] [DEBUG] << Content-Encoding: gzip
+[2019-12-27 14:40:51] [DEBUG] << Content-Type: application/json
+[2019-12-27 14:40:51] [DEBUG] << Content-Length: 551
+[2019-12-27 14:40:51] [DEBUG] << Date: Fri, 27 Dec 2019 20:40:51 GMT
+[2019-12-27 14:40:51] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 14:40:51] [DEBUG]  << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0x95]S][0x8f][0x9a]@[0x14][0xfd]/[0x93]}T[0xc4][0x5]V[0xe0]i[0xad][0xf8]`lY[0xbb]j[0xfb][0xd0]4fv[0xb8][0xca]da 3[0x83][c[0xfc][0xef]{[0x87])[0xb6]j[0x9b][0xb4][0xf1][0x1]9[0xf7][0xdc][0xaf]s[0xf]GB[0xeb][0xba][0xe0][0x8c]j^[0x9]E[0xe2]#[0xd9][0x83]T[0xe6][0xff]f[0x93]A[0xa1])[0x89]I[0xe4][0x91][0x9e][0xa1]![0x94]S[0x95][0xb3]*[0x3]D[0xd7][0x8b][0x8d][0xbf][0xb1][0x81].[0x9f][0xc4][0xdf][0x8e]D[0xd0][0xd2][0x84][0xc7][0x8b]Y[0xff][0xc3]8[0x9d]#[0x83][0xb][0xa5][0xa9]`[0xd0][0x86][0xbb][0x97]Y[0x86][0xa4]d[0xba][0x9c][0xaf][0x9e][0x16][0xfd][0xe8]9[0xf5]?GALk[0xde][0xa1][0xe2]5[0xe]][0xd7][0xc7][0xcc][0xbc]R:[0xb5][0xf5][0xae][0xa8][0xb6][0xf1]U[0x9f]z[0x9c]e[0x12][0xb1]at[0xef][0xc][0x1f]B[0xc7][0xf7][0x9c][0x7][0xc4][0xb1][0xa1]nT;2[0xbe]U[0xb8][0xa0][0xe4]Y[0x6]by[0xc6][0xd3]y[0xfa][0xf4]5[0xc5]`]ImD[0xb8]#[0xed][0x8]=[0xf2][0x8][0x82][0xbe][0x14]`[0x86][0xd5][0xb2][0x1]r[0xc2]r[0xc0][0x1a][0x9][0x8b]_L[0xdf][0xf7].[0x88][Z[0xa8][0x96][0xc9][0xaa]Fhy0[0xab][0xe]{$[0xa3][0x9a]N@h[0x90]3[0xb1][0xad]L[0xee]#+[0xa8]2[0x3][0xb0][0xaa]t[0x4][0xe8]m[0xc1]8[0xb8][0x16][0xc7][0xb8]3[0xeb][0x84][0xc2][0x97][0xbb][0x4][0xb6][0xb4])trY[0xa2][0xd7][0x89][0xfd][0xe9][0xf0][0xf4]&L[0xc7][0x2][0xa8][0x82][0xae][0xbc][0x4][0x1]o[0xb4][0x98][0x19][0xfe][0xde]<[0x97][0xc0][0xb0][0x9b][0xe7][0xe2],[0x8d]l/[0xd6]a[0x11]b[0x12]v\i[0x8b][0xaf]x[0x9][0xd8][0xbe]D[0x85][0x87][0xc1]h[0xe4][0x8f][0xc2] [0xc][0xfd][0x8][0xb7][0xc0][0x89][0xf5][0xb3]-|C[0x8a]\/[0xc]\[0x14][0x3][0xf6][0x9c][0xfd][0xb1]L4[0xf4][0xc3][0xc0][0xb][0x8d][0x88][0x12]9[0xb0][0xae]o(#/[0x18][0x5][0xf7]..S[0x82][0xa6]F4[0xb3]KI[0x5][0xdd]A[0x89][0xbb];[0xf6]F[0xa4][0xb5][0xc8][0xc9]x[0xa4][0x84][0x5][0xc6][0xd6][0xb2]@4[0xd7][0xba][0x8e][0x7][0x83]kc[0x19][0xf2][0xe0]l[0x85][0xa3]S[0xa6][0x1b][0xaa]+9[0xe0]V[0xeb][0x1c]h[0xa1][0xf3]I[0xe][0xec][0xf5]?[0x92]m[0x16][0xa6][0xef][0xad]=[0xa1]=xgt[0xd2][0xd9][0xe9][0xcb]_[0xa2]\M[0xaa]Jf\[0xe0]Y[0xc4].[0xe1][0x8a][0x19][0xff][0x1e][0x96]([0x1f][0xc8][0xb3][0xd7][0xec]Y[0xd6]5[0xaa][0x5][0xd9]o[0x8a][0x92][0xb][0xd5][0xd2][0x12].[0xf5][0xe1][0x96][0x84][0x17][0x1e]E~d>,{[0xbb]Cm[0xbf][0xbb][0x8f][0xd3][0xd5]4![0xa7][0xef][0xf8];[0xbd][0x3][0xa0]'k[0xb2]/[0x4][0x0][0x0]"
+[2019-12-27 14:40:51] [DEBUG] Released connection is reusable.
+[2019-12-27 14:40:51] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:40:51] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 14:40:51] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:40:51] [DEBUG] clearing global-level cache with size 1
+[2019-12-27 14:40:51] [DEBUG] clearing app-level serialization cache with size 9
+[2019-12-27 14:40:51] [DEBUG] Jersey HTTP GET http://localhost:8761/eureka//apps/delta?; statusCode=200
+[2019-12-27 14:40:51] [DEBUG] Got delta update with apps hashcode UP_4_
+[2019-12-27 14:40:51] [DEBUG] The total number of instances fetched by the delta processor : 1
+[2019-12-27 14:40:51] [DEBUG] The total number of all instances in the client now is 4
+[2019-12-27 14:40:51] [DEBUG] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_4_, is fetching remote regions? false 
+[2019-12-27 14:41:18] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2019-12-27 14:41:20] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:41:20] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:41:21] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:41:21] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:41:21] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:41:21] [DEBUG] Stale connection check
+[2019-12-27 14:41:21] [DEBUG] CookieSpec selected: default
+[2019-12-27 14:41:21] [DEBUG] Auth cache not set in the context
+[2019-12-27 14:41:21] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 14:41:21] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 14:41:21] [DEBUG] Attempt 1 to execute request
+[2019-12-27 14:41:21] [DEBUG] Sending request: PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1
+[2019-12-27 14:41:21] [DEBUG]  >> "PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.43.6[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  >> "Content-Length: 0[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG] >> PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1
+[2019-12-27 14:41:21] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 14:41:21] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 14:41:21] [DEBUG] >> DiscoveryIdentity-Id: 192.168.43.6
+[2019-12-27 14:41:21] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 14:41:21] [DEBUG] >> Content-Length: 0
+[2019-12-27 14:41:21] [DEBUG] >> Host: localhost:8761
+[2019-12-27 14:41:21] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 14:41:21] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2019-12-27 14:41:21] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  << "Content-Type: application/xml[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  << "Content-Length: 0[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  << "Date: Fri, 27 Dec 2019 20:41:21 GMT[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  << "[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 14:41:21] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 14:41:21] [DEBUG] << Content-Type: application/xml
+[2019-12-27 14:41:21] [DEBUG] << Content-Length: 0
+[2019-12-27 14:41:21] [DEBUG] << Date: Fri, 27 Dec 2019 20:41:21 GMT
+[2019-12-27 14:41:21] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 14:41:21] [DEBUG] Released connection is reusable.
+[2019-12-27 14:41:21] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:41:21] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 14:41:21] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:41:21] [DEBUG] Jersey HTTP PUT http://localhost:8761/eureka//apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001; statusCode=200
+[2019-12-27 14:41:21] [DEBUG] DiscoveryClient_AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001 - Heartbeat status: 200
+[2019-12-27 14:41:21] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:41:21] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:41:21] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:41:21] [DEBUG] Stale connection check
+[2019-12-27 14:41:21] [DEBUG] CookieSpec selected: default
+[2019-12-27 14:41:21] [DEBUG] Auth cache not set in the context
+[2019-12-27 14:41:21] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 14:41:21] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 14:41:21] [DEBUG] Attempt 1 to execute request
+[2019-12-27 14:41:21] [DEBUG] Sending request: GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 14:41:21] [DEBUG]  >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  >> "Accept: application/json[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.43.6[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG] >> GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 14:41:21] [DEBUG] >> Accept: application/json
+[2019-12-27 14:41:21] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 14:41:21] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 14:41:21] [DEBUG] >> DiscoveryIdentity-Id: 192.168.43.6
+[2019-12-27 14:41:21] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 14:41:21] [DEBUG] >> Host: localhost:8761
+[2019-12-27 14:41:21] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 14:41:21] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2019-12-27 14:41:21] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  << "Content-Encoding: gzip[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  << "Content-Type: application/json[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  << "Content-Length: 551[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  << "Date: Fri, 27 Dec 2019 20:41:21 GMT[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG]  << "[\r][\n]"
+[2019-12-27 14:41:21] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 14:41:21] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 14:41:21] [DEBUG] << Content-Encoding: gzip
+[2019-12-27 14:41:21] [DEBUG] << Content-Type: application/json
+[2019-12-27 14:41:21] [DEBUG] << Content-Length: 551
+[2019-12-27 14:41:21] [DEBUG] << Date: Fri, 27 Dec 2019 20:41:21 GMT
+[2019-12-27 14:41:21] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 14:41:21] [DEBUG]  << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0x95]S][0x8f][0x9a]@[0x14][0xfd]/[0x93]}T[0xc4][0x5]V[0xe0]i[0xad][0xf8]`lY[0xbb]j[0xfb][0xd0]4fv[0xb8][0xca]da 3[0x83][c[0xfc][0xef]{[0x87])[0xb6]j[0x9b][0xb4][0xf1][0x1]9[0xf7][0xdc][0xaf]s[0xf]GB[0xeb][0xba][0xe0][0x8c]j^[0x9]E[0xe2]#[0xd9][0x83]T[0xe6][0xff]f[0x93]A[0xa1])[0x89]I[0xe4][0x91][0x9e][0xa1]![0x94]S[0x95][0xb3]*[0x3]D[0xd7][0x8b][0x8d][0xbf][0xb1][0x81].[0x9f][0xc4][0xdf][0x8e]D[0xd0][0xd2][0x84][0xc7][0x8b]Y[0xff][0xc3]8[0x9d]#[0x83][0xb][0xa5][0xa9]`[0xd0][0x86][0xbb][0x97]Y[0x86][0xa4]d[0xba][0x9c][0xaf][0x9e][0x16][0xfd][0xe8]9[0xf5]?GALk[0xde][0xa1][0xe2]5[0xe]][0xd7][0xc7][0xcc][0xbc]R:[0xb5][0xf5][0xae][0xa8][0xb6][0xf1]U[0x9f]z[0x9c]e[0x12][0xb1]at[0xef][0xc][0x1f]B[0xc7][0xf7][0x9c][0x7][0xc4][0xb1][0xa1]nT;2[0xbe]U[0xb8][0xa0][0xe4]Y[0x6]by[0xc6][0xd3]y[0xfa][0xf4]5[0xc5]`]ImD[0xb8]#[0xed][0x8]=[0xf2][0x8][0x82][0xbe][0x14]`[0x86][0xd5][0xb2][0x1]r[0xc2]r[0xc0][0x1a][0x9][0x8b]_L[0xdf][0xf7].[0x88][Z[0xa8][0x96][0xc9][0xaa]Fhy0[0xab][0xe]{$[0xa3][0x9a]N@h[0x90]3[0xb1][0xad]L[0xee]#+[0xa8]2[0x3][0xb0][0xaa]t[0x4][0xe8]m[0xc1]8[0xb8][0x16][0xc7][0xb8]3[0xeb][0x84][0xc2][0x97][0xbb][0x4][0xb6][0xb4])trY[0xa2][0xd7][0x89][0xfd][0xe9][0xf0][0xf4]&L[0xc7][0x2][0xa8][0x82][0xae][0xbc][0x4][0x1]o[0xb4][0x98][0x19][0xfe][0xde]<[0x97][0xc0][0xb0][0x9b][0xe7][0xe2],[0x8d]l/[0xd6]a[0x11]b[0x12]v\i[0x8b][0xaf]x[0x9][0xd8][0xbe]D[0x85][0x87][0xc1]h[0xe4][0x8f][0xc2] [0xc][0xfd][0x8][0xb7][0xc0][0x89][0xf5][0xb3]-|C[0x8a]\/[0xc]\[0x14][0x3][0xf6][0x9c][0xfd][0xb1]L4[0xf4][0xc3][0xc0][0xb][0x8d][0x88][0x12]9[0xb0][0xae]o(#/[0x18][0x5][0xf7]..S[0x82][0xa6]F4[0xb3]KI[0x5][0xdd]A[0x89][0xbb];[0xf6]F[0xa4][0xb5][0xc8][0xc9]x[0xa4][0x84][0x5][0xc6][0xd6][0xb2]@4[0xd7][0xba][0x8e][0x7][0x83]kc[0x19][0xf2][0xe0]l[0x85][0xa3]S[0xa6][0x1b][0xaa]+9[0xe0]V[0xeb][0x1c]h[0xa1][0xf3]I[0xe][0xec][0xf5]?[0x92]m[0x16][0xa6][0xef][0xad]=[0xa1]=xgt[0xd2][0xd9][0xe9][0xcb]_[0xa2]\M[0xaa]Jf\[0xe0]Y[0xc4].[0xe1][0x8a][0x19][0xff][0x1e][0x96]([0x1f][0xc8][0xb3][0xd7][0xec]Y[0xd6]5[0xaa][0x5][0xd9]o[0x8a][0x92][0xb][0xd5][0xd2][0x12].[0xf5][0xe1][0x96][0x84][0x17][0x1e]E~d>,{[0xbb]Cm[0xbf][0xbb][0x8f][0xd3][0xd5]4![0xa7][0xef][0xf8];[0xbd][0x3][0xa0]'k[0xb2]/[0x4][0x0][0x0]"
+[2019-12-27 14:41:21] [DEBUG] Released connection is reusable.
+[2019-12-27 14:41:21] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:41:21] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 14:41:21] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:41:21] [DEBUG] clearing global-level cache with size 1
+[2019-12-27 14:41:21] [DEBUG] clearing app-level serialization cache with size 9
+[2019-12-27 14:41:21] [DEBUG] Jersey HTTP GET http://localhost:8761/eureka//apps/delta?; statusCode=200
+[2019-12-27 14:41:21] [DEBUG] Got delta update with apps hashcode UP_4_
+[2019-12-27 14:41:21] [DEBUG] The total number of instances fetched by the delta processor : 1
+[2019-12-27 14:41:21] [DEBUG] The total number of all instances in the client now is 4
+[2019-12-27 14:41:21] [DEBUG] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_4_, is fetching remote regions? false 
+[2019-12-27 14:41:48] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2019-12-27 14:41:50] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:41:50] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:41:51] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:41:51] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:41:51] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:41:51] [DEBUG] Stale connection check
+[2019-12-27 14:41:51] [DEBUG] CookieSpec selected: default
+[2019-12-27 14:41:51] [DEBUG] Auth cache not set in the context
+[2019-12-27 14:41:51] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 14:41:51] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 14:41:51] [DEBUG] Attempt 1 to execute request
+[2019-12-27 14:41:51] [DEBUG] Sending request: PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1
+[2019-12-27 14:41:51] [DEBUG]  >> "PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.43.6[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  >> "Content-Length: 0[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG] >> PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1
+[2019-12-27 14:41:51] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 14:41:51] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 14:41:51] [DEBUG] >> DiscoveryIdentity-Id: 192.168.43.6
+[2019-12-27 14:41:51] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 14:41:51] [DEBUG] >> Content-Length: 0
+[2019-12-27 14:41:51] [DEBUG] >> Host: localhost:8761
+[2019-12-27 14:41:51] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 14:41:51] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2019-12-27 14:41:51] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  << "Content-Type: application/xml[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  << "Content-Length: 0[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  << "Date: Fri, 27 Dec 2019 20:41:51 GMT[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  << "[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 14:41:51] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 14:41:51] [DEBUG] << Content-Type: application/xml
+[2019-12-27 14:41:51] [DEBUG] << Content-Length: 0
+[2019-12-27 14:41:51] [DEBUG] << Date: Fri, 27 Dec 2019 20:41:51 GMT
+[2019-12-27 14:41:51] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 14:41:51] [DEBUG] Released connection is reusable.
+[2019-12-27 14:41:51] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:41:51] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 14:41:51] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:41:51] [DEBUG] Jersey HTTP PUT http://localhost:8761/eureka//apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001; statusCode=200
+[2019-12-27 14:41:51] [DEBUG] DiscoveryClient_AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001 - Heartbeat status: 200
+[2019-12-27 14:41:51] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:41:51] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:41:51] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:41:51] [DEBUG] Stale connection check
+[2019-12-27 14:41:51] [DEBUG] CookieSpec selected: default
+[2019-12-27 14:41:51] [DEBUG] Auth cache not set in the context
+[2019-12-27 14:41:51] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 14:41:51] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 14:41:51] [DEBUG] Attempt 1 to execute request
+[2019-12-27 14:41:51] [DEBUG] Sending request: GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 14:41:51] [DEBUG]  >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  >> "Accept: application/json[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.43.6[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG] >> GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 14:41:51] [DEBUG] >> Accept: application/json
+[2019-12-27 14:41:51] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 14:41:51] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 14:41:51] [DEBUG] >> DiscoveryIdentity-Id: 192.168.43.6
+[2019-12-27 14:41:51] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 14:41:51] [DEBUG] >> Host: localhost:8761
+[2019-12-27 14:41:51] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 14:41:51] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2019-12-27 14:41:51] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  << "Content-Encoding: gzip[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  << "Content-Type: application/json[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  << "Content-Length: 551[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  << "Date: Fri, 27 Dec 2019 20:41:51 GMT[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG]  << "[\r][\n]"
+[2019-12-27 14:41:51] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 14:41:51] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 14:41:51] [DEBUG] << Content-Encoding: gzip
+[2019-12-27 14:41:51] [DEBUG] << Content-Type: application/json
+[2019-12-27 14:41:51] [DEBUG] << Content-Length: 551
+[2019-12-27 14:41:51] [DEBUG] << Date: Fri, 27 Dec 2019 20:41:51 GMT
+[2019-12-27 14:41:51] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 14:41:51] [DEBUG]  << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0x95]S][0x8f][0x9a]@[0x14][0xfd]/[0x93]}T[0xc4][0x5]V[0xe0]i[0xad][0xf8]`lY[0xbb]j[0xfb][0xd0]4fv[0xb8][0xca]da 3[0x83][c[0xfc][0xef]{[0x87])[0xb6]j[0x9b][0xb4][0xf1][0x1]9[0xf7][0xdc][0xaf]s[0xf]GB[0xeb][0xba][0xe0][0x8c]j^[0x9]E[0xe2]#[0xd9][0x83]T[0xe6][0xff]f[0x93]A[0xa1])[0x89]I[0xe4][0x91][0x9e][0xa1]![0x94]S[0x95][0xb3]*[0x3]D[0xd7][0x8b][0x8d][0xbf][0xb1][0x81].[0x9f][0xc4][0xdf][0x8e]D[0xd0][0xd2][0x84][0xc7][0x8b]Y[0xff][0xc3]8[0x9d]#[0x83][0xb][0xa5][0xa9]`[0xd0][0x86][0xbb][0x97]Y[0x86][0xa4]d[0xba][0x9c][0xaf][0x9e][0x16][0xfd][0xe8]9[0xf5]?GALk[0xde][0xa1][0xe2]5[0xe]][0xd7][0xc7][0xcc][0xbc]R:[0xb5][0xf5][0xae][0xa8][0xb6][0xf1]U[0x9f]z[0x9c]e[0x12][0xb1]at[0xef][0xc][0x1f]B[0xc7][0xf7][0x9c][0x7][0xc4][0xb1][0xa1]nT;2[0xbe]U[0xb8][0xa0][0xe4]Y[0x6]by[0xc6][0xd3]y[0xfa][0xf4]5[0xc5]`]ImD[0xb8]#[0xed][0x8]=[0xf2][0x8][0x82][0xbe][0x14]`[0x86][0xd5][0xb2][0x1]r[0xc2]r[0xc0][0x1a][0x9][0x8b]_L[0xdf][0xf7].[0x88][Z[0xa8][0x96][0xc9][0xaa]Fhy0[0xab][0xe]{$[0xa3][0x9a]N@h[0x90]3[0xb1][0xad]L[0xee]#+[0xa8]2[0x3][0xb0][0xaa]t[0x4][0xe8]m[0xc1]8[0xb8][0x16][0xc7][0xb8]3[0xeb][0x84][0xc2][0x97][0xbb][0x4][0xb6][0xb4])trY[0xa2][0xd7][0x89][0xfd][0xe9][0xf0][0xf4]&L[0xc7][0x2][0xa8][0x82][0xae][0xbc][0x4][0x1]o[0xb4][0x98][0x19][0xfe][0xde]<[0x97][0xc0][0xb0][0x9b][0xe7][0xe2],[0x8d]l/[0xd6]a[0x11]b[0x12]v\i[0x8b][0xaf]x[0x9][0xd8][0xbe]D[0x85][0x87][0xc1]h[0xe4][0x8f][0xc2] [0xc][0xfd][0x8][0xb7][0xc0][0x89][0xf5][0xb3]-|C[0x8a]\/[0xc]\[0x14][0x3][0xf6][0x9c][0xfd][0xb1]L4[0xf4][0xc3][0xc0][0xb][0x8d][0x88][0x12]9[0xb0][0xae]o(#/[0x18][0x5][0xf7]..S[0x82][0xa6]F4[0xb3]KI[0x5][0xdd]A[0x89][0xbb];[0xf6]F[0xa4][0xb5][0xc8][0xc9]x[0xa4][0x84][0x5][0xc6][0xd6][0xb2]@4[0xd7][0xba][0x8e][0x7][0x83]kc[0x19][0xf2][0xe0]l[0x85][0xa3]S[0xa6][0x1b][0xaa]+9[0xe0]V[0xeb][0x1c]h[0xa1][0xf3]I[0xe][0xec][0xf5]?[0x92]m[0x16][0xa6][0xef][0xad]=[0xa1]=xgt[0xd2][0xd9][0xe9][0xcb]_[0xa2]\M[0xaa]Jf\[0xe0]Y[0xc4].[0xe1][0x8a][0x19][0xff][0x1e][0x96]([0x1f][0xc8][0xb3][0xd7][0xec]Y[0xd6]5[0xaa][0x5][0xd9]o[0x8a][0x92][0xb][0xd5][0xd2][0x12].[0xf5][0xe1][0x96][0x84][0x17][0x1e]E~d>,{[0xbb]Cm[0xbf][0xbb][0x8f][0xd3][0xd5]4![0xa7][0xef][0xf8];[0xbd][0x3][0xa0]'k[0xb2]/[0x4][0x0][0x0]"
+[2019-12-27 14:41:51] [DEBUG] Released connection is reusable.
+[2019-12-27 14:41:51] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:41:51] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 14:41:51] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:41:51] [DEBUG] clearing global-level cache with size 1
+[2019-12-27 14:41:51] [DEBUG] clearing app-level serialization cache with size 9
+[2019-12-27 14:41:51] [DEBUG] Jersey HTTP GET http://localhost:8761/eureka//apps/delta?; statusCode=200
+[2019-12-27 14:41:51] [DEBUG] Got delta update with apps hashcode UP_4_
+[2019-12-27 14:41:51] [DEBUG] The total number of instances fetched by the delta processor : 1
+[2019-12-27 14:41:51] [DEBUG] The total number of all instances in the client now is 4
+[2019-12-27 14:41:51] [DEBUG] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_4_, is fetching remote regions? false 
+[2019-12-27 14:42:18] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2019-12-27 14:42:20] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:42:20] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:42:21] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:42:21] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:42:21] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:42:21] [DEBUG] Stale connection check
+[2019-12-27 14:42:21] [DEBUG] CookieSpec selected: default
+[2019-12-27 14:42:21] [DEBUG] Auth cache not set in the context
+[2019-12-27 14:42:21] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 14:42:21] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 14:42:21] [DEBUG] Attempt 1 to execute request
+[2019-12-27 14:42:21] [DEBUG] Sending request: PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1
+[2019-12-27 14:42:21] [DEBUG]  >> "PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.43.6[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  >> "Content-Length: 0[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG] >> PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1
+[2019-12-27 14:42:21] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 14:42:21] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 14:42:21] [DEBUG] >> DiscoveryIdentity-Id: 192.168.43.6
+[2019-12-27 14:42:21] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 14:42:21] [DEBUG] >> Content-Length: 0
+[2019-12-27 14:42:21] [DEBUG] >> Host: localhost:8761
+[2019-12-27 14:42:21] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 14:42:21] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2019-12-27 14:42:21] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  << "Content-Type: application/xml[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  << "Content-Length: 0[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  << "Date: Fri, 27 Dec 2019 20:42:21 GMT[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  << "[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 14:42:21] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 14:42:21] [DEBUG] << Content-Type: application/xml
+[2019-12-27 14:42:21] [DEBUG] << Content-Length: 0
+[2019-12-27 14:42:21] [DEBUG] << Date: Fri, 27 Dec 2019 20:42:21 GMT
+[2019-12-27 14:42:21] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 14:42:21] [DEBUG] Released connection is reusable.
+[2019-12-27 14:42:21] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:42:21] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 14:42:21] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:42:21] [DEBUG] Jersey HTTP PUT http://localhost:8761/eureka//apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001; statusCode=200
+[2019-12-27 14:42:21] [DEBUG] DiscoveryClient_AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001 - Heartbeat status: 200
+[2019-12-27 14:42:21] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:42:21] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:42:21] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:42:21] [DEBUG] Stale connection check
+[2019-12-27 14:42:21] [DEBUG] CookieSpec selected: default
+[2019-12-27 14:42:21] [DEBUG] Auth cache not set in the context
+[2019-12-27 14:42:21] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 14:42:21] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 14:42:21] [DEBUG] Attempt 1 to execute request
+[2019-12-27 14:42:21] [DEBUG] Sending request: GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 14:42:21] [DEBUG]  >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  >> "Accept: application/json[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.43.6[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG] >> GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 14:42:21] [DEBUG] >> Accept: application/json
+[2019-12-27 14:42:21] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 14:42:21] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 14:42:21] [DEBUG] >> DiscoveryIdentity-Id: 192.168.43.6
+[2019-12-27 14:42:21] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 14:42:21] [DEBUG] >> Host: localhost:8761
+[2019-12-27 14:42:21] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 14:42:21] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2019-12-27 14:42:21] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  << "Content-Encoding: gzip[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  << "Content-Type: application/json[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  << "Content-Length: 551[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  << "Date: Fri, 27 Dec 2019 20:42:21 GMT[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG]  << "[\r][\n]"
+[2019-12-27 14:42:21] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 14:42:21] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 14:42:21] [DEBUG] << Content-Encoding: gzip
+[2019-12-27 14:42:21] [DEBUG] << Content-Type: application/json
+[2019-12-27 14:42:21] [DEBUG] << Content-Length: 551
+[2019-12-27 14:42:21] [DEBUG] << Date: Fri, 27 Dec 2019 20:42:21 GMT
+[2019-12-27 14:42:21] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 14:42:21] [DEBUG]  << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0x95]S][0x8f][0x9a]@[0x14][0xfd]/[0x93]}T[0xc4][0x5]V[0xe0]i[0xad][0xf8]`lY[0xbb]j[0xfb][0xd0]4fv[0xb8][0xca]da 3[0x83][c[0xfc][0xef]{[0x87])[0xb6]j[0x9b][0xb4][0xf1][0x1]9[0xf7][0xdc][0xaf]s[0xf]GB[0xeb][0xba][0xe0][0x8c]j^[0x9]E[0xe2]#[0xd9][0x83]T[0xe6][0xff]f[0x93]A[0xa1])[0x89]I[0xe4][0x91][0x9e][0xa1]![0x94]S[0x95][0xb3]*[0x3]D[0xd7][0x8b][0x8d][0xbf][0xb1][0x81].[0x9f][0xc4][0xdf][0x8e]D[0xd0][0xd2][0x84][0xc7][0x8b]Y[0xff][0xc3]8[0x9d]#[0x83][0xb][0xa5][0xa9]`[0xd0][0x86][0xbb][0x97]Y[0x86][0xa4]d[0xba][0x9c][0xaf][0x9e][0x16][0xfd][0xe8]9[0xf5]?GALk[0xde][0xa1][0xe2]5[0xe]][0xd7][0xc7][0xcc][0xbc]R:[0xb5][0xf5][0xae][0xa8][0xb6][0xf1]U[0x9f]z[0x9c]e[0x12][0xb1]at[0xef][0xc][0x1f]B[0xc7][0xf7][0x9c][0x7][0xc4][0xb1][0xa1]nT;2[0xbe]U[0xb8][0xa0][0xe4]Y[0x6]by[0xc6][0xd3]y[0xfa][0xf4]5[0xc5]`]ImD[0xb8]#[0xed][0x8]=[0xf2][0x8][0x82][0xbe][0x14]`[0x86][0xd5][0xb2][0x1]r[0xc2]r[0xc0][0x1a][0x9][0x8b]_L[0xdf][0xf7].[0x88][Z[0xa8][0x96][0xc9][0xaa]Fhy0[0xab][0xe]{$[0xa3][0x9a]N@h[0x90]3[0xb1][0xad]L[0xee]#+[0xa8]2[0x3][0xb0][0xaa]t[0x4][0xe8]m[0xc1]8[0xb8][0x16][0xc7][0xb8]3[0xeb][0x84][0xc2][0x97][0xbb][0x4][0xb6][0xb4])trY[0xa2][0xd7][0x89][0xfd][0xe9][0xf0][0xf4]&L[0xc7][0x2][0xa8][0x82][0xae][0xbc][0x4][0x1]o[0xb4][0x98][0x19][0xfe][0xde]<[0x97][0xc0][0xb0][0x9b][0xe7][0xe2],[0x8d]l/[0xd6]a[0x11]b[0x12]v\i[0x8b][0xaf]x[0x9][0xd8][0xbe]D[0x85][0x87][0xc1]h[0xe4][0x8f][0xc2] [0xc][0xfd][0x8][0xb7][0xc0][0x89][0xf5][0xb3]-|C[0x8a]\/[0xc]\[0x14][0x3][0xf6][0x9c][0xfd][0xb1]L4[0xf4][0xc3][0xc0][0xb][0x8d][0x88][0x12]9[0xb0][0xae]o(#/[0x18][0x5][0xf7]..S[0x82][0xa6]F4[0xb3]KI[0x5][0xdd]A[0x89][0xbb];[0xf6]F[0xa4][0xb5][0xc8][0xc9]x[0xa4][0x84][0x5][0xc6][0xd6][0xb2]@4[0xd7][0xba][0x8e][0x7][0x83]kc[0x19][0xf2][0xe0]l[0x85][0xa3]S[0xa6][0x1b][0xaa]+9[0xe0]V[0xeb][0x1c]h[0xa1][0xf3]I[0xe][0xec][0xf5]?[0x92]m[0x16][0xa6][0xef][0xad]=[0xa1]=xgt[0xd2][0xd9][0xe9][0xcb]_[0xa2]\M[0xaa]Jf\[0xe0]Y[0xc4].[0xe1][0x8a][0x19][0xff][0x1e][0x96]([0x1f][0xc8][0xb3][0xd7][0xec]Y[0xd6]5[0xaa][0x5][0xd9]o[0x8a][0x92][0xb][0xd5][0xd2][0x12].[0xf5][0xe1][0x96][0x84][0x17][0x1e]E~d>,{[0xbb]Cm[0xbf][0xbb][0x8f][0xd3][0xd5]4![0xa7][0xef][0xf8];[0xbd][0x3][0xa0]'k[0xb2]/[0x4][0x0][0x0]"
+[2019-12-27 14:42:21] [DEBUG] Released connection is reusable.
+[2019-12-27 14:42:21] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:42:21] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 14:42:21] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:42:21] [DEBUG] clearing global-level cache with size 1
+[2019-12-27 14:42:21] [DEBUG] clearing app-level serialization cache with size 9
+[2019-12-27 14:42:21] [DEBUG] Jersey HTTP GET http://localhost:8761/eureka//apps/delta?; statusCode=200
+[2019-12-27 14:42:21] [DEBUG] Got delta update with apps hashcode UP_4_
+[2019-12-27 14:42:21] [DEBUG] The total number of instances fetched by the delta processor : 1
+[2019-12-27 14:42:21] [DEBUG] The total number of all instances in the client now is 4
+[2019-12-27 14:42:21] [DEBUG] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_4_, is fetching remote regions? false 
+[2019-12-27 14:42:48] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2019-12-27 14:42:50] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:42:50] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:42:51] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:42:51] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:42:51] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:42:51] [DEBUG] Stale connection check
+[2019-12-27 14:42:51] [DEBUG] CookieSpec selected: default
+[2019-12-27 14:42:51] [DEBUG] Auth cache not set in the context
+[2019-12-27 14:42:51] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 14:42:51] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 14:42:51] [DEBUG] Attempt 1 to execute request
+[2019-12-27 14:42:51] [DEBUG] Sending request: PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1
+[2019-12-27 14:42:51] [DEBUG]  >> "PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.43.6[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  >> "Content-Length: 0[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG] >> PUT /eureka/apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001?status=UP&lastDirtyTimestamp=1577475260658 HTTP/1.1
+[2019-12-27 14:42:51] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 14:42:51] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 14:42:51] [DEBUG] >> DiscoveryIdentity-Id: 192.168.43.6
+[2019-12-27 14:42:51] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 14:42:51] [DEBUG] >> Content-Length: 0
+[2019-12-27 14:42:51] [DEBUG] >> Host: localhost:8761
+[2019-12-27 14:42:51] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 14:42:51] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2019-12-27 14:42:51] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  << "Content-Type: application/xml[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  << "Content-Length: 0[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  << "Date: Fri, 27 Dec 2019 20:42:51 GMT[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  << "[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 14:42:51] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 14:42:51] [DEBUG] << Content-Type: application/xml
+[2019-12-27 14:42:51] [DEBUG] << Content-Length: 0
+[2019-12-27 14:42:51] [DEBUG] << Date: Fri, 27 Dec 2019 20:42:51 GMT
+[2019-12-27 14:42:51] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 14:42:51] [DEBUG] Released connection is reusable.
+[2019-12-27 14:42:51] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:42:51] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 14:42:51] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:42:51] [DEBUG] Jersey HTTP PUT http://localhost:8761/eureka//apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001; statusCode=200
+[2019-12-27 14:42:51] [DEBUG] DiscoveryClient_AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001 - Heartbeat status: 200
+[2019-12-27 14:42:51] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:42:51] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:42:51] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:42:51] [DEBUG] Stale connection check
+[2019-12-27 14:42:51] [DEBUG] CookieSpec selected: default
+[2019-12-27 14:42:51] [DEBUG] Auth cache not set in the context
+[2019-12-27 14:42:51] [DEBUG] Target auth state: UNCHALLENGED
+[2019-12-27 14:42:51] [DEBUG] Proxy auth state: UNCHALLENGED
+[2019-12-27 14:42:51] [DEBUG] Attempt 1 to execute request
+[2019-12-27 14:42:51] [DEBUG] Sending request: GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 14:42:51] [DEBUG]  >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  >> "Accept: application/json[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.43.6[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  >> "[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG] >> GET /eureka/apps/delta HTTP/1.1
+[2019-12-27 14:42:51] [DEBUG] >> Accept: application/json
+[2019-12-27 14:42:51] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2019-12-27 14:42:51] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2019-12-27 14:42:51] [DEBUG] >> DiscoveryIdentity-Id: 192.168.43.6
+[2019-12-27 14:42:51] [DEBUG] >> Accept-Encoding: gzip
+[2019-12-27 14:42:51] [DEBUG] >> Host: localhost:8761
+[2019-12-27 14:42:51] [DEBUG] >> Connection: Keep-Alive
+[2019-12-27 14:42:51] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2019-12-27 14:42:51] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  << "Content-Encoding: gzip[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  << "Content-Type: application/json[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  << "Content-Length: 551[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  << "Date: Fri, 27 Dec 2019 20:42:51 GMT[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG]  << "[\r][\n]"
+[2019-12-27 14:42:51] [DEBUG] Receiving response: HTTP/1.1 200 
+[2019-12-27 14:42:51] [DEBUG] << HTTP/1.1 200 
+[2019-12-27 14:42:51] [DEBUG] << Content-Encoding: gzip
+[2019-12-27 14:42:51] [DEBUG] << Content-Type: application/json
+[2019-12-27 14:42:51] [DEBUG] << Content-Length: 551
+[2019-12-27 14:42:51] [DEBUG] << Date: Fri, 27 Dec 2019 20:42:51 GMT
+[2019-12-27 14:42:51] [DEBUG] Connection can be kept alive indefinitely
+[2019-12-27 14:42:51] [DEBUG]  << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0x95]S][0x93][0x9a]0[0x14][0xfd]/[0x99]}T[0xc4][0x5]V[0xe0]i[0xad][0xf8][0xe0][0xd8][0xb2]v[0xd5][0xf6][0xa1][0xd3]q[0xb2][0xe1]*[0x99][0x85][0xc0]$[0xc1][0xad][0xe3][0xf8][0xdf][0xf7][0x86][0x14][[0xb5][0x9d]i[0x87][0x7][0xc8][0xb9]'[0xf7][0xe3][0xdc][0xc3][0x91][0xd0][0xba].8[0xa3][0x9a]WB[0x91][0xf8]H[0xf6] [0x95][0xf9][0xde]l2(4%1[0x89]|[0xd2]34[0x84]r[0xaa]rVe[0x80][0xe8]z[0xb1][0xf1]76[0xd0][0xdd]'[0xf1][0xb7]#[0x11][0xb4]4[0xe1][0xf1]b[0xd6][0xff]0N[0xe7][0xc8][0xe0]Bi*[0x18][0xb4][0xe1][0xee]0[0xcb][0x90][0x94]L[0x97][0xf3][0xd5][0xd3][0xa2][0x1f]=[0xa7][0xfe][0xe7]([0x88]i[0xcd][0xfb]/T[0xbc][0xc6][0xa1][0xeb][0x9a][0xa2]y[0xa5]tj[0xf3]]Qm[0xe1][0xab]:[0xf5]8[0xcb]$b[0xc3][0xe8][0xde][0x19]>[0x84][0x8e][0xef]9[0xf][0x88]cA[0xdd][0xa8][0xb6]e<U8[0xa0][0xe4]Y[0x6]by[0xc6][0xd3]y[0xfa][0xf4]5[0xc5]`]ImD[0xb8]#m[0xb]=[0xf2][0x8][0x82][0xbe][0x14]`[0x9a][0xd5][0xb2][0x1]r[0xc2]t[0xc0][0x1a][0x9][0x8b]_L[0xdf][0xf7].[0x88][Z[0xa8][0x96][0xc9][0xaa]Fhy0[0xa3][0xe]{$[0xa3][0x9a]N@h[0x90]3[0xb1][0xad][0xcc][0xdd]GVPe[0x1a]`U[0xe9][0x8][0xd0][0xdb][0x82][0xff]pp,[0x8e]qg[0xd6][0x9][0x85][0x87][0xbb][0x4][0xb6][0xb4])tr[0x99][0xa2][0xd7][0x89][0xfd][0xe9][0xf0][0xf4]&L[0xc5][0x2][0xa8][0x82].[0xbd][0x4][0x1]o[0xb4][0x98][0x19][0xfe][0xde][0xbc][0x97][0xc0][0xb0][0x9a][0xe7]b/[0x8d]l7[0xd6]a[0x11]b[0x12]v\i[0x8b][0xaf]x[0x9]X[0xbe]D[0x85][0x87][0xc1]h[0xe4][0x8f][0xc2] [0xc][0xfd][0x8][0xa7][0xc0][0x8e][0xf5][0xb3]M|C[0x8a]\/[0xc]\[0x14][0x3][0xf6][0x9c][0xfd]1M4[0xf4][0xc3][0xc0][0xb][0x8d][0x88][0x12]9[0xb0][0xae]o(#/[0x18][0x5][0xf7].[0xe]S[0x82][0xa6]F43KI[0x5][0xdd]A[0x89][0xb3];vG[0xa4][0xb5][0xc8][0xc9]x[0xa4][0x84][0x5][0xc6][0xd6][0xb2]@4[0xd7][0xba][0x8e][0x7][0x83]kc[0x19][0xf2][0xe0]l[0x85][0xa3]S[0xa6][0x1b][0xaa]+9[0xe0]V[0xeb][0x1c]h[0xa1][0xf3]I[0xe][0xec][0xf5]?.[0xdb][x}o[0xed][0x9][0xed][0xc2];[0xa3][0x93][0xce]N_[0xfe][0x12][0xe5]jRU2[0xe3][0x2][0xd7]"v[0x9]W[0xcc][0xf8][0xf7][0xb0]D[0xf9]@[0x9e][0xbd]f[0xd7][0xb2][0xae]Q-[0xc8]~S[0x94]\[0xa8][0xfe][0x93][0x96]p[0xa9][0xf][0xb7]$[0xdc][0xf0]([0xf2]#[0xf3]c[0xd9][0xdd][0x1d]j[0xfb][0xdf]}[0x9c][0xae][0xa6][0x9]9}[0xc7][0xe7][0xf4][0xe]k[0xdd]l[0xdb]/[0x4][0x0][0x0]"
+[2019-12-27 14:42:51] [DEBUG] Released connection is reusable.
+[2019-12-27 14:42:51] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:42:51] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2019-12-27 14:42:51] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:42:51] [DEBUG] clearing global-level cache with size 1
+[2019-12-27 14:42:51] [DEBUG] clearing app-level serialization cache with size 9
+[2019-12-27 14:42:51] [DEBUG] Jersey HTTP GET http://localhost:8761/eureka//apps/delta?; statusCode=200
+[2019-12-27 14:42:51] [DEBUG] Got delta update with apps hashcode UP_4_
+[2019-12-27 14:42:51] [DEBUG] The total number of instances fetched by the delta processor : 1
+[2019-12-27 14:42:51] [DEBUG] The total number of all instances in the client now is 4
+[2019-12-27 14:42:51] [DEBUG] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_4_, is fetching remote regions? false 
+[2019-12-27 14:43:18] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2019-12-27 14:43:20] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:43:20] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:43:21] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:43:21] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2019-12-27 14:43:21] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:43:21] [DEBUG] Stale connection check
+[2019-12-27 14:43:21] [DEBUG] Stale connection detected
+[2019-12-27 14:43:21] [DEBUG] Connection 0.0.0.0:59901<->127.0.0.1:8761 closed
+[2019-12-27 14:43:21] [DEBUG] Connecting to localhost:8761
+[2019-12-27 14:43:21] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:43:21] [DEBUG] [{}->http://localhost:8761] total kept alive: 1, total issued: 1, total allocated: 2 out of 200
+[2019-12-27 14:43:21] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2019-12-27 14:43:21] [DEBUG] Stale connection check
+[2019-12-27 14:43:21] [DEBUG] Stale connection detected
+[2019-12-27 14:43:21] [DEBUG] Connection 0.0.0.0:58662<->127.0.0.1:8761 closed
+[2019-12-27 14:43:21] [DEBUG] Connecting to localhost:8761
+[2019-12-27 14:43:23] [DEBUG] Connect to localhost:8761 timed out. Connection will be retried using another IP address
+[2019-12-27 14:43:23] [DEBUG] Connecting to localhost:8761
+[2019-12-27 14:43:23] [DEBUG] Connect to localhost:8761 timed out. Connection will be retried using another IP address
+[2019-12-27 14:43:23] [DEBUG] Connecting to localhost:8761
+[2019-12-27 14:43:25] [DEBUG] Connection 0.0.0.0:59901<->127.0.0.1:8761 closed
+[2019-12-27 14:43:25] [DEBUG] Connection 0.0.0.0:59901<->127.0.0.1:8761 shut down
+[2019-12-27 14:43:25] [DEBUG] Released connection is not reusable.
+[2019-12-27 14:43:25] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:43:25] [DEBUG] Connection 0.0.0.0:59901<->127.0.0.1:8761 closed
+[2019-12-27 14:43:25] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:43:25] [DEBUG] Jersey HTTP PUT http://localhost:8761/eureka//apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001; statusCode=N/A
+[2019-12-27 14:43:25] [ERROR] Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.put(WebResource.java:529) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.sendHeartBeat(AbstractJerseyEurekaHttpClient.java:102) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:846) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1405) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.waitForConnect(Native Method) ~[?:?]
+	at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[?:?]
+	at java.net.Socket.connect(Socket.java:591) ~[?:?]
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.10.jar:4.5.10]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	... 26 more
+[2019-12-27 14:43:25] [DEBUG] Connection 0.0.0.0:58662<->127.0.0.1:8761 closed
+[2019-12-27 14:43:25] [DEBUG] Connection 0.0.0.0:58662<->127.0.0.1:8761 shut down
+[2019-12-27 14:43:25] [DEBUG] Released connection is not reusable.
+[2019-12-27 14:43:25] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:43:25] [WARN] Request execution failed with message: java.net.ConnectException: Connection refused: connect
+[2019-12-27 14:43:25] [DEBUG] Connection 0.0.0.0:58662<->127.0.0.1:8761 closed
+[2019-12-27 14:43:25] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:43:25] [DEBUG] Jersey HTTP GET http://localhost:8761/eureka//apps/delta?; statusCode=N/A
+[2019-12-27 14:43:25] [DEBUG] Created client for url: http://localhost:8761/eureka/
+[2019-12-27 14:43:25] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:43:25] [DEBUG] [{}->http://localhost:8761] total kept alive: 0, total issued: 0, total allocated: 0 out of 200
+[2019-12-27 14:43:25] [DEBUG] No free connections [{}->http://localhost:8761][null]
+[2019-12-27 14:43:25] [DEBUG] Available capacity: 50 out of 50 [{}->http://localhost:8761][null]
+[2019-12-27 14:43:25] [DEBUG] Creating new connection [{}->http://localhost:8761]
+[2019-12-27 14:43:25] [DEBUG] Connecting to localhost:8761
+[2019-12-27 14:43:25] [ERROR] Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.get(WebResource.java:509) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:194) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getDelta(AbstractJerseyEurekaHttpClient.java:170) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1085) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:967) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1479) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1446) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.waitForConnect(Native Method) ~[?:?]
+	at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[?:?]
+	at java.net.Socket.connect(Socket.java:591) ~[?:?]
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.10.jar:4.5.10]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	... 29 more
+[2019-12-27 14:43:25] [WARN] Request execution failed with message: java.net.ConnectException: Connection refused: connect
+[2019-12-27 14:43:25] [DEBUG] Created client for url: http://localhost:8761/eureka/
+[2019-12-27 14:43:25] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:43:25] [DEBUG] [{}->http://localhost:8761] total kept alive: 0, total issued: 1, total allocated: 1 out of 200
+[2019-12-27 14:43:25] [DEBUG] No free connections [{}->http://localhost:8761][null]
+[2019-12-27 14:43:25] [DEBUG] Available capacity: 49 out of 50 [{}->http://localhost:8761][null]
+[2019-12-27 14:43:25] [DEBUG] Creating new connection [{}->http://localhost:8761]
+[2019-12-27 14:43:25] [DEBUG] Connecting to localhost:8761
+[2019-12-27 14:43:27] [DEBUG] Connect to localhost:8761 timed out. Connection will be retried using another IP address
+[2019-12-27 14:43:27] [DEBUG] Connecting to localhost:8761
+[2019-12-27 14:43:27] [DEBUG] Connect to localhost:8761 timed out. Connection will be retried using another IP address
+[2019-12-27 14:43:27] [DEBUG] Connecting to localhost:8761
+[2019-12-27 14:43:29] [DEBUG] Connection org.apache.http.impl.conn.DefaultClientConnection@71a6738a closed
+[2019-12-27 14:43:29] [DEBUG] Connection org.apache.http.impl.conn.DefaultClientConnection@71a6738a shut down
+[2019-12-27 14:43:29] [DEBUG] Released connection is not reusable.
+[2019-12-27 14:43:29] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:43:29] [DEBUG] Connection org.apache.http.impl.conn.DefaultClientConnection@71a6738a closed
+[2019-12-27 14:43:29] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:43:29] [DEBUG] Jersey HTTP GET http://localhost:8761/eureka//apps/delta?; statusCode=N/A
+[2019-12-27 14:43:29] [ERROR] Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.get(WebResource.java:509) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:194) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getDelta(AbstractJerseyEurekaHttpClient.java:170) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1085) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:967) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1479) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1446) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.waitForConnect(Native Method) ~[?:?]
+	at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[?:?]
+	at java.net.Socket.connect(Socket.java:591) ~[?:?]
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.10.jar:4.5.10]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	... 30 more
+[2019-12-27 14:43:29] [WARN] Request execution failed with message: java.net.ConnectException: Connection refused: connect
+[2019-12-27 14:43:29] [ERROR] DiscoveryClient_AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1085) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:967) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1479) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1446) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+[2019-12-27 14:43:29] [DEBUG] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_4_, is fetching remote regions? false 
+[2019-12-27 14:43:29] [DEBUG] Connection org.apache.http.impl.conn.DefaultClientConnection@5a75511a closed
+[2019-12-27 14:43:29] [DEBUG] Connection org.apache.http.impl.conn.DefaultClientConnection@5a75511a shut down
+[2019-12-27 14:43:29] [DEBUG] Released connection is not reusable.
+[2019-12-27 14:43:29] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:43:29] [DEBUG] Connection org.apache.http.impl.conn.DefaultClientConnection@5a75511a closed
+[2019-12-27 14:43:29] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:43:29] [DEBUG] Jersey HTTP PUT http://localhost:8761/eureka//apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001; statusCode=N/A
+[2019-12-27 14:43:29] [ERROR] Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.put(WebResource.java:529) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.sendHeartBeat(AbstractJerseyEurekaHttpClient.java:102) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:846) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1405) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.waitForConnect(Native Method) ~[?:?]
+	at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[?:?]
+	at java.net.Socket.connect(Socket.java:591) ~[?:?]
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.10.jar:4.5.10]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	... 27 more
+[2019-12-27 14:43:29] [WARN] Request execution failed with message: java.net.ConnectException: Connection refused: connect
+[2019-12-27 14:43:29] [ERROR] DiscoveryClient_AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001 - was unable to send heartbeat!
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:846) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1405) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+[2019-12-27 14:43:48] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2019-12-27 14:43:50] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:43:50] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:43:59] [DEBUG] Clearing quarantined list of size 1
+[2019-12-27 14:43:59] [DEBUG] Created client for url: http://localhost:8761/eureka/
+[2019-12-27 14:43:59] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:43:59] [DEBUG] [{}->http://localhost:8761] total kept alive: 0, total issued: 0, total allocated: 0 out of 200
+[2019-12-27 14:43:59] [DEBUG] No free connections [{}->http://localhost:8761][null]
+[2019-12-27 14:43:59] [DEBUG] Available capacity: 50 out of 50 [{}->http://localhost:8761][null]
+[2019-12-27 14:43:59] [DEBUG] Creating new connection [{}->http://localhost:8761]
+[2019-12-27 14:43:59] [DEBUG] Connecting to localhost:8761
+[2019-12-27 14:43:59] [DEBUG] Clearing quarantined list of size 1
+[2019-12-27 14:43:59] [DEBUG] Created client for url: http://localhost:8761/eureka/
+[2019-12-27 14:43:59] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:43:59] [DEBUG] [{}->http://localhost:8761] total kept alive: 0, total issued: 1, total allocated: 1 out of 200
+[2019-12-27 14:43:59] [DEBUG] No free connections [{}->http://localhost:8761][null]
+[2019-12-27 14:43:59] [DEBUG] Available capacity: 49 out of 50 [{}->http://localhost:8761][null]
+[2019-12-27 14:43:59] [DEBUG] Creating new connection [{}->http://localhost:8761]
+[2019-12-27 14:43:59] [DEBUG] Connecting to localhost:8761
+[2019-12-27 14:44:01] [DEBUG] Connect to localhost:8761 timed out. Connection will be retried using another IP address
+[2019-12-27 14:44:01] [DEBUG] Connecting to localhost:8761
+[2019-12-27 14:44:01] [DEBUG] Connect to localhost:8761 timed out. Connection will be retried using another IP address
+[2019-12-27 14:44:01] [DEBUG] Connecting to localhost:8761
+[2019-12-27 14:44:03] [DEBUG] Connection org.apache.http.impl.conn.DefaultClientConnection@28452e53 closed
+[2019-12-27 14:44:03] [DEBUG] Connection org.apache.http.impl.conn.DefaultClientConnection@28452e53 shut down
+[2019-12-27 14:44:03] [DEBUG] Released connection is not reusable.
+[2019-12-27 14:44:03] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:44:03] [DEBUG] Connection org.apache.http.impl.conn.DefaultClientConnection@28452e53 closed
+[2019-12-27 14:44:03] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:44:03] [DEBUG] Jersey HTTP PUT http://localhost:8761/eureka//apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001; statusCode=N/A
+[2019-12-27 14:44:03] [ERROR] Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.put(WebResource.java:529) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.sendHeartBeat(AbstractJerseyEurekaHttpClient.java:102) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:846) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1405) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.waitForConnect(Native Method) ~[?:?]
+	at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[?:?]
+	at java.net.Socket.connect(Socket.java:591) ~[?:?]
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.10.jar:4.5.10]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	... 27 more
+[2019-12-27 14:44:03] [WARN] Request execution failed with message: java.net.ConnectException: Connection refused: connect
+[2019-12-27 14:44:03] [ERROR] DiscoveryClient_AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001 - was unable to send heartbeat!
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:846) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1405) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+[2019-12-27 14:44:03] [DEBUG] Connection org.apache.http.impl.conn.DefaultClientConnection@64edf0a4 closed
+[2019-12-27 14:44:03] [DEBUG] Connection org.apache.http.impl.conn.DefaultClientConnection@64edf0a4 shut down
+[2019-12-27 14:44:03] [DEBUG] Released connection is not reusable.
+[2019-12-27 14:44:03] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:44:03] [DEBUG] Connection org.apache.http.impl.conn.DefaultClientConnection@64edf0a4 closed
+[2019-12-27 14:44:03] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:44:03] [DEBUG] Jersey HTTP GET http://localhost:8761/eureka//apps/delta?; statusCode=N/A
+[2019-12-27 14:44:03] [ERROR] Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.get(WebResource.java:509) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:194) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getDelta(AbstractJerseyEurekaHttpClient.java:170) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1085) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:967) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1479) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1446) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.waitForConnect(Native Method) ~[?:?]
+	at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[?:?]
+	at java.net.Socket.connect(Socket.java:591) ~[?:?]
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.10.jar:4.5.10]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	... 30 more
+[2019-12-27 14:44:03] [WARN] Request execution failed with message: java.net.ConnectException: Connection refused: connect
+[2019-12-27 14:44:03] [ERROR] DiscoveryClient_AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1085) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:967) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1479) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1446) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+[2019-12-27 14:44:03] [DEBUG] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_4_, is fetching remote regions? false 
+[2019-12-27 14:44:18] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2019-12-27 14:44:20] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:44:20] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2019-12-27 14:44:20] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 14:44:20] [DEBUG] The availability zone for the given region us-east-1 are [defaultZone]
+[2019-12-27 14:44:20] [DEBUG] Config resolved to [AwsEndpoint{ serviceUrl='http://localhost:8761/eureka/', region='us-east-1', zone='defaultZone'}]
+[2019-12-27 14:44:20] [DEBUG] Local zone=defaultZone; resolved to: [AwsEndpoint{ serviceUrl='http://localhost:8761/eureka/', region='us-east-1', zone='defaultZone'}]
+[2019-12-27 14:44:20] [DEBUG] Resolved to [AwsEndpoint{ serviceUrl='http://localhost:8761/eureka/', region='us-east-1', zone='defaultZone'}]
+[2019-12-27 14:44:33] [DEBUG] Clearing quarantined list of size 1
+[2019-12-27 14:44:33] [DEBUG] Created client for url: http://localhost:8761/eureka/
+[2019-12-27 14:44:33] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:44:33] [DEBUG] [{}->http://localhost:8761] total kept alive: 0, total issued: 0, total allocated: 0 out of 200
+[2019-12-27 14:44:33] [DEBUG] No free connections [{}->http://localhost:8761][null]
+[2019-12-27 14:44:33] [DEBUG] Available capacity: 50 out of 50 [{}->http://localhost:8761][null]
+[2019-12-27 14:44:33] [DEBUG] Creating new connection [{}->http://localhost:8761]
+[2019-12-27 14:44:33] [DEBUG] Connecting to localhost:8761
+[2019-12-27 14:44:33] [DEBUG] Ending a session and starting anew
+[2019-12-27 14:44:33] [DEBUG] Created client for url: http://localhost:8761/eureka/
+[2019-12-27 14:44:33] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2019-12-27 14:44:33] [DEBUG] [{}->http://localhost:8761] total kept alive: 0, total issued: 1, total allocated: 1 out of 200
+[2019-12-27 14:44:33] [DEBUG] No free connections [{}->http://localhost:8761][null]
+[2019-12-27 14:44:33] [DEBUG] Available capacity: 49 out of 50 [{}->http://localhost:8761][null]
+[2019-12-27 14:44:33] [DEBUG] Creating new connection [{}->http://localhost:8761]
+[2019-12-27 14:44:33] [DEBUG] Connecting to localhost:8761
+[2019-12-27 14:44:35] [DEBUG] Connect to localhost:8761 timed out. Connection will be retried using another IP address
+[2019-12-27 14:44:35] [DEBUG] Connecting to localhost:8761
+[2019-12-27 14:44:35] [DEBUG] Connect to localhost:8761 timed out. Connection will be retried using another IP address
+[2019-12-27 14:44:35] [DEBUG] Connecting to localhost:8761
+[2019-12-27 14:44:37] [DEBUG] Connection org.apache.http.impl.conn.DefaultClientConnection@3efcda70 closed
+[2019-12-27 14:44:37] [DEBUG] Connection org.apache.http.impl.conn.DefaultClientConnection@3efcda70 shut down
+[2019-12-27 14:44:37] [DEBUG] Released connection is not reusable.
+[2019-12-27 14:44:37] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:44:37] [DEBUG] Connection org.apache.http.impl.conn.DefaultClientConnection@3efcda70 closed
+[2019-12-27 14:44:37] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:44:37] [DEBUG] Jersey HTTP PUT http://localhost:8761/eureka//apps/AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001; statusCode=N/A
+[2019-12-27 14:44:37] [ERROR] Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.put(WebResource.java:529) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.sendHeartBeat(AbstractJerseyEurekaHttpClient.java:102) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:846) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1405) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.waitForConnect(Native Method) ~[?:?]
+	at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[?:?]
+	at java.net.Socket.connect(Socket.java:591) ~[?:?]
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.10.jar:4.5.10]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	... 27 more
+[2019-12-27 14:44:37] [WARN] Request execution failed with message: java.net.ConnectException: Connection refused: connect
+[2019-12-27 14:44:37] [ERROR] DiscoveryClient_AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001 - was unable to send heartbeat!
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:846) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1405) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+[2019-12-27 14:44:37] [DEBUG] Connection org.apache.http.impl.conn.DefaultClientConnection@454c8dfb closed
+[2019-12-27 14:44:37] [DEBUG] Connection org.apache.http.impl.conn.DefaultClientConnection@454c8dfb shut down
+[2019-12-27 14:44:37] [DEBUG] Released connection is not reusable.
+[2019-12-27 14:44:37] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2019-12-27 14:44:37] [DEBUG] Connection org.apache.http.impl.conn.DefaultClientConnection@454c8dfb closed
+[2019-12-27 14:44:37] [DEBUG] Notifying no-one, there are no waiting threads
+[2019-12-27 14:44:37] [DEBUG] Jersey HTTP GET http://localhost:8761/eureka//apps/delta?; statusCode=N/A
+[2019-12-27 14:44:37] [ERROR] Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.get(WebResource.java:509) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:194) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getDelta(AbstractJerseyEurekaHttpClient.java:170) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1085) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:967) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1479) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1446) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.waitForConnect(Native Method) ~[?:?]
+	at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[?:?]
+	at java.net.Socket.connect(Socket.java:591) ~[?:?]
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.10.jar:4.5.10]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.10.jar:4.5.10]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	... 30 more
+[2019-12-27 14:44:37] [WARN] Request execution failed with message: java.net.ConnectException: Connection refused: connect
+[2019-12-27 14:44:37] [ERROR] DiscoveryClient_AUTHENTICATION-SERVICE/DESKTOP-9RN4Q95:authentication-service:8001 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1085) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:967) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1479) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1446) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+[2019-12-27 14:44:37] [DEBUG] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_4_, is fetching remote regions? false 
