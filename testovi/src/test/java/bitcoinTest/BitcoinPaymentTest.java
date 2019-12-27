@@ -32,8 +32,7 @@ public class BitcoinPaymentTest {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		browser = new ChromeDriver();
 		browser.manage().window().maximize();
-		browser.navigate().to("http://localhost:4200");
-
+	    browser.navigate().to("http://localhost:4200");
 
 		//dodacemo jos stranicu za izbor caspoisa i kupovinu
 		scientificLoginPage = PageFactory.initElements(browser, LoginPage.class);
@@ -44,15 +43,19 @@ public class BitcoinPaymentTest {
 		loginPageAuthentification = PageFactory.initElements(browser, LoginPageAuthentification.class);
 
 		//prijavimo se na autentification server
+
 		loginPageAuthentification.getSignOut().isDisplayed();
 		loginPageAuthentification.getSignOut().click();
 
 		loginPageAuthentification.loginLinkIsDisplay();
+
 		loginPageAuthentification.getLoginLink().click();
 		loginPageAuthentification.usernameFieldIsDisplay();
 		loginPageAuthentification.setUsername("mikamikic");
 		loginPageAuthentification.passwordFieldIsDisplay();
 		loginPageAuthentification.setPassword("mika");
+		loginPageAuthentification.loginButtonIsDisplay();
+		loginPageAuthentification.getSignInButton().click();
 
 		browser.navigate().to("http://localhost:4300/login");
 		scientificLoginPage.usernameFieldIsDisplayed();
@@ -78,6 +81,10 @@ public class BitcoinPaymentTest {
 		assertTrue(browser.getCurrentUrl().equals("http://localhost:4300/shopping-cart"));
 		assertTrue(viewMagazinPage.getProceedPaymentButton().isDisplayed());
 		viewMagazinPage.getProceedPaymentButton().click();
+
+		//loginPageAuthentification.signOutIsDisplay();
+		//assertTrue(browser.getCurrentUrl().equals("http://localhost:4200"));
+
 		/*
 		bitcoinPage.bitcoinButtonIsDisplay();
 		bitcoinPage.payButtonIsDisplay();

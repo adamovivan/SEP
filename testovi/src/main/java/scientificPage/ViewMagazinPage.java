@@ -15,7 +15,7 @@ public class ViewMagazinPage {
     @FindBy(xpath = "//app-magazine/button")
     private WebElement shoppingCartButton;
 
-    @FindBy(xpath = "//button")
+    @FindBy(xpath = "//div/button")
     private WebElement proceedPaymentButton;
 
     public ViewMagazinPage(WebDriver driver) {

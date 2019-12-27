@@ -22,7 +22,7 @@ public class LoginPageAuthentification {
 	@FindBy(xpath="(//div[@class='form-group']/button)[1]")
 	private WebElement signInButton;
 
-	@FindBy(xpath = "//a[3]")
+	@FindBy(xpath = "//a[@href='/'][2]")
 	private  WebElement signOut;
 
 	public LoginPageAuthentification(WebDriver driver) {
