@@ -1,14 +1,19 @@
 package rs.ac.uns.ftn.bank_service.service;
 
 
+import java.time.LocalDateTime;
+import java.util.UUID;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
 import rs.ac.uns.ftn.bank_service.dto.CardPaymentRequestDTO;
 import rs.ac.uns.ftn.bank_service.dto.CardPaymentResponseDTO;
+import rs.ac.uns.ftn.bank_service.dto.PaymentRegistrationDTO;
 import rs.ac.uns.ftn.bank_service.dto.PaymentRequestDTO;
 import rs.ac.uns.ftn.bank_service.dto.SimpleResponseDTO;
 import rs.ac.uns.ftn.bank_service.exception.ExceptionResolver;
@@ -18,9 +23,6 @@ import rs.ac.uns.ftn.bank_service.model.Transaction;
 import rs.ac.uns.ftn.bank_service.model.TransactionStatus;
 import rs.ac.uns.ftn.bank_service.repository.MerchantRepository;
 import rs.ac.uns.ftn.bank_service.repository.TransactionRepository;
-
-import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Service
 public class PaymentService {
@@ -113,5 +115,14 @@ public class PaymentService {
         }
         transaction.setTransactionStatus(TransactionStatus.ERROR);
         return new SimpleResponseDTO("Success.");
+    }
+    
+    public SimpleResponseDTO paymentRegistration(PaymentRegistrationDTO paymentRegistationDTO) {
+    	Merchant merchant = new Merchant();
+    	marchant.setUsernme(paymentRegistationDTO.getUsername());
+    	merchant.setMerchantId(paymentRegistationDTO.getMerchantId());
+    	merchant.setMerchantPassword(paymentRegistationDTO.getMerchantPassword());
+    	merchantRepository.save(merchant);
+    	return new SimpleResponseDTO("Success.");
     }
 }

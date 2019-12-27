@@ -14,7 +14,7 @@ export class ShoppingCartService {
     return this.http.get(environment.apiUrl + '/shopping-cart/item')
   }
 
-  public pay(){
+  public pay(): Observable<any> {
     return this.http.post(environment.apiUrl + '/shopping-cart/pay', {});
   }
 }

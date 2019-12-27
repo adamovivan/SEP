@@ -1,131 +1,66 @@
-[2019-12-27 10:52:29] [INFO] The Class-Path manifest attribute in C:\Users\Dejan\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/Dejan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/Dejan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/Dejan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/Dejan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/Dejan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/Dejan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
-[2019-12-27 10:52:29] [INFO] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-[2019-12-27 10:52:29] [INFO] Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-[2019-12-27 10:52:30] [INFO] No active profile set, falling back to default profiles: default
-[2019-12-27 10:52:32] [INFO] Bootstrapping Spring Data repositories in DEFAULT mode.
-[2019-12-27 10:52:32] [INFO] Finished Spring Data repository scanning in 92ms. Found 2 repository interfaces.
-[2019-12-27 10:52:32] [INFO] BeanFactory id=0fc5779e-25ec-3245-9891-69ad9d08fa21
-[2019-12-27 10:52:33] [INFO] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-[2019-12-27 10:52:33] [INFO] Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-[2019-12-27 10:52:33] [INFO] Tomcat initialized with port(s): 8003 (http)
-[2019-12-27 10:52:33] [INFO] Initializing ProtocolHandler ["http-nio-8003"]
-[2019-12-27 10:52:33] [INFO] Starting service [Tomcat]
-[2019-12-27 10:52:33] [INFO] Starting Servlet engine: [Apache Tomcat/9.0.27]
-[2019-12-27 10:52:34] [INFO] Initializing Spring embedded WebApplicationContext
-[2019-12-27 10:52:34] [INFO] Root WebApplicationContext: initialization completed in 3451 ms
-[2019-12-27 10:52:34] [INFO] HikariPool-1 - Starting...
-[2019-12-27 10:52:34] [INFO] HikariPool-1 - Start completed.
-[2019-12-27 10:52:34] [INFO] H2 console available at '/h2'. Database available at 'jdbc:h2:file:~/bitcoin'
-[2019-12-27 10:52:35] [INFO] HHH000412: Hibernate Core {5.4.8.Final}
-[2019-12-27 10:52:35] [INFO] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-[2019-12-27 10:52:35] [INFO] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-[2019-12-27 10:52:36] [INFO] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-[2019-12-27 10:52:36] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
-[2019-12-27 10:52:36] [WARN] Unable to start LiveReload server
-[2019-12-27 10:52:38] [WARN] No URLs will be polled as dynamic configuration sources.
-[2019-12-27 10:52:38] [INFO] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-[2019-12-27 10:52:38] [WARN] No URLs will be polled as dynamic configuration sources.
-[2019-12-27 10:52:38] [INFO] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-[2019-12-27 10:52:38] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[2019-12-27 10:52:38] [INFO] Initializing ExecutorService 'applicationTaskExecutor'
-[2019-12-27 10:52:41] [INFO] Setting initial instance status as: STARTING
-[2019-12-27 10:52:41] [INFO] Initializing Eureka in region us-east-1
-[2019-12-27 10:52:41] [INFO] Using JSON encoding codec LegacyJacksonJson
-[2019-12-27 10:52:41] [INFO] Using JSON decoding codec LegacyJacksonJson
-[2019-12-27 10:52:42] [INFO] Using XML encoding codec XStreamXml
-[2019-12-27 10:52:42] [INFO] Using XML decoding codec XStreamXml
-[2019-12-27 10:52:42] [INFO] Resolving eureka endpoints via configuration
-[2019-12-27 10:52:42] [INFO] Disable delta property : false
-[2019-12-27 10:52:42] [INFO] Single vip registry refresh property : null
-[2019-12-27 10:52:42] [INFO] Force full registry fetch : false
-[2019-12-27 10:52:42] [INFO] Application is null : false
-[2019-12-27 10:52:42] [INFO] Registered Applications size is zero : true
-[2019-12-27 10:52:42] [INFO] Application version is -1: true
-[2019-12-27 10:52:42] [INFO] Getting all instance registry info from the eureka server
-[2019-12-27 10:52:42] [INFO] The response status is 200
-[2019-12-27 10:52:42] [INFO] Starting heartbeat executor: renew interval is: 30
-[2019-12-27 10:52:42] [INFO] InstanceInfoReplicator onDemand update allowed rate per min is 4
-[2019-12-27 10:52:42] [INFO] Discovery Client initialized at timestamp 1577465562897 with initial instances count: 1
-[2019-12-27 10:52:42] [INFO] Registering application API-BITCOIN with eureka with status UP
-[2019-12-27 10:52:42] [INFO] Saw local status change event StatusChangeEvent [timestamp=1577465562906, current=UP, previous=STARTING]
-[2019-12-27 10:52:42] [INFO] DiscoveryClient_API-BITCOIN/DESKTOP-9RN4Q95:api-bitcoin:8003: registering service...
-[2019-12-27 10:52:42] [INFO] Starting ProtocolHandler ["http-nio-8003"]
-[2019-12-27 10:52:42] [INFO] DiscoveryClient_API-BITCOIN/DESKTOP-9RN4Q95:api-bitcoin:8003 - registration status: 204
-[2019-12-27 10:52:42] [INFO] Tomcat started on port(s): 8003 (http) with context path ''
-[2019-12-27 10:52:42] [INFO] Updating port to 8003
-[2019-12-27 10:52:43] [INFO] Started BitcoinApplication in 15.364 seconds (JVM running for 17.442)
-[2019-12-27 10:57:42] [INFO] Resolving eureka endpoints via configuration
-[2019-12-27 11:02:26] [INFO] Unregistering application API-BITCOIN with eureka with status DOWN
-[2019-12-27 11:02:26] [WARN] Saw local status change event StatusChangeEvent [timestamp=1577466146069, current=DOWN, previous=UP]
-[2019-12-27 11:02:26] [INFO] DiscoveryClient_API-BITCOIN/DESKTOP-9RN4Q95:api-bitcoin:8003: registering service...
-[2019-12-27 11:02:26] [INFO] Shutting down ExecutorService 'applicationTaskExecutor'
-[2019-12-27 11:02:26] [INFO] DiscoveryClient_API-BITCOIN/DESKTOP-9RN4Q95:api-bitcoin:8003 - registration status: 204
-[2019-12-27 11:02:26] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
-[2019-12-27 11:02:26] [INFO] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-[2019-12-27 11:02:26] [INFO] Shutting down DiscoveryClient ...
-[2019-12-27 11:02:29] [INFO] Unregistering ...
-[2019-12-27 11:02:29] [INFO] DiscoveryClient_API-BITCOIN/DESKTOP-9RN4Q95:api-bitcoin:8003 - deregister  status: 200
-[2019-12-27 11:02:29] [INFO] Completed shut down of DiscoveryClient
-[2019-12-27 11:02:29] [INFO] HikariPool-1 - Shutdown initiated...
-[2019-12-27 11:02:29] [INFO] HikariPool-1 - Shutdown completed.
-[2019-12-27 11:02:29] [INFO] Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-[2019-12-27 11:02:30] [INFO] No active profile set, falling back to default profiles: default
-[2019-12-27 11:02:30] [INFO] Bootstrapping Spring Data repositories in DEFAULT mode.
-[2019-12-27 11:02:30] [INFO] Finished Spring Data repository scanning in 11ms. Found 2 repository interfaces.
-[2019-12-27 11:02:30] [INFO] BeanFactory id=0fc5779e-25ec-3245-9891-69ad9d08fa21
-[2019-12-27 11:02:30] [INFO] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-[2019-12-27 11:02:30] [INFO] Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-[2019-12-27 11:02:30] [WARN] The MBean registry cannot be disabled because it has already been initialised
-[2019-12-27 11:02:30] [INFO] Tomcat initialized with port(s): 8003 (http)
-[2019-12-27 11:02:30] [INFO] Initializing ProtocolHandler ["http-nio-8003"]
-[2019-12-27 11:02:30] [INFO] Starting service [Tomcat]
-[2019-12-27 11:02:30] [INFO] Starting Servlet engine: [Apache Tomcat/9.0.27]
-[2019-12-27 11:02:30] [INFO] Initializing Spring embedded WebApplicationContext
-[2019-12-27 11:02:30] [INFO] Root WebApplicationContext: initialization completed in 460 ms
-[2019-12-27 11:02:30] [INFO] HikariPool-2 - Starting...
-[2019-12-27 11:02:30] [INFO] HikariPool-2 - Start completed.
-[2019-12-27 11:02:30] [INFO] H2 console available at '/h2'. Database available at 'jdbc:h2:file:~/bitcoin'
-[2019-12-27 11:02:30] [INFO] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-[2019-12-27 11:02:30] [INFO] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-[2019-12-27 11:02:30] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
-[2019-12-27 11:02:30] [WARN] Unable to start LiveReload server
-[2019-12-27 11:02:30] [WARN] No URLs will be polled as dynamic configuration sources.
-[2019-12-27 11:02:30] [INFO] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-[2019-12-27 11:02:30] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[2019-12-27 11:02:30] [INFO] Initializing ExecutorService 'applicationTaskExecutor'
-[2019-12-27 11:02:31] [INFO] Setting initial instance status as: STARTING
-[2019-12-27 11:02:31] [INFO] Initializing Eureka in region us-east-1
-[2019-12-27 11:02:31] [INFO] Using JSON encoding codec LegacyJacksonJson
-[2019-12-27 11:02:31] [INFO] Using JSON decoding codec LegacyJacksonJson
-[2019-12-27 11:02:31] [INFO] Using XML encoding codec XStreamXml
-[2019-12-27 11:02:31] [INFO] Using XML decoding codec XStreamXml
-[2019-12-27 11:02:31] [INFO] Resolving eureka endpoints via configuration
-[2019-12-27 11:02:31] [INFO] Disable delta property : false
-[2019-12-27 11:02:31] [INFO] Single vip registry refresh property : null
-[2019-12-27 11:02:31] [INFO] Force full registry fetch : false
-[2019-12-27 11:02:31] [INFO] Application is null : false
-[2019-12-27 11:02:31] [INFO] Registered Applications size is zero : true
-[2019-12-27 11:02:31] [INFO] Application version is -1: true
-[2019-12-27 11:02:31] [INFO] Getting all instance registry info from the eureka server
-[2019-12-27 11:02:31] [INFO] The response status is 200
-[2019-12-27 11:02:31] [INFO] Starting heartbeat executor: renew interval is: 30
-[2019-12-27 11:02:31] [INFO] InstanceInfoReplicator onDemand update allowed rate per min is 4
-[2019-12-27 11:02:31] [INFO] Discovery Client initialized at timestamp 1577466151528 with initial instances count: 3
-[2019-12-27 11:02:31] [INFO] Registering application API-BITCOIN with eureka with status UP
-[2019-12-27 11:02:31] [INFO] Saw local status change event StatusChangeEvent [timestamp=1577466151529, current=UP, previous=STARTING]
-[2019-12-27 11:02:31] [INFO] DiscoveryClient_API-BITCOIN/DESKTOP-9RN4Q95:api-bitcoin:8003: registering service...
-[2019-12-27 11:02:31] [INFO] DiscoveryClient_API-BITCOIN/DESKTOP-9RN4Q95:api-bitcoin:8003 - registration status: 204
-[2019-12-27 11:02:31] [INFO] Starting ProtocolHandler ["http-nio-8003"]
-[2019-12-27 11:02:31] [INFO] Tomcat started on port(s): 8003 (http) with context path ''
-[2019-12-27 11:02:31] [INFO] Updating port to 8003
-[2019-12-27 11:02:31] [INFO] Started BitcoinApplication in 2.267 seconds (JVM running for 605.755)
-[2019-12-27 11:02:31] [INFO] Condition evaluation unchanged
-[2019-12-27 11:07:31] [INFO] Resolving eureka endpoints via configuration
-[2019-12-27 11:12:31] [INFO] Resolving eureka endpoints via configuration
-[2019-12-27 11:17:31] [INFO] Resolving eureka endpoints via configuration
-[2019-12-27 11:22:31] [INFO] Resolving eureka endpoints via configuration
-[2019-12-27 11:23:28] [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
-[2019-12-27 11:23:28] [INFO] Initializing Servlet 'dispatcherServlet'
-[2019-12-27 11:23:28] [INFO] Completed initialization in 20 ms
-[2019-12-27 11:23:32] [INFO] Merchant id for user mikamikicwas succesfully saved.
-[2019-12-27 11:27:31] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 11:58:39] [INFO] The Class-Path manifest attribute in C:\Users\Dejan\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/Dejan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/Dejan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/Dejan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/Dejan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/Dejan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/Dejan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+[2019-12-27 11:58:39] [INFO] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2019-12-27 11:58:39] [INFO] Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2019-12-27 11:58:39] [INFO] No active profile set, falling back to default profiles: default
+[2019-12-27 11:58:40] [INFO] Bootstrapping Spring Data repositories in DEFAULT mode.
+[2019-12-27 11:58:40] [INFO] Finished Spring Data repository scanning in 41ms. Found 2 repository interfaces.
+[2019-12-27 11:58:40] [INFO] BeanFactory id=0fc5779e-25ec-3245-9891-69ad9d08fa21
+[2019-12-27 11:58:40] [INFO] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2019-12-27 11:58:40] [INFO] Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2019-12-27 11:58:40] [INFO] Tomcat initialized with port(s): 8003 (http)
+[2019-12-27 11:58:40] [INFO] Initializing ProtocolHandler ["http-nio-8003"]
+[2019-12-27 11:58:40] [INFO] Starting service [Tomcat]
+[2019-12-27 11:58:40] [INFO] Starting Servlet engine: [Apache Tomcat/9.0.27]
+[2019-12-27 11:58:41] [INFO] Initializing Spring embedded WebApplicationContext
+[2019-12-27 11:58:41] [INFO] Root WebApplicationContext: initialization completed in 1325 ms
+[2019-12-27 11:58:41] [INFO] HikariPool-1 - Starting...
+[2019-12-27 11:58:41] [INFO] HikariPool-1 - Start completed.
+[2019-12-27 11:58:41] [INFO] H2 console available at '/h2'. Database available at 'jdbc:h2:file:~/bitcoin'
+[2019-12-27 11:58:41] [INFO] HHH000412: Hibernate Core {5.4.8.Final}
+[2019-12-27 11:58:41] [INFO] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+[2019-12-27 11:58:41] [INFO] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2019-12-27 11:58:42] [INFO] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2019-12-27 11:58:42] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2019-12-27 11:58:42] [WARN] Unable to start LiveReload server
+[2019-12-27 11:58:42] [WARN] No URLs will be polled as dynamic configuration sources.
+[2019-12-27 11:58:42] [INFO] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+[2019-12-27 11:58:42] [WARN] No URLs will be polled as dynamic configuration sources.
+[2019-12-27 11:58:42] [INFO] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+[2019-12-27 11:58:42] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2019-12-27 11:58:43] [INFO] Initializing ExecutorService 'applicationTaskExecutor'
+[2019-12-27 11:58:44] [INFO] Setting initial instance status as: STARTING
+[2019-12-27 11:58:44] [INFO] Initializing Eureka in region us-east-1
+[2019-12-27 11:58:44] [INFO] Using JSON encoding codec LegacyJacksonJson
+[2019-12-27 11:58:44] [INFO] Using JSON decoding codec LegacyJacksonJson
+[2019-12-27 11:58:44] [INFO] Using XML encoding codec XStreamXml
+[2019-12-27 11:58:44] [INFO] Using XML decoding codec XStreamXml
+[2019-12-27 11:58:44] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 11:58:44] [INFO] Disable delta property : false
+[2019-12-27 11:58:44] [INFO] Single vip registry refresh property : null
+[2019-12-27 11:58:44] [INFO] Force full registry fetch : false
+[2019-12-27 11:58:44] [INFO] Application is null : false
+[2019-12-27 11:58:44] [INFO] Registered Applications size is zero : true
+[2019-12-27 11:58:44] [INFO] Application version is -1: true
+[2019-12-27 11:58:44] [INFO] Getting all instance registry info from the eureka server
+[2019-12-27 11:58:44] [INFO] The response status is 200
+[2019-12-27 11:58:44] [INFO] Starting heartbeat executor: renew interval is: 30
+[2019-12-27 11:58:44] [INFO] InstanceInfoReplicator onDemand update allowed rate per min is 4
+[2019-12-27 11:58:44] [INFO] Discovery Client initialized at timestamp 1577469524994 with initial instances count: 4
+[2019-12-27 11:58:44] [INFO] Registering application API-BITCOIN with eureka with status UP
+[2019-12-27 11:58:44] [INFO] Saw local status change event StatusChangeEvent [timestamp=1577469524998, current=UP, previous=STARTING]
+[2019-12-27 11:58:45] [INFO] DiscoveryClient_API-BITCOIN/DESKTOP-9RN4Q95:api-bitcoin:8003: registering service...
+[2019-12-27 11:58:45] [INFO] Starting ProtocolHandler ["http-nio-8003"]
+[2019-12-27 11:58:45] [INFO] DiscoveryClient_API-BITCOIN/DESKTOP-9RN4Q95:api-bitcoin:8003 - registration status: 204
+[2019-12-27 11:58:45] [INFO] Tomcat started on port(s): 8003 (http) with context path ''
+[2019-12-27 11:58:45] [INFO] Updating port to 8003
+[2019-12-27 11:58:45] [INFO] Started BitcoinApplication in 6.536 seconds (JVM running for 7.353)
+[2019-12-27 12:03:44] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 12:08:44] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 12:13:44] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 12:18:44] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 12:23:44] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 12:28:44] [INFO] Resolving eureka endpoints via configuration
+[2019-12-27 12:30:59] [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2019-12-27 12:30:59] [INFO] Initializing Servlet 'dispatcherServlet'
+[2019-12-27 12:30:59] [INFO] Completed initialization in 14 ms
+[2019-12-27 12:33:44] [INFO] Resolving eureka endpoints via configuration

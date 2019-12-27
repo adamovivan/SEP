@@ -20,4 +20,8 @@ export class PaymentService {
   public paymentError() {
     return this.http.put(environment.zuulUrl + "/payment-error", {});
   }
+
+  public saveUserData(userInfo){
+    return this.http.post(environment.zuulUrl + "/payment-registration", userInfo);
+  }
 }

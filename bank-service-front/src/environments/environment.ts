@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  zuulUrl: "http://localhost:8765"
+  zuulUrl: "http://localhost:8765",
+  authenticationPaymentsUrl: "http://localhost:4200/typePayments"
 };
 
 /*
