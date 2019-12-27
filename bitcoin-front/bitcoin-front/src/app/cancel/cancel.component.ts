@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { BitcoinService } from '../service/bitcoin.service';
 
 @Component({
   selector: 'app-cancel',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CancelComponent implements OnInit {
 
-  constructor() { }
+  orderId : string;
+  response : string;
+  constructor(private activatedRoute : ActivatedRoute, private router: Router, private service: BitcoinService) { }
 
   ngOnInit() {
+    this.activatedRoute.paramMap.subscribe(
+      params => {
+        this.orderId = params.get('token');
+        this.service.cancel(this.orderId).subscribe(
+          data => {
+            this.response = data;
+        });
+      }
+    );
   }
 
 }

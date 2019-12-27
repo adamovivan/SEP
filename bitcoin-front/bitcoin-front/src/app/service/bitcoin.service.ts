@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,12 +20,12 @@ export class BitcoinService {
   }
 
 
-  success(token:string){
-
+  success(token:string): Observable<string>{
+    return this.http.get(this.SERVER_URL + "/api-bitcoin/success/" + token, {responseType:'text'});
   }
 
-  cancel(token:string){
-
+  cancel(token:string):  Observable<string>{
+    return this.http.get(this.SERVER_URL + "/api-bitcoin/cancel/" + token, {responseType:'text'});
   }
 
   saveUserData(user:any){

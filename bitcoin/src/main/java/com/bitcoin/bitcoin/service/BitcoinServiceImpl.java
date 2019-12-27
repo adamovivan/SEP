@@ -16,6 +16,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 
+import com.bitcoin.bitcoin.dto.OrderResponseDto;
 import com.bitcoin.bitcoin.dto.PaymentDto;
 import com.bitcoin.bitcoin.dto.PaymentResponseDto;
 import com.bitcoin.bitcoin.dto.ResponseUrlDto;
@@ -31,52 +32,50 @@ import com.bitcoin.bitcoin.repository.OrderRepository;
 import com.bitcoin.bitcoin.repository.UserBitcoinRepository;
 
 @Service
-public class BitcoinServiceImpl implements BitcoinService{
+public class BitcoinServiceImpl implements BitcoinService {
 
 	private static final Logger logger = LoggerFactory.getLogger(BitcoinService.class);
 	
 	@Autowired
-	private UserBitcoinRepository userRepository; 
+	private UserBitcoinRepository userRepository;
 	@Autowired
 	private OrderRepository orderRepository;
-	
+
 	private String address = "http://localhost:";
-	
-	
+
 	@Override
 	public ResponseUrlDto pay(PaymentDto pdt, String username) {
 		// TODO Auto-generated method stub
-		Merchant u = this.userRepository.findByUsername(username).orElseThrow(() -> new BitcoinUserNotExistException("User with that username does not exist!"));
-		
-		
+		Merchant u = this.userRepository.findByUsername(username)
+				.orElseThrow(() -> new BitcoinUserNotExistException("User with that username does not exist!"));
+
 		RestTemplate rest = new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Authorization", "Token " + u.getToken());
 		System.out.println(u.getToken());
-		
+
 		String randomToken = UUID.randomUUID().toString();
-		
+
 		MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
 		map.add("order_id", "nc-1");
-		map.add("price_amount",  Double.toString(pdt.getTotalPrice()));
+		map.add("price_amount", Double.toString(pdt.getTotalPrice()));
 		map.add("price_currency", Currency.USD.toString());
 		map.add("receive_currency", Currency.USD.toString());
 		map.add("cancel_url", this.address + "4202/cancel/" + randomToken);
 		map.add("success_url", this.address + "4202/success/" + randomToken);
 		map.add("token", randomToken);
-		
-		
-		HttpEntity<MultiValueMap<String, String>> request =  new HttpEntity<MultiValueMap<String,String>>(map, headers);
+
+		HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<MultiValueMap<String, String>>(map, headers);
 		ResponseUrlDto returnResponse = new ResponseUrlDto();
 		try {
-			ResponseEntity<PaymentResponseDto> response = rest.postForEntity("https://api-sandbox.coingate.com/v2/orders", request, PaymentResponseDto.class);
+			ResponseEntity<PaymentResponseDto> response = rest
+					.postForEntity("https://api-sandbox.coingate.com/v2/orders", request, PaymentResponseDto.class);
 			System.out.println("obratio se api-u");
 			Order o = convertToOrder(response.getBody(), username, "", randomToken);
 			this.orderRepository.save(o);
 			returnResponse.setUrl(response.getBody().getPayment_url());
 			returnResponse.setSuccess(true);
-			logger.info("Redirect url for bitcoin payment to user account " + username + " was"
-					+ " successfully created.");
+		
 		}catch(HttpStatusCodeException e) {
 			System.out.println("ERROR WHILE CALLING APPLICATION!");
 			System.out.println(e.getMessage());
@@ -85,33 +84,30 @@ public class BitcoinServiceImpl implements BitcoinService{
 			logger.error("Redirect url for bitcoin payment to user account " + username + " was"
 					+ " not created.");
 		}
-		
-		
-		
+
 		return returnResponse;
 	}
 
-
 	private Order convertToOrder(PaymentResponseDto body, String username, String callbackUrl, String randomToken) {
 		// TODO Auto-generated method stub
-		return new Order(body.getId().toString(), username, new Date(), null, Double.parseDouble(body.getPrice_amount()), Currency.valueOf(body.getPrice_currency()),
+		return new Order(body.getId().toString(), username, new Date(), null,
+				Double.parseDouble(body.getPrice_amount()), Currency.valueOf(body.getPrice_currency()),
 				PaymentState.NEW, NotificationState.NOT_NOTIFIED, callbackUrl, randomToken);
 	}
-
 
 	@Override
 	public void saveMerchant(Merchant m) {
 		// TODO Auto-generated method stub
 		Merchant find = this.userRepository.findByUsername(m.getUsername()).orElse(null);
-		
+
 		if (find != null) {
 			if (find.getToken().equals("")) {
 				find.setToken("");
-			}else {
+			} else {
 				find.setToken(m.getToken());
 			}
-		}else {
-			if(m.getToken().equals("")){
+		} else {
+			if (m.getToken().equals("")) {
 				throw new BadRequestException("Some of the input fields can`t be empty!");
 			}
 			find = new Merchant();
@@ -128,76 +124,95 @@ public class BitcoinServiceImpl implements BitcoinService{
 		
 	}
 
-
 	@Override
 	public String completePayment(String token) {
 		// TODO Auto-generated method stub
-		Order order = this.orderRepository.findByRandomToken(token).orElseThrow(() -> new OrderNotExistException("Order with that token does not exist!"));
-		
-		if (order.getState() == PaymentState.PAID || order.getState() == PaymentState.CANCELED) {
-			throw new BadRequestException("Payment is already processed!");
+		Order order = this.orderRepository.findByRandomToken(token)
+				.orElseThrow(() -> new OrderNotExistException("Order with that token does not exist!"));
+
+		OrderResponseDto ordto = new OrderResponseDto();
+		System.out.println(order.getState());
+		if (order.getState().equals(PaymentState.PAID) || order.getState() == PaymentState.CANCELED) {
+			// throw new BadRequestException("Payment is already processed!");
+			System.out.println("paid is it");
+			ordto.setMessage("Payment is already processed!");
+			ordto.setSuccess(false);
+			return ordto.getMessage();
 		}
-		
-		Merchant m = this.userRepository.findByUsername(order.getUsername()).orElseThrow(()-> new BitcoinUserNotExistException("Merchant with that username does not exist!"));
-		
+
+		Merchant m = this.userRepository.findByUsername(order.getUsername())
+				.orElseThrow(() -> new BitcoinUserNotExistException("Merchant with that username does not exist!"));
+
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Authorization", "Token " + m.getToken());
 		RestTemplate rest = new RestTemplate();
-		
+
 		try {
-			ResponseEntity<PaymentResponseDto> response = rest.exchange("https://api-sandbox.coingate.com/v2/orders/"+order.getPaymentId(), HttpMethod.GET,
+			ResponseEntity<PaymentResponseDto> response = rest.exchange(
+					"https://api-sandbox.coingate.com/v2/orders/" + order.getPaymentId(), HttpMethod.GET,
 					new HttpEntity<Object>(headers), PaymentResponseDto.class);
-			
-			if(response.getBody().getStatus().equals("paid")) {
+
+			if (response.getBody().getStatus().equals("paid")) {
 				order.setState(PaymentState.PAID);
 				order.setUpdateTime(new Date());
 				this.orderRepository.save(order);
 			}
-			logger.info("Successfully created bitcoin order!");
-		}catch(HttpStatusCodeException e)
-		{
+			ordto.setMessage("Payment is success processed!");
+			ordto.setSuccess(true);
+		} catch (HttpStatusCodeException e) {
 			System.out.println("Error while checking bitcoin order!");
-			logger.error("Error while checking bitcoin order!");
-		}
-		return this.address + "4202/bitcoin/details" + order.getId();
-	}
+			ordto.setMessage("Error while checking bitcoin order!");
+			ordto.setSuccess(false);
 
+			logger.info("Error while checking bitcoin order!");
+		
+		}
+		logger.info("Successfully created bitcoin order!");
+		return ordto.getMessage();
+	}
 
 	@Override
 	public String cancelPayment(String token) {
 		// TODO Auto-generated method stub
-Order order = this.orderRepository.findByRandomToken(token).orElseThrow(() -> new OrderNotExistException("Order with that token does not exist!"));
-		
+		Order order = this.orderRepository.findByRandomToken(token)
+				.orElseThrow(() -> new OrderNotExistException("Order with that token does not exist!"));
+		OrderResponseDto ordto = new OrderResponseDto();
 		if (order.getState() == PaymentState.PAID || order.getState() == PaymentState.CANCELED) {
-			throw new BadRequestException("Payment is already processed!");
+			// throw new BadRequestException("Payment is already processed!");
+			ordto.setMessage("Payment is already processed!");
+			ordto.setSuccess(false);
+			return ordto.getMessage();
 		}
-		
-		Merchant m = this.userRepository.findByUsername(order.getUsername()).orElseThrow(()-> new BitcoinUserNotExistException("Merchant with that username does not exist!"));
-		
+
+		Merchant m = this.userRepository.findByUsername(order.getUsername())
+				.orElseThrow(() -> new BitcoinUserNotExistException("Merchant with that username does not exist!"));
+
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Authorization", "Token " + m.getToken());
 		RestTemplate rest = new RestTemplate();
-		
+
 		try {
-			ResponseEntity<PaymentResponseDto> response = rest.exchange("https://api-sandbox.coingate.com/v2/orders/"+order.getPaymentId(), HttpMethod.GET,
+			ResponseEntity<PaymentResponseDto> response = rest.exchange(
+					"https://api-sandbox.coingate.com/v2/orders/" + order.getPaymentId(), HttpMethod.GET,
 					new HttpEntity<Object>(headers), PaymentResponseDto.class);
-			
-			if(!response.getBody().getStatus().equals("paid")) {
+
+			if (!response.getBody().getStatus().equals("paid")) {
 				order.setState(PaymentState.CANCELED);
 				order.setUpdateTime(new Date());
 				this.orderRepository.save(order);
+				ordto.setMessage("Payment is success processed!");
+				ordto.setSuccess(true);
 			}
-			logger.info("Payment was successfuly canceled!");
-		}catch(HttpStatusCodeException e)
-		{
+		} catch (HttpStatusCodeException e) {
 			System.out.println("Error while checking bitcoin order!");
-			logger.error("Problem while trying to cancel payment.");
+			ordto.setMessage("Error while checking bitcoin order!");
+			ordto.setSuccess(false);
+
+			logger.info("Error while checking bitcoin order!");
 		}
-		return this.address + "4202/bitcoin/details" + order.getId();
+		logger.info("Successfully canceled bitcoin order!");
+		return ordto.getMessage();
+
 	}
-	
-	
-	
-	
 
 }
