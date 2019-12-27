@@ -3,6 +3,8 @@ package rs.ac.uns.ftn.paypal_service.service;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -19,6 +21,8 @@ import rs.ac.uns.ftn.paypal_service.repository.TransactionRepository;
 
 @Service
 public class PaymentService {
+	
+	private static final Logger logger = LoggerFactory.getLogger(PaymentService.class);
 
     @Autowired
     private PaymentRepository paymentRepository;
@@ -54,8 +58,12 @@ public class PaymentService {
 				Date date = new Date(System.currentTimeMillis());
 				transaction.setTime(formatter.format(date));
 				transaction = transactionRepository.save(transaction);
+				logger.info("Redirect url for paypal payment to user account " + paymentOrderRequest.getUsername() + " was"
+						+ " successfully created.");
 				return response;
 			} catch (PayPalRESTException e) {
+				logger.error("Redirect url for paypal payment to user account " + paymentOrderRequest.getUsername() + " was"
+						+ " not created.");
 				e.printStackTrace();
 			}
 			
