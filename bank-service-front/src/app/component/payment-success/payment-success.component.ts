@@ -12,8 +12,8 @@ export class PaymentSuccessComponent implements OnInit {
   ngOnInit() {
   }
 
-  goBack(){
-    console.log("BACK")
+  ok(){
+    window.location.href = "https://www.google.com";
   }
 
 }
