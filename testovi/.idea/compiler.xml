@@ -9,5 +9,8 @@
         <module name="testovi" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="testovi" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

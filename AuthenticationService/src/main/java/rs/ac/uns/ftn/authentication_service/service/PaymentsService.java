@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -24,6 +26,8 @@ import rs.ac.uns.ftn.authentication_service.response.PaymentResponse;
 
 @Service
 public class PaymentsService {
+	
+	private static final Logger logger = LoggerFactory.getLogger(PaymentsService.class);
 	
 	@Autowired
 	private PaymentsRepository paymentsRepository;
@@ -66,8 +70,10 @@ public class PaymentsService {
 			for (String string : st) {
 				lista.add(string);
 			}
+			logger.info("Successfully obtained selected payment methods for the " + username + " user");
 			return lista;
 		}else {
+			logger.error("Selected payment methods for " + username + " users have not been received");
 			return lista;
 		}
 	}
@@ -89,8 +95,10 @@ public class PaymentsService {
 				lista.add(string);
 			}
 			payment = new PaymentResponse(payments.getUsername(), lista);
+			logger.info("Successfully obtained selected payment methods for the " + client.getUsername() + " user");
 		}else {
 			payment = new PaymentResponse(null, null);
+			logger.error("Selected payment methods for " + client.getUsername() + " users have not been received");
 		}
 		
 		
@@ -109,10 +117,12 @@ public class PaymentsService {
 		if(transaction != null) {
 			response.setSuccess(true);
 			response.setUrl("http://localhost:4200/payingType/"+ transaction.getUuid());
+			logger.info("Successfully obtained transaction link");
 			return response;
 		}else {
 			response.setSuccess(false);
 			response.setUrl("");
+			logger.info("No transaction link was obtained");
 			return response;
 		}
 	}
@@ -125,11 +135,20 @@ public class PaymentsService {
 		PaymentOrderRequest order = new PaymentOrderRequest();
 		order.setTotalPrice(transaction.getTotalPrice());
 		order.setUsername(client.getUsername());
+		try {
+			
+			
+			ResponseEntity<PaymentLinkResponse> response = restTemplate.postForEntity("http://localhost:8765/api-"+paymentLinkRequest.getType().toLowerCase()+"/pay", order, PaymentLinkResponse.class);
+			logger.info("Successfully obtained payment link for payment to" + client.getUsername() + " user account");
+			return response.getBody();
+		}catch (Exception e) {
+			logger.info("no payment link was provided for payment to " + client.getUsername() + "'s account");
+			// TODO: handle exception
+		}
 		
-		ResponseEntity<PaymentLinkResponse> response = restTemplate.postForEntity("http://localhost:8765/api-"+paymentLinkRequest.getType().toLowerCase()+"/pay", order, PaymentLinkResponse.class);
 		
+		return new PaymentLinkResponse();
 		
-		return response.getBody();
 		
 	}
 	

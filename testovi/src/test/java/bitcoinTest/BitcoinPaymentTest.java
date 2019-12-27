@@ -2,6 +2,7 @@ package bitcoinTest;
 
 import static org.junit.Assert.assertTrue;
 
+import authentificationPage.LoginPageAuthentification;
 import bitcoinPage.BitcoinMarkPayment;
 import bitcoinPage.BitcoinPage;
 import bitcoinPage.BitcoinSuccessCancelPage;
@@ -10,7 +11,9 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-import scientificPage.ScientificPage;
+import scientificPage.LoginPage;
+import scientificPage.ViewMagazinPage;
+import sun.rmi.runtime.Log;
 
 
 public class BitcoinPaymentTest {
@@ -19,30 +22,63 @@ public class BitcoinPaymentTest {
 	
 	BitcoinPage bitcoinPage;
 	BitcoinMarkPayment bitcoinMarkPaymentPage;
-	ScientificPage choosenMagazinesPage;
+	LoginPage scientificLoginPage;
+	ViewMagazinPage viewMagazinPage;
 	BitcoinSuccessCancelPage bitcoinSuccessCancelPage;
+	LoginPageAuthentification loginPageAuthentification;
 	
 	@Before
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		browser = new ChromeDriver();
 		browser.manage().window().maximize();
-		browser.navigate().to("http://localhost:4300/magazines");
-		
+		browser.navigate().to("http://localhost:4200");
+
+
 		//dodacemo jos stranicu za izbor caspoisa i kupovinu
-		choosenMagazinesPage = PageFactory.initElements(browser, ScientificPage.class);
+		scientificLoginPage = PageFactory.initElements(browser, LoginPage.class);
+		viewMagazinPage = PageFactory.initElements(browser, ViewMagazinPage.class);
 		bitcoinPage = PageFactory.initElements(browser, BitcoinPage.class);
 		bitcoinMarkPaymentPage = PageFactory.initElements(browser, BitcoinMarkPayment.class);
 		bitcoinSuccessCancelPage = PageFactory.initElements(browser, BitcoinSuccessCancelPage.class);
-		
-		//sad bi trebalo prvo da izaberemo neki casopis i da to prosledimo na pay
-		
-		//posle toga odlazi na stranicu za placanje 
-		
+		loginPageAuthentification = PageFactory.initElements(browser, LoginPageAuthentification.class);
+
+		//prijavimo se na autentification server
+		loginPageAuthentification.getSignOut().isDisplayed();
+		loginPageAuthentification.getSignOut().click();
+
+		loginPageAuthentification.loginLinkIsDisplay();
+		loginPageAuthentification.getLoginLink().click();
+		loginPageAuthentification.usernameFieldIsDisplay();
+		loginPageAuthentification.setUsername("mikamikic");
+		loginPageAuthentification.passwordFieldIsDisplay();
+		loginPageAuthentification.setPassword("mika");
+
+		browser.navigate().to("http://localhost:4300/login");
+		scientificLoginPage.usernameFieldIsDisplayed();
+		scientificLoginPage.setUsernameField("peraperic");
+		scientificLoginPage.passwordFieldIsDisplayed();
+		scientificLoginPage.setPasswordField("12345");
+		scientificLoginPage.loginButtonIsDisplayed();
+		scientificLoginPage.getLoginButton().click();
 	}
 	
 	@Test
 	public void test_bitcoinPayment_success() {
+
+		viewMagazinPage.addButtonIsDisplay();
+		assertTrue(browser.getCurrentUrl().equals("http://localhost:4300/magazines"));
+		assertTrue(viewMagazinPage.getAddButton().isDisplayed());
+		viewMagazinPage.getAddButton().click();
+
+		assertTrue(viewMagazinPage.getShoppingCartButton().isDisplayed());
+		viewMagazinPage.getShoppingCartButton().click();
+
+		viewMagazinPage.proceedPaymentButtonIsDisplay();
+		assertTrue(browser.getCurrentUrl().equals("http://localhost:4300/shopping-cart"));
+		assertTrue(viewMagazinPage.getProceedPaymentButton().isDisplayed());
+		viewMagazinPage.getProceedPaymentButton().click();
+		/*
 		bitcoinPage.bitcoinButtonIsDisplay();
 		bitcoinPage.payButtonIsDisplay();
 		assertTrue(browser.getCurrentUrl().startsWith("https://sandbox.coingate.com/invoice")); //mozemo da poredimo samo da li pocinje sa nekim url, zato sto ne znamo token 
@@ -78,7 +114,7 @@ public class BitcoinPaymentTest {
 		bitcoinSuccessCancelPage.completeButtonIsDisplay();
 		assertTrue(bitcoinSuccessCancelPage.getCompleteButton().isDisplayed());
 		assertTrue(browser.getCurrentUrl().startsWith("http://localhost:4202/success"));
-		
+		*/
 	}
 	
 	@Test

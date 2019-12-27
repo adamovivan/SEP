@@ -10,17 +10,20 @@ public class LoginPageAuthentification {
 
 	private WebDriver driver; 
 	
-	@FindBy(xpath="//a@[href='/login'")
+	@FindBy(xpath="//a[@href='/login']")
 	private WebElement loginLink; 
 	
-	@FindBy(xpath="//input[@formcontrolname='username'")
+	@FindBy(xpath="//input[@formcontrolname='username']")
 	private WebElement usernameField;
 	
-	@FindBy(xpath="//input[@formcontrolname='password'")
+	@FindBy(xpath="//input[@formcontrolname='password']")
 	private WebElement passwordField; 
 	
 	@FindBy(xpath="(//div[@class='form-group']/button)[1]")
 	private WebElement signInButton;
+
+	@FindBy(xpath = "//a[3]")
+	private  WebElement signOut;
 
 	public LoginPageAuthentification(WebDriver driver) {
 		this.driver = driver;
@@ -46,14 +49,10 @@ public class LoginPageAuthentification {
 		return usernameField;
 	}
 
-	public void setUsernameField(WebElement usernameField) {
-		this.usernameField = usernameField;
-	}
 
 	public WebElement getPasswordField() {
 		return passwordField;
 	}
-
 	public void setPasswordField(WebElement passwordField) {
 		this.passwordField = passwordField;
 	}
@@ -62,10 +61,9 @@ public class LoginPageAuthentification {
 		return signInButton;
 	}
 
-	public void setSignInButton(WebElement signInButton) {
-		this.signInButton = signInButton;
+	public WebElement getSignOut() {
+		return signOut;
 	}
-	
 
 	public void loginLinkIsDisplay() {
 		(new WebDriverWait(driver, 50)).until(ExpectedConditions.visibilityOf(loginLink));
@@ -81,7 +79,9 @@ public class LoginPageAuthentification {
 	public void passwordFieldIsDisplay() {
 		(new WebDriverWait(driver, 50)).until(ExpectedConditions.visibilityOf(passwordField));
 	}
-	
+	public void signOutIsDisplay() {
+		(new WebDriverWait(driver, 50)).until(ExpectedConditions.visibilityOf(signOut));
+	}
 	public void setPassword(String password) {
 		passwordField.clear();
 		passwordField.sendKeys(password);
