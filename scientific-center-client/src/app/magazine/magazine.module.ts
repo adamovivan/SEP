@@ -23,8 +23,8 @@ import { CommonService } from './service/common.service';
   ],
   providers: [
     MagazineService,
-    CommonService,
-    ShoppingCartService
+    ShoppingCartService,
+    CommonService
   ]
 })
 export class MagazineModule { }

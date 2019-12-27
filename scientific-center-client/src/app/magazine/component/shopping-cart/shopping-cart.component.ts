@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { CommonService } from '../../service/common.service';
 import { ShoppingCartService } from '../../service/shopping-cart.service';
 import { PaymentRequest } from '../../model/payment-request.model';
+import { CommonService } from 'src/app/login/service/common.service';
 
 @Component({
   selector: 'app-shopping-cart',
