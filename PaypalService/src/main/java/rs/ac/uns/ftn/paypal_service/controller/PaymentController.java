@@ -51,6 +51,13 @@ public class PaymentController {
         System.out.println("<<< In paypal >>>");
         return "In paypal";
     }
+
+    @PostMapping("/paypal-test-post")
+    public PaymentOrderRequest testpost(@RequestBody PaymentOrderRequest paymentOrderRequest){
+        System.out.println(paymentOrderRequest.getTotalPrice());
+        System.out.println("<<< In paypal POST >>>");
+        return paymentOrderRequest;
+    }
     
     /**
 	 * Ovu medotu pozivamo kada se po povratku sa paypala ona potvrdjuje izvrsenu uplatu

@@ -12,11 +12,10 @@ export class PaymentService {
   constructor(private http: HttpClient) { }
 
   public pay(paymentCardDTO: PaymentCardDTO){
-    // return this.http.post(environment.zuulUrl + '/pay', paymentCardDTO);
-    return this.http.post("http://localhost:8200" + '/pay', paymentCardDTO);
+    return this.http.post(environment.apiUrl + '/pay', paymentCardDTO);
   }
 
   public getCallbackUrls(paymentId: string): Observable<any> {
-    return this.http.get("http://localhost:8200/get-callback-urls/" + paymentId);
+    return this.http.get(environment.apiUrl + '/get-callback-urls/' + paymentId);
   }
 }

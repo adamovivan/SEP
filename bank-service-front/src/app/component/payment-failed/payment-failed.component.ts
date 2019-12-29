@@ -18,7 +18,7 @@ export class PaymentFailedComponent implements OnInit {
 
   ngOnInit() {
     this.transactionId = this.route.snapshot.paramMap.get("transaction-id");
-    this.paymentService.paymentFailed().subscribe();
+    this.paymentService.paymentFailed(this.transactionId).subscribe();
   }
 
   goBack(){

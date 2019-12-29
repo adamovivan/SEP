@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class BitcoinService {
 
-  readonly SERVER_URL = 'http://localhost:8765';
+  readonly SERVER_URL = 'https://localhost:8765';
   constructor(private http: HttpClient) { }
 
 

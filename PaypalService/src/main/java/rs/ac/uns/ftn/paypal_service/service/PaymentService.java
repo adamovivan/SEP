@@ -33,9 +33,6 @@ public class PaymentService {
     @Autowired
     private PaypalService paypalService;
 
-    @Value("${zuul-gateway-url}")
-    private String zuulUrl;
-
     public PaymentOrderResponse createOrder(PaymentOrderRequest paymentOrderRequest){
     	
         if(paymentOrderRequest.getUsername() != null){
@@ -45,8 +42,8 @@ public class PaymentService {
 	        orderDTO.setTotalPrice(paymentOrderRequest.getTotalPrice());
 	        orderDTO.setClientId(payment.getPaymentId());
 	        orderDTO.setClientSecret(payment.getPaymentSecret());
-	        orderDTO.setSuccessUrl("http://localhost:4201/success");
-	        orderDTO.setCancelUrl("http://localhost:4201/cancel");
+	        orderDTO.setSuccessUrl("https://localhost:4201/success");
+	        orderDTO.setCancelUrl("https://localhost:4201/cancel");
 	
 			try {
 				PaymentOrderResponse response = paypalService.createPayment(orderDTO);
