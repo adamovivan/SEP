@@ -7,5 +7,5 @@ import rs.ac.uns.ftn.paypal_service.model.TransactionData;
 
 @Repository
 public interface TransactionRepository extends JpaRepository<TransactionData, Long> {
-	TransactionData findByUsername(String username);
+	TransactionData findByToken(String token);
 }

@@ -12,7 +12,7 @@ export class SuccessComponent implements OnInit {
 
   paymendId:any;
   PayerId:any;
-  username:any;
+  token:any;
   completePayment:any;
 
   constructor(
@@ -25,10 +25,10 @@ export class SuccessComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(
       params => {
           this.paymendId = window.location.href.split("?")[1].split("&")[0].split("=")[1];
+          this.token = window.location.href.split("?")[1].split("&")[1].split("=")[1];
           this.PayerId = window.location.href.split("?")[1].split("&")[2].split("=")[1];
-          this.username = 'mikamikic';
           this.completePayment = {
-            username: this.username,
+            token: this.token,
             paymentID: this.paymendId,
             payerID: this.PayerId
           }

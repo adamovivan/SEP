@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class PaymentCompleteRequest {
 	
-	private String username;
+	private String token;
 	private String paymentID;
 	private String payerID;
 	
