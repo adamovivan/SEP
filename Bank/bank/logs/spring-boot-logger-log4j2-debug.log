@@ -4199,3 +4199,5 @@ Unconditional classes:
 [2019-12-27 11:24:46] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
 [2019-12-27 11:25:16] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
 [2019-12-27 11:25:46] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2019-12-27 11:26:16] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2019-12-27 11:26:46] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
