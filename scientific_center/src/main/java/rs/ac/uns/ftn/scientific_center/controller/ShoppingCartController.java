@@ -18,13 +18,13 @@ public class ShoppingCartController {
 
     @RequestMapping(value = "/add-item/{magazineId}", method = RequestMethod.POST)
     public ResponseEntity<SimpleResponse> addItem(@PathVariable("magazineId") Long magazineId){
-        try{
+          try{
             shoppingCartService.addItem(magazineId);
-        }
-        catch (NullPointerException e){
+          }
+          catch (NullPointerException e){
             return ResponseEntity.badRequest().body(new SimpleResponse(false, "Something went wrong."));
-        }
-        return ResponseEntity.ok(new SimpleResponse("Item successfully added."));
+          }
+          return ResponseEntity.ok(new SimpleResponse("Item successfully added."));
     }
 
     @RequestMapping(value = "/item", method = RequestMethod.GET)

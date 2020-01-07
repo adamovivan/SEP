@@ -10,20 +10,31 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class CancelComponent implements OnInit {
 
-  username:any;
+  
+  paymendId:any;
+  PayerId:any;
+  token:any;
+  cancelPayment:any;
 
   constructor(
-    private payPalService:PayPalService,
+    private service:PayPalService,
     private formBuilder:FormBuilder,
     private router:Router,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-          this.username = localStorage.getItem('username');
-          console.log(this.username);
-  }
+    this.activatedRoute.paramMap.subscribe(
+      params => {
+          this.token = window.location.href.split("?")[1].split("=")[1];
+          this.cancelPayment = {
+            token: this.token
+          }
 
-  cancel(){
+          this.service.cancelPayment(this.cancelPayment).subscribe(
+            data => {
+               console.log("USPESNO OTKAZANA TRANSAKCIJA");
+          });
+      });
   }
 
 }

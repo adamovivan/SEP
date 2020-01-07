@@ -24,7 +24,7 @@ public class PaypalPayment {
 	@Column(nullable=false,length=100)
 	private String paymentSecret;
 	
-	@Column(nullable=true)
+	@Column(nullable=true, unique=true)
 	private String username;
 
 	public Long getId() {

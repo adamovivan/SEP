@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
@@ -21,6 +22,9 @@ public class TransactionData {
 	private String username;
 	
 	@Column(nullable=false)
+	private String token;
+	
+	@Column(nullable=false)
 	private String time;
 	
 	@Column(nullable=false)
@@ -31,5 +35,8 @@ public class TransactionData {
 	
 	@Column
 	private String buyer;
+	
+	@Column
+	private String orderID;
 	
 }

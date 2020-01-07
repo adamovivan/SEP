@@ -1,1 +1,2 @@
-insert into client (id, username, password, first_Name, last_Name, address, email) values (1,'demo','demo','demo','demo','Veljka Vlahovica 38','demo@gmail.com');
+insert into client (id, username, password, first_Name, last_Name, address, email) values (1,'mikamikic','cXshm0JXlfLD5HD68ylox9aznG6lgdmWV54PCpv30zM=$swBpYPppohWoXtkT1fxhuWN6wTXJVEo/aC3ta0urcrM=','Mika','Mikic','Veljka Vlahovica 38','mikamikic@gmail.com');
+insert into payments (id, payments, username) values (1, 'Paypal,Bitcoin,Bank', 'mikamikic');
