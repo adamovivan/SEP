@@ -5,9 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import rs.ac.uns.ftn.bank.dto.CallbackUrlsDTO;
-import rs.ac.uns.ftn.bank.dto.PaymentCardDTO;
-import rs.ac.uns.ftn.bank.dto.PaymentStatusDTO;
+import org.springframework.web.client.RestTemplate;
+import rs.ac.uns.ftn.bank.dto.*;
 import rs.ac.uns.ftn.bank.exception.BadRequestException;
 import rs.ac.uns.ftn.bank.exception.NotFoundException;
 import rs.ac.uns.ftn.bank.model.*;
@@ -17,6 +16,7 @@ import rs.ac.uns.ftn.bank.repository.ReservationRepository;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -34,18 +34,25 @@ public class PaymentService {
     @Autowired
     private ReservationRepository reservationRepository;
 
+    @Autowired
+    private RestTemplate restTemplate;
+
     @Value("${bank.iin}")
     private String bankIIN;
+
+    @Value("${pcc.url}")
+    private String pccUrl;
 
     public PaymentStatusDTO pay(PaymentCardDTO paymentCardDTO){
         validate(paymentCardDTO);
 
         if(!isSameBank(paymentCardDTO.getPan())){
-            return null;
-            // TODO pcc
+            return forwardToPcc(paymentCardDTO);
         }
 
         // same bank
+        validateCard(paymentCardDTO);
+
         if(!checkBalance(paymentCardDTO.getPan(), paymentCardDTO.getPaymentId())){
             throw new BadRequestException("You don't have enough money for this transaction.");
         }
@@ -65,6 +72,9 @@ public class PaymentService {
         if(isPaymentIdUsed(paymentCardDTO.getPaymentId())){
             throw new BadRequestException("Payment id is already used.");
         }
+    }
+
+    private void validateCard(PaymentCardDTO paymentCardDTO){
         if(!isValidPAN(paymentCardDTO.getPan())){
             throw new BadRequestException("Invalid data.");
         }
@@ -80,6 +90,22 @@ public class PaymentService {
         if(isCardExpired(paymentCardDTO.getExpiryDate())){
             throw new BadRequestException("Card expired.");
         }
+    }
+
+    private PaymentStatusDTO forwardToPcc(PaymentCardDTO paymentCardDTO){
+        PaymentRequest paymentRequest = paymentRequestRepository.findByPaymentId(paymentCardDTO.getPaymentId());
+        AcquirerTransactionRequestDTO acquirerTransactionRequestDTO = new AcquirerTransactionRequestDTO();
+        acquirerTransactionRequestDTO.setAcquirerInn(bankIIN);
+        acquirerTransactionRequestDTO.setAcquirerOrderId(UUID.randomUUID().toString());
+        acquirerTransactionRequestDTO.setAcquirerTimestamp(LocalDateTime.now());
+        acquirerTransactionRequestDTO.setPan(paymentCardDTO.getPan());
+        acquirerTransactionRequestDTO.setCardholderName(paymentCardDTO.getCardholderName());
+        acquirerTransactionRequestDTO.setCvv(paymentCardDTO.getCvv());
+        acquirerTransactionRequestDTO.setExpiryDate(paymentCardDTO.getExpiryDate());
+        acquirerTransactionRequestDTO.setAmount(paymentRequest.getAmount());
+
+        PaymentStatusPccDTO paymentStatusPccDTO = restTemplate.postForObject(pccUrl, acquirerTransactionRequestDTO, PaymentStatusPccDTO.class);
+        return new PaymentStatusDTO(paymentCardDTO.getPaymentId(), PaymentStatus.SUCCESS);
     }
 
     private Reservation reserveMoney(String pan, String paymentId){

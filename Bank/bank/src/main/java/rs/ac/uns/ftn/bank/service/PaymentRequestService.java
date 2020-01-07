@@ -54,7 +54,7 @@ public class PaymentRequestService {
         paymentRequest.setUsed(false);
         paymentRequestRepository.save(paymentRequest);
         logger.info("Payment Request is succesfuly created.");
-        return new PaymentResponseDTO(paymentId, paymentUrl);
+        return new PaymentResponseDTO(true, paymentUrl);
     }
 
     private Boolean isValidMerchant(PaymentRequestDTO paymentRequestDTO){

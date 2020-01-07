@@ -6,6 +6,6 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class PaymentResponseDTO {
-    private String paymentId;
-    private String paymentUrl;
+    private Boolean success;
+    private String url;
 }
