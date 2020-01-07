@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.client.HttpClientErrorException;
 
-import rs.ac.uns.ftn.bank.service.PaymentRequestService;
-
 @ControllerAdvice
 public class ExceptionResolver {
 	
@@ -30,6 +28,11 @@ public class ExceptionResolver {
     @ExceptionHandler(HttpClientErrorException.class)
     public final ResponseEntity httpClientErrorException(HttpClientErrorException exception){
     	logger.error("BAD_REQUEST:> " + exception.getMessage());
+        return buildResponseEntity(new ApiError(HttpStatus.BAD_REQUEST, exception.getMessage()));
+    }
+
+    @ExceptionHandler(NullPointerException.class)
+    public final ResponseEntity nullPointerException(NullPointerException exception){
         return buildResponseEntity(new ApiError(HttpStatus.BAD_REQUEST, exception.getMessage()));
     }
 

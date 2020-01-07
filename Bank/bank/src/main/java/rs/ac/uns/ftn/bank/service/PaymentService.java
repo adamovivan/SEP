@@ -13,6 +13,7 @@ import rs.ac.uns.ftn.bank.model.*;
 import rs.ac.uns.ftn.bank.repository.CardRepository;
 import rs.ac.uns.ftn.bank.repository.PaymentRequestRepository;
 import rs.ac.uns.ftn.bank.repository.ReservationRepository;
+import rs.ac.uns.ftn.bank.repository.TransactionRepository;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -33,6 +34,9 @@ public class PaymentService {
 
     @Autowired
     private ReservationRepository reservationRepository;
+
+    @Autowired
+    private TransactionRepository transactionRepository;
 
     @Autowired
     private RestTemplate restTemplate;
@@ -58,8 +62,9 @@ public class PaymentService {
         }
 
         Reservation reservation = reserveMoney(paymentCardDTO.getPan(), paymentCardDTO.getPaymentId());
+
         logger.info("Payment Transaction is successfully completed to user " + paymentCardDTO.getCardholderName() + " account.");
-        return new PaymentStatusDTO(reservation.getPaymentId(), PaymentStatus.SUCCESS);
+        return new PaymentStatusDTO(reservation.getTransaction().getTransactionId(), reservation.getTransaction().getTransactionStatus());
     }
 
     private void validate(PaymentCardDTO paymentCardDTO){
@@ -104,8 +109,20 @@ public class PaymentService {
         acquirerTransactionRequestDTO.setExpiryDate(paymentCardDTO.getExpiryDate());
         acquirerTransactionRequestDTO.setAmount(paymentRequest.getAmount());
 
+        Transaction transaction = transactionRepository.findByTransactionId(paymentCardDTO.getPaymentId());
+        if(transaction == null){
+            throw new NotFoundException("Transaction with provided id doesn't exist.");
+        }
+
         PaymentStatusPccDTO paymentStatusPccDTO = restTemplate.postForObject(pccUrl, acquirerTransactionRequestDTO, PaymentStatusPccDTO.class);
-        return new PaymentStatusDTO(paymentCardDTO.getPaymentId(), PaymentStatus.SUCCESS);
+        if(paymentStatusPccDTO == null){
+            throw new NullPointerException("PCC returned null.");
+        }
+
+        transaction.setTransactionStatus(paymentStatusPccDTO.getTransactionStatus());
+        transactionRepository.save(transaction);
+
+        return new PaymentStatusDTO(paymentCardDTO.getPaymentId(), paymentStatusPccDTO.getTransactionStatus());
     }
 
     private Reservation reserveMoney(String pan, String paymentId){
@@ -116,12 +133,16 @@ public class PaymentService {
         BankAccount bankAccount = card.getBankAccount();
         bankAccount.setBalance(bankAccount.getBalance() - paymentRequest.getAmount());
 
+        Transaction transaction = transactionRepository.findByTransactionId(paymentId);
+        if(transaction == null){
+            throw new NotFoundException("Transaction with provided id doesn't exist.");
+        }
+        transaction.setTransactionStatus(TransactionStatus.SUCCESS);
         Reservation reservation = new Reservation();
-        reservation.setPaymentId(paymentId);
+        reservation.setTransaction(transaction);
         reservation.setBankAccount(bankAccount);
         reservation.setAmount(paymentRequest.getAmount());
         bankAccount.getReservations().add(reservation);
-
         return reservationRepository.save(reservation);
     }
 
