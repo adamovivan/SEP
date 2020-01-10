@@ -1,4 +1,4 @@
-package rs.ac.uns.ftn.bank.model;
+package rs.ac.uns.ftn.bank2.model;
 
 import lombok.Data;
 
@@ -10,12 +10,12 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
+    @OneToOne
+    private Transaction transaction;
     @ManyToOne
     private BankAccount bankAccount;
     private Double amount;
     private Boolean active;
-    @OneToOne
-    private Transaction transaction;
 
     public Reservation(){
         this.active = true;

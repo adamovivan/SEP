@@ -1,4 +1,4 @@
-package rs.ac.uns.ftn.bank.exception;
+package rs.ac.uns.ftn.bank2.exception;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,11 +28,6 @@ public class ExceptionResolver {
     @ExceptionHandler(HttpClientErrorException.class)
     public final ResponseEntity httpClientErrorException(HttpClientErrorException exception){
     	logger.error("BAD_REQUEST:> " + exception.getMessage());
-        return buildResponseEntity(new ApiError(HttpStatus.BAD_REQUEST, exception.getMessage()));
-    }
-
-    @ExceptionHandler(NullPointerException.class)
-    public final ResponseEntity nullPointerException(NullPointerException exception){
         return buildResponseEntity(new ApiError(HttpStatus.BAD_REQUEST, exception.getMessage()));
     }
 

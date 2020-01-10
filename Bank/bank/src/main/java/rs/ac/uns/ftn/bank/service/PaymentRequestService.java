@@ -16,8 +16,11 @@ import rs.ac.uns.ftn.bank.exception.BadRequestException;
 import rs.ac.uns.ftn.bank.mapper.PaymentRequestMapper;
 import rs.ac.uns.ftn.bank.model.Merchant;
 import rs.ac.uns.ftn.bank.model.PaymentRequest;
+import rs.ac.uns.ftn.bank.model.Transaction;
+import rs.ac.uns.ftn.bank.model.TransactionStatus;
 import rs.ac.uns.ftn.bank.repository.MerchantRepository;
 import rs.ac.uns.ftn.bank.repository.PaymentRequestRepository;
+import rs.ac.uns.ftn.bank.repository.TransactionRepository;
 
 @Service
 public class PaymentRequestService {
@@ -33,6 +36,9 @@ public class PaymentRequestService {
     @Autowired
     private PaymentRequestMapper paymentRequestMapper;
 
+    @Autowired
+    private TransactionRepository transactionRepository;
+
     @Value("${bank.payment.url}")
     private String bankPaymentUrl;
 
@@ -46,14 +52,13 @@ public class PaymentRequestService {
         String paymentId = generatePaymentId();
         String paymentUrl = getPaymentUrl(paymentId);
 
-
         PaymentRequest paymentRequest = paymentRequestMapper.paymentRequestDTOtoPaymentRequest(paymentRequestDTO);
         paymentRequest.setPaymentUrl(paymentUrl);
         paymentRequest.setPaymentId(paymentId);
         paymentRequest.setExpiryTime(LocalDateTime.now().plusMinutes(5));
         paymentRequest.setUsed(false);
         paymentRequestRepository.save(paymentRequest);
-        logger.info("Payment Request is succesfuly created.");
+        createTransaction(paymentRequest);
         return new PaymentResponseDTO(true, paymentUrl);
     }
 
@@ -71,5 +76,14 @@ public class PaymentRequestService {
         return UUID.randomUUID().toString();
     }
 
-
+    private Transaction createTransaction(PaymentRequest paymentRequest){
+        Transaction transaction = new Transaction();
+        transaction.setTransactionId(paymentRequest.getPaymentId());
+        transaction.setMerchantId(paymentRequest.getMerchantId());
+        transaction.setMerchantOrderId(paymentRequest.getMerchantOrderId());
+        transaction.setMerchantTimestamp(paymentRequest.getMerchantTimestamp());
+        transaction.setAmount(paymentRequest.getAmount());
+        transaction.setTransactionStatus(TransactionStatus.OPEN);
+        return transactionRepository.save(transaction);
+    }
 }
