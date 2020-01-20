@@ -1,55 +1,36 @@
 package rs.ac.uns.ftn.zuul.config;
 
-import java.security.NoSuchAlgorithmException;
-
-import javax.annotation.PostConstruct;
-import javax.net.ssl.SSLContext;
-
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.config.Registry;
-import org.apache.http.config.RegistryBuilder;
-import org.apache.http.conn.socket.ConnectionSocketFactory;
-import org.apache.http.conn.socket.PlainConnectionSocketFactory;
-import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
+import org.apache.http.ssl.SSLContextBuilder;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
+import javax.net.ssl.SSLContext;
 
 @Configuration
 public class Config {
 
+	@Value("${http.client.ssl.trust-store}")
+	private String truststorePath;
+
+	@Value("${http.client.ssl.trust-store-password}")
+	private String truststorePassword;
+
 	@Bean
-	public CloseableHttpClient config2() {
-		final SSLConnectionSocketFactory sslsf;
-		try {
-		    sslsf = new SSLConnectionSocketFactory(SSLContext.getDefault(),
-		            NoopHostnameVerifier.INSTANCE);
-		} catch (NoSuchAlgorithmException e) {
-		    throw new RuntimeException(e);
-		}
+	public CloseableHttpClient configSSL() throws Exception {
+		Resource trustStore = new ClassPathResource(truststorePath);
 
-		final Registry<ConnectionSocketFactory> registry = RegistryBuilder.<ConnectionSocketFactory>create()
-		        .register("http", new PlainConnectionSocketFactory())
-		        .register("https", sslsf)
-		        .build();
-
-		final PoolingHttpClientConnectionManager cm = new PoolingHttpClientConnectionManager(registry);
-		cm.setMaxTotal(100);
+		SSLContext sslContext = new SSLContextBuilder()
+				.loadTrustMaterial(trustStore.getURL(), truststorePassword.toCharArray())
+				.build();
+		SSLConnectionSocketFactory socketFactory = new SSLConnectionSocketFactory(sslContext);
 		return HttpClients.custom()
-		        .setSSLSocketFactory(sslsf)
-		        .setConnectionManager(cm)
-		        .build();
+				.setSSLSocketFactory(socketFactory)
+				.build();
 	}
-	
-    @PostConstruct
-    private void configureSSL() {
-
-      System.setProperty("javax.net.ssl.trustStoreType", "JKS");
-      System.setProperty("javax.net.ssl.trustStore", "./src/main/resources/truststore"); 
-      System.setProperty("javax.net.ssl.trustStorePassword", "123");
-    }
 }
