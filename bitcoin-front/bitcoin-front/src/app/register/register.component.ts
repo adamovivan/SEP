@@ -13,6 +13,8 @@ export class RegisterComponent implements OnInit {
   submitted = false;
   userInfo: any;
   username: any;
+  addPayment:any;
+
   constructor(private service: BitcoinService, private formBuilder : FormBuilder, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
@@ -31,9 +33,16 @@ export class RegisterComponent implements OnInit {
           this.userInfo.username = params.get('username');
           this.service.saveUserData(this.userInfo).subscribe(
             data => {
-              window.location.href = 'http://localhost:4200/typePayments';
+              this.addPayment = {
+                username: this.userInfo.username,
+                payment: 'Bitcoin'
+              };
+              this.service.addPayments(this.addPayment).subscribe(
+                data => {
+                       window.location.href = 'https://localhost:4200/typePayments';
+              })
+            })
           })
-      });
   }
 
 }

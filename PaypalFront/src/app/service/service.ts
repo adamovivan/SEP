@@ -26,4 +26,8 @@ import { SERVER_URL } from '../app.constant';
     cancelPayment(cancel:any){
       return this.http.post(SERVER_URL + '/api-paypal/cancelData',cancel);
     }
+
+    addPayments(tip:any){
+      return this.http.post(SERVER_URL + '/authentication-service/addPayments',tip);
+    }
 }

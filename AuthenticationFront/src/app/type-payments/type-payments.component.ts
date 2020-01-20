@@ -65,17 +65,8 @@ export class TypePaymentsComponent implements OnInit {
     this.service.frontedPort(tip).subscribe(
       data => {
         this.port = data;
-        this.addPayment = {
-          username: this.token.username,
-          payment: tip
-        };
-        this.service.addPayments(this.addPayment).subscribe(
-          data => {
-            window.location.href = 'http://localhost:' + this.port + '/input/'+ this.token.username;
-        });
+            window.location.href = 'https://localhost:' + this.port + '/input/'+ this.token.username;
     });
-    
-    
   }
 
 }

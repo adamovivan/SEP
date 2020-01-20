@@ -31,4 +31,8 @@ export class BitcoinService {
   saveUserData(user:any){
     return this.http.post(this.SERVER_URL + '/api-bitcoin/save', user, {responseType:'text'});
   }
+
+  addPayments(tip:any){
+    return this.http.post(this.SERVER_URL + '/authentication-service/addPayments',tip);
+  }
 }

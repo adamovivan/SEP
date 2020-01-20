@@ -15,6 +15,7 @@ export class PaymentRegistrationComponent implements OnInit {
   submitted = false;
   userInfo: any;
   username: any;
+  addPayment: any;
 
   constructor(
     private paymentService: PaymentService,
@@ -38,7 +39,15 @@ export class PaymentRegistrationComponent implements OnInit {
           this.userInfo.username = params.get('username');
           this.paymentService.saveUserData(this.userInfo).subscribe(
             () => {
-              window.location.href = environment.authenticationPaymentsUrl;
+              this.addPayment = {
+                username: this.userInfo.username,
+                payment: 'Bank'
+              };
+              this.paymentService.addPayments(this.addPayment).subscribe(
+                data => {
+                    window.location.href = environment.authenticationPaymentsUrl;
+              })
+             
           })
       });
      
