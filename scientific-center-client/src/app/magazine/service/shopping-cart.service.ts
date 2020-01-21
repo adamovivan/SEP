@@ -11,10 +11,14 @@ export class ShoppingCartService {
   constructor(private http: HttpClient) { }
 
   public getShoppingCartItems(): Observable<any> {
-    return this.http.get(environment.apiUrl + '/shopping-cart/item')
+    return this.http.get(environment.apiUrl + '/shopping-cart/items')
   }
 
   public pay(): Observable<any> {
     return this.http.post(environment.apiUrl + '/shopping-cart/pay', {});
+  }
+
+  public removeFromCart(itemId: string) {
+    return this.http.delete(environment.apiUrl + '/shopping-cart/remove/' + itemId);
   }
 }

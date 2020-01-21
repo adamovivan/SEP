@@ -1,25 +1,29 @@
 package rs.ac.uns.ftn.scientific_center.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @Entity
 public class Magazine {
     @Id
     private Long id;
     private String title;
     private String issn;
-    @ManyToOne
-    private ScientificField scientificField;
     @ManyToMany
-    private List<User> reviewers;
+    private Set<ScientificField> scientificFields;
     @ManyToMany
-    private List<Pricelist> pricelists;
+    private Set<User> reviewers;
+    @ManyToMany
+    private Set<Pricelist> pricelists;
     @OneToMany
-    private List<Membership> memberships;
+    private Set<Membership> memberships;
     @OneToOne
     private EditorialBoard editorialBoard;
+    @OneToMany(mappedBy = "magazine")
+    private Set<Article> articles;
 }

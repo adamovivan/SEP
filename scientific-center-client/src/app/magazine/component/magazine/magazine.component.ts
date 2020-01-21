@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MagazineService } from '../../service/magazine.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CommonService } from '../../service/common.service';
 
 @Component({
@@ -10,33 +10,55 @@ import { CommonService } from '../../service/common.service';
 })
 export class MagazineComponent implements OnInit {
 
-  displayedColumns: string[] = ['no', 'issn', 'title', 'scientificField', 'addToShoppingCart'];
-  magazines = [];
+  displayedColumns: string[] = ['no', 'title', 'scientificFields', 'show', 'addToShoppingCart'];
+  magazine = {};
+  articles = [];
+  magazineId: string;
 
   constructor(private magazineService: MagazineService,
-              private commonService: CommonService,
-              private router: Router) { }
+    private commonService: CommonService,
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.magazineService.getAllMagazines().subscribe(
-      res => {
-        this.magazines = res;
-      }
-    );
+    this.magazineId = this.route.snapshot.paramMap.get("id");
+    this.magazine["title"] = '';
+    this.magazine["issn"] = '';
+    this.magazineService.getMagazine(this.magazineId).subscribe(res => {
+      console.log(res);
+      this.magazine = res;
+      this.articles = res.articles;
+    },
+    () => {
+      this.commonService.somethingWentWrong();
+    })
   }
 
   addToShoppingCart(element){
-    this.magazineService.addMagazineToShoppingCart(element.id).subscribe(res => {
-       this.commonService.showMessage("Item successfully added.");
+    this.magazineService.addArticleToShoppingCart(element.id).subscribe(res => {
+       this.commonService.showMessage("Article successfully added.");
     },
     err => {
        console.log(err)
        this.commonService.somethingWentWrong();
     });
   }
-  
-  showShoppingCart(){
-    this.router.navigateByUrl('/shopping-cart');
+
+  addMagazineToCart(){
+    this.magazineService.addMagazineToShoppingCart(this.magazineId).subscribe(() => {
+      this.commonService.showMessage("Magazine successfully added.");
+   },
+   err => {
+      console.log(err)
+      this.commonService.somethingWentWrong();
+   });
   }
 
+  showArticle(element){
+    console.log(element);
+  }
+
+  showShoppingCart(){
+    this.router.navigate(['/shopping-cart']);
+  }
 }

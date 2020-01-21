@@ -1,30 +1,32 @@
 <h3 class="shopping-cart">Shopping Cart</h3>
 
 <div class="mat-elevation-z8">
-  <mat-table [dataSource]="magazineItems">
+  <mat-table [dataSource]="items">
     <ng-container matColumnDef="no">
-      <th mat-header-cell *matHeaderCellDef> no. </th>
-      <td mat-cell *matCellDef="let element; let i = index;">{{ i+1 }}</td>
+      <th mat-header-cell class="no-cell" *matHeaderCellDef> no. </th>
+      <td mat-cell class="no-cell" *matCellDef="let element; let i = index;">{{ i+1 }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="issn">
-      <th mat-header-cell *matHeaderCellDef> ISSN </th>
-      <td mat-cell *matCellDef="let element">{{ element.magazine.issn }}</td>
+    <ng-container matColumnDef="itemType">
+      <th mat-header-cell class="item-type-cell" *matHeaderCellDef> Item Type </th>
+      <td mat-cell class="item-type-cell" *matCellDef="let element">
+        {{ element.itemType }}
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="title">
-      <th mat-header-cell *matHeaderCellDef> Title </th>
-      <td mat-cell *matCellDef="let element">{{ element.magazine.title }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="scientificField">
-      <th mat-header-cell *matHeaderCellDef> Scientific Field </th>
-      <td mat-cell *matCellDef="let element">{{ element.magazine.scientificField.name | titlecase}}</td>
+      <th mat-header-cell class="title-cell" *matHeaderCellDef> Title </th>
+      <td mat-cell class="title-cell" *matCellDef="let element">
+        <span *ngIf="element.membership != undefined">
+        {{ element.membership.item.title }}
+      </span>
+    </td>
+      
     </ng-container>
 
     <ng-container matColumnDef="price">
-      <th mat-header-cell *matHeaderCellDef> Price </th>
-      <td mat-cell *matCellDef="let element">{{ element.price | currency }}</td>
+      <th mat-header-cell class="price-cell" *matHeaderCellDef> Price </th>
+      <td mat-cell class="price-cell" *matCellDef="let element">{{ element.price | currency }}</td>
     </ng-container>
 
     <ng-container matColumnDef="remove">

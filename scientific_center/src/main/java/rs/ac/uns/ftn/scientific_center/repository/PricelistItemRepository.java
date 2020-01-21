@@ -7,5 +7,6 @@ import rs.ac.uns.ftn.scientific_center.model.PricelistItem;
 
 @Repository
 public interface PricelistItemRepository extends JpaRepository<PricelistItem, Long> {
-    PricelistItem findByMagazineId(Long magazineId);
+    PricelistItem findByMembershipMagazineId(Long magazineId);
+    PricelistItem findByMembershipArticleId(Long articleId);
 }
