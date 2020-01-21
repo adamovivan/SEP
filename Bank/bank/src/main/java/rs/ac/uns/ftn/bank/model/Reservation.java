@@ -10,11 +10,12 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    private String paymentId;
     @ManyToOne
     private BankAccount bankAccount;
     private Double amount;
     private Boolean active;
+    @OneToOne
+    private Transaction transaction;
 
     public Reservation(){
         this.active = true;

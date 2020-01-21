@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  zuulUrl: "http://localhost:8765"
+  apiUrl: "https://localhost:8200",
+  zuulUrl: "https://localhost:8765"
 };
 
 /*

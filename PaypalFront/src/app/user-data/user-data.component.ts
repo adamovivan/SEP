@@ -15,6 +15,7 @@ export class UserDataComponent implements OnInit {
   submitted = false;
   userInfo: any;
   username: any;
+  addPayment: any;
 
   constructor(
     private payPalService:PayPalService,
@@ -39,7 +40,15 @@ export class UserDataComponent implements OnInit {
           this.userInfo.username = params.get('username');
           this.payPalService.saveUserData(this.userInfo).subscribe(
             data => {
-              window.location.href = 'http://localhost:4200/typePayments';
+              
+            this.addPayment = {
+              username: this.userInfo.username,
+              payment: 'Paypal'
+            };
+            this.payPalService.addPayments(this.addPayment).subscribe(
+              data => {
+                     window.location.href = 'https://localhost:4200/typePayments';
+            })
           })
       });
      

@@ -41,7 +41,7 @@ public class BitcoinServiceImpl implements BitcoinService {
 	@Autowired
 	private OrderRepository orderRepository;
 
-	private String address = "http://localhost:";
+	private String address = "https://localhost:";
 
 	@Override
 	public ResponseUrlDto pay(PaymentDto pdt, String username) {

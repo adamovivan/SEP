@@ -5,18 +5,19 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import rs.ac.uns.ftn.bank.dto.CallbackUrlsDTO;
-import rs.ac.uns.ftn.bank.dto.PaymentCardDTO;
-import rs.ac.uns.ftn.bank.dto.PaymentStatusDTO;
+import org.springframework.web.client.RestTemplate;
+import rs.ac.uns.ftn.bank.dto.*;
 import rs.ac.uns.ftn.bank.exception.BadRequestException;
 import rs.ac.uns.ftn.bank.exception.NotFoundException;
 import rs.ac.uns.ftn.bank.model.*;
 import rs.ac.uns.ftn.bank.repository.CardRepository;
 import rs.ac.uns.ftn.bank.repository.PaymentRequestRepository;
 import rs.ac.uns.ftn.bank.repository.ReservationRepository;
+import rs.ac.uns.ftn.bank.repository.TransactionRepository;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -34,25 +35,36 @@ public class PaymentService {
     @Autowired
     private ReservationRepository reservationRepository;
 
+    @Autowired
+    private TransactionRepository transactionRepository;
+
+    @Autowired
+    private RestTemplate restTemplate;
+
     @Value("${bank.iin}")
     private String bankIIN;
+
+    @Value("${pcc.url}")
+    private String pccUrl;
 
     public PaymentStatusDTO pay(PaymentCardDTO paymentCardDTO){
         validate(paymentCardDTO);
 
         if(!isSameBank(paymentCardDTO.getPan())){
-            return null;
-            // TODO pcc
+            return forwardToPcc(paymentCardDTO);
         }
 
         // same bank
+        validateCard(paymentCardDTO);
+
         if(!checkBalance(paymentCardDTO.getPan(), paymentCardDTO.getPaymentId())){
             throw new BadRequestException("You don't have enough money for this transaction.");
         }
 
         Reservation reservation = reserveMoney(paymentCardDTO.getPan(), paymentCardDTO.getPaymentId());
+
         logger.info("Payment Transaction is successfully completed to user " + paymentCardDTO.getCardholderName() + " account.");
-        return new PaymentStatusDTO(reservation.getPaymentId(), PaymentStatus.SUCCESS);
+        return new PaymentStatusDTO(reservation.getTransaction().getTransactionId(), reservation.getTransaction().getTransactionStatus());
     }
 
     private void validate(PaymentCardDTO paymentCardDTO){
@@ -65,6 +77,9 @@ public class PaymentService {
         if(isPaymentIdUsed(paymentCardDTO.getPaymentId())){
             throw new BadRequestException("Payment id is already used.");
         }
+    }
+
+    private void validateCard(PaymentCardDTO paymentCardDTO){
         if(!isValidPAN(paymentCardDTO.getPan())){
             throw new BadRequestException("Invalid data.");
         }
@@ -82,6 +97,34 @@ public class PaymentService {
         }
     }
 
+    private PaymentStatusDTO forwardToPcc(PaymentCardDTO paymentCardDTO){
+        PaymentRequest paymentRequest = paymentRequestRepository.findByPaymentId(paymentCardDTO.getPaymentId());
+        AcquirerTransactionRequestDTO acquirerTransactionRequestDTO = new AcquirerTransactionRequestDTO();
+        acquirerTransactionRequestDTO.setAcquirerInn(bankIIN);
+        acquirerTransactionRequestDTO.setAcquirerOrderId(UUID.randomUUID().toString());
+        acquirerTransactionRequestDTO.setAcquirerTimestamp(LocalDateTime.now());
+        acquirerTransactionRequestDTO.setPan(paymentCardDTO.getPan());
+        acquirerTransactionRequestDTO.setCardholderName(paymentCardDTO.getCardholderName());
+        acquirerTransactionRequestDTO.setCvv(paymentCardDTO.getCvv());
+        acquirerTransactionRequestDTO.setExpiryDate(paymentCardDTO.getExpiryDate());
+        acquirerTransactionRequestDTO.setAmount(paymentRequest.getAmount());
+
+        Transaction transaction = transactionRepository.findByTransactionId(paymentCardDTO.getPaymentId());
+        if(transaction == null){
+            throw new NotFoundException("Transaction with provided id doesn't exist.");
+        }
+
+        PaymentStatusPccDTO paymentStatusPccDTO = restTemplate.postForObject(pccUrl, acquirerTransactionRequestDTO, PaymentStatusPccDTO.class);
+        if(paymentStatusPccDTO == null){
+            throw new NullPointerException("PCC returned null.");
+        }
+
+        transaction.setTransactionStatus(paymentStatusPccDTO.getTransactionStatus());
+        transactionRepository.save(transaction);
+
+        return new PaymentStatusDTO(paymentCardDTO.getPaymentId(), paymentStatusPccDTO.getTransactionStatus());
+    }
+
     private Reservation reserveMoney(String pan, String paymentId){
         Card card = cardRepository.findByPan(pan);
         PaymentRequest paymentRequest = paymentRequestRepository.findByPaymentId(paymentId);
@@ -90,12 +133,16 @@ public class PaymentService {
         BankAccount bankAccount = card.getBankAccount();
         bankAccount.setBalance(bankAccount.getBalance() - paymentRequest.getAmount());
 
+        Transaction transaction = transactionRepository.findByTransactionId(paymentId);
+        if(transaction == null){
+            throw new NotFoundException("Transaction with provided id doesn't exist.");
+        }
+        transaction.setTransactionStatus(TransactionStatus.SUCCESS);
         Reservation reservation = new Reservation();
-        reservation.setPaymentId(paymentId);
+        reservation.setTransaction(transaction);
         reservation.setBankAccount(bankAccount);
         reservation.setAmount(paymentRequest.getAmount());
         bankAccount.getReservations().add(reservation);
-
         return reservationRepository.save(reservation);
     }
 

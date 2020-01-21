@@ -116,7 +116,7 @@ public class PaymentsService {
 		PaymentLinkResponse response = new PaymentLinkResponse();
 		if(transaction != null) {
 			response.setSuccess(true);
-			response.setUrl("http://localhost:4200/payingType/"+ transaction.getUuid());
+			response.setUrl("https://localhost:4200/payingType/"+ transaction.getUuid());
 			logger.info("Successfully obtained transaction link");
 			return response;
 		}else {
@@ -136,12 +136,11 @@ public class PaymentsService {
 		order.setTotalPrice(transaction.getTotalPrice());
 		order.setUsername(client.getUsername());
 		try {
-			
-			
-			ResponseEntity<PaymentLinkResponse> response = restTemplate.postForEntity("http://localhost:8765/api-"+paymentLinkRequest.getType().toLowerCase()+"/pay", order, PaymentLinkResponse.class);
+			ResponseEntity<PaymentLinkResponse> response = restTemplate.postForEntity("https://localhost:8765/api-"+paymentLinkRequest.getType().toLowerCase()+"/pay", order, PaymentLinkResponse.class);
 			logger.info("Successfully obtained payment link for payment to" + client.getUsername() + " user account");
 			return response.getBody();
 		}catch (Exception e) {
+			e.printStackTrace();
 			logger.info("no payment link was provided for payment to " + client.getUsername() + "'s account");
 			// TODO: handle exception
 		}

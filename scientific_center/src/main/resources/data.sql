@@ -33,7 +33,8 @@ insert into editorial_board(id, main_editor_id, magazine_id) values (1, 2, 1);
 
 -- memberships
 insert into membership (id, subscription_type, magazine_id, user_id) values (1, 'READER_PAYS', 1, 2);
--- insert into membership (id, subscription_type, magazine_id) values (2, 'READER_PAYS', 2);
+insert into membership (id, subscription_type, magazine_id, user_id) values (2, 'READER_PAYS', 2, 2);
+insert into membership (id, subscription_type, magazine_id, user_id) values (3, 'READER_PAYS', 3, 2);
 -- insert into membership (id, subscription_type, magazine_id) values (3, 'OPEN_ACCESS', 3);
 
 -- insert into membership_magazines(magazines_id, membership_id) values (1, 1);
@@ -41,6 +42,7 @@ insert into membership (id, subscription_type, magazine_id, user_id) values (1, 
 -- pricelist item
 insert into pricelist_item (id, price, subscription_type, magazine_id) values (1, 339.00, 'READER_PAYS', 1);
 insert into pricelist_item (id, price, subscription_type, magazine_id) values (2, 219.50, 'READER_PAYS', 2);
+insert into pricelist_item (id, price, subscription_type, magazine_id) values (3, 33219.50, 'READER_PAYS', 3);
 
 -- pricelist
 insert into pricelist (id, start_date, end_date) values (1, '2019-01-01', '2020-01-01');

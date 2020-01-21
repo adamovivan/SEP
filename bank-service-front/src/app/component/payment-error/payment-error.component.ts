@@ -18,7 +18,7 @@ export class PaymentErrorComponent implements OnInit {
 
   ngOnInit() {
     this.transactionId = this.route.snapshot.paramMap.get("transaction-id");
-    this.paymentService.paymentError().subscribe();
+    this.paymentService.paymentError(this.transactionId).subscribe();
   }
 
   goBack(){

@@ -24,5 +24,9 @@ export class PaymentService {
   public saveUserData(userInfo){
     return this.http.post(environment.zuulUrl + "/api-bank/payment-registration", userInfo);
   }
+
+  addPayments(tip:any){
+    return this.http.post(environment.zuulUrl + '/authentication-service/addPayments',tip);
+  }
   
 }

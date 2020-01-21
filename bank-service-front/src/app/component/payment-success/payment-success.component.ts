@@ -16,7 +16,7 @@ export class PaymentSuccessComponent implements OnInit {
 
   ngOnInit() {
     this.transactionId = this.route.snapshot.paramMap.get("transaction-id");
-    this.paymentService.paymentSuccess().subscribe();
+    this.paymentService.paymentSuccess(this.transactionId).subscribe();
   }
 
   ok(){

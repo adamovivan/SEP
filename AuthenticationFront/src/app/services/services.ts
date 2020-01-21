@@ -27,10 +27,6 @@ export class SellerService {
     return this.http.get(SERVER_URL + '/api-' + type.toLowerCase() + '/frontendPort');
   }
 
-  addPayments(tip:any){
-    return this.http.post(SERVER_URL + '/authentication-service/addPayments',tip);
-  }
-
   getPayments(tip:any){
     return this.http.get(SERVER_URL + '/authentication-service/getPayments/'+tip,);
   }
