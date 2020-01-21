@@ -2,14 +2,17 @@ package bitcoinTest;
 
 import static org.junit.Assert.assertTrue;
 
+import authentificationPage.ChoosenPayment;
 import authentificationPage.LoginPageAuthentification;
 import bitcoinPage.BitcoinMarkPayment;
 import bitcoinPage.BitcoinPage;
 import bitcoinPage.BitcoinSuccessCancelPage;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import scientificPage.LoginPage;
 import scientificPage.ViewMagazinPage;
@@ -26,6 +29,7 @@ public class BitcoinPaymentTest {
 	ViewMagazinPage viewMagazinPage;
 	BitcoinSuccessCancelPage bitcoinSuccessCancelPage;
 	LoginPageAuthentification loginPageAuthentification;
+	ChoosenPayment choosenPaymentPage;
 	
 	@Before
 	public void setUp() {
@@ -41,6 +45,7 @@ public class BitcoinPaymentTest {
 		bitcoinMarkPaymentPage = PageFactory.initElements(browser, BitcoinMarkPayment.class);
 		bitcoinSuccessCancelPage = PageFactory.initElements(browser, BitcoinSuccessCancelPage.class);
 		loginPageAuthentification = PageFactory.initElements(browser, LoginPageAuthentification.class);
+		choosenPaymentPage = PageFactory.initElements(browser, ChoosenPayment.class);
 
 		//prijavimo se na autentification server
 
@@ -82,10 +87,16 @@ public class BitcoinPaymentTest {
 		assertTrue(viewMagazinPage.getProceedPaymentButton().isDisplayed());
 		viewMagazinPage.getProceedPaymentButton().click();
 
-		//loginPageAuthentification.signOutIsDisplay();
-		//assertTrue(browser.getCurrentUrl().equals("http://localhost:4200"));
+		choosenPaymentPage.bitcoinButtonIsDisplay();
+		assertTrue(browser.getCurrentUrl().startsWith("http://localhost:4200/payingType"));
+		assertTrue(choosenPaymentPage.getBitcoinRadioButton().isDisplayed());
+		choosenPaymentPage.getBitcoinRadioButton().click();
 
-		/*
+		choosenPaymentPage.continueButtonIsDisplay();
+		assertTrue(choosenPaymentPage.getContinueButton().isDisplayed());
+		choosenPaymentPage.getContinueButton().click();
+
+
 		bitcoinPage.bitcoinButtonIsDisplay();
 		bitcoinPage.payButtonIsDisplay();
 		assertTrue(browser.getCurrentUrl().startsWith("https://sandbox.coingate.com/invoice")); //mozemo da poredimo samo da li pocinje sa nekim url, zato sto ne znamo token 
@@ -105,27 +116,58 @@ public class BitcoinPaymentTest {
 		assertTrue(browser.getCurrentUrl().startsWith("https://sandbox.coingate.com/invoice"));
 		
 		//kliknemo na mark as paid
+
 		assertTrue(bitcoinMarkPaymentPage.getMarkPaidButton().isDisplayed());
-		bitcoinMarkPaymentPage.getMarkPaidButton().click();
-		
+		assertTrue(bitcoinMarkPaymentPage.getMarkPaidButton().isEnabled());
+		//bitcoinMarkPaymentPage.getMarkPaidButton().click();
+		Actions builder = new Actions(browser);
+		builder.moveToElement(bitcoinMarkPaymentPage.getMarkPaidButton());
+		builder.click(bitcoinMarkPaymentPage.getMarkPaidButton());
+		builder.perform();
+
 		//pojavi se stranica za potvrdjenu kupovinu
 		bitcoinMarkPaymentPage.bitcoinMerchantBackIsDisplay();
 		assertTrue(browser.getCurrentUrl().startsWith("https://sandbox.coingate.com/invoice"));
 		
 		//kliknemo za povratak na merchant-a
 		assertTrue(bitcoinMarkPaymentPage.getBackToMerchantButton().isDisplayed());
-		bitcoinMarkPaymentPage.getBackToMerchantButton().click();
-		
+		//bitcoinMarkPaymentPage.getBackToMerchantButton().click();
+		Actions builder1 = new Actions(browser);
+		builder1.moveToElement(bitcoinMarkPaymentPage.getBackToMerchantButton());
+		builder1.click(bitcoinMarkPaymentPage.getBackToMerchantButton());
+		builder1.perform();
 		//sad treba da nas odvede na stranicu od bitcoin fronta
 		//moramo malo da sacekamo 
 		bitcoinSuccessCancelPage.completeButtonIsDisplay();
 		assertTrue(bitcoinSuccessCancelPage.getCompleteButton().isDisplayed());
-		assertTrue(browser.getCurrentUrl().startsWith("http://localhost:4202/success"));
-		*/
+		//assertTrue(browser.getCurrentUrl().startsWith("http://localhost:4202/success"));
+
 	}
 	
 	@Test
 	public void test_bitcoinPayment_cancel() {
+		viewMagazinPage.addButtonIsDisplay();
+		assertTrue(browser.getCurrentUrl().equals("http://localhost:4300/magazines"));
+		assertTrue(viewMagazinPage.getAddButton().isDisplayed());
+		viewMagazinPage.getAddButton().click();
+
+		assertTrue(viewMagazinPage.getShoppingCartButton().isDisplayed());
+		viewMagazinPage.getShoppingCartButton().click();
+
+		viewMagazinPage.proceedPaymentButtonIsDisplay();
+		assertTrue(browser.getCurrentUrl().equals("http://localhost:4300/shopping-cart"));
+		assertTrue(viewMagazinPage.getProceedPaymentButton().isDisplayed());
+		viewMagazinPage.getProceedPaymentButton().click();
+
+		choosenPaymentPage.bitcoinButtonIsDisplay();
+		assertTrue(browser.getCurrentUrl().startsWith("http://localhost:4200/payingType"));
+		assertTrue(choosenPaymentPage.getBitcoinRadioButton().isDisplayed());
+		choosenPaymentPage.getBitcoinRadioButton().click();
+
+		choosenPaymentPage.continueButtonIsDisplay();
+		assertTrue(choosenPaymentPage.getContinueButton().isDisplayed());
+		choosenPaymentPage.getContinueButton().click();
+
 		bitcoinPage.bitcoinButtonIsDisplay();
 		bitcoinPage.payButtonIsDisplay();
 		assertTrue(browser.getCurrentUrl().startsWith("https://sandbox.coingate.com/invoice")); //mozemo da poredimo samo da li pocinje sa nekim url, zato sto ne znamo token 
@@ -146,21 +188,31 @@ public class BitcoinPaymentTest {
 		
 		//kliknemo na mark as paid
 		assertTrue(bitcoinMarkPaymentPage.getMarkInvalidButton().isDisplayed());
-		bitcoinMarkPaymentPage.getMarkInvalidButton().click();
-		
+
+	//	Actions builder = new Actions(browser);
+	//	builder.moveToElement(bitcoinMarkPaymentPage.getMarkInvalidButton());
+	//	builder.click(bitcoinMarkPaymentPage.getMarkInvalidButton());
 		//pojavi se stranica za potvrdjenu kupovinu
 		bitcoinMarkPaymentPage.bitcoinMerchantBackIsDisplay();
 		assertTrue(browser.getCurrentUrl().startsWith("https://sandbox.coingate.com/invoice"));
-		
+		//ovo rucno uraditi
 		//kliknemo za povratak na merchant-a
 		assertTrue(bitcoinMarkPaymentPage.getBackToMerchantButton().isDisplayed());
 		bitcoinMarkPaymentPage.getBackToMerchantButton().click();
+	//	Actions builder1 = new Actions(browser);
+	//	builder1.moveToElement(bitcoinMarkPaymentPage.getBackToMerchantButton());
+	//	builder1.click(bitcoinMarkPaymentPage.getBackToMerchantButton());
 		
 		//sad treba da nas odvede na stranicu od bitcoin fronta
 		//moramo malo da sacekamo 
 		bitcoinSuccessCancelPage.completeButtonIsDisplay();
 		assertTrue(bitcoinSuccessCancelPage.getCompleteButton().isDisplayed());
-		assertTrue(browser.getCurrentUrl().startsWith("http://localhost:4202/cancel"));
+		//assertTrue(browser.getCurrentUrl().startsWith("http://localhost:4202/cancel"));
 		
+	}
+
+	@After
+	public void clean(){
+		browser.quit();
 	}
 }

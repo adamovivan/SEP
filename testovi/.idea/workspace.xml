@@ -2,16 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18dac4a2-0eda-4134-8352-d5a23afe2e1f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/authentificationPage/ChoosenPayment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-1.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-2.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-3.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-4.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-4.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-5.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-6.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-6.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-7.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-7.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-error--27-December-2019-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-error--27-December-2019-1.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-error--27-December-2019-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-error--27-December-2019-2.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-error--27-December-2019-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-error--27-December-2019-3.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-error--27-December-2019-4.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-error--27-December-2019-4.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-error--27-December-2019-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-error--27-December-2019-5.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-1.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-2.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-3.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-4.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-4.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-5.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-6.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-6.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-7.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-7.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/spring-boot-logger-log4j2-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/spring-boot-logger-log4j2-debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/spring-boot-logger-log4j2-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/spring-boot-logger-log4j2-error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AuthenticationService/logs/spring-boot-logger-log4j2-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/logs/spring-boot-logger-log4j2-info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationService/src/main/java/rs/ac/uns/ftn/authentication_service/service/PaymentsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationService/src/main/java/rs/ac/uns/ftn/authentication_service/service/PaymentsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PaypalService/logs/spring-boot-logger-log4j2-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/../PaypalService/logs/spring-boot-logger-log4j2-debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PaypalService/logs/spring-boot-logger-log4j2-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/../PaypalService/logs/spring-boot-logger-log4j2-error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PaypalService/logs/spring-boot-logger-log4j2-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/../PaypalService/logs/spring-boot-logger-log4j2-info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bitcoin-front/bitcoin-front/src/app/success/success.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin-front/bitcoin-front/src/app/success/success.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-1.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-2.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-3.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-4.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-4.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-5.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-6.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-debug--27-December-2019-6.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-1.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-2.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-3.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-4.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-4.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-5.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-6.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin/logs/2019-12/spring-boot-logger-log4j2-info--27-December-2019-6.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bitcoin/logs/spring-boot-logger-log4j2-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin/logs/spring-boot-logger-log4j2-debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bitcoin/logs/spring-boot-logger-log4j2-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/../bitcoin/logs/spring-boot-logger-log4j2-info.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/authentificationPage/LoginPageAuthentification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/authentificationPage/LoginPageAuthentification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/scientificPage/ViewMagazinPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/scientificPage/ViewMagazinPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bitcoinPage/BitcoinMarkPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bitcoinPage/BitcoinMarkPayment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/bitcoinTest/BitcoinPaymentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/bitcoinTest/BitcoinPaymentTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/authentificationPage/LoginPageAuthentification.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/authentificationPage/LoginPageAuthentification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bitcoinPage/BitcoinMarkPayment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bitcoinPage/BitcoinMarkPayment.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/bitcoinTest/BitcoinPaymentTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/bitcoinTest/BitcoinPaymentTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,7 +72,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../master/upp/naucna-centrala/pom.xml" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -53,7 +89,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BitcoinPaymentTest.test_bitcoinPayment_success">
+  <component name="RunManager" selected="JUnit.BitcoinPaymentTest.test_bitcoinPayment_cancel">
     <configuration name="AuthentificationLoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="testovi" />
       <extension name="coverage">
@@ -80,6 +116,22 @@
       <option name="PACKAGE_NAME" value="authentification" />
       <option name="MAIN_CLASS_NAME" value="authentification.AuthentificationLoginTest" />
       <option name="METHOD_NAME" value="authentificationLoginTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BitcoinPaymentTest.test_bitcoinPayment_cancel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="testovi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bitcoinTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bitcoinTest" />
+      <option name="MAIN_CLASS_NAME" value="bitcoinTest.BitcoinPaymentTest" />
+      <option name="METHOD_NAME" value="test_bitcoinPayment_cancel" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -119,6 +171,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BitcoinPaymentTest.test_bitcoinPayment_cancel" />
         <item itemvalue="JUnit.BitcoinPaymentTest.test_bitcoinPayment_success" />
         <item itemvalue="JUnit.AuthentificationLoginTest" />
         <item itemvalue="JUnit.AuthentificationLoginTest.authentificationLoginTest" />
@@ -138,6 +191,12 @@
       <updated>1577467521147</updated>
       <workItem from="1577467523766" duration="1324000" />
       <workItem from="1577469041534" duration="3892000" />
+      <workItem from="1577480071075" duration="439000" />
+      <workItem from="1577480619381" duration="507000" />
+      <workItem from="1577482209368" duration="1216000" />
+      <workItem from="1577484664409" duration="4869000" />
+      <workItem from="1577520596727" duration="55000" />
+      <workItem from="1578489107040" duration="32000" />
     </task>
     <servers />
   </component>
@@ -156,5 +215,19 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/bitcoinTest/BitcoinPaymentTest.java</url>
+          <line>74</line>
+          <properties class="bitcoinTest.BitcoinPaymentTest" method="test_bitcoinPayment_success">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

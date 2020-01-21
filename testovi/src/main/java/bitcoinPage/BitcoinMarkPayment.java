@@ -10,10 +10,10 @@ public class BitcoinMarkPayment {
 	
 	private WebDriver driver;
 
-	@FindBy(xpath = "(//button[@class='ant-btn ant-btn-dashed'])[1]")
+	@FindBy(xpath = "(//div[@id='payment-button']/div/div/button)[1]")
 	private WebElement markPaidButton; 
 	
-	@FindBy(xpath="(//button[@class='ant-btn ant-btn-dashed'])[2]")
+	@FindBy(xpath="(//div[@id='payment-button']/div/div/button)[2]")
 	private WebElement markInvalidButton; 
 	
 	@FindBy(xpath="//div/span/button")
@@ -69,6 +69,7 @@ public class BitcoinMarkPayment {
 	public void bitcoinMerchantBackIsDisplay() {
 		(new WebDriverWait(driver, 50)).until(ExpectedConditions.visibilityOf(backToMerchantButton));
 	}
-	
+
+
 	
 }

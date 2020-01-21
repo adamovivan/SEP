@@ -18,7 +18,6 @@ export class SuccessComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(
       params => {
         this.orderId = params.get('token');
-        alert(this.orderId)
         this.service.success(this.orderId).subscribe(
           data => {
             this.response = data;

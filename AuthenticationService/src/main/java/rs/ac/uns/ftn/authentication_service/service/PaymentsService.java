@@ -83,7 +83,7 @@ public class PaymentsService {
 		
 		Transaction transaction = new Transaction();
 		transaction = transactionRepository.findByUuid(token);
-		
+		System.out.println(transaction.getEmail());
 		Client client = new Client();
 		client = clientRepository.findByEmail(transaction.getEmail());
 		PaymentResponse payment;
