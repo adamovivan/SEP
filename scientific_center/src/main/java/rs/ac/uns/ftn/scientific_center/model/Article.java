@@ -23,8 +23,8 @@ public class Article {
     private Set<User> coAuthors;
     @ManyToMany
     private Set<ScientificField> scientificFields;
-    @OneToMany
-    private Set<Membership> memberships;
+    @OneToOne
+    private Membership membership;
     @ManyToOne
     private Magazine magazine;
 }

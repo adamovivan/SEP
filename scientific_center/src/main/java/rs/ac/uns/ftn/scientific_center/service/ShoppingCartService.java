@@ -12,6 +12,7 @@ import rs.ac.uns.ftn.scientific_center.dto.response.PaymentOrderResponse;
 import rs.ac.uns.ftn.scientific_center.mapper.PricelistItemMapper;
 import rs.ac.uns.ftn.scientific_center.model.PricelistItem;
 import rs.ac.uns.ftn.scientific_center.model.ShoppingCart;
+import rs.ac.uns.ftn.scientific_center.model.SubscriptionType;
 import rs.ac.uns.ftn.scientific_center.repository.PricelistItemRepository;
 import rs.ac.uns.ftn.scientific_center.repository.ShoppingCartRepository;
 
@@ -162,6 +163,9 @@ public class ShoppingCartService {
     private Double calculatePrice(Set<PricelistItem> items){
         double total = 0D;
         for(PricelistItem pricelistItem: items){
+            if(pricelistItem.getMembership().getSubscriptionType() == SubscriptionType.OPEN_ACCESS){
+                continue;
+            }
             total += pricelistItem.getPrice();
         }
         return total;

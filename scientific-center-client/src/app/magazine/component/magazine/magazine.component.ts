@@ -25,7 +25,6 @@ export class MagazineComponent implements OnInit {
     this.magazine["title"] = '';
     this.magazine["issn"] = '';
     this.magazineService.getMagazine(this.magazineId).subscribe(res => {
-      console.log(res);
       this.magazine = res;
       this.articles = res.articles;
     },

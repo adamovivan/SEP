@@ -7,7 +7,4 @@ import rs.ac.uns.ftn.scientific_center.model.SubscriptionType;
 public class MembershipDTO {
     private Long id;
     private SubscriptionType subscriptionType;
-    private MagazineDTO magazine;
-    private ArticleDTO article;
-    private UserDTO user;
 }

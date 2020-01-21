@@ -98,13 +98,18 @@ insert into membership (id, subscription_type, magazine_id, user_id) values (1, 
 insert into membership (id, subscription_type, magazine_id, user_id) values (2, 'READER_PAYS', 2, 2);
 insert into membership (id, subscription_type, magazine_id, user_id) values (3, 'READER_PAYS', 3, 2);
 insert into membership (id, subscription_type, article_id, user_id) values (4, 'READER_PAYS', 1, 2);
-insert into membership (id, subscription_type, article_id, user_id) values (5, 'READER_PAYS', 2, 2);
+insert into membership (id, subscription_type, article_id, user_id) values (5, 'OPEN_ACCESS', 2, 2);
 insert into membership (id, subscription_type, article_id, user_id) values (6, 'READER_PAYS', 3, 2);
 insert into membership (id, subscription_type, article_id, user_id) values (7, 'READER_PAYS', 4, 2);
 insert into membership (id, subscription_type, article_id, user_id) values (8, 'READER_PAYS', 5, 2);
 -- insert into membership (id, subscription_type, magazine_id) values (3, 'OPEN_ACCESS', 3);
 
--- insert into membership_magazines(magazines_id, membership_id) values (1, 1);
+-- article membership
+update article set membership_id=4 where id=1;
+update article set membership_id=5 where id=2;
+update article set membership_id=6 where id=3;
+update article set membership_id=7 where id=4;
+update article set membership_id=8 where id=5;
 
 -- pricelist item
 insert into pricelist_item (id, price, membership_id) values (1, 339.00, 1);

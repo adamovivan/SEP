@@ -42,11 +42,12 @@
 <ng-container matColumnDef="addToShoppingCart">
 <th mat-header-cell class="add-cell" *matHeaderCellDef> </th>
 <td mat-cell class="add-cell" *matCellDef="let element">
-<button mat-icon-button>
+<button mat-icon-button *ngIf="element.membership.subscriptionType === 'READER_PAYS'">
   <i class="material-icons" (click)="addToShoppingCart(element)">
     add_shopping_cart
   </i>
 </button>
+<h3 *ngIf="element.membership.subscriptionType !== 'READER_PAYS'" class="free">FREE</h3>
 </td>
 </ng-container>
 

@@ -13,7 +13,7 @@ public class Membership {
     private SubscriptionType subscriptionType;
     @ManyToOne
     private Magazine magazine;
-    @ManyToOne
+    @OneToOne
     private Article article;
     @OneToOne
     private User user;
