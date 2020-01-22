@@ -29,6 +29,11 @@ public class ExceptionResolver {
         return buildResponseEntity(new ApiError(HttpStatus.BAD_REQUEST, exception.getMessage()));
     }
 
+    @ExceptionHandler(ForbiddenException.class)
+    public final ResponseEntity forbiddenException(ForbiddenException exception){
+        return buildResponseEntity(new ApiError(HttpStatus.FORBIDDEN, exception.getMessage()));
+    }
+
     private ResponseEntity buildResponseEntity(ApiError apiError) {
         return new ResponseEntity<>(apiError, apiError.getStatus());
     }

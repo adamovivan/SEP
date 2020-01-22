@@ -7,7 +7,8 @@
         <h4 class="mainTitle" *ngIf="article.mainAuthor !== undefined">Main Author: {{article.mainAuthor.firstName}} {{article.mainAuthor.lastName}}</h4>
       </div>
       <div class="titleContainer">
-          <button mat-button color="primary" (click)="addArticleToCart()">Add Article To Shopping Cart</button>
+          <button mat-button color="primary" (click)="addArticleToCart()" *ngIf="article.membership !== undefined && article.membership.subscriptionType === 'READER_PAYS'">
+            Add Article To Shopping Cart</button>
       </div>
       <div class="titleContainer" *ngIf="article.abstractText !== undefined">
         <p><b>Abstract: </b>{{article.abstractText}}</p>

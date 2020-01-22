@@ -20,7 +20,7 @@ public class Magazine {
     private Set<User> reviewers;
     @ManyToMany
     private Set<Pricelist> pricelists;
-    @OneToMany
+    @OneToMany(mappedBy = "magazine")
     private Set<Membership> memberships;
     @OneToOne
     private EditorialBoard editorialBoard;

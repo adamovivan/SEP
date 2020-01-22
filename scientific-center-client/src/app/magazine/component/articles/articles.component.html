@@ -1,1 +1,63 @@
-<p>articles works!</p>
+<mat-card>
+    <mat-card-content>
+      <div class="titleContainer">
+        <h2 class="mainTitle">Articles</h2>
+      </div>
+  <br>
+  <button mat-button (click)="showShoppingCart()">Shopping Cart</button>
+  <br>
+  <div class="mat-elevation-z8">
+  <mat-table [dataSource]="articles">
+  <ng-container matColumnDef="no">
+  <th mat-header-cell class="no-cell" *matHeaderCellDef> no. </th>
+  <td mat-cell class="no-cell" *matCellDef="let element; let i = index;">{{ i+1 }}</td>
+  </ng-container>
+  
+  <ng-container matColumnDef="title">
+  <th mat-header-cell class="title-cell" *matHeaderCellDef> Title </th>
+  <td mat-cell class="title-cell" *matCellDef="let element">{{ element.title }}</td>
+  </ng-container>
+  
+  <ng-container matColumnDef="scientificFields">
+  <th mat-header-cell class="sf-cell" *matHeaderCellDef> Scientific Fields </th>
+  <td mat-cell class="sf-cell" *matCellDef="let element">
+      <span *ngFor="let sf of element.scientificFields">{{sf.name | titlecase}}.</span>
+  </td>
+  </ng-container>
+  <ng-container matColumnDef="subscriptionType">
+    <th mat-header-cell class="sub-type-cell" *matHeaderCellDef> Subscription Type </th>
+    <td mat-cell class="sub-type-cell" *matCellDef="let element">
+    <p *ngIf="element.membership.subscriptionType === 'READER_PAYS'">
+      Reader Pays
+    </p>
+    <p *ngIf="element.membership.subscriptionType === 'OPEN_ACCESS'" >Open Access</p>
+    </td>
+    </ng-container>
+  
+  <ng-container matColumnDef="show">
+  <th mat-header-cell class="show-cell" *matHeaderCellDef> </th>
+  <td mat-cell class="show-cell" *matCellDef="let element">
+      <button mat-button color="primary" (click)="showArticle(element)" class="submit-button">
+          Show
+      </button>
+  </td>
+  </ng-container>
+  <ng-container matColumnDef="addToShoppingCart">
+    <th mat-header-cell class="add-cell" *matHeaderCellDef> </th>
+    <td mat-cell class="add-cell" *matCellDef="let element">
+    <button mat-icon-button *ngIf="element.membership.subscriptionType === 'READER_PAYS'">
+      <i class="material-icons" (click)="addToShoppingCart(element)">
+        add_shopping_cart
+      </i>
+      Make It Open Access
+    </button>
+    </td>
+</ng-container>
+  
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+  </mat-table>
+  </div>
+  </mat-card-content>
+  </mat-card>

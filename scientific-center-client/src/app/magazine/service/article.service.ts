@@ -13,4 +13,12 @@ export class ArticleService {
   public getArticle(articleId: string): Observable<any> {
     return this.http.get(environment.apiUrl + "/article/" + articleId);
   }
+
+  public getArticleAuthor(articleId: string): Observable<any> {
+    return this.http.get(environment.apiUrl + "/author/article/" + articleId);
+  }
+
+  public getAllArticles(): Observable<any> {
+    return this.http.get(environment.apiUrl + "/article/all");
+  }
 }

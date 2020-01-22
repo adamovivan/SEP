@@ -13,6 +13,8 @@ values (4, 'Jelena', 'Jelenic', 'jelenajelenic', 'jelenajelenic@gmail.com', '$2a
 
 -- shopping carts
 insert into shopping_cart (id, user_id) values (1, 1);
+insert into shopping_cart (id, user_id) values (2, 3);
+insert into shopping_cart (id, user_id) values (3, 4);
 
 -- roles
 insert into role (id, role_name) values (1, 'READER');
@@ -94,15 +96,18 @@ insert into article_scientific_fields (article_id, scientific_fields_id) values 
 insert into editorial_board(id, main_editor_id, magazine_id) values (1, 2, 1);
 
 -- memberships
-insert into membership (id, subscription_type, magazine_id, user_id) values (1, 'READER_PAYS', 1, 2);
-insert into membership (id, subscription_type, magazine_id, user_id) values (2, 'READER_PAYS', 2, 2);
-insert into membership (id, subscription_type, magazine_id, user_id) values (3, 'READER_PAYS', 3, 2);
-insert into membership (id, subscription_type, article_id, user_id) values (4, 'READER_PAYS', 1, 2);
-insert into membership (id, subscription_type, article_id, user_id) values (5, 'OPEN_ACCESS', 2, 2);
-insert into membership (id, subscription_type, article_id, user_id) values (6, 'READER_PAYS', 3, 2);
-insert into membership (id, subscription_type, article_id, user_id) values (7, 'READER_PAYS', 4, 2);
-insert into membership (id, subscription_type, article_id, user_id) values (8, 'READER_PAYS', 5, 2);
--- insert into membership (id, subscription_type, magazine_id) values (3, 'OPEN_ACCESS', 3);
+insert into membership (id, subscription_type, item_type, magazine_id, user_id) values (1, 'READER_PAYS', 'MAGAZINE', 1, 2);
+insert into membership (id, subscription_type, item_type, magazine_id, user_id) values (2, 'READER_PAYS', 'MAGAZINE', 2, 2);
+insert into membership (id, subscription_type, item_type, magazine_id, user_id) values (3, 'READER_PAYS', 'MAGAZINE', 3, 2);
+insert into membership (id, subscription_type, item_type, article_id, user_id) values (4, 'READER_PAYS', 'ARTICLE', 1, 2);
+insert into membership (id, subscription_type, item_type, article_id, user_id) values (5, 'OPEN_ACCESS', 'ARTICLE', 2, 2);
+insert into membership (id, subscription_type, item_type, article_id, user_id) values (6, 'READER_PAYS', 'ARTICLE', 3, 2);
+insert into membership (id, subscription_type, item_type, article_id, user_id) values (7, 'READER_PAYS', 'ARTICLE', 4, 2);
+insert into membership (id, subscription_type, item_type, article_id, user_id) values (8, 'READER_PAYS', 'ARTICLE', 5, 2);
+
+insert into membership (id, subscription_type, item_type, magazine_id, user_id) values (9, 'OPEN_ACCESS', 'ARTICLE', 1, 2);
+insert into membership (id, subscription_type, item_type, magazine_id, user_id) values (10, 'OPEN_ACCESS', 'ARTICLE', 2, 2);
+insert into membership (id, subscription_type, item_type, magazine_id, user_id) values (11, 'OPEN_ACCESS', 'ARTICLE', 3, 2);
 
 -- article membership
 update article set membership_id=4 where id=1;
@@ -120,6 +125,10 @@ insert into pricelist_item (id, price, membership_id) values (5, 49.80, 5);
 insert into pricelist_item (id, price, membership_id) values (6, 22.40, 6);
 insert into pricelist_item (id, price, membership_id) values (7, 29.00, 7);
 insert into pricelist_item (id, price, membership_id) values (8, 25.60, 8);
+
+insert into pricelist_item (id, price, membership_id) values (9, 120.80, 9);
+insert into pricelist_item (id, price, membership_id) values (10, 115.30, 10);
+insert into pricelist_item (id, price, membership_id) values (11, 125.90, 11);
 
 -- pricelist
 insert into pricelist (id, start_date, end_date) values (1, '2019-01-01', '2020-01-01');

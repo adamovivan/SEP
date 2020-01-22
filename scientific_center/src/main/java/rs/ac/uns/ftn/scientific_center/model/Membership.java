@@ -11,6 +11,8 @@ public class Membership {
     private Long id;
     @Enumerated(EnumType.STRING)
     private SubscriptionType subscriptionType;
+    @Enumerated(EnumType.STRING)
+    private ItemType itemType;
     @ManyToOne
     private Magazine magazine;
     @OneToOne

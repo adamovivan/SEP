@@ -7,4 +7,5 @@ import rs.ac.uns.ftn.scientific_center.model.Membership;
 @Repository
 public interface MembershipRepository extends JpaRepository<Membership, Long> {
     Membership findByMagazineId(Long magazineId);
+    Membership findByArticleId(Long articleId);
 }

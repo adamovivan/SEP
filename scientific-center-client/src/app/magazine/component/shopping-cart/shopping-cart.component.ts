@@ -39,13 +39,11 @@ export class ShoppingCartComponent implements OnInit {
       let el;
       if(item.membership.magazine != undefined){
         el = item.membership.magazine;
-        item["itemType"] = "Magazine";
       }
       else if(item.membership.article != undefined){
         el = item.membership.article;
-        item["itemType"] = "Article";
       }
-
+      
       delete item.membership.magazine;
       delete item.membership.article;
       item.membership["item"] = el;
