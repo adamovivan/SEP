@@ -4,9 +4,7 @@ import lombok.Data;
 import rs.ac.uns.ftn.scientific_center.model.SubscriptionType;
 
 @Data
-public class MembershipDTO {
+public class MembershipSimpleDTO {
     private Long id;
     private SubscriptionType subscriptionType;
-    private ArticleDTO article;
-    private MagazineDTO magazine;
 }

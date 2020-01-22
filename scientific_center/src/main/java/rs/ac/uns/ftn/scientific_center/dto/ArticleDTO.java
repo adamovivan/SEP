@@ -12,7 +12,7 @@ public class ArticleDTO {
     private String abstractText;
     private String pdfPath;
     private Boolean accepted;
-    private MembershipDTO membership;
+    private MembershipSimpleDTO membership;
     private UserDTO mainAuthor;
     private Set<UserDTO> coAuthors;
     private Set<ScientificField> scientificFields;

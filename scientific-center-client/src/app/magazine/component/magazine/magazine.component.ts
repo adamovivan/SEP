@@ -54,7 +54,7 @@ export class MagazineComponent implements OnInit {
   }
 
   showArticle(element){
-    console.log(element);
+    this.router.navigate(['/article/' + element.id]);
   }
 
   showShoppingCart(){

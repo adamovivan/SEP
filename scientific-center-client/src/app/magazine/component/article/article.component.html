@@ -1,1 +1,19 @@
-<p>article works!</p>
+<mat-card>
+    <mat-card-content>
+      <div class="titleContainer">
+        <h2 class="mainTitle" *ngIf="article.title !== undefined">{{article.title}}</h2>
+      </div>
+      <div class="titleContainer">
+        <h4 class="mainTitle" *ngIf="article.mainAuthor !== undefined">Main Author: {{article.mainAuthor.firstName}} {{article.mainAuthor.lastName}}</h4>
+      </div>
+      <div class="titleContainer">
+          <button mat-button color="primary" (click)="addArticleToCart()">Add Article To Shopping Cart</button>
+      </div>
+      <div class="titleContainer" *ngIf="article.abstractText !== undefined">
+        <p><b>Abstract: </b>{{article.abstractText}}</p>
+      </div>
+  <br>
+  <button mat-button (click)="showShoppingCart()">Shopping Cart</button>
+  <br>
+</mat-card-content>
+</mat-card>
