@@ -9,13 +9,15 @@ import { ShoppingCartService } from './service/shopping-cart.service';
 import { CommonService } from './service/common.service';
 import { MagazinesComponent } from './component/magazines/magazines.component';
 import { ArticleComponent } from './component/article/article.component';
+import { ArticlesComponent } from './component/articles/articles.component';
 
 @NgModule({
   declarations: [
     MagazineComponent,
     ShoppingCartComponent,
     MagazinesComponent,
-    ArticleComponent
+    ArticleComponent,
+    ArticlesComponent
   ],
   imports: [
     CommonModule,
