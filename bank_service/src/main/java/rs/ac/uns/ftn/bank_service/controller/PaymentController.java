@@ -1,6 +1,8 @@
 package rs.ac.uns.ftn.bank_service.controller;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +21,22 @@ public class PaymentController {
 
     @Value("${client.port}")
     private Long clientPort;
+
+    private static Logger LOGGER = LoggerFactory.getLogger(PaymentController.class);
+
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public String test(){
+        return "HI!!";
+    }
+
+    @RequestMapping(value = "/test", method = RequestMethod.POST)
+    public String testPOST(@RequestBody String payload){
+        LOGGER.debug("DEBUGGG LOGG");
+        System.out.println("IN TEST POST " + payload);
+        LOGGER.info("INFOOO LOG");
+        return "HI!!";
+    }
+
 
     @RequestMapping(value = "/pay", method = RequestMethod.POST)
     public ResponseEntity<CardPaymentResponseDTO> createPaymentRequest(@RequestBody CardPaymentRequestDTO cardPaymentRequestDTO){
