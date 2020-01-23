@@ -3,6 +3,7 @@ package rs.ac.uns.ftn.scientific_center.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +22,11 @@ public class MagazineController {
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     public ResponseEntity<List<MagazineDTO>> getAllMagazines(){
         return ResponseEntity.ok().body(magazineService.getAllMagazines());
+    }
+
+    @RequestMapping(value = "/{magazineId}", method = RequestMethod.GET)
+    public ResponseEntity<MagazineDTO> getMagazine(@PathVariable Long magazineId){
+        return ResponseEntity.ok().body(magazineService.getMagazine(magazineId));
     }
 
 }

@@ -1,25 +1,30 @@
 package rs.ac.uns.ftn.scientific_center.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @Entity
 public class Article {
     @Id
     private Long id;
     private String title;
+    @Column(length = 3000)
     private String abstractText;
     private String pdfPath;
     private Boolean accepted;
     @ManyToOne
     private User mainAuthor;
     @ManyToMany
-    private List<User> coAuthors;
+    private Set<User> coAuthors;
+    @ManyToMany
+    private Set<ScientificField> scientificFields;
+    @OneToOne
+    private Membership membership;
     @ManyToOne
-    private ScientificField scientificField;
-    @OneToMany
-    private List<Membership> memberships;
+    private Magazine magazine;
 }

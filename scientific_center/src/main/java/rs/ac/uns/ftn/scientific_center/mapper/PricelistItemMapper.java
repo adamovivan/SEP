@@ -5,7 +5,9 @@ import org.mapstruct.Mapper;
 import rs.ac.uns.ftn.scientific_center.dto.PricelistItemDTO;
 import rs.ac.uns.ftn.scientific_center.model.PricelistItem;
 
+import java.util.Set;
+
 @Mapper(componentModel = "spring")
 public interface PricelistItemMapper {
-    PricelistItemDTO pricelistItemToPricelistItemDTO(PricelistItem pricelistItem);
+    Set<PricelistItemDTO> pricelistItemsToPricelistItemDTOs(Set<PricelistItem> pricelistItems);
 }

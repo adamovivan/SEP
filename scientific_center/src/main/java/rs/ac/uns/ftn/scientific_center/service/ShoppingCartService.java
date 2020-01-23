@@ -2,6 +2,7 @@ package rs.ac.uns.ftn.scientific_center.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
@@ -10,11 +11,13 @@ import rs.ac.uns.ftn.scientific_center.dto.PricelistItemDTO;
 import rs.ac.uns.ftn.scientific_center.dto.request.PaymentOrderRequest;
 import rs.ac.uns.ftn.scientific_center.dto.response.PaymentOrderResponse;
 import rs.ac.uns.ftn.scientific_center.mapper.PricelistItemMapper;
-import rs.ac.uns.ftn.scientific_center.model.PricelistItem;
-import rs.ac.uns.ftn.scientific_center.model.ShoppingCart;
-import rs.ac.uns.ftn.scientific_center.repository.MembershipRepository;
-import rs.ac.uns.ftn.scientific_center.repository.PricelistItemRepository;
-import rs.ac.uns.ftn.scientific_center.repository.ShoppingCartRepository;
+import rs.ac.uns.ftn.scientific_center.model.*;
+import rs.ac.uns.ftn.scientific_center.repository.*;
+
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 
 
 @Service
@@ -27,7 +30,16 @@ public class ShoppingCartService {
     private PricelistItemRepository pricelistItemRepository;
 
     @Autowired
+    private ArticleRepository articleRepository;
+
+    @Autowired
     private MembershipRepository membershipRepository;
+
+    @Autowired
+    private OpenAccessRequestRepository openAccessRequestRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Autowired
     private PricelistItemMapper pricelistItemMapper;
@@ -38,22 +50,124 @@ public class ShoppingCartService {
     @Value("${payment.url}")
     private String paymentUrl;
 
-    public ShoppingCart addItem(Long magazineId) throws NullPointerException {
-        PricelistItem pricelistItem = pricelistItemRepository.findByMagazineId(magazineId);
+    public ShoppingCart addMagazine(Long magazineId) throws NullPointerException {
+        PricelistItem pricelistItemMagazine = pricelistItemRepository.findByMembershipMagazineId(magazineId);
 
-        if(pricelistItem == null){
+        if(pricelistItemMagazine == null){
             throw new NullPointerException();
         }
 
         ShoppingCart shoppingCart = getAuthenticatedUserShoppingCart();
 
-        shoppingCart.setItem(pricelistItem);
+        boolean needToClear = false;
+        Iterator<PricelistItem> pricelistItemIterator = shoppingCart.getItems().iterator();
+        while(pricelistItemIterator.hasNext()){
+            PricelistItem plItem = pricelistItemIterator.next();
+            if(!plItem.getId().equals(pricelistItemMagazine.getId()) && plItem.getMembership().getMagazine() != null){      // different magazine
+                needToClear = true;
+                break;
+            }
+            // If articles originates from different magazine
+            else if(plItem.getMembership().getArticle() != null && !plItem.getMembership().getArticle()
+                                                                                        .getMagazine()
+                                                                                        .getId().equals(magazineId)){
+                needToClear = true;
+                break;
+            }
+        }
+
+        if(needToClear){
+            shoppingCart.getItems().clear();
+        }
+
+        shoppingCart.getItems().add(pricelistItemMagazine);
         return shoppingCartRepository.save(shoppingCart);
     }
 
-    public PricelistItemDTO getItem() {
+
+
+    @SuppressWarnings("unchecked")
+    public ShoppingCart addArticle(Long articleId) throws NullPointerException {
+        List<GrantedAuthority> grantedAuthorities = (List<GrantedAuthority>) SecurityContextHolder.getContext().getAuthentication().getAuthorities();
+        for (GrantedAuthority authority : grantedAuthorities) {
+            if (authority.getAuthority().equals(RoleName.AUTHOR.toString())) {
+                return addArticleAuthor(articleId);
+            }
+        }
+
+        for (GrantedAuthority authority : grantedAuthorities) {
+            if (authority.getAuthority().equals(RoleName.READER.toString())) {
+                return addArticleReader(articleId);
+            }
+        }
+
+        return null;
+    }
+
+    public ShoppingCart addArticleReader(Long articleId) throws NullPointerException {
+        PricelistItem pricelistItemArticle = pricelistItemRepository.findByMembershipArticleId(articleId);
+
+        if(pricelistItemArticle == null){
+            throw new NullPointerException();
+        }
+
         ShoppingCart shoppingCart = getAuthenticatedUserShoppingCart();
-        return pricelistItemMapper.pricelistItemToPricelistItemDTO(shoppingCart.getItem());
+
+        boolean needToClear = false;
+        Iterator<PricelistItem> pricelistItemIterator = shoppingCart.getItems().iterator();
+        while(pricelistItemIterator.hasNext()){
+            PricelistItem plItem = pricelistItemIterator.next();
+
+            if(plItem.getMembership().getArticle() != null){
+                // Check if articles originates from same magazine
+                if(!pricelistItemArticle.getMembership().getArticle().getMagazine().getId().equals(plItem.getMembership().getArticle().getMagazine().getId())){
+                    needToClear = true;
+                    break;
+                }
+            } // magazine
+            else if(plItem.getMembership().getMagazine() != null){
+                if(!pricelistItemArticle.getMembership().getArticle().getMagazine().getId().equals(plItem.getMembership().getMagazine().getId())){
+                    needToClear = true;
+                    break;
+                }
+            }
+        }
+
+        if(needToClear){
+            shoppingCart.getItems().clear();
+        }
+
+        shoppingCart.getItems().add(pricelistItemArticle);
+        return shoppingCartRepository.save(shoppingCart);
+    }
+
+    public ShoppingCart addArticleAuthor(Long articleId) throws NullPointerException {
+        Article article = articleRepository.findById(articleId).orElseThrow(() -> new NullPointerException("Article doesn't exist."));
+        PricelistItem pricelistItem = pricelistItemRepository.findByMembershipMagazineIdAndMembershipSubscriptionType(article.getMagazine().getId(), SubscriptionType.OPEN_ACCESS);
+
+        if (pricelistItem == null) {
+            throw new NullPointerException();
+        }
+
+
+        ShoppingCart shoppingCart = getAuthenticatedUserShoppingCart();
+        shoppingCart.getItems().add(pricelistItem);
+
+        rs.ac.uns.ftn.scientific_center.model.User user = userRepository.findByUsername(((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername());
+
+        OpenAccessRequest oar = new OpenAccessRequest();
+        oar.setArticle(article);
+        oar.setAuthor(user);
+        oar.setMembership(pricelistItem.getMembership());
+        oar.setActive(true);
+        openAccessRequestRepository.save(oar);
+
+        return shoppingCartRepository.save(shoppingCart);
+    }
+
+    public Set<PricelistItemDTO> getItems() {
+        ShoppingCart shoppingCart = getAuthenticatedUserShoppingCart();
+        return pricelistItemMapper.pricelistItemsToPricelistItemDTOs(shoppingCart.getItems());
     }
 
     private ShoppingCart getAuthenticatedUserShoppingCart() throws NullPointerException {
@@ -75,14 +189,78 @@ public class ShoppingCartService {
     public PaymentOrderResponse pay() {
         ShoppingCart shoppingCart = getAuthenticatedUserShoppingCart();
 
-        PricelistItem shoppingCartItem = shoppingCart.getItem();
-        Double totalPrice = shoppingCartItem.getPrice();
-        String email = membershipRepository.findByMagazineId(shoppingCartItem
-                    .getMagazine()
-                    .getId())
-                            .getUser()
-                            .getEmail();
-        return restTemplate.postForObject(paymentUrl, new PaymentOrderRequest(totalPrice, email),
+        if(shoppingCart.getItems().size() == 0){
+            return null;
+        }
+
+        PricelistItem pricelistItem = shoppingCart.getItems().iterator().next();
+
+        SubscriptionType subscriptionType = pricelistItem.getMembership().getSubscriptionType();
+        Double totalPrice = calculatePrice(shoppingCart.getItems(), subscriptionType);
+
+        String email = pricelistItem.getMembership().getUser().getEmail();
+
+        PaymentOrderResponse paymentOrderResponse = restTemplate.postForObject(paymentUrl, new PaymentOrderRequest(totalPrice, email),
                 PaymentOrderResponse.class);
+
+        if(paymentOrderResponse == null){
+            throw new NullPointerException("Payment response is null.");
+        }
+
+        if(!paymentOrderResponse.getSuccess()){
+            return paymentOrderResponse;     // failed
+        }
+
+        if(subscriptionType == SubscriptionType.OPEN_ACCESS){
+            changeArticleMembership(shoppingCart);
+        }
+
+        shoppingCart.getItems().clear();
+        shoppingCartRepository.save(shoppingCart);
+
+        // TODO create transaction
+
+        return paymentOrderResponse;
+    }
+
+    private void changeArticleMembership(ShoppingCart shoppingCart){
+        Iterator<PricelistItem> itemIterator = shoppingCart.getItems().iterator();
+        while(itemIterator.hasNext()){
+            Membership membership = itemIterator.next().getMembership();
+            List<OpenAccessRequest> oars = openAccessRequestRepository.findByMembershipIdAndAuthorUsernameAndActive(membership.getId(), ((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername(), true);
+
+            for(OpenAccessRequest oar: oars){
+                Membership articleMembership = membershipRepository.findByArticleId(oar.getArticle().getId());
+                articleMembership.setSubscriptionType(SubscriptionType.OPEN_ACCESS);
+                membershipRepository.save(articleMembership);
+                oar.setActive(false);
+                openAccessRequestRepository.save(oar);
+            }
+        }
+    }
+
+    public Boolean removeItem(Long itemId){
+        ShoppingCart shoppingCart = getAuthenticatedUserShoppingCart();
+        Iterator<PricelistItem> pricelistItemIterator = shoppingCart.getItems().iterator();
+        while(pricelistItemIterator.hasNext()){
+            PricelistItem pricelistItem = pricelistItemIterator.next();
+            if(pricelistItem.getId().equals(itemId)){
+                shoppingCart.getItems().remove(pricelistItem);
+                shoppingCartRepository.save(shoppingCart);
+                return true;
+            }
+        }
+        return true;
+    }
+
+    private Double calculatePrice(Set<PricelistItem> items, SubscriptionType subscriptionType){
+        double total = 0D;
+        for(PricelistItem pricelistItem: items){
+            if(pricelistItem.getMembership().getSubscriptionType() != subscriptionType){
+                continue;
+            }
+            total += pricelistItem.getPrice();
+        }
+        return total;
     }
 }

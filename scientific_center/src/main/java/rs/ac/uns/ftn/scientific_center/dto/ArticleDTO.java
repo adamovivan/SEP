@@ -3,16 +3,17 @@ package rs.ac.uns.ftn.scientific_center.dto;
 import lombok.Data;
 import rs.ac.uns.ftn.scientific_center.model.ScientificField;
 
-import java.util.List;
 import java.util.Set;
 
-
 @Data
-public class MagazineDTO {
+public class ArticleDTO {
     private Long id;
     private String title;
-    private String issn;
+    private String abstractText;
+    private String pdfPath;
+    private Boolean accepted;
+    private MembershipSimpleDTO membership;
+    private UserDTO mainAuthor;
+    private Set<UserDTO> coAuthors;
     private Set<ScientificField> scientificFields;
-    private Set<UserDTO> reviewers;
-    private Set<ArticleDTO> articles;
 }
