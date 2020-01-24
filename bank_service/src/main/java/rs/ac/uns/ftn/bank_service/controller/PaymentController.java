@@ -22,22 +22,6 @@ public class PaymentController {
     @Value("${client.port}")
     private Long clientPort;
 
-    private static Logger LOGGER = LoggerFactory.getLogger(PaymentController.class);
-
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
-    public String test(){
-        return "HI!!";
-    }
-
-    @RequestMapping(value = "/test", method = RequestMethod.POST)
-    public String testPOST(@RequestBody String payload){
-        LOGGER.debug("DEBUGGG LOGG");
-        System.out.println("IN TEST POST " + payload);
-        LOGGER.info("INFOOO LOG");
-        return "HI!!";
-    }
-
-
     @RequestMapping(value = "/pay", method = RequestMethod.POST)
     public ResponseEntity<CardPaymentResponseDTO> createPaymentRequest(@RequestBody CardPaymentRequestDTO cardPaymentRequestDTO){
         return ResponseEntity.ok(paymentService.createPaymentRequest(cardPaymentRequestDTO));
