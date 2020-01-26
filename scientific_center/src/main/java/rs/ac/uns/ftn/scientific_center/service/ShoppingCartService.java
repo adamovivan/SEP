@@ -51,7 +51,7 @@ public class ShoppingCartService {
     private String paymentUrl;
 
     public ShoppingCart addMagazine(Long magazineId) throws NullPointerException {
-        PricelistItem pricelistItemMagazine = pricelistItemRepository.findByMembershipMagazineId(magazineId);
+        PricelistItem pricelistItemMagazine = pricelistItemRepository.findByMembershipMagazineIdAndMembershipSubscriptionType(magazineId, SubscriptionType.READER_PAYS);
 
         if(pricelistItemMagazine == null){
             throw new NullPointerException();
