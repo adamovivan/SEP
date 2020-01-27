@@ -1,0 +1,47 @@
+<mat-card>
+        <mat-card-content>
+          <div id="titleContainer">
+            <h2 id="mainTitle">Magazines</h2>
+          </div>
+<button mat-button (click)="showShoppingCart()">Shopping Cart</button>
+<br>
+<div class="mat-elevation-z8">
+  <mat-table [dataSource]="magazines">
+    <ng-container matColumnDef="no">
+      <th mat-header-cell class="no-cell" *matHeaderCellDef> no. </th>
+      <td mat-cell class="no-cell" *matCellDef="let element; let i = index;">{{ i+1 }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="issn">
+      <th mat-header-cell class="issn-cell" *matHeaderCellDef> ISSN </th>
+      <td mat-cell class="issn-cell" *matCellDef="let element">{{ element.issn }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+      <th mat-header-cell class="title-cell" *matHeaderCellDef> Title </th>
+      <td mat-cell class="title-cell" *matCellDef="let element">{{ element.title }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="scientificFields">
+      <th mat-header-cell class="sf-cell" *matHeaderCellDef> Scientific Fields </th>
+      <td mat-cell class="sf-cell" *matCellDef="let element">
+          <span *ngFor="let sf of element.scientificFields">{{sf.name | titlecase}}.</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="show">
+      <th mat-header-cell class="show-cell" *matHeaderCellDef> </th>
+      <td mat-cell class="show-cell" *matCellDef="let element">
+          <button mat-button id="submit" color="primary" (click)="showMagazine(element)" class="submit-button">
+              Show
+          </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </mat-table>
+</div>
+</mat-card-content>
+</mat-card>

@@ -3,6 +3,7 @@ package rs.ac.uns.ftn.scientific_center.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @Entity
@@ -11,6 +12,6 @@ public class ShoppingCart {
     private Long id;
     @OneToOne
     private User user;
-    @ManyToOne
-    private PricelistItem item;
+    @ManyToMany
+    private Set<PricelistItem> items;
 }

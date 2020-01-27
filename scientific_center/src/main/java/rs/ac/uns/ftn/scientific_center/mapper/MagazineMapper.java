@@ -9,6 +9,6 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface MagazineMapper {
-
+    MagazineDTO magazineToMagazineDTO(Magazine magazine);
     List<MagazineDTO> magazinesToMagazineDTOs(List<Magazine> magazines);
 }

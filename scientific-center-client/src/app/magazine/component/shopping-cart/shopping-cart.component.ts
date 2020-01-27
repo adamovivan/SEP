@@ -10,8 +10,8 @@ import { CommonService } from 'src/app/login/service/common.service';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  displayedColumns: string[] = ['no', 'issn', 'title', 'scientificField', 'price', 'remove'];
-  magazineItems = [];
+  displayedColumns: string[] = ['no', 'itemType', 'title', 'price', 'remove'];
+  items = [];
   totalPrice = 0;
 
   constructor(private shoppingCartService: ShoppingCartService,
@@ -22,15 +22,32 @@ export class ShoppingCartComponent implements OnInit {
   ngOnInit() {
     this.shoppingCartService.getShoppingCartItems().subscribe(
       res => {
-        this.magazineItems = [res];
+        console.log(res)
+        this.items = res;
+        this.mapMagazineArticleToItem();
         this.totalPrice = this.calculateTotalPrice();
       },
-      err => {
-        console.log(err)
+      () => {
         this.commonService.somethingWentWrong();
       }
       
     );
+  }
+
+  mapMagazineArticleToItem() {
+    for(let item of this.items){
+      let el;
+      if(item.membership.magazine != undefined){
+        el = item.membership.magazine;
+      }
+      else if(item.membership.article != undefined){
+        el = item.membership.article;
+      }
+      
+      delete item.membership.magazine;
+      delete item.membership.article;
+      item.membership["item"] = el;
+    }
   }
 
   ngAfterContentChecked() {
@@ -38,12 +55,20 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   removeFromShoppingCart(element){
-    console.log(element)
+    this.shoppingCartService.removeFromCart(element.id).subscribe(() => {
+      this.items = this.items.filter(obj => obj !== element);
+      this.totalPrice = this.calculateTotalPrice();
+      this.commonService.showMessage("Item successfully removed from shopping cart.");
+    },
+    () => {
+      this.commonService.somethingWentWrong();
+    });
+    
   }
 
   calculateTotalPrice(){
     let sum = 0;
-    this.magazineItems.forEach(element => sum += element.price);
+    this.items.forEach(element => sum += element.price);
     return sum;
   }
 

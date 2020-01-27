@@ -84,7 +84,7 @@ public class PaymentsService {
 		
 		Transaction transaction = new Transaction();
 		transaction = transactionRepository.findByUuid(token);
-		
+		System.out.println(transaction.getEmail());
 		Client client = new Client();
 		client = clientRepository.findByEmail(transaction.getEmail());
 		PaymentResponse payment;
@@ -117,7 +117,7 @@ public class PaymentsService {
 		PaymentLinkResponse response = new PaymentLinkResponse();
 		if(transaction != null) {
 			response.setSuccess(true);
-			response.setUrl("https://localhost:4200/payingType/"+ transaction.getUuid());
+			response.setUrl("https://localhost:4200/payment-method/"+ transaction.getUuid());
 			logger.info("Successfully obtained transaction link");
 			return response;
 		}else {

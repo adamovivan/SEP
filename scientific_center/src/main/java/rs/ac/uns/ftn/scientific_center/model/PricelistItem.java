@@ -12,12 +12,8 @@ public class PricelistItem {
     private Long id;
     @Column(nullable = false)
     private Double price;
-    @Enumerated(EnumType.STRING)
-    private SubscriptionType subscriptionType;
-    @ManyToOne
-    private Magazine magazine;
-    @ManyToOne
-    private Article article;
     @ManyToMany
     private Set<Pricelist> pricelists;
+    @ManyToOne
+    private Membership membership;
 }
