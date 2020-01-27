@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CancelComponent } from './cancel/cancel.component';
 import { SuccessComponent } from './success/success.component';
 import { UserDataComponent } from './user-data/user-data.component';
+import { SubscriptionPlanComponent } from './subscription-plan/subscription-plan.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'input/:username',
     component: UserDataComponent
+  },
+  {
+    path: 'subscriptionPlan/:token',
+    component: SubscriptionPlanComponent
   }
 ];
 

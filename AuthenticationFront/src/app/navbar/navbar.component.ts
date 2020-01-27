@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Shared } from '../services/token';
+import { SERVER_URL } from '../app.constant';
+import { SellerService } from '../services/services';
+import { AnonymousSubject } from 'rxjs/internal/Subject';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +11,6 @@ import { Shared } from '../services/token';
 })
 export class NavbarComponent implements OnInit {
 
-  
   constructor(private token: Shared) { }
 
   ngOnInit() {

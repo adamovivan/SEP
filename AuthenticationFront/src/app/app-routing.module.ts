@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { TypePaymentsComponent } from './type-payments/type-payments.component';
 import { PayingTypeComponent } from './paying-type/paying-type.component';
+import { SubscriptionPlansComponent } from './subscription-plans/subscription-plans.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'payingType/:token',
     component: PayingTypeComponent
+  },
+  {
+    path: 'subscriptionPlans',
+    component: SubscriptionPlansComponent
   }
 ];
 

@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   userInfo: any;
   public isLoged:boolean=false;
   uAt: any;
+  inc: boolean;
 
   constructor(
     private service:SellerService,
@@ -41,12 +42,19 @@ export class LoginComponent implements OnInit {
     this.userInfo = this.SingIn.getRawValue();
     this.service.login(this.userInfo).subscribe(
       data => {
+        
         this.userInfo = data
-        this.router.navigateByUrl("");
-        this.token.username = this.userInfo.logedUsername;
-        localStorage.setItem('username',this.userInfo.logedUsername);
+        if(this.userInfo.status != false){
+          this.router.navigateByUrl("");
+          this.token.username = this.userInfo.logedUsername;
+          localStorage.setItem('username',this.userInfo.logedUsername);
+        }else{
+          this.inc = true;
+        }
+    },
+    err => {
+        this.inc = true;
     });
   }
-
 
 }
