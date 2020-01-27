@@ -1,3 +1,3 @@
 # SEP
 
-Projekat iz predmeta Sistemi elektonskog placanja
+Projekat iz predmeta Sistemi elektronskog placanja

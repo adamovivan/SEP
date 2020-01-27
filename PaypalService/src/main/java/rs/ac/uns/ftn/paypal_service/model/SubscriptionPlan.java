@@ -6,13 +6,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @Entity
-public class TransactionData {
-
+public class SubscriptionPlan {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
@@ -22,21 +21,29 @@ public class TransactionData {
 	private String username;
 	
 	@Column(nullable=false)
-	private String token;
+	private String name;
 	
 	@Column(nullable=false)
-	private String time;
+	private String description;
 	
 	@Column(nullable=false)
-	private String status;
+	private String planID;
 	
 	@Column(nullable=false)
-	private Double price;
+	private String frequency;
 	
-	@Column
-	private String buyer;
+	@Column(nullable=false)
+	private String frequencyInterval;
 	
-	@Column
-	private String orderID;
+	@Column(nullable=false)
+	private Integer cycles;
 	
+	@Column(nullable=false)
+	private Double value;
+	
+	@Column(nullable=false)
+	private String type;
+	
+	
+
 }

@@ -38,5 +38,16 @@ export class SellerService {
   getPaymentLink(request:any){
     return this.http.post(SERVER_URL + '/authentication-service/getPaymentLink',request);
   }
-  
+
+  getTransactionPlanLink(username:any){
+    return this.http.post(SERVER_URL + '/authentication-service/getTransactionPlanLink',username);
+  }
+
+  getSubscriptionPlans(username:any){
+    return this.http.post(SERVER_URL + '/api-paypal/getSubscriptionPlans',username);
+  }
+
+  deletePlan(id:any){
+    return this.http.delete(SERVER_URL + '/api-paypal/deletePlan/'+id);
+  }
 }

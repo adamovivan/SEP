@@ -20,6 +20,7 @@ import rs.ac.uns.ftn.authentication_service.repository.TransactionRepository;
 import rs.ac.uns.ftn.authentication_service.request.PaymentLinkRequest;
 import rs.ac.uns.ftn.authentication_service.request.PaymentOrderRequest;
 import rs.ac.uns.ftn.authentication_service.request.PaymentRequest;
+import rs.ac.uns.ftn.authentication_service.request.TransactionPlanRequest;
 import rs.ac.uns.ftn.authentication_service.request.TransactionRequest;
 import rs.ac.uns.ftn.authentication_service.response.PaymentLinkResponse;
 import rs.ac.uns.ftn.authentication_service.response.PaymentResponse;
@@ -116,7 +117,7 @@ public class PaymentsService {
 		PaymentLinkResponse response = new PaymentLinkResponse();
 		if(transaction != null) {
 			response.setSuccess(true);
-			response.setUrl("https://localhost:4200/payingType/"+ transaction.getUuid());
+			response.setUrl("https://localhost:4200/payment-method/"+ transaction.getUuid());
 			logger.info("Successfully obtained transaction link");
 			return response;
 		}else {
@@ -125,6 +126,11 @@ public class PaymentsService {
 			logger.info("No transaction link was obtained");
 			return response;
 		}
+		
+	}
+	
+	public PaymentLinkResponse getTransactionPlanLink(TransactionPlanRequest transactionPlanRequest) {
+	        return restTemplate.postForObject("https://localhost:8765/api-paypal/getTransactionPlanLink", transactionPlanRequest, PaymentLinkResponse.class);
 	}
 	
 	public PaymentLinkResponse getPaymentLink(PaymentLinkRequest paymentLinkRequest) {
