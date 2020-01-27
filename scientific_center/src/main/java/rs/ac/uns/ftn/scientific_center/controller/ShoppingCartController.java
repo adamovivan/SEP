@@ -3,6 +3,7 @@ package rs.ac.uns.ftn.scientific_center.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import rs.ac.uns.ftn.scientific_center.dto.CompletePaymentDTO;
 import rs.ac.uns.ftn.scientific_center.dto.PricelistItemDTO;
 import rs.ac.uns.ftn.scientific_center.dto.response.PaymentOrderResponse;
 import rs.ac.uns.ftn.scientific_center.dto.response.SimpleResponse;
@@ -45,5 +46,9 @@ public class ShoppingCartController {
         return ResponseEntity.ok().body(shoppingCartService.removeItem(itemId));
     }
 
+    @RequestMapping(value = "/complete-payment", method = RequestMethod.POST)
+    public ResponseEntity<SimpleResponse> completePayment(CompletePaymentDTO completePaymentDTO){
+        return ResponseEntity.ok().body(shoppingCartService.completePayment(completePaymentDTO));
+    }
 
 }

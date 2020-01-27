@@ -9,13 +9,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import rs.ac.uns.ftn.bank_service.dto.CardPaymentRequestDTO;
-import rs.ac.uns.ftn.bank_service.dto.CardPaymentResponseDTO;
-import rs.ac.uns.ftn.bank_service.dto.PaymentRegistrationDTO;
-import rs.ac.uns.ftn.bank_service.dto.PaymentRequestDTO;
-import rs.ac.uns.ftn.bank_service.dto.SimpleResponseDTO;
+import rs.ac.uns.ftn.bank_service.dto.*;
 import rs.ac.uns.ftn.bank_service.exception.NotFoundException;
 import rs.ac.uns.ftn.bank_service.model.Merchant;
+import rs.ac.uns.ftn.bank_service.model.NotificationStatus;
 import rs.ac.uns.ftn.bank_service.model.Transaction;
 import rs.ac.uns.ftn.bank_service.model.TransactionStatus;
 import rs.ac.uns.ftn.bank_service.repository.MerchantRepository;
@@ -60,10 +57,12 @@ public class PaymentService {
         transaction.setMerchantId(merchant.getMerchantId());
         transaction.setMerchantPassword(merchant.getMerchantPassword());
         transaction.setAmount(cardPaymentRequestDTO.getTotalPrice());
-        //transaction.setMerchantOrderId(cardPaymentRequestDTO.getMerchantOrderId());
-        transaction.setMerchantOrderId(UUID.randomUUID().toString());
+        transaction.setMerchantOrderId(cardPaymentRequestDTO.getOrderId());
+        //transaction.setMerchantOrderId(UUID.randomUUID().toString());
         transaction.setMerchantTimestamp(LocalDateTime.now());
+        transaction.setCallbackUrl(cardPaymentRequestDTO.getCallbackUrl());
         transaction.setTransactionStatus(TransactionStatus.CREATED);
+        transaction.setNotificationStatus(NotificationStatus.NOT_NOTIFIED);
 
         Transaction savedTransaction = transactionRepository.save(transaction);
         PaymentRequestDTO paymentRequestDTO = transactionToPaymentRequestDTO(savedTransaction);
@@ -84,41 +83,32 @@ public class PaymentService {
         return paymentRequestDTO;
     }
 
-    public SimpleResponseDTO transactionSuccess(String transactionId){
+    public SimpleResponseDTO completePayment(String transactionId, TransactionStatus transactionStatus){
         Transaction transaction = transactionRepository.findByTransactionId(transactionId);
         if(transaction == null){
             throw new NotFoundException("Transaction doesn't exist.");
         }
-        transaction.setTransactionStatus(TransactionStatus.SUCCESS);
+        transaction.setTransactionStatus(transactionStatus);
         transactionRepository.save(transaction);
-        return new SimpleResponseDTO("Success.");
-    }
 
-    public SimpleResponseDTO transactionFailed(String transactionId){
-        Transaction transaction = transactionRepository.findByTransactionId(transactionId);
-        if(transaction == null){
-            throw new NotFoundException("Transaction doesn't exist.");
-        }
-        transaction.setTransactionStatus(TransactionStatus.FAILED);
-        transactionRepository.save(transaction);
-        return new SimpleResponseDTO("Success.");
-    }
 
-    public SimpleResponseDTO transactionError(String transactionId){
-        Transaction transaction = transactionRepository.findByTransactionId(transactionId);
-        if(transaction == null){
-            throw new NotFoundException("Transaction doesn't exist.");
+        CompletePaymentDTO completePaymentDTO = new CompletePaymentDTO(transaction.getMerchantOrderId(), transaction.getTransactionStatus());
+
+        SimpleResponseDTO simpleResponseDTO = restTemplate.postForObject(transaction.getCallbackUrl(), completePaymentDTO, SimpleResponseDTO.class);
+
+        if(simpleResponseDTO != null && simpleResponseDTO.getSuccess()){
+            transaction.setNotificationStatus(NotificationStatus.NOTIFIED);
+            transactionRepository.save(transaction);
         }
-        transaction.setTransactionStatus(TransactionStatus.ERROR);
-        transactionRepository.save(transaction);
+
         return new SimpleResponseDTO("Success.");
     }
     
-    public SimpleResponseDTO paymentRegistration(PaymentRegistrationDTO paymentRegistationDTO) {
+    public SimpleResponseDTO paymentRegistration(PaymentRegistrationDTO paymentRegistrationDTO) {
     	Merchant merchant = new Merchant();
-    	merchant.setUsername(paymentRegistationDTO.getUsername());
-    	merchant.setMerchantId(paymentRegistationDTO.getMerchantId());
-    	merchant.setMerchantPassword(paymentRegistationDTO.getMerchantPassword());
+    	merchant.setUsername(paymentRegistrationDTO.getUsername());
+    	merchant.setMerchantId(paymentRegistrationDTO.getMerchantId());
+    	merchant.setMerchantPassword(paymentRegistrationDTO.getMerchantPassword());
     	merchantRepository.save(merchant);
     	return new SimpleResponseDTO("Success.");
     }

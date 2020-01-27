@@ -7,10 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import rs.ac.uns.ftn.bank_service.dto.CardPaymentRequestDTO;
-import rs.ac.uns.ftn.bank_service.dto.CardPaymentResponseDTO;
-import rs.ac.uns.ftn.bank_service.dto.PaymentRegistrationDTO;
-import rs.ac.uns.ftn.bank_service.dto.SimpleResponseDTO;
+import rs.ac.uns.ftn.bank_service.dto.*;
+import rs.ac.uns.ftn.bank_service.model.TransactionStatus;
 import rs.ac.uns.ftn.bank_service.service.PaymentService;
 
 @RestController
@@ -29,17 +27,17 @@ public class PaymentController {
 
     @RequestMapping(value = "/payment-success/{transaction-id}", method = RequestMethod.PUT)
     public ResponseEntity<SimpleResponseDTO> paymentSuccess(@PathVariable("transaction-id") String transactionId){
-        return ResponseEntity.ok().body(paymentService.transactionSuccess(transactionId));
+        return ResponseEntity.ok().body(paymentService.completePayment(transactionId, TransactionStatus.SUCCESS));
     }
 
     @RequestMapping(value = "/payment-failed/{transaction-id}", method = RequestMethod.PUT)
     public ResponseEntity<SimpleResponseDTO> paymentFailed(@PathVariable("transaction-id") String transactionId){
-        return ResponseEntity.ok().body(paymentService.transactionFailed(transactionId));
+        return ResponseEntity.ok().body(paymentService.completePayment(transactionId, TransactionStatus.FAILED));
     }
 
     @RequestMapping(value = "/payment-error/{transaction-id}", method = RequestMethod.PUT)
     public ResponseEntity<SimpleResponseDTO> paymentError(@PathVariable("transaction-id") String transactionId){
-        return ResponseEntity.ok().body(paymentService.transactionError(transactionId));
+        return ResponseEntity.ok().body(paymentService.completePayment(transactionId, TransactionStatus.ERROR));
     }
     
     @RequestMapping(value = "/payment-registration", method = RequestMethod.POST)

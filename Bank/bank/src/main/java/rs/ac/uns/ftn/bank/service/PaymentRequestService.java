@@ -4,8 +4,6 @@ package rs.ac.uns.ftn.bank.service;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -25,8 +23,6 @@ import rs.ac.uns.ftn.bank.repository.TransactionRepository;
 @Service
 public class PaymentRequestService {
 	
-	private static final Logger logger = LoggerFactory.getLogger(PaymentRequestService.class);
-
     @Autowired
     private PaymentRequestRepository paymentRequestRepository;
 
@@ -45,7 +41,6 @@ public class PaymentRequestService {
     public PaymentResponseDTO createPaymentRequest(PaymentRequestDTO paymentRequestDTO){
 
         if(!isValidMerchant(paymentRequestDTO)){
-        	 logger.error("Wrong merchant id or password.");
             throw new BadRequestException("Wrong merchant id or password.");
         }
 

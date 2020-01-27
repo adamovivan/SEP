@@ -7,17 +7,20 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import rs.ac.uns.ftn.scientific_center.dto.CompletePaymentDTO;
 import rs.ac.uns.ftn.scientific_center.dto.PricelistItemDTO;
 import rs.ac.uns.ftn.scientific_center.dto.request.PaymentOrderRequest;
 import rs.ac.uns.ftn.scientific_center.dto.response.PaymentOrderResponse;
+import rs.ac.uns.ftn.scientific_center.dto.response.SimpleResponse;
 import rs.ac.uns.ftn.scientific_center.mapper.PricelistItemMapper;
 import rs.ac.uns.ftn.scientific_center.model.*;
 import rs.ac.uns.ftn.scientific_center.repository.*;
 
-import java.util.Collection;
+import java.time.LocalDateTime;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 
 
 @Service
@@ -42,6 +45,9 @@ public class ShoppingCartService {
     private UserRepository userRepository;
 
     @Autowired
+    private TransactionRepository transactionRepository;
+
+    @Autowired
     private PricelistItemMapper pricelistItemMapper;
 
     @Autowired
@@ -49,6 +55,9 @@ public class ShoppingCartService {
 
     @Value("${payment.url}")
     private String paymentUrl;
+
+    @Value("${payment.callback.url}")
+    private String paymentCallbackUrl;
 
     public ShoppingCart addMagazine(Long magazineId) throws NullPointerException {
         PricelistItem pricelistItemMagazine = pricelistItemRepository.findByMembershipMagazineIdAndMembershipSubscriptionType(magazineId, SubscriptionType.READER_PAYS);
@@ -194,33 +203,40 @@ public class ShoppingCartService {
         }
 
         PricelistItem pricelistItem = shoppingCart.getItems().iterator().next();
-
         SubscriptionType subscriptionType = pricelistItem.getMembership().getSubscriptionType();
         Double totalPrice = calculatePrice(shoppingCart.getItems(), subscriptionType);
-
         String email = pricelistItem.getMembership().getUser().getEmail();
 
-        PaymentOrderResponse paymentOrderResponse = restTemplate.postForObject(paymentUrl, new PaymentOrderRequest(totalPrice, email),
+        Transaction transaction = new Transaction();
+        transaction.setItems(shoppingCart.getItems());
+        transaction.setCustomer(shoppingCart.getUser());
+        transaction.setTransactionStatus(TransactionStatus.CREATED);
+        transaction.setVendor(shoppingCart.getItems().iterator().next().getMembership().getUser());
+        transaction.setAmount(totalPrice);
+        transaction.setSubscriptionType(subscriptionType);
+        transaction.setOrderId(UUID.randomUUID().toString());
+        transaction.setTimestamp(LocalDateTime.now());
+        transactionRepository.save(transaction);
+
+        return restTemplate.postForObject(paymentUrl, new PaymentOrderRequest(totalPrice, email, transaction.getOrderId(), paymentCallbackUrl),
                 PaymentOrderResponse.class);
+    }
 
-        if(paymentOrderResponse == null){
-            throw new NullPointerException("Payment response is null.");
+    public SimpleResponse completePayment(CompletePaymentDTO completePaymentDTO){
+        Transaction transaction = transactionRepository.findByTransactionId(completePaymentDTO.getTransactionId());
+        transaction.setTransactionStatus(completePaymentDTO.getTransactionStatus());
+        transactionRepository.save(transaction);
+
+        if(transaction.getTransactionStatus() == TransactionStatus.SUCCESS){
+            if(transaction.getSubscriptionType() == SubscriptionType.OPEN_ACCESS){
+                changeArticleMembership(transaction.getCustomer().getShoppingCart());
+            }
+
+            transaction.getCustomer().getShoppingCart().getItems().clear();
+            shoppingCartRepository.save(transaction.getCustomer().getShoppingCart());
         }
 
-        if(!paymentOrderResponse.getSuccess()){
-            return paymentOrderResponse;     // failed
-        }
-
-        if(subscriptionType == SubscriptionType.OPEN_ACCESS){
-            changeArticleMembership(shoppingCart);
-        }
-
-        shoppingCart.getItems().clear();
-        shoppingCartRepository.save(shoppingCart);
-
-        // TODO create transaction
-
-        return paymentOrderResponse;
+        return new SimpleResponse("Success.");
     }
 
     private void changeArticleMembership(ShoppingCart shoppingCart){

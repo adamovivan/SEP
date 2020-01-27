@@ -141,7 +141,7 @@ public class PaymentsService {
 			return response.getBody();
 		}catch (Exception e) {
 			e.printStackTrace();
-			logger.info("no payment link was provided for payment to " + client.getUsername() + "'s account");
+			// logger.info("no payment link was provided for payment to " + client.getUsername() + "'s account");
 			// TODO: handle exception
 		}
 		

@@ -1,7 +1,5 @@
 package rs.ac.uns.ftn.bank.service;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -23,8 +21,6 @@ import java.util.regex.Pattern;
 
 @Service
 public class PaymentService {
-	
-	private static final Logger logger = LoggerFactory.getLogger(PaymentRequestService.class);
 
     @Autowired
     private CardRepository cardRepository;
@@ -63,7 +59,6 @@ public class PaymentService {
 
         Reservation reservation = reserveMoney(paymentCardDTO.getPan(), paymentCardDTO.getPaymentId());
 
-        logger.info("Payment Transaction is successfully completed to user " + paymentCardDTO.getCardholderName() + " account.");
         return new PaymentStatusDTO(reservation.getTransaction().getTransactionId(), reservation.getTransaction().getTransactionStatus());
     }
 
