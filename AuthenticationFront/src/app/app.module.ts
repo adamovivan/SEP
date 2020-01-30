@@ -13,6 +13,7 @@ import { Shared } from './services/token';
 import { TypePaymentsComponent } from './type-payments/type-payments.component';
 import { PayingTypeComponent } from './paying-type/paying-type.component';
 import { SubscriptionPlansComponent } from './subscription-plans/subscription-plans.component';
+import { SubscriptionAgreementComponent } from './subscription-agreement/subscription-agreement.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SubscriptionPlansComponent } from './subscription-plans/subscription-pl
     HomeComponent,
     TypePaymentsComponent,
     PayingTypeComponent,
-    SubscriptionPlansComponent
+    SubscriptionPlansComponent,
+    SubscriptionAgreementComponent
   ],
   imports: [
     BrowserModule,

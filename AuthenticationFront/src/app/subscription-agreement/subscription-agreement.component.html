@@ -1,0 +1,43 @@
+<div *ngIf="subscriptionPlans" class="row">
+    <div class="col"></div>
+    <div class="col">
+        <table class="table ml-2 mt-2" style="width: 50vw; margin-left: 25vw;">
+            <thead style="background-color: #0074E1;">
+              <tr>
+                <th scope="col" colspan="9" style="text-align: center; color: white">
+                  Choose Subscription plan
+                </th>
+              </tr>
+              <tr style="color: white">
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Frequency</th>
+                <th scope="col">Frequency interval</th>
+                <th scope="col">Cycles</th>
+                <th scope="col">Type</th>
+                <th scope="col">Manipulation</th>
+              </tr>
+            </thead>
+            <tbody style="color: #0074E1">
+              <tr *ngFor="let item of subscriptionPlans.plans; let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{item.name}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.value}}</td>
+                <td>{{item.frequency}}</td>
+                <td>{{item.frequencyInterval}}</td>
+                <td>{{item.cycles}}</td>
+                <td>{{item.type}}</td>
+                <td style="text-align: center;">
+                    <a class="active mr-2" (click)="subscribe(item)">
+                      <img src="/assets/img/approval-32.png">
+                    </a>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    <div class="col"></div>
+</div>

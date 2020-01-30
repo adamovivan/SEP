@@ -34,4 +34,8 @@ import { SERVER_URL } from '../app.constant';
     addSubscriptionPlan(planInfo:any){
       return this.http.post(SERVER_URL + '/api-paypal/createSubscriptionPlan',planInfo);
     }
+
+    completeAgreement(complete:any){
+      return this.http.post(SERVER_URL + '/api-paypal/completeAgreement',complete);
+    }
 }

@@ -4,6 +4,8 @@ import { CancelComponent } from './cancel/cancel.component';
 import { SuccessComponent } from './success/success.component';
 import { UserDataComponent } from './user-data/user-data.component';
 import { SubscriptionPlanComponent } from './subscription-plan/subscription-plan.component';
+import { CancelAgreementComponent } from './cancel-agreement/cancel-agreement.component';
+import { SuccessAgreementComponent } from './success-agreement/success-agreement.component';
 
 
 const routes: Routes = [
@@ -22,7 +24,15 @@ const routes: Routes = [
   {
     path: 'subscriptionPlan/:token',
     component: SubscriptionPlanComponent
-  }
+  },
+  {
+    path: 'cancelAgreement',
+    component: CancelAgreementComponent
+  },
+  {
+    path: 'successAgreement',
+    component: SuccessAgreementComponent
+  },
 ];
 
 @NgModule({

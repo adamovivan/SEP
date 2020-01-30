@@ -35,6 +35,10 @@ export class SellerService {
     return this.http.get(SERVER_URL + '/authentication-service/getTypePayments/'+token,);
   }
 
+  getSubscriptionPlansByToken(token:any){
+    return this.http.get(SERVER_URL + '/authentication-service/getSubscriptionPlans/'+ token);
+  }
+
   getPaymentLink(request:any){
     return this.http.post(SERVER_URL + '/authentication-service/getPaymentLink',request);
   }
@@ -49,5 +53,9 @@ export class SellerService {
 
   deletePlan(id:any){
     return this.http.delete(SERVER_URL + '/api-paypal/deletePlan/'+id);
+  }
+
+  Subscription(item:any){
+      return this.http.post(SERVER_URL + '/api-paypal/createAgreement',item);
   }
 }

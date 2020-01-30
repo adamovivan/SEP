@@ -39,6 +39,9 @@ export class SubscriptionPlanComponent implements OnInit {
   onSubmit(event:any) {
     this.submitted = true;
     this.planInfo = this.SingIn.getRawValue();
+    if(this.planInfo.frequency == "YEAR"){
+        this.planInfo.frequencyInterval = 1;
+    }
     this.activatedRoute.paramMap.subscribe(
       params => {
           this.planInfo.token = params.get('token');

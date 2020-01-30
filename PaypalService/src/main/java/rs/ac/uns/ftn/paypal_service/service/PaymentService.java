@@ -14,7 +14,9 @@ import com.paypal.base.rest.PayPalRESTException;
 import rs.ac.uns.ftn.paypal_service.dto.request.OrderRequest;
 import rs.ac.uns.ftn.paypal_service.dto.request.PaymentOrderRequest;
 import rs.ac.uns.ftn.paypal_service.dto.request.TransactionPlanLinkRequest;
+import rs.ac.uns.ftn.paypal_service.dto.request.UserPlansRequest;
 import rs.ac.uns.ftn.paypal_service.dto.response.PaymentOrderResponse;
+import rs.ac.uns.ftn.paypal_service.dto.response.SubscriptionPlanResponse;
 import rs.ac.uns.ftn.paypal_service.dto.response.TransactionPlanLinkResponse;
 import rs.ac.uns.ftn.paypal_service.exception.BadRequestException;
 import rs.ac.uns.ftn.paypal_service.exception.NotFoundException;
@@ -113,11 +115,29 @@ public class PaymentService {
 		
     	List<SubscriptionPlan> list = new ArrayList<>();
     	if(transactionPlanLinkRequest == null) {
-    		return null;
+    		throw new BadRequestException("You cannot pay with negative value.");
     	}
+    	if(subscriptionPlanRepository.findByUsername(transactionPlanLinkRequest.getUsername()) == null) {
+    		throw new NotFoundException("There is not created plans");
+    	}
+    	
     	list = subscriptionPlanRepository.findByUsername(transactionPlanLinkRequest.getUsername());
+    	System.out.println(">>>" + list + "<<<");
     	return list;
 	}
+    
+    public SubscriptionPlanResponse  getSubscriptionPlansByUsername(UserPlansRequest userPlansRequest)  {
+    	if(userPlansRequest == null) {
+    		throw new BadRequestException("User plan request is not send.");
+    	}
+    	if(userPlansRequest.getUsername() == null || userPlansRequest.getType() == null) {
+    		throw new BadRequestException("User plan data is not send.");
+    	}
+    	List<SubscriptionPlan> list = subscriptionPlanRepository.findByUsernameAndType(userPlansRequest.getUsername(),userPlansRequest.getType());
+    	SubscriptionPlanResponse spr = new SubscriptionPlanResponse();
+    	spr.setPlans(list);
+    	return spr;
+    }
     
     
 }

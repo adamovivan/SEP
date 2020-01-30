@@ -8,5 +8,6 @@ import rs.ac.uns.ftn.paypal_service.model.SubscriptionPlan;
 
 public interface SubscriptionPlanRepository extends JpaRepository<SubscriptionPlan, Long>{
 	List<SubscriptionPlan> findByUsername(String username);
+	List<SubscriptionPlan> findByUsernameAndType(String usernamem, String type);
 	
 }

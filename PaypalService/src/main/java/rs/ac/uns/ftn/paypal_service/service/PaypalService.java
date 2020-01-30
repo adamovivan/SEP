@@ -1,7 +1,9 @@
 package rs.ac.uns.ftn.paypal_service.service;
 
+import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.net.MalformedURLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.paypal.api.payments.Agreement;
 import com.paypal.api.payments.Amount;
 import com.paypal.api.payments.ChargeModels;
 import com.paypal.api.payments.Currency;
@@ -27,20 +30,25 @@ import com.paypal.api.payments.PaymentDefinition;
 import com.paypal.api.payments.PaymentExecution;
 import com.paypal.api.payments.Plan;
 import com.paypal.api.payments.RedirectUrls;
+import com.paypal.api.payments.ShippingAddress;
 import com.paypal.api.payments.Transaction;
 import com.paypal.base.rest.APIContext;
 import com.paypal.base.rest.OAuthTokenCredential;
 import com.paypal.base.rest.PayPalRESTException;
 
+import rs.ac.uns.ftn.paypal_service.dto.request.AgreementCompleteRequest;
+import rs.ac.uns.ftn.paypal_service.dto.request.AgreementRequest;
 import rs.ac.uns.ftn.paypal_service.dto.request.OrderRequest;
 import rs.ac.uns.ftn.paypal_service.dto.request.PaymentCompleteRequest;
 import rs.ac.uns.ftn.paypal_service.dto.request.SubscriptionPlanRequest;
+import rs.ac.uns.ftn.paypal_service.dto.response.CompleteAgreementResponse;
 import rs.ac.uns.ftn.paypal_service.dto.response.PaymentOrderResponse;
 import rs.ac.uns.ftn.paypal_service.exception.BadRequestException;
 import rs.ac.uns.ftn.paypal_service.exception.NotFoundException;
 import rs.ac.uns.ftn.paypal_service.exception.PayPalException;
 import rs.ac.uns.ftn.paypal_service.model.PaypalPayment;
 import rs.ac.uns.ftn.paypal_service.model.SubscriptionPlan;
+import rs.ac.uns.ftn.paypal_service.model.TransactionAgreementData;
 import rs.ac.uns.ftn.paypal_service.model.TransactionPaymentData;
 import rs.ac.uns.ftn.paypal_service.model.TransactionPlanData;
 import rs.ac.uns.ftn.paypal_service.repository.PaymentRepository;
@@ -244,7 +252,7 @@ public class PaypalService {
 
 	}
 	
-	/*public PaymentOrderResponse createAgreement(AgreementRequest agrementRequest) throws PayPalRESTException {
+	public PaymentOrderResponse createAgreement(AgreementRequest agrementRequest) throws PayPalRESTException {
 
 		Agreement agreement = makeAgreement(agrementRequest);
 		
@@ -261,6 +269,16 @@ public class PaypalService {
 			  for (Links links : agreement.getLinks()) {
 			    if ("approval_url".equals(links.getRel())) {
 			      url = links.getHref();
+			      String token = url.split("&")[1].split("=")[1];
+			      TransactionAgreementData transAgr = new TransactionAgreementData();
+			      transAgr.setToken(token);
+			      transAgr.setUsername(agrementRequest.getUsername());
+			      transAgr.setStatus("Created");
+			      transAgr.setPlanID(agrementRequest.getPlanID());
+			      SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+			      Date date = new Date(System.currentTimeMillis());
+			      transAgr.setTime(formatter.format(date));
+			      transactionAgreementRepository.save(transAgr);
 			      break;
 			    }
 			  }
@@ -339,7 +357,7 @@ public class PaypalService {
 		shipping.setCountryCode("US");
 		agreement.setShippingAddress(shipping);
 		return agreement;
-	}*/
+	}
 	
 	public Boolean cancelTransaction(String token) {
 		TransactionPaymentData transactionData;
@@ -396,8 +414,8 @@ public class PaypalService {
 		// Merchant_preferences
 		MerchantPreferences merchantPreferences = new MerchantPreferences();
 		merchantPreferences.setSetupFee(currency);
-		merchantPreferences.setCancelUrl("https://google.com");
-		merchantPreferences.setReturnUrl("https://google.com");
+		merchantPreferences.setCancelUrl("https://localhost:4201/cancelAgreement");
+		merchantPreferences.setReturnUrl("https://localhost:4201/successAgreement");
 		merchantPreferences.setMaxFailAttempts("0");
 		merchantPreferences.setAutoBillAmount("YES");
 		merchantPreferences.setInitialFailAmountAction("CONTINUE");
