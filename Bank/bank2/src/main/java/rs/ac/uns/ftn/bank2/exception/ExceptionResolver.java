@@ -31,6 +31,11 @@ public class ExceptionResolver {
         return buildResponseEntity(new ApiError(HttpStatus.BAD_REQUEST, exception.getMessage()));
     }
 
+    @ExceptionHandler(InvalidDataException.class)
+    public final ResponseEntity invalidDataException(InvalidDataException exception){
+        return buildResponseEntity(new ApiError(HttpStatus.NOT_FOUND, exception.getMessage()));
+    }
+
     private ResponseEntity buildResponseEntity(ApiError apiError) {
     	logger.error("Api EROR:> " + apiError.getMessage());
         return new ResponseEntity<>(apiError, apiError.getStatus());

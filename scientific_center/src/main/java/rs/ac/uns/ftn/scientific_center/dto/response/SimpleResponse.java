@@ -1,13 +1,14 @@
 package rs.ac.uns.ftn.scientific_center.dto.response;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class SimpleResponse {
-
-	private boolean success;
+	private Boolean success;
 	private String message;
 
 	public SimpleResponse(String message) {

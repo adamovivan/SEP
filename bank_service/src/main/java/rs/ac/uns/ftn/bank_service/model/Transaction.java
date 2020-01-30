@@ -19,4 +19,7 @@ public class Transaction {
     private LocalDateTime merchantTimestamp;
     @Enumerated(EnumType.STRING)
     private TransactionStatus transactionStatus;
+    @Enumerated(EnumType.STRING)
+    private NotificationStatus notificationStatus;
+    private String callbackUrl;
 }

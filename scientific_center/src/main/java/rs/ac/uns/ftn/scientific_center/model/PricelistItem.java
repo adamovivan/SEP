@@ -9,6 +9,7 @@ import java.util.Set;
 @Entity
 public class PricelistItem {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
     private Double price;

@@ -59,6 +59,7 @@ export class PaymentDetailsComponent implements OnInit {
   setCallbackUrls(){
     this.paymentService.getCallbackUrls(this.paymentId).subscribe(
       res => {
+        console.log(res)
           this.successUrl = res.successUrl;
           this.failedUrl = res.failedUrl;
           this.errorUrl = res.errorUrl;

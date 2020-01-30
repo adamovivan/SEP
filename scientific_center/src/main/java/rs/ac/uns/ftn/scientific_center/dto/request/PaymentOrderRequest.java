@@ -1,18 +1,13 @@
 package rs.ac.uns.ftn.scientific_center.dto.request;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class PaymentOrderRequest {
     private Double totalPrice;
     private String email;
-
-    public PaymentOrderRequest(){
-
-    }
-
-    public PaymentOrderRequest(Double totalPrice, String email) {
-        this.totalPrice = totalPrice;
-        this.email = email;
-    }
+    private String orderId;
+    private String callbackUrl;
 }
