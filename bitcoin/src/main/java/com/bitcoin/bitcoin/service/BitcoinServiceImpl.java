@@ -3,6 +3,8 @@ package com.bitcoin.bitcoin.service;
 import java.util.Date;
 import java.util.UUID;
 
+import com.bitcoin.bitcoin.dto.*;
+import com.bitcoin.bitcoin.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,18 +18,9 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 
-import com.bitcoin.bitcoin.dto.OrderResponseDto;
-import com.bitcoin.bitcoin.dto.PaymentDto;
-import com.bitcoin.bitcoin.dto.PaymentResponseDto;
-import com.bitcoin.bitcoin.dto.ResponseUrlDto;
 import com.bitcoin.bitcoin.exception.BadRequestException;
 import com.bitcoin.bitcoin.exception.BitcoinUserNotExistException;
 import com.bitcoin.bitcoin.exception.OrderNotExistException;
-import com.bitcoin.bitcoin.model.Currency;
-import com.bitcoin.bitcoin.model.Merchant;
-import com.bitcoin.bitcoin.model.NotificationState;
-import com.bitcoin.bitcoin.model.Order;
-import com.bitcoin.bitcoin.model.PaymentState;
 import com.bitcoin.bitcoin.repository.OrderRepository;
 import com.bitcoin.bitcoin.repository.UserBitcoinRepository;
 
@@ -40,6 +33,9 @@ public class BitcoinServiceImpl implements BitcoinService {
 	private UserBitcoinRepository userRepository;
 	@Autowired
 	private OrderRepository orderRepository;
+
+	@Autowired
+	private RestTemplate restTemplate;
 
 	private String address = "https://localhost:";
 
@@ -65,13 +61,15 @@ public class BitcoinServiceImpl implements BitcoinService {
 		map.add("success_url", this.address + "4202/success/" + randomToken);
 		map.add("token", randomToken);
 
-		HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<MultiValueMap<String, String>>(map, headers);
+		HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(map, headers);
 		ResponseUrlDto returnResponse = new ResponseUrlDto();
 		try {
 			ResponseEntity<PaymentResponseDto> response = rest
 					.postForEntity("https://api-sandbox.coingate.com/v2/orders", request, PaymentResponseDto.class);
 			System.out.println("obratio se api-u");
 			Order o = convertToOrder(response.getBody(), username, "", randomToken);
+			o.setOrderId(pdt.getOrderId());
+			o.setCallbackUrl(pdt.getCallbackUrl());
 			this.orderRepository.save(o);
 			returnResponse.setUrl(response.getBody().getPayment_url());
 			returnResponse.setSuccess(true);
@@ -92,7 +90,7 @@ public class BitcoinServiceImpl implements BitcoinService {
 		// TODO Auto-generated method stub
 		return new Order(body.getId().toString(), username, new Date(), null,
 				Double.parseDouble(body.getPrice_amount()), Currency.valueOf(body.getPrice_currency()),
-				PaymentState.NEW, NotificationState.NOT_NOTIFIED, callbackUrl, randomToken);
+				TransactionStatus.CREATED, NotificationState.NOT_NOTIFIED, callbackUrl, randomToken);
 	}
 
 	@Override
@@ -132,7 +130,8 @@ public class BitcoinServiceImpl implements BitcoinService {
 
 		OrderResponseDto ordto = new OrderResponseDto();
 		System.out.println(order.getState());
-		if (order.getState().equals(PaymentState.PAID) || order.getState() == PaymentState.CANCELED) {
+		//if (order.getState().equals(PaymentState.PAID) || order.getState() == PaymentState.CANCELED) {
+		if (order.getTransactionStatus().equals(TransactionStatus.SUCCESS) || order.getTransactionStatus() == TransactionStatus.FAILED) {
 			// throw new BadRequestException("Payment is already processed!");
 			System.out.println("paid is it");
 			ordto.setMessage("Payment is already processed!");
@@ -153,7 +152,8 @@ public class BitcoinServiceImpl implements BitcoinService {
 					new HttpEntity<Object>(headers), PaymentResponseDto.class);
 
 			if (response.getBody().getStatus().equals("paid")) {
-				order.setState(PaymentState.PAID);
+				//order.setState(PaymentState.PAID);
+				order.setTransactionStatus(TransactionStatus.SUCCESS);
 				order.setUpdateTime(new Date());
 				this.orderRepository.save(order);
 			}
@@ -168,7 +168,22 @@ public class BitcoinServiceImpl implements BitcoinService {
 		
 		}
 		logger.info("Successfully created bitcoin order!");
+		//obavestimo naucnu centralu
+		notify(order);
 		return ordto.getMessage();
+	}
+
+	private SimpleResponseDTO notify(Order order){
+		PaymentNotificationDto paymentNotificationDto = new PaymentNotificationDto(order.getOrderId(), order.getTransactionStatus());
+
+		SimpleResponseDTO simpleResponseDTO = restTemplate.postForObject(order.getCallbackUrl(), paymentNotificationDto, SimpleResponseDTO.class);
+
+		if(simpleResponseDTO != null && simpleResponseDTO.getSuccess()){
+			order.setNotification(NotificationState.NOTIFIED);
+			orderRepository.save(order);
+		}
+
+		return new SimpleResponseDTO("Success.");
 	}
 
 	@Override
@@ -177,7 +192,8 @@ public class BitcoinServiceImpl implements BitcoinService {
 		Order order = this.orderRepository.findByRandomToken(token)
 				.orElseThrow(() -> new OrderNotExistException("Order with that token does not exist!"));
 		OrderResponseDto ordto = new OrderResponseDto();
-		if (order.getState() == PaymentState.PAID || order.getState() == PaymentState.CANCELED) {
+		//if (order.getState() == PaymentState.PAID || order.getState() == PaymentState.CANCELED) {
+		if (order.getTransactionStatus() == TransactionStatus.SUCCESS || order.getTransactionStatus() == TransactionStatus.FAILED) {
 			// throw new BadRequestException("Payment is already processed!");
 			ordto.setMessage("Payment is already processed!");
 			ordto.setSuccess(false);
@@ -197,7 +213,8 @@ public class BitcoinServiceImpl implements BitcoinService {
 					new HttpEntity<Object>(headers), PaymentResponseDto.class);
 
 			if (!response.getBody().getStatus().equals("paid")) {
-				order.setState(PaymentState.CANCELED);
+				//order.setState(PaymentState.CANCELED);
+				order.setTransactionStatus(TransactionStatus.FAILED);
 				order.setUpdateTime(new Date());
 				this.orderRepository.save(order);
 				ordto.setMessage("Payment is success processed!");
@@ -211,6 +228,7 @@ public class BitcoinServiceImpl implements BitcoinService {
 			logger.info("Error while checking bitcoin order!");
 		}
 		logger.info("Successfully canceled bitcoin order!");
+		notify(order);
 		return ordto.getMessage();
 
 	}

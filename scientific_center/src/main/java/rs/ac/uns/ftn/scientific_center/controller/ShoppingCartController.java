@@ -47,7 +47,7 @@ public class ShoppingCartController {
     }
 
     @RequestMapping(value = "/complete-payment", method = RequestMethod.POST)
-    public ResponseEntity<SimpleResponse> completePayment(CompletePaymentDTO completePaymentDTO){
+    public ResponseEntity<SimpleResponse> completePayment(@RequestBody CompletePaymentDTO completePaymentDTO){
         return ResponseEntity.ok().body(shoppingCartService.completePayment(completePaymentDTO));
     }
 

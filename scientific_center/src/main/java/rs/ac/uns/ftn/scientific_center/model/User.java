@@ -2,16 +2,14 @@ package rs.ac.uns.ftn.scientific_center.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.List;
 
 @Data
 @Entity
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
     private String lastName;
@@ -29,6 +27,6 @@ public class User {
     private List<ScientificField> scientificFields;
     @ManyToMany
     private List<Article> articles;
-    @OneToOne
+    @OneToOne(mappedBy = "user")
     private ShoppingCart shoppingCart;
 }

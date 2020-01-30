@@ -111,6 +111,8 @@ public class PaymentsService {
 		
 		Transaction transaction = new Transaction();
 		transaction.setEmail(transactionRequest.getEmail());
+		transaction.setOrderId(transactionRequest.getOrderId());
+		transaction.setCallbackUrl(transactionRequest.getCallbackUrl());
 		transaction.setTotalPrice(transactionRequest.getTotalPrice());
 		transaction.setUuid(UUID.randomUUID().toString());
 		transaction = transactionRepository.save(transaction);
@@ -141,13 +143,13 @@ public class PaymentsService {
 		PaymentOrderRequest order = new PaymentOrderRequest();
 		order.setTotalPrice(transaction.getTotalPrice());
 		order.setUsername(client.getUsername());
+		order.setOrderId(transaction.getOrderId());
+		order.setCallbackUrl(transaction.getCallbackUrl());
 		try {
 			ResponseEntity<PaymentLinkResponse> response = restTemplate.postForEntity("https://localhost:8765/api-"+paymentLinkRequest.getType().toLowerCase()+"/pay", order, PaymentLinkResponse.class);
-			logger.info("Successfully obtained payment link for payment to" + client.getUsername() + " user account");
 			return response.getBody();
 		}catch (Exception e) {
 			e.printStackTrace();
-			// logger.info("no payment link was provided for payment to " + client.getUsername() + "'s account");
 			// TODO: handle exception
 		}
 		

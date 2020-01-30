@@ -6,5 +6,5 @@ import rs.ac.uns.ftn.scientific_center.model.Transaction;
 
 @Repository
 public interface TransactionRepository extends JpaRepository<Transaction, Long> {
-    Transaction findByTransactionId(String transactionId);
+    Transaction findByOrderId(String transactionId);
 }

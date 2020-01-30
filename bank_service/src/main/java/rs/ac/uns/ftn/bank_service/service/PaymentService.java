@@ -33,6 +33,9 @@ public class PaymentService {
     @Value("${bank.url}")
     private String bankUrl;
 
+    @Value("${zuul.gateway.url}")
+    private String zuulGateway;
+
     @Value("${bank.create.payment.request.api}")
     private String createPaymentRequestApi;
 
@@ -58,7 +61,6 @@ public class PaymentService {
         transaction.setMerchantPassword(merchant.getMerchantPassword());
         transaction.setAmount(cardPaymentRequestDTO.getTotalPrice());
         transaction.setMerchantOrderId(cardPaymentRequestDTO.getOrderId());
-        //transaction.setMerchantOrderId(UUID.randomUUID().toString());
         transaction.setMerchantTimestamp(LocalDateTime.now());
         transaction.setCallbackUrl(cardPaymentRequestDTO.getCallbackUrl());
         transaction.setTransactionStatus(TransactionStatus.CREATED);
@@ -90,7 +92,6 @@ public class PaymentService {
         }
         transaction.setTransactionStatus(transactionStatus);
         transactionRepository.save(transaction);
-
 
         CompletePaymentDTO completePaymentDTO = new CompletePaymentDTO(transaction.getMerchantOrderId(), transaction.getTransactionStatus());
 

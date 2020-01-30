@@ -1,4 +1,4 @@
-package rs.ac.uns.ftn.bank_service.dto;
+package com.bitcoin.bitcoin.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -10,6 +10,7 @@ import java.util.Set;
 @Entity
 public class EditorialBoard {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @OneToOne
     private User mainEditor;

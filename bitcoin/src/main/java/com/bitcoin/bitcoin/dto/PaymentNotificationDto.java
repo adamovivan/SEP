@@ -1,14 +1,14 @@
-package rs.ac.uns.ftn.scientific_center.dto;
+package com.bitcoin.bitcoin.dto;
 
+import com.bitcoin.bitcoin.model.TransactionStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import rs.ac.uns.ftn.scientific_center.model.TransactionStatus;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class CompletePaymentDTO {
+@NoArgsConstructor
+public class PaymentNotificationDto {
     private String transactionId;
     private TransactionStatus transactionStatus;
 }

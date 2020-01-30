@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import rs.ac.uns.ftn.bank2.dto.AcquirerTransactionRequestDTO;
 import rs.ac.uns.ftn.bank2.dto.PaymentStatusDTO;
 import rs.ac.uns.ftn.bank2.exception.BadRequestException;
+import rs.ac.uns.ftn.bank2.exception.InvalidDataException;
 import rs.ac.uns.ftn.bank2.exception.NotFoundException;
 import rs.ac.uns.ftn.bank2.model.*;
 import rs.ac.uns.ftn.bank2.repository.CardRepository;
@@ -53,22 +54,22 @@ public class BankService {
 
     private void validate(AcquirerTransactionRequestDTO acquirerTransactionRequestDTO){
         if(isAcquirerOrderUsed(acquirerTransactionRequestDTO.getAcquirerOrderId())){
-            throw new BadRequestException("Acquirer order is already used.");
+            throw new InvalidDataException("Acquirer order is already used.");
         }
         if(!isValidPAN(acquirerTransactionRequestDTO.getPan())){
-            throw new BadRequestException("Invalid data.");
+            throw new InvalidDataException("Invalid data.");
         }
         if(!isValidCardhoderName(acquirerTransactionRequestDTO.getCardholderName())){
-            throw new BadRequestException("Invalid data.");
+            throw new InvalidDataException("Invalid data.");
         }
         if(!isValidCVV(acquirerTransactionRequestDTO.getCvv())){
-            throw new BadRequestException("Invalid data.");
+            throw new InvalidDataException("Invalid data.");
         }
         if(!isValidExpiryDate(acquirerTransactionRequestDTO.getExpiryDate())){
-            throw new BadRequestException("Invalid data.");
+            throw new InvalidDataException("Invalid data.");
         }
         if(isCardExpired(acquirerTransactionRequestDTO.getExpiryDate())){
-            throw new BadRequestException("Card expired.");
+            throw new InvalidDataException("Card expired.");
         }
     }
 

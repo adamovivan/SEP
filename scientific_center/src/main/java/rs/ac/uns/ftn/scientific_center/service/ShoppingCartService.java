@@ -17,10 +17,8 @@ import rs.ac.uns.ftn.scientific_center.model.*;
 import rs.ac.uns.ftn.scientific_center.repository.*;
 
 import java.time.LocalDateTime;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -208,7 +206,7 @@ public class ShoppingCartService {
         String email = pricelistItem.getMembership().getUser().getEmail();
 
         Transaction transaction = new Transaction();
-        transaction.setItems(shoppingCart.getItems());
+        transaction.setItems(new HashSet<>(shoppingCart.getItems()));
         transaction.setCustomer(shoppingCart.getUser());
         transaction.setTransactionStatus(TransactionStatus.CREATED);
         transaction.setVendor(shoppingCart.getItems().iterator().next().getMembership().getUser());
@@ -223,7 +221,7 @@ public class ShoppingCartService {
     }
 
     public SimpleResponse completePayment(CompletePaymentDTO completePaymentDTO){
-        Transaction transaction = transactionRepository.findByTransactionId(completePaymentDTO.getTransactionId());
+        Transaction transaction = transactionRepository.findByOrderId(completePaymentDTO.getTransactionId());
         transaction.setTransactionStatus(completePaymentDTO.getTransactionStatus());
         transactionRepository.save(transaction);
 

@@ -11,6 +11,7 @@ import java.util.Set;
 @Entity
 public class Magazine {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String issn;

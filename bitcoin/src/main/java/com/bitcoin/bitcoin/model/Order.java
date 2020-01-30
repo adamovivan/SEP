@@ -1,14 +1,12 @@
 package com.bitcoin.bitcoin.model;
 
+import lombok.Data;
+
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+@Data
 @Entity
 @Table(name="order_tab")
 public class Order {
@@ -24,20 +22,28 @@ public class Order {
 		private String username; 
 		
 		@Column(nullable=false)
-		private Date createTime; 
-		
-		@Column
+		private Date createTime;
+
+	@Column(nullable=false)
+	private String orderId;
+
+	@Column
 		private Date updateTime;
 		
 		@Column(nullable=false)
 		private double amount;
-		
+
+	@Enumerated(EnumType.STRING)
 		@Column(nullable=false)
 		private Currency currency;
-		
-		@Column(nullable=false)
+
+	@Enumerated(EnumType.STRING)
 		private PaymentState state;
-		
+
+	@Enumerated(EnumType.STRING)
+	private TransactionStatus transactionStatus;
+
+	@Enumerated(EnumType.STRING)
 		@Column(nullable=false)
 		private NotificationState notification; 
 		
@@ -52,7 +58,7 @@ public class Order {
 		}
 
 		public Order(String paymentId, String username, Date createTime, Date updateTime, double amount,
-				Currency currency, PaymentState state, NotificationState notification, String callbackUrl,
+				Currency currency, TransactionStatus transactionStatus, NotificationState notification, String callbackUrl,
 				String randomToken) {
 			this();
 			this.paymentId = paymentId;
@@ -61,7 +67,7 @@ public class Order {
 			this.updateTime = updateTime;
 			this.amount = amount;
 			this.currency = currency;
-			this.state = state;
+			this.transactionStatus = transactionStatus;
 			this.notification = notification;
 			this.callbackUrl = callbackUrl;
 			this.randomToken = randomToken;

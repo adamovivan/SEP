@@ -72,7 +72,7 @@ public class ClientController {
 	
 	@PostMapping(value = "/getTransactionLink")
 	public ResponseEntity<PaymentLinkResponse> getTransactionLink(@RequestBody TransactionRequest transactionRequest) {
-		return new ResponseEntity<PaymentLinkResponse>(paymentsService.getTransactionLink(transactionRequest), HttpStatus.OK);
+		return new ResponseEntity<>(paymentsService.getTransactionLink(transactionRequest), HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/getTransactionPlanLink", method = RequestMethod.POST)

@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Entity
 public class Membership {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Enumerated(EnumType.STRING)
     private SubscriptionType subscriptionType;

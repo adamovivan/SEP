@@ -108,11 +108,17 @@ public class PaymentService {
         if(transaction == null){
             throw new NotFoundException("Transaction with provided id doesn't exist.");
         }
-
-        PaymentStatusPccDTO paymentStatusPccDTO = restTemplate.postForObject(pccUrl, acquirerTransactionRequestDTO, PaymentStatusPccDTO.class);
-        if(paymentStatusPccDTO == null){
-            throw new NullPointerException("PCC returned null.");
+        PaymentStatusPccDTO paymentStatusPccDTO = null;
+        try{
+            paymentStatusPccDTO = restTemplate.postForObject(pccUrl, acquirerTransactionRequestDTO, PaymentStatusPccDTO.class);
+        }catch (BadRequestException e){
+            System.out.println(e.getMessage());
+            throw new BadRequestException(e.getMessage());
         }
+
+       if(paymentStatusPccDTO == null){
+            throw new NullPointerException("PCC returned null.");
+       }
 
         transaction.setTransactionStatus(paymentStatusPccDTO.getTransactionStatus());
         transactionRepository.save(transaction);
