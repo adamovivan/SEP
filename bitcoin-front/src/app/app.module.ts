@@ -1,28 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SuccessComponent } from './success/success.component';
+import { RegisterComponent } from './register/register.component';
+import { MainComponent } from './main/main.component';
 import { CancelComponent } from './cancel/cancel.component';
-import { UserDataComponent } from './user-data/user-data.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
-import { SubscriptionPlanComponent } from './subscription-plan/subscription-plan.component';
+import { SuccessComponent } from './success/success.component';
+import { ReactiveFormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    SuccessComponent,
+    RegisterComponent,
+    MainComponent,
     CancelComponent,
-    UserDataComponent,
-    SubscriptionPlanComponent
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

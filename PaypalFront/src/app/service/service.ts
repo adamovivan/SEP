@@ -30,4 +30,8 @@ import { SERVER_URL } from '../app.constant';
     addPayments(tip:any){
       return this.http.post(SERVER_URL + '/authentication-service/addPayments',tip);
     }
+
+    addSubscriptionPlan(planInfo:any){
+      return this.http.post(SERVER_URL + '/api-paypal/createSubscriptionPlan',planInfo);
+    }
 }

@@ -1,4 +1,4 @@
-package rs.ac.uns.ftn.authentication_service.model;
+package rs.ac.uns.ftn.paypal_service.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,23 +10,37 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Transaction {
-
+public class TransactionAgreementData {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
 	private Long id;
-
-	@Column(nullable=false)
-	private String uuid;
 	
 	@Column(nullable=false)
-	private String email;
+	private String username;
 	
 	@Column(nullable=false)
-	private Double totalPrice;
+	private String token;
+	
+	@Column(nullable=false)
+	private String time;
+	
+	@Column(nullable=false)
+	private String status;
+	
+	@Column(nullable=false)
+	private Double price;
 	
 	@Column
-	private String type;
+	private String buyer;
 	
+	@Column
+	private String orderID;
+	
+	@Column
+	private String frequency;
+	
+	@Column
+	private String frequencyInterval;
 }

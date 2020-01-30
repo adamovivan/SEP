@@ -12,12 +12,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import rs.ac.uns.ftn.authentication_service.model.Client;
 import rs.ac.uns.ftn.authentication_service.request.LoginRequest;
 import rs.ac.uns.ftn.authentication_service.request.PaymentLinkRequest;
 import rs.ac.uns.ftn.authentication_service.request.PaymentRequest;
+import rs.ac.uns.ftn.authentication_service.request.TransactionPlanRequest;
 import rs.ac.uns.ftn.authentication_service.request.TransactionRequest;
 import rs.ac.uns.ftn.authentication_service.response.LoginResponse;
 import rs.ac.uns.ftn.authentication_service.response.PaymentLinkResponse;
@@ -72,6 +74,11 @@ public class ClientController {
 	public ResponseEntity<PaymentLinkResponse> getTransactionLink(@RequestBody TransactionRequest transactionRequest) {
 		return new ResponseEntity<PaymentLinkResponse>(paymentsService.getTransactionLink(transactionRequest), HttpStatus.OK);
 	}
+	
+	@RequestMapping(value = "/getTransactionPlanLink", method = RequestMethod.POST)
+    public ResponseEntity<PaymentLinkResponse> getTransactionPlanLink(@RequestBody TransactionPlanRequest transactionPlanRequest){
+        return ResponseEntity.ok().body(paymentsService.getTransactionPlanLink(transactionPlanRequest));
+    }
 	
 	@PostMapping(value = "/getPaymentLink")
 	public ResponseEntity<PaymentLinkResponse> getPaymentLink(@RequestBody PaymentLinkRequest paymentLinkRequest) {
