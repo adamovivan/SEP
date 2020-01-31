@@ -35,9 +35,18 @@ public class BankService {
     private String bankIIN;
 
     public PaymentStatusDTO pay(AcquirerTransactionRequestDTO acquirerTransactionRequestDTO){
-        validate(acquirerTransactionRequestDTO);
 
         Transaction transaction = createTransaction(acquirerTransactionRequestDTO);
+
+        try{
+            validate(acquirerTransactionRequestDTO);
+        }catch (InvalidDataException e){
+            return new PaymentStatusDTO(acquirerTransactionRequestDTO.getAcquirerOrderId(),
+                    null,
+                    null,
+                    null,
+                    TransactionStatus.FAILED);
+        }
 
         if(!checkBalance(acquirerTransactionRequestDTO.getPan(), acquirerTransactionRequestDTO.getAmount())){
             throw new BadRequestException("You don't have enough money for this transaction.");
@@ -81,7 +90,7 @@ public class BankService {
         transaction.setIssuerOrderId(UUID.randomUUID().toString());
         transaction.setIssuerTimestamp(LocalDateTime.now());
         transaction.setAmount(acquirerTransactionRequestDTO.getAmount());
-        transaction.setTransactionStatus(TransactionStatus.OPEN);
+        transaction.setTransactionStatus(TransactionStatus.CREATED);
         return transactionRepository.save(transaction);
     }
 
@@ -135,7 +144,7 @@ public class BankService {
         if(transaction == null){
             return false;
         }
-        return transaction.getTransactionStatus() != TransactionStatus.OPEN;
+        return transaction.getTransactionStatus() != TransactionStatus.CREATED;
     }
 
     private Boolean checkBalance(String pan, Double amount){

@@ -23,13 +23,11 @@ import rs.ac.uns.ftn.authentication_service.request.PaymentRequest;
 import rs.ac.uns.ftn.authentication_service.request.TransactionAgreementRequest;
 import rs.ac.uns.ftn.authentication_service.request.TransactionPlanRequest;
 import rs.ac.uns.ftn.authentication_service.request.TransactionRequest;
-import rs.ac.uns.ftn.authentication_service.response.LoginResponse;
-import rs.ac.uns.ftn.authentication_service.response.PaymentLinkResponse;
-import rs.ac.uns.ftn.authentication_service.response.PaymentResponse;
-import rs.ac.uns.ftn.authentication_service.response.SubscriptionPlanResponse;
+import rs.ac.uns.ftn.authentication_service.response.*;
 import rs.ac.uns.ftn.authentication_service.service.LoginService;
 import rs.ac.uns.ftn.authentication_service.service.PaymentsService;
 import rs.ac.uns.ftn.authentication_service.service.RegistrationService;
+import rs.ac.uns.ftn.authentication_service.service.UtcService;
 
 @RestController
 @CrossOrigin(origins = "", allowedHeaders = "", maxAge = 3600)
@@ -44,6 +42,9 @@ public class ClientController {
 	
 	@Autowired
 	PaymentsService paymentsService;
+
+	@Autowired
+	private UtcService utcService;
 
 	@PostMapping("/registerClient")
 	public ResponseEntity<Client> saveKorisnik(@RequestBody Client client) throws Exception{
@@ -102,5 +103,28 @@ public class ClientController {
 	@PostMapping(value = "/getAgreementLink")
 	public ResponseEntity<PaymentLinkResponse> getAgreementLink(@RequestBody AgreementRequest agreementRequest) {
 		return new ResponseEntity<PaymentLinkResponse>(paymentsService.getAgreementLink(agreementRequest), HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/start-utc", method = RequestMethod.PUT)
+	public ResponseEntity startUTC() throws InterruptedException {
+		utcService.startUTC();
+		return null;
+	}
+
+	@RequestMapping(value = "/stop-utc", method = RequestMethod.PUT)
+	public ResponseEntity stopUTC() {
+		utcService.stopUTC();
+		return null;
+	}
+
+	@RequestMapping(value = "/utc-timeout/{timeout}", method = RequestMethod.PUT)
+	public ResponseEntity setTimeoutUtc(@PathVariable Integer timeout) {
+		utcService.setTimeoutUtc(timeout);
+		return null;
+	}
+
+	@RequestMapping(value = "/utc-config", method = RequestMethod.GET)
+	public ResponseEntity<UtcConfigResponse> utcConfig() {
+		return ResponseEntity.ok().body(utcService.utcConfig());
 	}
 }

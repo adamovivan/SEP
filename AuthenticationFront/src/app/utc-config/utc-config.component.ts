@@ -11,6 +11,8 @@ export class UtcConfigComponent implements OnInit {
 
   utcForm: FormGroup;
   submitted = false;
+  timeout = 0;
+  running = false;
 
   constructor(private service: SellerService,
     private formBuilder: FormBuilder) { }
@@ -21,7 +23,8 @@ export class UtcConfigComponent implements OnInit {
     });
 
     this.service.getConfig().subscribe(res => {
-      console.log(res);
+      console.log(res)
+      this.setup(res);
     },
     err => {
       console.log(err);
@@ -32,16 +35,24 @@ export class UtcConfigComponent implements OnInit {
 
   utcStart(){
     this.service.startUtc().subscribe(() => {
-
+      
     },
     err => {
       console.log(err);
     });
+    this.running = true;
+  }
+
+  setup(res){
+    this.running = res.running;
+    this.timeout = res.timeout / 1000;
   }
 
   utcStop(){
     this.service.stopUtc().subscribe(() => {
-
+      this.service.getConfig().subscribe(res => {
+        this.setup(res);
+      })
     },
     err => {
       console.log(err);
@@ -50,7 +61,14 @@ export class UtcConfigComponent implements OnInit {
 
   changeTimeout(){
     this.submitted = true;
-    console.log(this.utcForm.controls["timeout"].value * 1000);
+    if(this.utcForm.controls.timeout.errors){
+      return;
+    }
+    this.service.setTimeout(this.utcForm.controls["timeout"].value * 1000).subscribe(res => {
+      this.service.getConfig().subscribe(res => {
+        this.setup(res);
+      })
+    });
   }
 
 }

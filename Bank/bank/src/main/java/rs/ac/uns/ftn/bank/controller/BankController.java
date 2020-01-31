@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rs.ac.uns.ftn.bank.dto.*;
+import rs.ac.uns.ftn.bank.model.TransactionStatus;
 import rs.ac.uns.ftn.bank.service.PaymentService;
 import rs.ac.uns.ftn.bank.service.PaymentRequestService;
 
@@ -32,5 +33,28 @@ public class BankController {
     @RequestMapping(value = "/get-callback-urls/{payment-id}")
     public ResponseEntity<CallbackUrlsDTO> getCallbackUrls(@PathVariable("payment-id") String paymentId){
         return ResponseEntity.ok(paymentService.getCallbackUrls(paymentId));
+    }
+
+    @RequestMapping(value = "/get-transaction-status/{orderId}", method = RequestMethod.GET)
+    public ResponseEntity<TransactionStatusDTO> getTransactionStatus(@PathVariable String orderId) throws InterruptedException {
+        return ResponseEntity.ok().body(paymentService.getTransactionStatus(orderId));
+    }
+
+    @RequestMapping(value = "/start-utc", method = RequestMethod.GET)
+    public ResponseEntity startUTC() throws InterruptedException {
+        paymentService.startUTC();
+        return null;
+    }
+
+    @RequestMapping(value = "/stop-utc", method = RequestMethod.GET)
+    public ResponseEntity stopUTC() {
+        paymentService.stopUTC();
+        return null;
+    }
+
+    @RequestMapping(value = "/utc-timeout/{timeout}", method = RequestMethod.GET)
+    public ResponseEntity setTimeoutUtc(@PathVariable Integer timeout) {
+        paymentService.setTimeoutUtc(timeout);
+        return null;
     }
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SERVER_URL } from '../app.constant';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -55,7 +56,7 @@ export class SellerService {
     return this.http.delete(SERVER_URL + '/api-paypal/deletePlan/'+id);
   }
 
-  getConfig(){
+  getConfig(): Observable<any> {
     return this.http.get(SERVER_URL + '/authentication-service/utc-config');
   }
 
@@ -68,7 +69,7 @@ export class SellerService {
   }
 
   setTimeout(timeout: number){
-    return this.http.put(SERVER_URL + '/authentication-service/timeout/' + timeout, {});
+    return this.http.put(SERVER_URL + '/authentication-service/utc-timeout/' + timeout, {});
   }
 
   Subscription(item:any){

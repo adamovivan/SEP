@@ -37,16 +37,11 @@ public class PccService {
             throw new NotFoundException("Issuer doesn't exist.");
         }
 
-//        createTransaction(acquirerTransactionRequestDTO);
-//        PaymentStatusDTO paymentStatusDTO = null;
-//        try{
+        createTransaction(acquirerTransactionRequestDTO);
+
         PaymentStatusDTO paymentStatusDTO = restTemplate.postForObject(issuer.getApiUrl(),
                     acquirerTransactionRequestDTO,
                     PaymentStatusDTO.class);
-//        }catch ( e){
-//            System.out.println(e.getMessage());
-//            throw new BadRequestException(e.getMessage());
-//        }
 
         if(paymentStatusDTO == null){
             throw new NotFoundException("Issuer return null.");

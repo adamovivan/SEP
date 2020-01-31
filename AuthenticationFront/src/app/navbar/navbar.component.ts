@@ -15,11 +15,13 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.token.username = localStorage.getItem('username');
+    this.token.role = localStorage.getItem('role');
   }
 
   logout(){
     localStorage.setItem('username', 'undefined');   
+    localStorage.setItem('role', 'undefined'); 
     this.token.username = 'undefined';
-    
+    this.token.role = undefined;
   }
 }

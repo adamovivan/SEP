@@ -23,10 +23,10 @@ public class LoginService {
 		Client client  = clientRepository.findByUsername(loginRequest.getUsername());
 		if(Password.check(loginRequest.getPassword(), client.getPassword())) {
 			logger.info("Successfully saved payment information of user " + loginRequest.getUsername());
-			return new LoginResponse(true,loginRequest.getUsername());
+			return new LoginResponse(true,loginRequest.getUsername(), client.getRole());
 		}
 		logger.error("Storage of payment information for "+ loginRequest.getUsername() + " users was not performed");
-		return new LoginResponse(false,"");
+		return new LoginResponse(false,"", null);
 		
 	}
 }

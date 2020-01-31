@@ -11,7 +11,7 @@ export class PaymentService {
 
   constructor(private http: HttpClient) { }
 
-  public pay(paymentCardDTO: PaymentCardDTO){
+  public pay(paymentCardDTO: PaymentCardDTO): Observable<any> {
     return this.http.post(environment.apiUrl + '/pay', paymentCardDTO);
   }
 

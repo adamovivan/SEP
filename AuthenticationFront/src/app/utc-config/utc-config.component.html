@@ -3,14 +3,17 @@
         <div class="col-md-3"></div>
         <div class="col-6">
             <h1 class="h3 mb-3 font-weight-normal mt-3">Unfinished Transaction Configuration</h1>
-            <form class="mt-4" [formGroup]="utcForm" (ngSubmit)="changeTimeout()" novalidate>
+            <form class="mt-4" [formGroup]="utcForm" novalidate>
                 <div class="form-group">
                     <div class="row">
                             <div class="col-4">
                                 <label>Current state:</label>
                             </div>
-                            <div class="col-8">
+                            <div class="col-8" *ngIf="running">
                                 <label>Running</label>
+                            </div>
+                            <div class="col-8"  *ngIf="!running">
+                                <label>Idle</label>
                             </div>
                     </div>
                     <div class="row">
@@ -18,7 +21,7 @@
                             <label>Current timeout:</label>
                         </div>
                         <div class="col-8">
-                            <label>5 seconds</label>
+                            <label>{{timeout}} seconds</label>
                         </div>
                     </div>
                     <div class="row">
@@ -39,8 +42,8 @@
                         <div class="col-6">
                         </div>
                         <div class="col-6">
-                            <button class="btn btn-lg btn-primary btn-block" type="submit">
-                                Submit
+                            <button class="btn btn-lg btn-primary btn-block" (click)="changeTimeout()">
+                                Change Timeout
                             </button>
                             <button class="btn btn-lg btn-primary btn-block" (click)="utcStart()">
                                 Start

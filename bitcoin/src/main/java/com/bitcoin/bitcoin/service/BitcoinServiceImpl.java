@@ -1,6 +1,7 @@
 package com.bitcoin.bitcoin.service;
 
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 import com.bitcoin.bitcoin.dto.*;
@@ -86,7 +87,7 @@ public class BitcoinServiceImpl implements BitcoinService {
 		return returnResponse;
 	}
 
-	private Order convertToOrder(PaymentResponseDto body, String username, String callbackUrl, String randomToken) {
+		private Order convertToOrder(PaymentResponseDto body, String username, String callbackUrl, String randomToken) {
 		// TODO Auto-generated method stub
 		return new Order(body.getId().toString(), username, new Date(), null,
 				Double.parseDouble(body.getPrice_amount()), Currency.valueOf(body.getPrice_currency()),
@@ -231,6 +232,43 @@ public class BitcoinServiceImpl implements BitcoinService {
 		notify(order);
 		return ordto.getMessage();
 
+	}
+
+	@Override
+	public void unfinishedTransactionsCheck() {
+
+		System.out.println("CHECKING");
+		List<Order> transactions = orderRepository.findByTransactionStatus(TransactionStatus.CREATED);
+
+
+		transactions.forEach(transaction -> {
+			//za svaku transakciju se obratim bitcoin servisu i proverim da nije expire
+			HttpHeaders headers = new HttpHeaders();
+			RestTemplate rest = new RestTemplate();
+			Merchant m = this.userRepository.findByUsername(transaction.getUsername())
+					.orElseThrow(() -> new BitcoinUserNotExistException("Merchant with that username does not exist!"));
+			headers.add("Authorization", "Token " + m.getToken());
+
+			ResponseEntity<PaymentResponseDto> response = rest.exchange(
+					"https://api-sandbox.coingate.com/v2/orders/" + transaction.getPaymentId(),  HttpMethod.GET,
+					new HttpEntity<Object>(headers), PaymentResponseDto.class);
+			System.out.println(response.getBody().getStatus());
+			if (response.getBody().getStatus().equals("expired")) {
+				//order.setState(PaymentState.CANCELED);
+				transaction.setTransactionStatus(TransactionStatus.EXPIRED);
+				transaction.setUpdateTime(new Date());
+				this.orderRepository.save(transaction);
+			}
+
+		});
+
+		transactions = orderRepository.findByNotification(NotificationState.NOT_NOTIFIED);
+
+		transactions.forEach(transaction -> {
+			if(transaction.getTransactionStatus() != TransactionStatus.CREATED) {
+				notify(transaction);
+			}
+		});
 	}
 
 }

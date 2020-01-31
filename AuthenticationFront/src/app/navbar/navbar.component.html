@@ -4,10 +4,12 @@
    </a>
   
   <nav class="my-2 my-md-0 mr-md-3">
-    <a *ngIf="token.username != 'undefined'" class="p-2 text-dark" href="#" [routerLink]="'/subscriptionPlans'">
+    <a *ngIf="token.username != 'undefined' && token.role == 'SELLER'" class="p-2 text-dark" href="#" [routerLink]="'/subscriptionPlans'">
       Subscription plans</a>
-    <a *ngIf="token.username != 'undefined'" class="p-2 text-dark" href="#" [routerLink]="'/typePayments'">
+    <a *ngIf="token.username != 'undefined' && token.role == 'SELLER'" class="p-2 text-dark" href="#" [routerLink]="'/typePayments'">
       Type of payments</a>
+      <a *ngIf="token.username != 'undefined' && token.role == 'ADMIN'" class="p-2 text-dark" href="#" [routerLink]="'/utc-config'">
+        Unfinished Transaction Config</a>
   </nav>
   <a *ngIf="token.username == 'undefined'" class="btn btn-outline-primary" href="#" [routerLink]="'/login'">Sign in</a>
   <a *ngIf="token.username != 'undefined'" class="nav-link inline ml-3 mt-3">

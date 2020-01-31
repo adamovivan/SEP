@@ -2,10 +2,14 @@ package rs.ac.uns.ftn.bank.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import rs.ac.uns.ftn.bank.config.UnfinishedTransactionCheckerConfig;
 import rs.ac.uns.ftn.bank.dto.*;
 import rs.ac.uns.ftn.bank.exception.BadRequestException;
+import rs.ac.uns.ftn.bank.exception.InvalidDataException;
 import rs.ac.uns.ftn.bank.exception.NotFoundException;
 import rs.ac.uns.ftn.bank.model.*;
 import rs.ac.uns.ftn.bank.repository.CardRepository;
@@ -15,6 +19,7 @@ import rs.ac.uns.ftn.bank.repository.TransactionRepository;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -35,7 +40,13 @@ public class PaymentService {
     private TransactionRepository transactionRepository;
 
     @Autowired
+    private UnfinishedTransactionCheckerConfig utcConfig;
+
+    @Autowired
     private RestTemplate restTemplate;
+
+    @Value("${transaction.expiration.interval}")
+    private Integer transactionExpirationInterval;
 
     @Value("${bank.iin}")
     private String bankIIN;
@@ -51,7 +62,21 @@ public class PaymentService {
         }
 
         // same bank
-        validateCard(paymentCardDTO);
+        try{
+            validateCard(paymentCardDTO);
+        }catch (InvalidDataException e){
+            Transaction transaction = transactionRepository.findByTransactionId(paymentCardDTO.getPaymentId());
+            if(transaction == null){
+                throw new NotFoundException("Transaction with provided id doesn't exist.");
+            }
+            PaymentRequest paymentRequest = paymentRequestRepository.findByPaymentId(paymentCardDTO.getPaymentId());
+            paymentRequest.setUsed(true);
+            paymentRequestRepository.save(paymentRequest);
+
+            transaction.setTransactionStatus(TransactionStatus.FAILED);
+            transactionRepository.save(transaction);
+            return new PaymentStatusDTO(paymentCardDTO.getPaymentId(), TransactionStatus.FAILED);
+        }
 
         if(!checkBalance(paymentCardDTO.getPan(), paymentCardDTO.getPaymentId())){
             throw new BadRequestException("You don't have enough money for this transaction.");
@@ -76,20 +101,25 @@ public class PaymentService {
 
     private void validateCard(PaymentCardDTO paymentCardDTO){
         if(!isValidPAN(paymentCardDTO.getPan())){
-            throw new BadRequestException("Invalid data.");
+            throw new InvalidDataException("Invalid data.");
         }
         if(!isValidCardhoderName(paymentCardDTO.getCardholderName())){
-            throw new BadRequestException("Invalid data.");
+            throw new InvalidDataException("Invalid data.");
         }
         if(!isValidCVV(paymentCardDTO.getCvv())){
-            throw new BadRequestException("Invalid data.");
+            throw new InvalidDataException("Invalid data.");
         }
         if(!isValidExpiryDate(paymentCardDTO.getExpiryDate())){
-            throw new BadRequestException("Invalid data.");
+            throw new InvalidDataException("Invalid data.");
         }
         if(isCardExpired(paymentCardDTO.getExpiryDate())){
-            throw new BadRequestException("Card expired.");
+            throw new InvalidDataException("Card expired.");
         }
+    }
+
+    public TransactionStatusDTO getTransactionStatus(String orderId) {
+        Transaction transaction = transactionRepository.findByMerchantOrderId(orderId);
+        return new TransactionStatusDTO(transaction.getTransactionId(), transaction.getTransactionStatus());
     }
 
     private PaymentStatusDTO forwardToPcc(PaymentCardDTO paymentCardDTO){
@@ -217,5 +247,39 @@ public class PaymentService {
         callbackUrlsDTO.setFailedUrl(paymentRequest.getFailedUrl());
         callbackUrlsDTO.setErrorUrl(paymentRequest.getErrorUrl());
         return callbackUrlsDTO;
+    }
+
+    public void startUTC() throws InterruptedException {
+        utcConfig.setRunning(true);
+        unfinishedTransactionChecker();
+    }
+
+    public void stopUTC(){
+        utcConfig.setRunning(false);
+        System.out.println("Stopped");
+    }
+
+    public void setTimeoutUtc(Integer timeout){
+        utcConfig.setTimeout(timeout);
+    }
+
+    @Async("utc-checker")
+    public void unfinishedTransactionChecker() throws InterruptedException {
+        while(utcConfig.isRunning()) {
+            System.out.println("Running: " + LocalDateTime.now());
+            System.out.println("Timeout: " + utcConfig.getTimeout());
+
+            List<Transaction> transactions = transactionRepository.findByTransactionStatus(TransactionStatus.CREATED);
+
+            transactions.forEach(transaction -> {
+                LocalDateTime transactionTimestamp = transaction.getMerchantTimestamp();
+                if (transactionTimestamp.plusSeconds(transactionExpirationInterval).isBefore(LocalDateTime.now())) {
+                    transaction.setTransactionStatus(TransactionStatus.EXPIRED);
+                }
+            });
+            transactionRepository.saveAll(transactions);
+
+            Thread.sleep(utcConfig.getTimeout());
+        }
     }
 }

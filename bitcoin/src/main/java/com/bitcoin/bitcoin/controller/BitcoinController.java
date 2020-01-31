@@ -1,22 +1,12 @@
 package com.bitcoin.bitcoin.controller;
 
+import com.bitcoin.bitcoin.dto.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import com.bitcoin.bitcoin.dto.OrderResponseDto;
-import com.bitcoin.bitcoin.dto.PaymentDto;
-import com.bitcoin.bitcoin.dto.PaymentResponseDto;
-import com.bitcoin.bitcoin.dto.ResponseUrlDto;
-import com.bitcoin.bitcoin.dto.UserDto;
 import com.bitcoin.bitcoin.model.Currency;
 import com.bitcoin.bitcoin.model.Merchant;
 import com.bitcoin.bitcoin.service.BitcoinService;
@@ -65,5 +55,11 @@ public class BitcoinController {
 		Merchant m = new Merchant(userDto.getUsername(), userDto.getToken());
 		this.bitcoinService.saveMerchant(m);
 		return new ResponseEntity<>("Successful added details about bitcoin wallet!", HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/unfinished-transactions-check", method = RequestMethod.GET)
+	public ResponseEntity<SimpleResponseDTO> unfinishedTransactionsCheck(){
+		bitcoinService.unfinishedTransactionsCheck();
+		return ResponseEntity.ok().body(new SimpleResponseDTO("Checked"));
 	}
 }

@@ -1,10 +1,6 @@
 package rs.ac.uns.ftn.authentication_service.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import lombok.Data;
 
@@ -17,7 +13,7 @@ public class Client {
 	@Column(name="id")
 	private Long id;
 
-	@Column(nullable=false,length=100)
+	@Column(nullable=false,length=100, unique = true)
 	private String username;
 	
 	@Column(nullable=false,length=100)
@@ -28,6 +24,9 @@ public class Client {
 
 	@Column(nullable=false,length=100)
 	private String lastName;
+
+	@Enumerated(EnumType.STRING)
+	private Role role;
 	
 	@Column(length=100)
 	private String address;

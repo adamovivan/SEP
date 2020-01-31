@@ -14,12 +14,12 @@ import java.util.concurrent.Executor;
 @Data
 public class UnfinishedTransactionCheckerConfig {
 
-    private boolean run;
+    private boolean running;
     private int timeout;
 
     @Bean(name = "utc-checker")
     public Executor threadPoolTaskExecutor() {
-        this.run = false;
+        this.running = false;
         this.timeout = 3000;
         return new ThreadPoolTaskExecutor();
     }

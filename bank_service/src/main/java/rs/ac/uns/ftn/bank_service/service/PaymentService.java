@@ -2,7 +2,9 @@ package rs.ac.uns.ftn.bank_service.service;
 
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -41,6 +43,9 @@ public class PaymentService {
     @Value("${bank.create.payment.request.api}")
     private String createPaymentRequestApi;
 
+    @Value("${bank.get.transaction.api}")
+    private String getTransactionStatusApi;
+
     @Value("${bank.service.success.url}")
     private String successUrl;
 
@@ -50,8 +55,8 @@ public class PaymentService {
     @Value("${bank.service.error.url}")
     private String errorUrl;
 
-    @Autowired
-    private UnfinishedTransactionCheckerConfig utcConfig;
+    @Value("${transaction.expiration.interval}")
+    private Integer transactionExpirationInterval;
 
     public CardPaymentResponseDTO createPaymentRequest(CardPaymentRequestDTO cardPaymentRequestDTO){
         Merchant merchant = merchantRepository.findByUsername(cardPaymentRequestDTO.getUsername());
@@ -100,14 +105,30 @@ public class PaymentService {
 
         CompletePaymentDTO completePaymentDTO = new CompletePaymentDTO(transaction.getMerchantOrderId(), transaction.getTransactionStatus());
 
+        if(notify(transaction)){
+            return new SimpleResponseDTO("Success.");
+        }
+//        SimpleResponseDTO simpleResponseDTO = restTemplate.postForObject(transaction.getCallbackUrl(), completePaymentDTO, SimpleResponseDTO.class);
+//
+//        if(simpleResponseDTO != null && simpleResponseDTO.getSuccess()){
+//            transaction.setNotificationStatus(NotificationStatus.NOTIFIED);
+//            transactionRepository.save(transaction);
+//            return new SimpleResponseDTO("Success.");
+//        }
+
+        return new SimpleResponseDTO(false,"Failed.");
+    }
+
+    private Boolean notify(Transaction transaction){
+        CompletePaymentDTO completePaymentDTO = new CompletePaymentDTO(transaction.getMerchantOrderId(), transaction.getTransactionStatus());
         SimpleResponseDTO simpleResponseDTO = restTemplate.postForObject(transaction.getCallbackUrl(), completePaymentDTO, SimpleResponseDTO.class);
 
         if(simpleResponseDTO != null && simpleResponseDTO.getSuccess()){
             transaction.setNotificationStatus(NotificationStatus.NOTIFIED);
             transactionRepository.save(transaction);
+            return true;
         }
-
-        return new SimpleResponseDTO("Success.");
+        return false;
     }
     
     public SimpleResponseDTO paymentRegistration(PaymentRegistrationDTO paymentRegistrationDTO) {
@@ -119,25 +140,32 @@ public class PaymentService {
     	return new SimpleResponseDTO("Success.");
     }
 
-    public void startUTC() throws InterruptedException {
-        utcConfig.setRun(true);
-        unfinishedTransactionChecker();
-    }
+    public void unfinishedTransactionsCheck(){
+        System.out.println("CHECKING: " + LocalDateTime.now());
+        List<Transaction> transactions = transactionRepository.findByTransactionStatus(TransactionStatus.CREATED);
 
-    public void stopUTC(){
-        utcConfig.setRun(false);
-    }
+        for(Transaction transaction: transactions){
+            TransactionStatusDTO transactionStatusDTO = restTemplate.getForObject(bankUrl+getTransactionStatusApi+transaction.getMerchantOrderId(), TransactionStatusDTO.class);
 
-    public void setTimeoutUtc(Integer timeout){
-        utcConfig.setTimeout(timeout);
-    }
+            if(transactionStatusDTO == null){
+                continue;
+            }
 
-    @Async("utc-checker")
-    public void unfinishedTransactionChecker() throws InterruptedException {
-        while(utcConfig.isRun()) {
-            System.out.println("HELLO");
-            System.out.println("Timeout: " + utcConfig.getTimeout());
-            Thread.sleep(utcConfig.getTimeout());
+            LocalDateTime transactionTimestamp = transaction.getMerchantTimestamp();
+            //if(transactionTimestamp.plusSeconds(transactionExpirationInterval).isBefore(LocalDateTime.now())){
+                transaction.setTransactionStatus(transactionStatusDTO.getTransactionStatus());
+           // }
         }
+        transactionRepository.saveAll(transactions);
+
+        transactions = transactionRepository.findByNotificationStatus(NotificationStatus.NOT_NOTIFIED);
+
+        transactions.forEach(transaction -> {
+                    LocalDateTime transactionTimestamp = transaction.getMerchantTimestamp();
+                    if (transactionTimestamp.plusSeconds(transactionExpirationInterval).isBefore(LocalDateTime.now())) {
+                        notify(transaction);
+                    }
+         });
     }
+
 }

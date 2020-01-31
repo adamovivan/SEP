@@ -87,7 +87,14 @@ export class PaymentDetailsComponent implements OnInit {
 
     this.paymentService.pay(paymentCardDTO).subscribe(
       res => {
-        window.location.href = this.successUrl;
+
+        console.log(res);
+        if(res.paymentStatus === 'SUCCESS'){
+          window.location.href = this.successUrl;
+        }
+        else if(res.paymentStatus === 'FAILED'){
+          window.location.href = this.failedUrl;
+        }
         
       },
       err => {

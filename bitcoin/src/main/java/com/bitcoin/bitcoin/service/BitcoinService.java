@@ -12,4 +12,6 @@ public interface BitcoinService {
 	
 	String completePayment(String token);
 	String cancelPayment(String token);
+
+    void unfinishedTransactionsCheck();
 }

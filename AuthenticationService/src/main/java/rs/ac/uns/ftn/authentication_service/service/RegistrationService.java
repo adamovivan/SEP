@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import rs.ac.uns.ftn.authentication_service.config.Password;
 import rs.ac.uns.ftn.authentication_service.model.Client;
+import rs.ac.uns.ftn.authentication_service.model.Role;
 import rs.ac.uns.ftn.authentication_service.repository.ClientRepository;
 
 @Service
@@ -20,6 +21,7 @@ public class RegistrationService {
 	public Client save(Client client) throws Exception {
 		Client newClient  = client;
 		newClient.setPassword(Password.getSaltedHash(client.getPassword()));
+		newClient.setRole(Role.SELLER);
 		try {
 			newClient = registrationRepository.save(newClient);
 			logger.info("Successfully registered new user" + newClient.getUsername() + ".");

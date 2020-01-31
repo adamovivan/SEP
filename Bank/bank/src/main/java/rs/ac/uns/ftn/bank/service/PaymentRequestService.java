@@ -78,7 +78,7 @@ public class PaymentRequestService {
         transaction.setMerchantOrderId(paymentRequest.getMerchantOrderId());
         transaction.setMerchantTimestamp(paymentRequest.getMerchantTimestamp());
         transaction.setAmount(paymentRequest.getAmount());
-        transaction.setTransactionStatus(TransactionStatus.OPEN);
+        transaction.setTransactionStatus(TransactionStatus.CREATED);
         return transactionRepository.save(transaction);
     }
 }

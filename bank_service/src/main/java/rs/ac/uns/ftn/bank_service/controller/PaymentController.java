@@ -18,24 +18,6 @@ public class PaymentController {
     @Value("${client.port}")
     private Long clientPort;
 
-    @RequestMapping(value = "/start-utc", method = RequestMethod.GET)
-    public ResponseEntity startUTC() throws InterruptedException {
-        paymentService.startUTC();
-        return null;
-    }
-
-    @RequestMapping(value = "/stop-utc", method = RequestMethod.GET)
-    public ResponseEntity stopUTC() {
-        paymentService.stopUTC();
-        return null;
-    }
-
-    @RequestMapping(value = "/utc-timeout/{timeout}", method = RequestMethod.GET)
-    public ResponseEntity setTimeoutUtc(@PathVariable Integer timeout) {
-        paymentService.setTimeoutUtc(timeout);
-        return null;
-    }
-
     @RequestMapping(value = "/pay", method = RequestMethod.POST)
     public ResponseEntity<CardPaymentResponseDTO> createPaymentRequest(@RequestBody CardPaymentRequestDTO cardPaymentRequestDTO){
         return ResponseEntity.ok(paymentService.createPaymentRequest(cardPaymentRequestDTO));
@@ -64,6 +46,12 @@ public class PaymentController {
     @RequestMapping(value = "/frontendPort", method = RequestMethod.GET)
     public Long getClientPort(){
         return clientPort;
+    }
+
+    @RequestMapping(value = "/unfinished-transactions-check", method = RequestMethod.GET)
+    public ResponseEntity<SimpleResponseDTO> unfinishedTransactionsCheck(){
+        paymentService.unfinishedTransactionsCheck();
+        return ResponseEntity.ok().body(new SimpleResponseDTO("Checked"));
     }
 
 }
