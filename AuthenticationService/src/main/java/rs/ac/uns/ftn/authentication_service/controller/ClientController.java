@@ -16,14 +16,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import rs.ac.uns.ftn.authentication_service.model.Client;
+import rs.ac.uns.ftn.authentication_service.request.AgreementRequest;
 import rs.ac.uns.ftn.authentication_service.request.LoginRequest;
 import rs.ac.uns.ftn.authentication_service.request.PaymentLinkRequest;
 import rs.ac.uns.ftn.authentication_service.request.PaymentRequest;
+import rs.ac.uns.ftn.authentication_service.request.TransactionAgreementRequest;
 import rs.ac.uns.ftn.authentication_service.request.TransactionPlanRequest;
 import rs.ac.uns.ftn.authentication_service.request.TransactionRequest;
 import rs.ac.uns.ftn.authentication_service.response.LoginResponse;
 import rs.ac.uns.ftn.authentication_service.response.PaymentLinkResponse;
 import rs.ac.uns.ftn.authentication_service.response.PaymentResponse;
+import rs.ac.uns.ftn.authentication_service.response.SubscriptionPlanResponse;
 import rs.ac.uns.ftn.authentication_service.service.LoginService;
 import rs.ac.uns.ftn.authentication_service.service.PaymentsService;
 import rs.ac.uns.ftn.authentication_service.service.RegistrationService;
@@ -70,9 +73,20 @@ public class ClientController {
 		return new ResponseEntity<PaymentResponse>(paymentsService.getTypePayments(token), HttpStatus.OK);
 	}
 	
+	//buyer
+	@GetMapping(value = "/getSubscriptionPlans/{token}")
+	public ResponseEntity<SubscriptionPlanResponse> getSubscriptionPlans(@PathVariable String token) {
+		return new ResponseEntity<SubscriptionPlanResponse>(paymentsService.getSubscriptionPlans(token), HttpStatus.OK);
+	}
+	
 	@PostMapping(value = "/getTransactionLink")
 	public ResponseEntity<PaymentLinkResponse> getTransactionLink(@RequestBody TransactionRequest transactionRequest) {
 		return new ResponseEntity<>(paymentsService.getTransactionLink(transactionRequest), HttpStatus.OK);
+	}
+	
+	@PostMapping(value = "/getTransactionAgreementLink")
+	public ResponseEntity<PaymentLinkResponse> getTransactionAgreementLink(@RequestBody TransactionAgreementRequest transactionRequest) {
+		return new ResponseEntity<PaymentLinkResponse>(paymentsService.getTransactionAgreementLink(transactionRequest), HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/getTransactionPlanLink", method = RequestMethod.POST)
@@ -83,5 +97,10 @@ public class ClientController {
 	@PostMapping(value = "/getPaymentLink")
 	public ResponseEntity<PaymentLinkResponse> getPaymentLink(@RequestBody PaymentLinkRequest paymentLinkRequest) {
 		return new ResponseEntity<PaymentLinkResponse>(paymentsService.getPaymentLink(paymentLinkRequest), HttpStatus.OK);
+	}
+	
+	@PostMapping(value = "/getAgreementLink")
+	public ResponseEntity<PaymentLinkResponse> getAgreementLink(@RequestBody AgreementRequest agreementRequest) {
+		return new ResponseEntity<PaymentLinkResponse>(paymentsService.getAgreementLink(agreementRequest), HttpStatus.OK);
 	}
 }

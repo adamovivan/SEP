@@ -11,19 +11,26 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import rs.ac.uns.ftn.authentication_service.model.AgreementTransaction;
 import rs.ac.uns.ftn.authentication_service.model.Client;
+import rs.ac.uns.ftn.authentication_service.model.PaymentTransaction;
 import rs.ac.uns.ftn.authentication_service.model.Payments;
-import rs.ac.uns.ftn.authentication_service.model.Transaction;
 import rs.ac.uns.ftn.authentication_service.repository.ClientRepository;
 import rs.ac.uns.ftn.authentication_service.repository.PaymentsRepository;
+import rs.ac.uns.ftn.authentication_service.repository.TransactionAgreementRepository;
 import rs.ac.uns.ftn.authentication_service.repository.TransactionRepository;
+import rs.ac.uns.ftn.authentication_service.request.AgreementRequest;
+import rs.ac.uns.ftn.authentication_service.request.AgreementUrlRequest;
 import rs.ac.uns.ftn.authentication_service.request.PaymentLinkRequest;
 import rs.ac.uns.ftn.authentication_service.request.PaymentOrderRequest;
 import rs.ac.uns.ftn.authentication_service.request.PaymentRequest;
+import rs.ac.uns.ftn.authentication_service.request.TransactionAgreementRequest;
 import rs.ac.uns.ftn.authentication_service.request.TransactionPlanRequest;
 import rs.ac.uns.ftn.authentication_service.request.TransactionRequest;
+import rs.ac.uns.ftn.authentication_service.request.UserPlansRequest;
 import rs.ac.uns.ftn.authentication_service.response.PaymentLinkResponse;
 import rs.ac.uns.ftn.authentication_service.response.PaymentResponse;
+import rs.ac.uns.ftn.authentication_service.response.SubscriptionPlanResponse;
 
 @Service
 public class PaymentsService {
@@ -38,6 +45,11 @@ public class PaymentsService {
 	
 	@Autowired
 	private TransactionRepository transactionRepository;
+	
+	@Autowired
+	private TransactionAgreementRepository transactionAgreementRepository;
+	
+	
 	
 	@Autowired
 	 private RestTemplate restTemplate;
@@ -82,7 +94,7 @@ public class PaymentsService {
 	public PaymentResponse getTypePayments(String token) {
 		List<String> lista = new ArrayList<>();
 		
-		Transaction transaction = new Transaction();
+		PaymentTransaction transaction = new PaymentTransaction();
 		transaction = transactionRepository.findByUuid(token);
 		System.out.println(transaction.getEmail());
 		Client client = new Client();
@@ -106,10 +118,38 @@ public class PaymentsService {
 		return payment;
 	}
 	
+	public SubscriptionPlanResponse getSubscriptionPlans(String token) {
+		if(token == null) {
+			return new SubscriptionPlanResponse();
+		}
+		if(transactionAgreementRepository.findByUuid(token) == null) {
+			return new SubscriptionPlanResponse();
+		}
+		AgreementTransaction transaction = transactionAgreementRepository.findByUuid(token);
+		if(clientRepository.findByEmail(transaction.getEmail()) == null) {
+			return new SubscriptionPlanResponse();
+		}
+	    Client client = clientRepository.findByEmail(transaction.getEmail());
+	    
+	    UserPlansRequest upr = new UserPlansRequest();
+	    upr.setType(transaction.getType());
+	    upr.setUsername(client.getUsername());
+	    try {
+	    	ResponseEntity<SubscriptionPlanResponse> spr = restTemplate.postForEntity("https://localhost:8765/api-paypal/getSubscriptionPlansByUsername", upr, SubscriptionPlanResponse.class);
+	    	return spr.getBody();
+		}catch (Exception e) {
+			e.printStackTrace();
+			// TODO: handle exception
+		}
+	    
+		
+		return new SubscriptionPlanResponse();
+	}
+	
 	//cuvanje podataka vezanih za uplatu od strane kupca....
 	public PaymentLinkResponse getTransactionLink(TransactionRequest transactionRequest) {
 		
-		Transaction transaction = new Transaction();
+		PaymentTransaction transaction = new PaymentTransaction();
 		transaction.setEmail(transactionRequest.getEmail());
 		transaction.setOrderId(transactionRequest.getOrderId());
 		transaction.setCallbackUrl(transactionRequest.getCallbackUrl());
@@ -131,12 +171,44 @@ public class PaymentsService {
 		
 	}
 	
+	//cuvanje podataka vezanih za uplatu od strane kupca....
+		public PaymentLinkResponse getTransactionAgreementLink(TransactionAgreementRequest transactionAgreementRequest) {
+			
+			AgreementTransaction transaction = new AgreementTransaction();
+			transaction.setEmail(transactionAgreementRequest.getEmail());
+			transaction.setUuid(UUID.randomUUID().toString());
+			transaction.setType(transactionAgreementRequest.getType());
+			transaction.setCallbackUrl(transactionAgreementRequest.getCallbackUrl());
+			transaction.setOrderId(transactionAgreementRequest.getOrderId());
+			transaction = transactionAgreementRepository.save(transaction);
+			PaymentLinkResponse response = new PaymentLinkResponse();
+			if(transaction != null) {
+				response.setSuccess(true);
+				response.setUrl("https://localhost:4200/subscription-agreement/"+ transaction.getUuid());
+				logger.info("Successfully obtained transaction link");
+				return response;
+			}else {
+				response.setSuccess(false);
+				response.setUrl("");
+				logger.info("No transaction link was obtained");
+				return response;
+			}
+			
+		}
+	
 	public PaymentLinkResponse getTransactionPlanLink(TransactionPlanRequest transactionPlanRequest) {
-	        return restTemplate.postForObject("https://localhost:8765/api-paypal/getTransactionPlanLink", transactionPlanRequest, PaymentLinkResponse.class);
+		try {
+			PaymentLinkResponse p = restTemplate.postForObject("https://localhost:8765/api-paypal/getTransactionPlanLink", transactionPlanRequest, PaymentLinkResponse.class);
+	    	return p;
+		}catch (Exception e) {
+			e.printStackTrace();
+			// TODO: handle exception
+		}
+		return new PaymentLinkResponse();
 	}
 	
 	public PaymentLinkResponse getPaymentLink(PaymentLinkRequest paymentLinkRequest) {
-		Transaction transaction = new Transaction();
+		PaymentTransaction transaction = new PaymentTransaction();
 		transaction = transactionRepository.findByUuid(paymentLinkRequest.getToken());
 		Client client = new Client();
 		client = clientRepository.findByEmail(transaction.getEmail());
@@ -157,6 +229,27 @@ public class PaymentsService {
 		return new PaymentLinkResponse();
 		
 		
+	}
+	
+	public PaymentLinkResponse getAgreementLink(AgreementRequest agreementRequest) {
+		AgreementTransaction transaction = new AgreementTransaction();
+		transaction = transactionAgreementRepository.findByUuid(agreementRequest.getToken());
+		Client client = new Client();
+		client = clientRepository.findByEmail(transaction.getEmail());
+		
+		AgreementUrlRequest aur = new AgreementUrlRequest(client.getUsername(),agreementRequest.getPlanID(),
+				transaction.getOrderId(),transaction.getCallbackUrl());
+		
+		try {
+			ResponseEntity<PaymentLinkResponse> response = restTemplate.postForEntity("https://localhost:8765/api-paypal/createAgreement", aur, PaymentLinkResponse.class);
+			return response.getBody();
+		}catch (Exception e) {
+			e.printStackTrace();
+			// TODO: handle exception
+		}
+		
+		
+		return new PaymentLinkResponse();
 	}
 	
 }

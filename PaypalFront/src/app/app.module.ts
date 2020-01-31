@@ -9,6 +9,8 @@ import { UserDataComponent } from './user-data/user-data.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SubscriptionPlanComponent } from './subscription-plan/subscription-plan.component';
+import { CancelAgreementComponent } from './cancel-agreement/cancel-agreement.component';
+import { SuccessAgreementComponent } from './success-agreement/success-agreement.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { SubscriptionPlanComponent } from './subscription-plan/subscription-plan
     SuccessComponent,
     CancelComponent,
     UserDataComponent,
-    SubscriptionPlanComponent
+    SubscriptionPlanComponent,
+    CancelAgreementComponent,
+    SuccessAgreementComponent
   ],
   imports: [
     BrowserModule,

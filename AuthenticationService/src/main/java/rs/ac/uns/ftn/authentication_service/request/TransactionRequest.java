@@ -8,4 +8,5 @@ public class TransactionRequest {
 	private String callbackUrl;
 	private String orderId;
 	private String email;
+
 }

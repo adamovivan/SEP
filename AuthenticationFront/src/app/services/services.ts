@@ -35,6 +35,10 @@ export class SellerService {
     return this.http.get(SERVER_URL + '/authentication-service/getTypePayments/'+token,);
   }
 
+  getSubscriptionPlansByToken(token:any){
+    return this.http.get(SERVER_URL + '/authentication-service/getSubscriptionPlans/'+ token);
+  }
+
   getPaymentLink(request:any){
     return this.http.post(SERVER_URL + '/authentication-service/getPaymentLink',request);
   }
@@ -65,5 +69,9 @@ export class SellerService {
 
   setTimeout(timeout: number){
     return this.http.put(SERVER_URL + '/authentication-service/timeout/' + timeout, {});
+  }
+
+  Subscription(item:any){
+      return this.http.post(SERVER_URL + '/authentication-service/getAgreementLink',item);
   }
 }
