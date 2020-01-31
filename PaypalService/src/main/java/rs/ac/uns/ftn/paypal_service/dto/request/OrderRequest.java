@@ -10,6 +10,6 @@ public class OrderRequest {
 	private String clientSecret;
 	private String successUrl;
 	private String cancelUrl;
-	//ovo ce biti potrebno zbog evidencije otkomentarisati posto se uspostavi veza ka nc...
-    //private String orderID;
+    private String orderId;
+    private String callbackUrl;
 }

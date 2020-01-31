@@ -17,12 +17,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.paypal.base.rest.PayPalRESTException;
+
+import rs.ac.uns.ftn.paypal_service.dto.request.AgreementCompleteRequest;
+import rs.ac.uns.ftn.paypal_service.dto.request.AgreementRequest;
 import rs.ac.uns.ftn.paypal_service.dto.request.PaymentCompleteRequest;
 import rs.ac.uns.ftn.paypal_service.dto.request.PaymentOrderRequest;
 import rs.ac.uns.ftn.paypal_service.dto.request.SubscriptionPlanRequest;
 import rs.ac.uns.ftn.paypal_service.dto.request.TransactionPlanLinkRequest;
 import rs.ac.uns.ftn.paypal_service.dto.request.UserDataRequest;
+import rs.ac.uns.ftn.paypal_service.dto.request.UserPlansRequest;
+import rs.ac.uns.ftn.paypal_service.dto.response.CompleteAgreementResponse;
 import rs.ac.uns.ftn.paypal_service.dto.response.PaymentOrderResponse;
+import rs.ac.uns.ftn.paypal_service.dto.response.SubscriptionPlanResponse;
 import rs.ac.uns.ftn.paypal_service.dto.response.TransactionPlanLinkResponse;
 import rs.ac.uns.ftn.paypal_service.model.SubscriptionPlan;
 import rs.ac.uns.ftn.paypal_service.service.DataService;
@@ -121,25 +128,40 @@ public class PaymentController {
 		return new ResponseEntity<TransactionPlanLinkResponse>(paymentService.getTransactionPlanLink(transactionRequest), HttpStatus.OK);
 	}
 	
+	@PostMapping(value= "/getSubscriptionPlansByUsername")
+	public ResponseEntity<SubscriptionPlanResponse> getSubscriptionPlansByUsername(@RequestBody UserPlansRequest userPlansRequest) {
+		return new ResponseEntity<SubscriptionPlanResponse>(paymentService.getSubscriptionPlansByUsername(userPlansRequest), HttpStatus.OK);
+	} 
+	
 	/**
      * A method that, based on all plan information, creates a redirect link to PayPal agreement.
      * @param paymentOrderRequest
      * @return
      */
-	/*@RequestMapping(value = "/createAgreement", method = RequestMethod.POST)
+	@RequestMapping(value = "/createAgreement", method = RequestMethod.POST)
     public ResponseEntity<PaymentOrderResponse> createAgreement(@RequestBody AgreementRequest agreementRequest) throws PayPalRESTException{
         PaymentOrderResponse paymentOrderResponse = paypalService.createAgreement(agreementRequest);
         return ResponseEntity.ok().body(paymentOrderResponse);
-    }*/
+    }
 	
 	/**
      * A method that complete PayPal agreement.
      * @param paymentOrderRequest
      * @return
      */
-	/*@PostMapping(value = "/completeAgreement")
+	@PostMapping(value = "/completeAgreement")
 	public ResponseEntity<CompleteAgreementResponse> completeAgreement(@RequestBody AgreementCompleteRequest agreementCompleteRequest){
 	    return ResponseEntity.ok().body(paypalService.completeAgreement(agreementCompleteRequest));
-	}*/
+	}
+	
+	/**
+	 * A method that stores the details of a failed paypal subscription.
+	 * @param username
+	 * @return
+	 */
+	@PostMapping(value = "/cancelAgreement")
+	public Boolean cancelAgreement(@RequestBody PaymentCompleteRequest paymentCompleteRequest){
+	    return paypalService.cancelAgreement(paymentCompleteRequest.getToken());
+	}
 	
 }
