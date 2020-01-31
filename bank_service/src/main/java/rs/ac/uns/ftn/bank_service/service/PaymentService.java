@@ -6,9 +6,11 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import rs.ac.uns.ftn.bank_service.config.UnfinishedTransactionCheckerConfig;
 import rs.ac.uns.ftn.bank_service.dto.*;
 import rs.ac.uns.ftn.bank_service.exception.NotFoundException;
 import rs.ac.uns.ftn.bank_service.model.Merchant;
@@ -47,6 +49,9 @@ public class PaymentService {
 
     @Value("${bank.service.error.url}")
     private String errorUrl;
+
+    @Autowired
+    private UnfinishedTransactionCheckerConfig utcConfig;
 
     public CardPaymentResponseDTO createPaymentRequest(CardPaymentRequestDTO cardPaymentRequestDTO){
         Merchant merchant = merchantRepository.findByUsername(cardPaymentRequestDTO.getUsername());
@@ -112,5 +117,27 @@ public class PaymentService {
     	merchant.setMerchantPassword(paymentRegistrationDTO.getMerchantPassword());
     	merchantRepository.save(merchant);
     	return new SimpleResponseDTO("Success.");
+    }
+
+    public void startUTC() throws InterruptedException {
+        utcConfig.setRun(true);
+        unfinishedTransactionChecker();
+    }
+
+    public void stopUTC(){
+        utcConfig.setRun(false);
+    }
+
+    public void setTimeoutUtc(Integer timeout){
+        utcConfig.setTimeout(timeout);
+    }
+
+    @Async("utc-checker")
+    public void unfinishedTransactionChecker() throws InterruptedException {
+        while(utcConfig.isRun()) {
+            System.out.println("HELLO");
+            System.out.println("Timeout: " + utcConfig.getTimeout());
+            Thread.sleep(utcConfig.getTimeout());
+        }
     }
 }
