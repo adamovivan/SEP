@@ -50,4 +50,20 @@ export class SellerService {
   deletePlan(id:any){
     return this.http.delete(SERVER_URL + '/api-paypal/deletePlan/'+id);
   }
+
+  getConfig(){
+    return this.http.get(SERVER_URL + '/authentication-service/utc-config');
+  }
+
+  startUtc(){
+    return this.http.put(SERVER_URL + '/authentication-service/start-utc', {});
+  }
+
+  stopUtc(){
+    return this.http.put(SERVER_URL + '/authentication-service/stop-utc', {});
+  }
+
+  setTimeout(timeout: number){
+    return this.http.put(SERVER_URL + '/authentication-service/timeout/' + timeout, {});
+  }
 }
