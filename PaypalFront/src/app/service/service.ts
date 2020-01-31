@@ -27,6 +27,10 @@ import { SERVER_URL } from '../app.constant';
       return this.http.post(SERVER_URL + '/api-paypal/cancelData',cancel);
     }
 
+    cancelAgreement(cancel:any){
+      return this.http.post(SERVER_URL + '/api-paypal/cancelAgreement',cancel);
+    }
+
     addPayments(tip:any){
       return this.http.post(SERVER_URL + '/authentication-service/addPayments',tip);
     }

@@ -47,7 +47,7 @@ export class SubscriptionAgreementComponent implements OnInit {
 
   subscribe(item : any){
       this.agreementRequest = {
-        username:item.username,
+        token:this.token,
         planID:item.planID
       }
       this.service.Subscription(this.agreementRequest).subscribe(

@@ -50,7 +50,7 @@ public class PaymentService {
         
         PaypalPayment payment = paymentRepository.findByUsername(paymentOrderRequest.getUsername());
         
-        OrderRequest orderDTO = orderDTOCreate(payment, paymentOrderRequest.getTotalPrice(), paymentOrderRequest.getUsername());
+        OrderRequest orderDTO = orderDTOCreate(payment, paymentOrderRequest);
 
 		try {
 			PaymentOrderResponse response = paypalService.createPayment(orderDTO);
@@ -66,10 +66,12 @@ public class PaymentService {
         
     }
     
-    private OrderRequest orderDTOCreate(PaypalPayment paypalInfo, Double totalPrice, String username) {
+    private OrderRequest orderDTOCreate(PaypalPayment paypalInfo, PaymentOrderRequest info) {
     	OrderRequest orderDTO = new OrderRequest();
-    	orderDTO.setUsername(username);
-        orderDTO.setTotalPrice(totalPrice);
+    	orderDTO.setUsername(info.getUsername());
+        orderDTO.setTotalPrice(info.getTotalPrice());
+        orderDTO.setCallbackUrl(info.getCallbackUrl());
+        orderDTO.setOrderId(info.getOrderId());
         orderDTO.setClientId(paypalInfo.getPaymentId());
         orderDTO.setClientSecret(paypalInfo.getPaymentSecret());
         orderDTO.setSuccessUrl("https://localhost:4201/success");
@@ -81,9 +83,13 @@ public class PaymentService {
 		if(paymentOrderRequest == null) {
 			throw new BadRequestException("Payment order request is not send.");
 		}
+		if(paymentOrderRequest.getCallbackUrl() == null || paymentOrderRequest.getOrderId() == null) {
+			throw new BadRequestException("Payment order info is not send.");
+		}
 		if(paymentRepository.findByUsername(paymentOrderRequest.getUsername()) == null){
 			throw new NotFoundException("Seller does not exist.");
-		}if(paymentOrderRequest.getTotalPrice() < 0.0) {
+		}
+		if(paymentOrderRequest.getTotalPrice() < 0.0) {
 			throw new BadRequestException("You cannot pay with negative value.");
 		}
 	}

@@ -7,5 +7,7 @@ public class AgreementRequest {
 	
 	String username;
 	String planID;
+	String orderId;
+	String callbackUrl;
 
 }

@@ -7,4 +7,6 @@ public class TransactionAgreementRequest {
 
 		private String type;
 		private String email;
+		private String orderId;
+		private String callbackUrl;
 }

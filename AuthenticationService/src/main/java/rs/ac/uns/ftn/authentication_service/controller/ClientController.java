@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import rs.ac.uns.ftn.authentication_service.model.Client;
+import rs.ac.uns.ftn.authentication_service.request.AgreementRequest;
 import rs.ac.uns.ftn.authentication_service.request.LoginRequest;
 import rs.ac.uns.ftn.authentication_service.request.PaymentLinkRequest;
 import rs.ac.uns.ftn.authentication_service.request.PaymentRequest;
@@ -96,5 +97,10 @@ public class ClientController {
 	@PostMapping(value = "/getPaymentLink")
 	public ResponseEntity<PaymentLinkResponse> getPaymentLink(@RequestBody PaymentLinkRequest paymentLinkRequest) {
 		return new ResponseEntity<PaymentLinkResponse>(paymentsService.getPaymentLink(paymentLinkRequest), HttpStatus.OK);
+	}
+	
+	@PostMapping(value = "/getAgreementLink")
+	public ResponseEntity<PaymentLinkResponse> getAgreementLink(@RequestBody AgreementRequest agreementRequest) {
+		return new ResponseEntity<PaymentLinkResponse>(paymentsService.getAgreementLink(agreementRequest), HttpStatus.OK);
 	}
 }

@@ -154,4 +154,14 @@ public class PaymentController {
 	    return ResponseEntity.ok().body(paypalService.completeAgreement(agreementCompleteRequest));
 	}
 	
+	/**
+	 * A method that stores the details of a failed paypal subscription.
+	 * @param username
+	 * @return
+	 */
+	@PostMapping(value = "/cancelAgreement")
+	public Boolean cancelAgreement(@RequestBody PaymentCompleteRequest paymentCompleteRequest){
+	    return paypalService.cancelAgreement(paymentCompleteRequest.getToken());
+	}
+	
 }

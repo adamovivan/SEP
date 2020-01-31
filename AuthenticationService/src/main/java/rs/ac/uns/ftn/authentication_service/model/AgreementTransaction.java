@@ -26,4 +26,10 @@ public class AgreementTransaction {
 	@Column
 	private String type;
 	
+	@Column(nullable=false)
+	private String orderId;
+	
+	@Column(nullable=false)
+	private String callbackUrl;
+	
 }

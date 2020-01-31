@@ -31,6 +31,12 @@ public class TransactionAgreementData {
 	
 	@Column
 	private String orderID;
+	
+	@Column
+	private String callbackUrl;
+	
+	@Column
+	private String Notification;
 
 	@Column
 	private String planID;

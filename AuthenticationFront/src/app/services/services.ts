@@ -56,6 +56,6 @@ export class SellerService {
   }
 
   Subscription(item:any){
-      return this.http.post(SERVER_URL + '/api-paypal/createAgreement',item);
+      return this.http.post(SERVER_URL + '/authentication-service/getAgreementLink',item);
   }
 }

@@ -19,6 +19,8 @@ import rs.ac.uns.ftn.authentication_service.repository.ClientRepository;
 import rs.ac.uns.ftn.authentication_service.repository.PaymentsRepository;
 import rs.ac.uns.ftn.authentication_service.repository.TransactionAgreementRepository;
 import rs.ac.uns.ftn.authentication_service.repository.TransactionRepository;
+import rs.ac.uns.ftn.authentication_service.request.AgreementRequest;
+import rs.ac.uns.ftn.authentication_service.request.AgreementUrlRequest;
 import rs.ac.uns.ftn.authentication_service.request.PaymentLinkRequest;
 import rs.ac.uns.ftn.authentication_service.request.PaymentOrderRequest;
 import rs.ac.uns.ftn.authentication_service.request.PaymentRequest;
@@ -176,6 +178,8 @@ public class PaymentsService {
 			transaction.setEmail(transactionAgreementRequest.getEmail());
 			transaction.setUuid(UUID.randomUUID().toString());
 			transaction.setType(transactionAgreementRequest.getType());
+			transaction.setCallbackUrl(transactionAgreementRequest.getCallbackUrl());
+			transaction.setOrderId(transactionAgreementRequest.getOrderId());
 			transaction = transactionAgreementRepository.save(transaction);
 			PaymentLinkResponse response = new PaymentLinkResponse();
 			if(transaction != null) {
@@ -193,7 +197,14 @@ public class PaymentsService {
 		}
 	
 	public PaymentLinkResponse getTransactionPlanLink(TransactionPlanRequest transactionPlanRequest) {
-	        return restTemplate.postForObject("https://localhost:8765/api-paypal/getTransactionPlanLink", transactionPlanRequest, PaymentLinkResponse.class);
+		try {
+			PaymentLinkResponse p = restTemplate.postForObject("https://localhost:8765/api-paypal/getTransactionPlanLink", transactionPlanRequest, PaymentLinkResponse.class);
+	    	return p;
+		}catch (Exception e) {
+			e.printStackTrace();
+			// TODO: handle exception
+		}
+		return new PaymentLinkResponse();
 	}
 	
 	public PaymentLinkResponse getPaymentLink(PaymentLinkRequest paymentLinkRequest) {
@@ -218,6 +229,27 @@ public class PaymentsService {
 		return new PaymentLinkResponse();
 		
 		
+	}
+	
+	public PaymentLinkResponse getAgreementLink(AgreementRequest agreementRequest) {
+		AgreementTransaction transaction = new AgreementTransaction();
+		transaction = transactionAgreementRepository.findByUuid(agreementRequest.getToken());
+		Client client = new Client();
+		client = clientRepository.findByEmail(transaction.getEmail());
+		
+		AgreementUrlRequest aur = new AgreementUrlRequest(client.getUsername(),agreementRequest.getPlanID(),
+				transaction.getOrderId(),transaction.getCallbackUrl());
+		
+		try {
+			ResponseEntity<PaymentLinkResponse> response = restTemplate.postForEntity("https://localhost:8765/api-paypal/createAgreement", aur, PaymentLinkResponse.class);
+			return response.getBody();
+		}catch (Exception e) {
+			e.printStackTrace();
+			// TODO: handle exception
+		}
+		
+		
+		return new PaymentLinkResponse();
 	}
 	
 }
