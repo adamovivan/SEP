@@ -26,4 +26,8 @@ export class MagazineService {
   public addArticleToShoppingCart(articleId: string) {
     return this.http.post(environment.apiUrl + "/shopping-cart/add-article/" + articleId, {});
   }
+
+  public subscribe(element: any){
+    return this.http.post(environment.apiUrl + "/magazine/subscribe", element);
+  }
 }

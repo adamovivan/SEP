@@ -12,7 +12,8 @@ export class MagazinesComponent implements OnInit {
 
   displayedColumns: string[] = ['no', 'issn', 'title', 'scientificFields', 'show'];
   magazines = [];
-
+  url : any;
+  subscribeData: any;
   constructor(private magazineService: MagazineService,
               private commonService: CommonService,
               private router: Router,
@@ -44,5 +45,19 @@ export class MagazinesComponent implements OnInit {
   
   showShoppingCart(){
     this.router.navigate(['/shopping-cart']);
+  }
+
+  subscribe(element){
+    this.subscribeData = {
+      magazineId: element.id,
+      magazineIssn: element.issn
+    }
+
+    this.magazineService.subscribe(this.subscribeData).subscribe(
+      data => {
+              this.url = data;
+              console.log(this.url);
+              window.location.href = this.url.url;
+    });
   }
 }

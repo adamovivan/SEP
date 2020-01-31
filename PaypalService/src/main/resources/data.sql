@@ -6,3 +6,5 @@ insert into subscription_plan (id, cycles, description, frequency, frequency_int
 2, 'Plan1', 'MONTH', '12', 'Plan1', 'P-53X44548FV14629347C36JJQ', 'Autors', 'mikamikic', 234.0);
 insert into subscription_plan (id, cycles, description, frequency, frequency_interval, name, planid, type, username, value) values (3,
 1, 'Plan3', 'MONTH', '6', 'Plan3', 'P-66546717TU211511X7C4LU5Q', 'Readers', 'mikamikic', 20.0);
+
+--Paypal132!
