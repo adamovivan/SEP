@@ -333,13 +333,13 @@ public class PaypalService {
 	      Date date = new Date(System.currentTimeMillis());
 	      transactionAgreementData.setTime(formatter.format(date));
 	      
-	      /*NotificationRequest paymentNotificationDto = new NotificationRequest(transactionAgreementData.getOrderID(), TransactionStatus.SUCCESS);
+	      NotificationRequest paymentNotificationDto = new NotificationRequest(transactionAgreementData.getOrderID(), TransactionStatus.SUCCESS);
 
 	      SimpleResponse simpleResponseDTO = restTemplate.postForObject(transactionAgreementData.getCallbackUrl(), paymentNotificationDto, SimpleResponse.class);
 
 	      if(simpleResponseDTO != null && simpleResponseDTO.getSuccess()){
 	    	  transactionAgreementData.setNotification("NOTIFIED");
-	      }*/
+	      }
 	      transactionAgreementRepository.save(transactionAgreementData);
 	      
 		} catch (PayPalRESTException e) {
@@ -417,13 +417,13 @@ public class PaypalService {
 		Date date = new Date(System.currentTimeMillis());
 		transactionData.setTime(formatter.format(date));
 		
-		/*NotificationRequest paymentNotificationDto = new NotificationRequest(transactionData.getOrderID(), TransactionStatus.FAILED);
+		NotificationRequest paymentNotificationDto = new NotificationRequest(transactionData.getOrderID(), TransactionStatus.FAILED);
 
 		SimpleResponse simpleResponseDTO = restTemplate.postForObject(transactionData.getCallbackUrl(), paymentNotificationDto, SimpleResponse.class);
 
 		if(simpleResponseDTO != null && simpleResponseDTO.getSuccess()){
 			transactionData.setNotification("NOTIFIED");
-		}*/
+		}
 		
 		transactionData = transactionAgreementRepository.save(transactionData);
 		if(transactionData != null)

@@ -32,6 +32,9 @@
     <ng-container matColumnDef="show">
       <th mat-header-cell class="show-cell" *matHeaderCellDef> </th>
       <td mat-cell class="show-cell" *matCellDef="let element">
+          <button mat-button id="submit" color="primary" (click)="subscribe(element)" class="submit-button">
+            Subscribe
+          </button>
           <button mat-button id="submit" color="primary" (click)="showMagazine(element)" class="submit-button">
               Show
           </button>
