@@ -34026,3 +34026,111 @@ org.springframework.web.client.HttpServerErrorException$InternalServerError: 500
 [2020-01-31 13:44:32] [DEBUG] The total number of all instances in the client now is 3
 [2020-01-31 13:44:32] [DEBUG] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_3_, is fetching remote regions? false 
 [2020-01-31 13:44:50] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2020-01-31 13:45:00] [INFO] Resolving eureka endpoints via configuration
+[2020-01-31 13:45:00] [DEBUG] The availability zone for the given region us-east-1 are [defaultZone]
+[2020-01-31 13:45:00] [DEBUG] Config resolved to [AwsEndpoint{ serviceUrl='http://localhost:8761/eureka/', region='us-east-1', zone='defaultZone'}]
+[2020-01-31 13:45:00] [DEBUG] Local zone=defaultZone; resolved to: [AwsEndpoint{ serviceUrl='http://localhost:8761/eureka/', region='us-east-1', zone='defaultZone'}]
+[2020-01-31 13:45:00] [DEBUG] Resolved to [AwsEndpoint{ serviceUrl='http://localhost:8761/eureka/', region='us-east-1', zone='defaultZone'}]
+[2020-01-31 13:45:00] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2020-01-31 13:45:00] [DEBUG] Closing connections idle longer than 30000 SECONDS
+[2020-01-31 13:45:02] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2020-01-31 13:45:02] [DEBUG] [{}->http://localhost:8761] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
+[2020-01-31 13:45:02] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2020-01-31 13:45:02] [DEBUG] Stale connection check
+[2020-01-31 13:45:02] [DEBUG] CookieSpec selected: default
+[2020-01-31 13:45:02] [DEBUG] Get connection: {}->http://localhost:8761, timeout = 5000
+[2020-01-31 13:45:02] [DEBUG] Auth cache not set in the context
+[2020-01-31 13:45:02] [DEBUG] Target auth state: UNCHALLENGED
+[2020-01-31 13:45:02] [DEBUG] Proxy auth state: UNCHALLENGED
+[2020-01-31 13:45:02] [DEBUG] Attempt 1 to execute request
+[2020-01-31 13:45:02] [DEBUG] Sending request: PUT /eureka/apps/AUTHENTICATION-SERVICE/localhost:authentication-service:8001?status=UP&lastDirtyTimestamp=1580493900692 HTTP/1.1
+[2020-01-31 13:45:02] [DEBUG]  >> "PUT /eureka/apps/AUTHENTICATION-SERVICE/localhost:authentication-service:8001?status=UP&lastDirtyTimestamp=1580493900692 HTTP/1.1[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG] [{}->http://localhost:8761] total kept alive: 1, total issued: 1, total allocated: 2 out of 200
+[2020-01-31 13:45:02] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG] Getting free connection [{}->http://localhost:8761][null]
+[2020-01-31 13:45:02] [DEBUG] Stale connection check
+[2020-01-31 13:45:02] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.1.105[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  >> "Content-Length: 0[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  >> "[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG] >> PUT /eureka/apps/AUTHENTICATION-SERVICE/localhost:authentication-service:8001?status=UP&lastDirtyTimestamp=1580493900692 HTTP/1.1
+[2020-01-31 13:45:02] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2020-01-31 13:45:02] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2020-01-31 13:45:02] [DEBUG] >> DiscoveryIdentity-Id: 192.168.1.105
+[2020-01-31 13:45:02] [DEBUG] >> Accept-Encoding: gzip
+[2020-01-31 13:45:02] [DEBUG] >> Content-Length: 0
+[2020-01-31 13:45:02] [DEBUG] >> Host: localhost:8761
+[2020-01-31 13:45:02] [DEBUG] >> Connection: Keep-Alive
+[2020-01-31 13:45:02] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2020-01-31 13:45:02] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  << "Content-Type: application/xml[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  << "Content-Length: 0[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  << "Date: Fri, 31 Jan 2020 19:45:02 GMT[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  << "[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG] Receiving response: HTTP/1.1 200 
+[2020-01-31 13:45:02] [DEBUG] << HTTP/1.1 200 
+[2020-01-31 13:45:02] [DEBUG] << Content-Type: application/xml
+[2020-01-31 13:45:02] [DEBUG] << Content-Length: 0
+[2020-01-31 13:45:02] [DEBUG] << Date: Fri, 31 Jan 2020 19:45:02 GMT
+[2020-01-31 13:45:02] [DEBUG] Connection can be kept alive indefinitely
+[2020-01-31 13:45:02] [DEBUG] Released connection is reusable.
+[2020-01-31 13:45:02] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2020-01-31 13:45:02] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2020-01-31 13:45:02] [DEBUG] Notifying no-one, there are no waiting threads
+[2020-01-31 13:45:02] [DEBUG] Jersey HTTP PUT http://localhost:8761/eureka//apps/AUTHENTICATION-SERVICE/localhost:authentication-service:8001; statusCode=200
+[2020-01-31 13:45:02] [DEBUG] DiscoveryClient_AUTHENTICATION-SERVICE/localhost:authentication-service:8001 - Heartbeat status: 200
+[2020-01-31 13:45:02] [DEBUG] CookieSpec selected: default
+[2020-01-31 13:45:02] [DEBUG] Auth cache not set in the context
+[2020-01-31 13:45:02] [DEBUG] Target auth state: UNCHALLENGED
+[2020-01-31 13:45:02] [DEBUG] Proxy auth state: UNCHALLENGED
+[2020-01-31 13:45:02] [DEBUG] Attempt 1 to execute request
+[2020-01-31 13:45:02] [DEBUG] Sending request: GET /eureka/apps/delta HTTP/1.1
+[2020-01-31 13:45:02] [DEBUG]  >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  >> "Accept: application/json[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  >> "DiscoveryIdentity-Id: 192.168.1.105[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  >> "Accept-Encoding: gzip[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  >> "Host: localhost:8761[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  >> "User-Agent: Java-EurekaClient/v1.9.8[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  >> "[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG] >> GET /eureka/apps/delta HTTP/1.1
+[2020-01-31 13:45:02] [DEBUG] >> Accept: application/json
+[2020-01-31 13:45:02] [DEBUG] >> DiscoveryIdentity-Name: DefaultClient
+[2020-01-31 13:45:02] [DEBUG] >> DiscoveryIdentity-Version: 1.4
+[2020-01-31 13:45:02] [DEBUG] >> DiscoveryIdentity-Id: 192.168.1.105
+[2020-01-31 13:45:02] [DEBUG] >> Accept-Encoding: gzip
+[2020-01-31 13:45:02] [DEBUG] >> Host: localhost:8761
+[2020-01-31 13:45:02] [DEBUG] >> Connection: Keep-Alive
+[2020-01-31 13:45:02] [DEBUG] >> User-Agent: Java-EurekaClient/v1.9.8
+[2020-01-31 13:45:02] [DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  << "Content-Encoding: gzip[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  << "Content-Type: application/json[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  << "Content-Length: 87[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  << "Date: Fri, 31 Jan 2020 19:45:02 GMT[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG]  << "[\r][\n]"
+[2020-01-31 13:45:02] [DEBUG] Receiving response: HTTP/1.1 200 
+[2020-01-31 13:45:02] [DEBUG] << HTTP/1.1 200 
+[2020-01-31 13:45:02] [DEBUG] << Content-Encoding: gzip
+[2020-01-31 13:45:02] [DEBUG] << Content-Type: application/json
+[2020-01-31 13:45:02] [DEBUG] << Content-Length: 87
+[2020-01-31 13:45:02] [DEBUG] << Date: Fri, 31 Jan 2020 19:45:02 GMT
+[2020-01-31 13:45:02] [DEBUG] Connection can be kept alive indefinitely
+[2020-01-31 13:45:02] [DEBUG]  << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x0][0xab]VJ,([0xc8][0xc9]LN,[0xc9][0xcc][0xcf]+V[0xb2][0xaa]V*K-*[0x6][0xb1][0xe3][0xe3]SRsJ[0x12][0x95][0xac][0x94][0xc][0x8d]-[0x95]t@[0xea][0x80]b[0x19][0x89][0xc5][0x19][0xc9][0xf9])[0xa9]@[0xe1][0xd0][0x80]x[0xe3]x[0x88][0x4][0xcc][0x0]%[0xab][0xe8][0xd8][0xda]Z[0x0]r[0xfa][0xc4]>T[0x0][0x0][0x0]"
+[2020-01-31 13:45:02] [DEBUG] Released connection is reusable.
+[2020-01-31 13:45:02] [DEBUG] Releasing connection [{}->http://localhost:8761][null]
+[2020-01-31 13:45:02] [DEBUG] Pooling connection [{}->http://localhost:8761][null]; keep alive indefinitely
+[2020-01-31 13:45:02] [DEBUG] Notifying no-one, there are no waiting threads
+[2020-01-31 13:45:02] [DEBUG] clearing global-level cache with size 0
+[2020-01-31 13:45:02] [DEBUG] clearing app-level serialization cache with size 0
+[2020-01-31 13:45:02] [DEBUG] Jersey HTTP GET http://localhost:8761/eureka//apps/delta?; statusCode=200
+[2020-01-31 13:45:02] [DEBUG] Got delta update with apps hashcode UP_3_
+[2020-01-31 13:45:02] [DEBUG] The total number of instances fetched by the delta processor : 0
+[2020-01-31 13:45:02] [DEBUG] The total number of all instances in the client now is 3
+[2020-01-31 13:45:02] [DEBUG] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_3_, is fetching remote regions? false 
+[2020-01-31 13:45:20] [DEBUG] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
