@@ -1,0 +1,42 @@
+<div class="login">
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+  <span>Log in</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-card class="pd-card">
+<mat-card-content>
+  
+      <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+        <div class="form-container"  text-align="center">  
+          <mat-form-field class="pd-width">
+              <input id="username"
+                     matInput
+                     formControlName="username"
+                     name="username"
+                     [(ngModel)]="user.username"
+                     placeholder="Username" />
+            </mat-form-field>
+            <br>
+          <mat-form-field class="pd-width">
+              <input id="password"
+                     matInput
+                     formControlName="password"
+                     name="password"
+                     [(ngModel)]="user.password"
+                     placeholder="Password"
+                     [type]="hide ? 'password':'text'" />
+            </mat-form-field>
+            <mat-icon matSuffix (click)="hide = !hide" class="show_hide_pass">
+              {{hide ? 'visibility' : 'visibility_off'}}
+            </mat-icon>
+            <br>
+            <button mat-button type="submit" 
+                    class="mat-raised-button mat-primary" id="btnLogin">Log In</button>
+            <!-- <button mat-button routerLink="/signup" class="divider">Register</button> -->
+        </div>
+      </form>
+</mat-card-content>
+</mat-card>
+</div>

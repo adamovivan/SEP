@@ -1,0 +1,47 @@
+// magazine-table {
+//     width: 100%;
+// }
+
+table {
+  width: 100%;
+}
+
+.titleContainer{
+    text-align: center;
+}
+
+.mainTitle{
+  display: inline-block;
+}
+
+// td.mat-cell {
+//     width: 100pc
+// }
+
+.title-cell {
+  width: 200pc
+}
+
+.no-cell {
+  width: 30pc
+}
+
+.sf-cell {
+  width: 40pc
+}
+
+.add-cell {
+  width: 80pc
+}
+
+.show-cell {
+  width: 20pc
+}
+
+.free {
+  color: green;
+}
+
+.submit-button {
+  float: right;
+}
