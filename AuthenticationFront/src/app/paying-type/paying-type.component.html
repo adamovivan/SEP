@@ -7,10 +7,14 @@
               <form [formGroup]="SingIn" (ngSubmit)="onSubmit($event)" novalidate>
 
                   <div  class="form-group">
-                      <div *ngFor="let item of payments.payments">
+                      <div *ngFor="let item of payments">
                             <label><input type="radio" value="{{item}}" class="form-control" formControlName="payment" name="payment">
-                                {{item}}</label>
+                                {{item}} <p style="color: green; display: inline;">Active!</p></label>
                     </div>
+                      <div *ngFor="let item of paymentsNoneActive">
+                      <label><input disabled type="radio" value="{{item}}" class="form-control" formControlName="payment" name="payment">
+                          {{item}} <p style="color: red; display: inline;">Currently unavailable!</p></label>
+                      </div>
                   </div>
       
                   <div class="form-group">

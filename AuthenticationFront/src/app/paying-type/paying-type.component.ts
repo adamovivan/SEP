@@ -14,11 +14,14 @@ export class PayingTypeComponent implements OnInit {
   token:any;
   url:any;
   request:any;
-  payments:any;
+  payments:Array<any> = [];
+  paymentsNoneActive:Array<any> = [];
   SingIn:FormGroup;
   submitted = false;
   payment: any;
   port:any;
+  paymentsNew:any;
+  chosen:any
 
   constructor(
     private service:SellerService,
@@ -30,11 +33,36 @@ export class PayingTypeComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(
     params => {
         this.token = params.get('token');
-
-
-        this.service.getTypePayments(this.token).subscribe(
+        this.service.fetchNames().subscribe(
           data => {
-                  this.payments = data;
+            this.paymentsNew = data;
+            this.service.getTypePayments(this.token).subscribe(
+              data => {
+                this.chosen = data;
+                console.log("Odabrani od strane usera " + this.chosen.payments);
+                console.log("Svi u sistemu " + this.paymentsNew);
+                let p = false;
+                if(this.chosen.payments.length == 0){
+                  this.payments = this.chosen.payments;
+                }else{
+                  for (let prvi of this.chosen.payments) {
+                    for (let drugi of this.paymentsNew) {
+                        if(prvi == drugi){
+                          p = true;
+                          break;
+                        }
+                    }
+                    if(p){
+                      this.payments.push(prvi);
+                      console.log("BLA BLA")
+                    }else{
+                      this.paymentsNoneActive.push(prvi);
+                    }
+                    p = false
+                  }
+                }
+                
+            });
         });
     });
     this.SingIn = this.formBuilder.group({
