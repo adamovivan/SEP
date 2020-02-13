@@ -108,13 +108,13 @@ public class PaymentService {
         if(notify(transaction)){
             return new SimpleResponseDTO("Success.");
         }
-//        SimpleResponseDTO simpleResponseDTO = restTemplate.postForObject(transaction.getCallbackUrl(), completePaymentDTO, SimpleResponseDTO.class);
-//
-//        if(simpleResponseDTO != null && simpleResponseDTO.getSuccess()){
-//            transaction.setNotificationStatus(NotificationStatus.NOTIFIED);
-//            transactionRepository.save(transaction);
-//            return new SimpleResponseDTO("Success.");
-//        }
+        SimpleResponseDTO simpleResponseDTO = restTemplate.postForObject(transaction.getCallbackUrl(), completePaymentDTO, SimpleResponseDTO.class);
+
+        if(simpleResponseDTO != null && simpleResponseDTO.getSuccess()){
+            transaction.setNotificationStatus(NotificationStatus.NOTIFIED);
+            transactionRepository.save(transaction);
+            return new SimpleResponseDTO("Success.");
+        }
 
         return new SimpleResponseDTO(false,"Failed.");
     }

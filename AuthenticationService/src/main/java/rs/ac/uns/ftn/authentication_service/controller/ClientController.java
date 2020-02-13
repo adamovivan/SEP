@@ -45,6 +45,22 @@ public class ClientController {
 
 	@Autowired
 	private UtcService utcService;
+	
+//	@PostMapping("/auth-test")
+//    public Cao testPost(@RequestBody Cao cao){
+//    	System.out.println(cao.getCao());
+//        System.out.println("Inside post secured 1");
+//        cao.setCao(cao.getCao() + " dobar dan, kako te? Ovde authentication!!!");
+//        return cao;
+//    }
+//	
+//	@GetMapping(value = "/auth-test/{username}")
+//	public ResponseEntity<Cao> testGet(@PathVariable String username) {
+//		System.out.println(username);
+//		Cao cao = new Cao();
+//		cao.setCao("sta radis");
+//		return new ResponseEntity<Cao>(cao, HttpStatus.OK);
+//	}
 
 	@PostMapping("/registerClient")
 	public ResponseEntity<Client> saveKorisnik(@RequestBody Client client) throws Exception{
