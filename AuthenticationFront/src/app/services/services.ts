@@ -17,7 +17,7 @@ export class SellerService {
   }
 
   login(user:any){
-    return this.http.post(SERVER_URL + '/authentication-service/loginClient',user,);
+    return this.http.post<any>(SERVER_URL + '/authentication-service/loginClient',user,);
   }
 
   fetchNames(){

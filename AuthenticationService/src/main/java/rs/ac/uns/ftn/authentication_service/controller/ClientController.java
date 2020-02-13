@@ -6,6 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import rs.ac.uns.ftn.authentication_service.dto.JwtTokenDTO;
 import rs.ac.uns.ftn.authentication_service.model.Client;
 import rs.ac.uns.ftn.authentication_service.request.AgreementRequest;
 import rs.ac.uns.ftn.authentication_service.request.LoginRequest;
@@ -24,10 +30,8 @@ import rs.ac.uns.ftn.authentication_service.request.TransactionAgreementRequest;
 import rs.ac.uns.ftn.authentication_service.request.TransactionPlanRequest;
 import rs.ac.uns.ftn.authentication_service.request.TransactionRequest;
 import rs.ac.uns.ftn.authentication_service.response.*;
-import rs.ac.uns.ftn.authentication_service.service.LoginService;
-import rs.ac.uns.ftn.authentication_service.service.PaymentsService;
-import rs.ac.uns.ftn.authentication_service.service.RegistrationService;
-import rs.ac.uns.ftn.authentication_service.service.UtcService;
+import rs.ac.uns.ftn.authentication_service.security.TokenUtils;
+import rs.ac.uns.ftn.authentication_service.service.*;
 
 @RestController
 @CrossOrigin(origins = "", allowedHeaders = "", maxAge = 3600)
@@ -45,32 +49,37 @@ public class ClientController {
 
 	@Autowired
 	private UtcService utcService;
-	
-//	@PostMapping("/auth-test")
-//    public Cao testPost(@RequestBody Cao cao){
-//    	System.out.println(cao.getCao());
-//        System.out.println("Inside post secured 1");
-//        cao.setCao(cao.getCao() + " dobar dan, kako te? Ovde authentication!!!");
-//        return cao;
-//    }
-//	
-//	@GetMapping(value = "/auth-test/{username}")
-//	public ResponseEntity<Cao> testGet(@PathVariable String username) {
-//		System.out.println(username);
-//		Cao cao = new Cao();
-//		cao.setCao("sta radis");
-//		return new ResponseEntity<Cao>(cao, HttpStatus.OK);
-//	}
+
+	@Autowired
+	private UserDetailsServiceImpl userDetailsService;
+
+	@Autowired
+	private AuthenticationManager authenticationManager;
+
+	@Autowired
+	private TokenUtils tokenUtils;
 
 	@PostMapping("/registerClient")
 	public ResponseEntity<Client> saveKorisnik(@RequestBody Client client) throws Exception{
 		return new ResponseEntity<Client>(registrationService.save(client), HttpStatus.OK);
 	}
-	
-	@PostMapping("/loginClient")
-	public ResponseEntity<LoginResponse> loginKorisnik(@RequestBody LoginRequest loginRequest) throws Exception{
-		return new ResponseEntity<LoginResponse>(loginService.login(loginRequest), HttpStatus.OK);
+
+	@RequestMapping(value = "/loginClient", method = RequestMethod.POST)
+	public ResponseEntity<JwtTokenDTO> login(@RequestBody LoginRequest loginDTO) {
+		UsernamePasswordAuthenticationToken token =
+				new UsernamePasswordAuthenticationToken(loginDTO.getUsername(), loginDTO.getPassword());
+		Authentication authentication = authenticationManager.authenticate(token);
+		SecurityContextHolder.getContext().setAuthentication(authentication);
+
+		UserDetails details = userDetailsService.loadUserByUsername(loginDTO.getUsername());
+
+		return ResponseEntity.ok(new JwtTokenDTO(tokenUtils.generateToken(details)));
 	}
+
+//	@PostMapping("/loginClient")
+//	public ResponseEntity<LoginResponse> loginKorisnik(@RequestBody LoginRequest loginRequest) throws Exception{
+//		return new ResponseEntity<LoginResponse>(loginService.login(loginRequest), HttpStatus.OK);
+//	}
 	
 	//seller
 	@PostMapping(value = "/addPayments")

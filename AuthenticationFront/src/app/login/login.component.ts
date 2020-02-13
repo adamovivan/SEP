@@ -6,6 +6,7 @@ import { HomeComponent } from '../home/home.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { SellerService } from '../services/services';
 import { Shared } from '../services/token';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -26,7 +27,8 @@ export class LoginComponent implements OnInit {
     private formBuilder:FormBuilder,
     private router:Router,
     private token: Shared,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    private authService: AuthenticationService) { }
 
   ngOnInit() {
       this.SingIn = this.formBuilder.group({
@@ -42,16 +44,22 @@ export class LoginComponent implements OnInit {
     this.userInfo = this.SingIn.getRawValue();
     this.service.login(this.userInfo).subscribe(
       data => {
-        this.userInfo = data
-        if(this.userInfo.status != false){
-          this.router.navigateByUrl("");
-          this.token.username = this.userInfo.logedUsername;
-          this.token.role = this.userInfo.role;
-          localStorage.setItem('username',this.userInfo.logedUsername);
-          localStorage.setItem('role',this.userInfo.role);
-        }else{
-          this.inc = true;
+
+        this.authService.saveToken(data.accessToken);
+
+        const roles = this.authService.getRoles();
+  
+        if (roles.length > 0) {
+          this.authService.loginSubject.next(roles);
         }
+
+        console.log(this.authService.getDecodedToken());
+
+        this.router.navigateByUrl("");
+          this.token.username = this.authService.getDecodedToken().sub;
+          this.token.role = this.authService.getDecodedToken().roles[0].authority;
+          localStorage.setItem('username',this.token.username);
+          localStorage.setItem('role',this.token.role);
     },
     err => {
         this.inc = true;
