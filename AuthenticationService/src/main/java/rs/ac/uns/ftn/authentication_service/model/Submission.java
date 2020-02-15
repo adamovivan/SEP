@@ -1,8 +1,11 @@
 package rs.ac.uns.ftn.authentication_service.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
+@Data
 @Entity
 public class Submission implements Serializable {
 
@@ -51,6 +54,10 @@ public class Submission implements Serializable {
     @Column(length=100000)
     private byte[] certificate;
 
+    private String companySecretId;
+
+
+
     public Submission() {}
 
     public Submission(String email, String companyName, String organization, String location, String stateLocation,
@@ -65,109 +72,5 @@ public class Submission implements Serializable {
         this.phoneNumber = phoneNumber;
         this.password = password;
         this.state = state;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getCompanyName() {
-        return companyName;
-    }
-
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
-    }
-
-    public String getOrganization() {
-        return organization;
-    }
-
-    public void setOrganization(String organization) {
-        this.organization = organization;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public String getStateLocation() {
-        return stateLocation;
-    }
-
-    public void setStateLocation(String stateLocation) {
-        this.stateLocation = stateLocation;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getUsage() {
-        return usage;
-    }
-
-    public void setUsage(String usage) {
-        this.usage = usage;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public SubmissionState getState() {
-        return state;
-    }
-
-    public void setState(SubmissionState state) {
-        this.state = state;
-    }
-
-    public byte[] getCertificateSigningRequest() {
-        return certificateSigningRequest;
-    }
-
-    public void setCertificateSigningRequest(byte[] certificateSigningRequest) {
-        this.certificateSigningRequest = certificateSigningRequest;
-    }
-
-    public byte[] getCertificate() {
-        return certificate;
-    }
-
-    public void setCertificate(byte[] certificate) {
-        this.certificate = certificate;
     }
 }

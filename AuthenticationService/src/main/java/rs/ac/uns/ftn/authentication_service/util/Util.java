@@ -1,6 +1,7 @@
 package rs.ac.uns.ftn.authentication_service.util;
 
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
+import org.bouncycastle.asn1.pkcs.PrivateKeyInfo;
 import org.bouncycastle.asn1.x500.RDN;
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.asn1.x509.AlgorithmIdentifier;
@@ -16,6 +17,9 @@ import org.bouncycastle.openssl.jcajce.JcePEMDecryptorProviderBuilder;
 import org.bouncycastle.operator.*;
 import org.bouncycastle.operator.bc.BcRSAContentSignerBuilder;
 import org.bouncycastle.pkcs.PKCS10CertificationRequest;
+import org.bouncycastle.pkcs.PKCS8EncryptedPrivateKeyInfo;
+import org.bouncycastle.pkcs.PKCSException;
+import org.bouncycastle.pkcs.bc.BcPKCS12PBEInputDecryptorProviderBuilder;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.web.multipart.MultipartFile;
 import rs.ac.uns.ftn.authentication_service.exceptions.BadRequestException;
@@ -97,16 +101,17 @@ public class Util {
 
             Object object = keyReader.readObject();
 
-            PEMDecryptorProvider decProv = new JcePEMDecryptorProviderBuilder().build(pass);
             JcaPEMKeyConverter converter = new JcaPEMKeyConverter().setProvider("BC");
-            KeyPair kp = null;
-            if (object instanceof PEMEncryptedKeyPair) {
-                kp = converter.getKeyPair(((PEMEncryptedKeyPair) object).decryptKeyPair(decProv));
+            if (object instanceof PKCS8EncryptedPrivateKeyInfo) {
+                PrivateKeyInfo pkInfo = ((PKCS8EncryptedPrivateKeyInfo) object).decryptPrivateKeyInfo(new BcPKCS12PBEInputDecryptorProviderBuilder().build(pass));
+                return converter.getPrivateKey(pkInfo);
             }
 
-            return kp.getPrivate();
+            return null;
         } catch (IOException e) {
             throw new BadRequestException("Error while loading private key!");
+        } catch (PKCSException e) {
+            throw new BadRequestException("Error while decripting private key!");
         }
     }
 
@@ -177,9 +182,8 @@ public class Util {
 
     public static String createMessage(String generatedCert, String caCert, String id) {
 
-        return "RootCA:" + "\n\n" +
-            caCert + "\n\n" +
-               "Your certificate:" + "\n\n" +
+        return "Certificate chain:" + "\n\n" +
+            caCert +
             generatedCert + "\n\n" +
                "Id:" + "\n\n" +
             id;

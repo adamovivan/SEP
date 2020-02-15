@@ -27,22 +27,13 @@ import java.util.List;
 @RestController
 public class RegistrationController {
 
+    @Autowired
     private SubmissionConverter submissionConverter;
 
-    private MerchantConverter merchantConverter;
-
-    private RegistrationService registrationService;
-
     @Autowired
-    public RegistrationController(
-            SubmissionConverter submissionConverter,
-            MerchantConverter merchantConverter,
-            RegistrationService registrationService
-    ) {
-        this.submissionConverter = submissionConverter;
-        this.merchantConverter = merchantConverter;
-        this.registrationService = registrationService;
-    }
+    private MerchantConverter merchantConverter;
+    @Autowired
+    private RegistrationService registrationService;
 
     @PostMapping(
             value = "/registerCompany",
@@ -58,7 +49,7 @@ public class RegistrationController {
 
         this.registrationService.submit(this.submissionConverter.convert(submissionDTO), file);
 
-        return new ResponseEntity<>("Successful submission. Track your email for further details!", HttpStatus.OK);
+        return new ResponseEntity<>("Successful submission.", HttpStatus.OK);
     }
 
     @GetMapping(
@@ -87,7 +78,7 @@ public class RegistrationController {
 
         this.registrationService.acceptSubmission(companyName);
 
-        return new ResponseEntity<>("User is successfuly registered in our KP!", HttpStatus.OK);
+        return new ResponseEntity<>("Registration accepted!", HttpStatus.OK);
     }
 
     @PostMapping(
@@ -110,24 +101,24 @@ public class RegistrationController {
             produces = MediaType.TEXT_PLAIN_VALUE
     )
     public ResponseEntity registerMerchant(@RequestBody MerchantDTO mdto) {
-        // TODO this.registrationService.registerMerchant(this.merchantConverter.convert(mdto), authentication.getName());
+        this.registrationService.registerMerchant(this.merchantConverter.convert(mdto), mdto.getCompanySecretId());
         return new ResponseEntity<>("Successful merchant registration", HttpStatus.OK);
     }
 
-    @GetMapping(
-            value = "/getMerchants",
-            produces = MediaType.APPLICATION_JSON_VALUE
-    )
-    public ResponseEntity getMerchants() {
-        String username = ((User)SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
-        List<Client> users = this.registrationService.getMerchants(username);
-
-        List<MerchantDTO> merchants = new ArrayList<>();
-        for (Client u : users) {
-            merchants.add(this.merchantConverter.convert(u));
-        }
-
-        return new ResponseEntity<>(merchants, HttpStatus.OK);
-    }
+//    @GetMapping(
+//            value = "/getMerchants",
+//            produces = MediaType.APPLICATION_JSON_VALUE
+//    )
+//    public ResponseEntity getMerchants() {
+//        String username = ((User)SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+//        List<Client> users = this.registrationService.getMerchants(username);
+//
+//        List<MerchantDTO> merchants = new ArrayList<>();
+//        for (Client u : users) {
+//            merchants.add(this.merchantConverter.convert(u));
+//        }
+//
+//        return new ResponseEntity<>(merchants, HttpStatus.OK);
+//    }
 
 }

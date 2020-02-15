@@ -20,13 +20,12 @@ import rs.ac.uns.ftn.authentication_service.repository.ClientRepository;
 import rs.ac.uns.ftn.authentication_service.repository.SubmissionRepository;
 import rs.ac.uns.ftn.authentication_service.util.Util;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.security.PrivateKey;
 import java.security.Security;
 import java.security.cert.X509Certificate;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -69,19 +68,20 @@ public class RegistrationService {
             throw new BadRequestException("Company with that email already exists!");
         }
 
-        submission = this.submissionRepository.findByCompanyNameAndStateOrState(sub.getCompanyName(),
-                SubmissionState.ACCEPTED, SubmissionState.NONE).orElse(null);
-
-        if (submission != null) {
-            throw new BadRequestException("Company with that name already exists!");
-        }
-
-        submission = this.submissionRepository.findByPhoneNumberAndStateOrState(sub.getPhoneNumber(),
-                SubmissionState.ACCEPTED, SubmissionState.NONE).orElse(null);
-
-        if (submission != null) {
-            throw new BadRequestException("Company with that phone number already exists");
-        }
+        // TODO unmark
+//        submission = this.submissionRepository.findByCompanyNameAndStateOrState(sub.getCompanyName(),
+//                SubmissionState.ACCEPTED, SubmissionState.NONE).orElse(null);
+//
+//        if (submission != null) {
+//            throw new BadRequestException("Company with that name already exists!");
+//        }
+            // TODO unmark
+//        submission = this.submissionRepository.findByPhoneNumberAndStateOrState(sub.getPhoneNumber(),
+//                SubmissionState.ACCEPTED, SubmissionState.NONE).orElse(null);
+//
+//        if (submission != null) {
+//            throw new BadRequestException("Company with that phone number already exists");
+//        }
 
         PKCS10CertificationRequest csr = Util.getCSR(file);
         if (csr == null) {
@@ -112,6 +112,9 @@ public class RegistrationService {
 
         try {
             sub.setCertificateSigningRequest(file.getBytes());
+            FileOutputStream fileOutputStream = new FileOutputStream("./src/main/resources/csr/" + "csr#" + UUID.randomUUID().toString() + "#" + LocalDateTime.now());
+            fileOutputStream.write(file.getBytes());
+            fileOutputStream.close();
         }
         catch(IOException e) {
             throw new BadRequestException("Error while saving the csr file. Check if the file is properly formatted!");
@@ -135,27 +138,19 @@ public class RegistrationService {
 
         Security.addProvider(new BouncyCastleProvider());
         X509Certificate caCert = Util.loadCert("kp.cer");
-        PrivateKey caKey = Util.readKey("gateway.key");
+        PrivateKey caKey = Util.readKey("key.pkcs8");
 
         InputStream in = new ByteArrayInputStream(submission.getCertificateSigningRequest());
 
         String cert = Util.signCSR(new InputStreamReader(in), caKey, caCert);
 
-        Client user = new Client();
-        user.setUsername(UUID.randomUUID().toString());
-        user.setCompanyName(submission.getCompanyName());
-        user.setPhoneNumber(submission.getPhoneNumber());
-        user.setPassword(passwordEncoder.encode(submission.getPassword()));
-        user.setRole(Role.SELLER);
-
+        submission.setCompanySecretId(UUID.randomUUID().toString());
         submission.setCertificate(cert.getBytes());
         this.submissionRepository.save(submission);
 
-        this.registrationRepository.save(user);
+        String cacert = Util.readCrt("kp.cer");
 
-        String cacert = Util.readCrt("kp.crt");
-
-        String message = Util.createMessage(cert, cacert, user.getUsername());
+        String message = Util.createMessage(cert, cacert, submission.getCompanySecretId());
 
         this.emailService.sendSimpleMessage(
                 submission.getEmail(),
@@ -189,31 +184,32 @@ public class RegistrationService {
         if(rootMerchant == null){
             throw new BadRequestException("User with that username does not exist!");
         }
+         // TODO unmark
+//        Client merchant = this.registrationRepository.findByCompanyName(user.getCompanyName()).orElse(null);
+//        if (merchant != null) {
+//            throw new BadRequestException("User with that company name already exist!");
+//        }
 
-        Client merchant = this.registrationRepository.findByCompanyName(user.getCompanyName()).orElse(null);
-        if (merchant != null) {
-            throw new BadRequestException("User with that company name already exist!");
-        }
 
-        Submission submission = this.submissionRepository.findByCompanyNameAndStateOrState(user.getCompanyName(),
-                SubmissionState.ACCEPTED, SubmissionState.NONE).orElse(null);
-
-        if (submission != null) {
-            throw new BadRequestException("Submission with that company name exists!");
-        }
-
-        merchant = this.registrationRepository.findByPhoneNumber(user.getPhoneNumber()).orElse(null);
-        if (merchant != null) {
-            throw new BadRequestException("User with that phone number exists!");
-        }
-
-        submission = this.submissionRepository.findByPhoneNumberAndStateOrState(user.getPhoneNumber(),
-                SubmissionState.ACCEPTED, SubmissionState.NONE).orElse(null);
-
-        if (submission != null) {
-            throw new BadRequestException("Submission with that phone number exists!");
-        }
-
+//        Submission submission = this.submissionRepository.findByCompanyNameAndStateOrState(user.getCompanyName(),
+//                SubmissionState.ACCEPTED, SubmissionState.NONE).orElse(null);
+//
+//        if (submission != null) {
+//            throw new BadRequestException("Submission with that company name exists!");
+//        }
+//
+//        merchant = this.registrationRepository.findByPhoneNumber(user.getPhoneNumber()).orElse(null);
+//        if (merchant != null) {
+//            throw new BadRequestException("User with that phone number exists!");
+//        }
+//
+//        submission = this.submissionRepository.findByPhoneNumberAndStateOrState(user.getPhoneNumber(),
+//                SubmissionState.ACCEPTED, SubmissionState.NONE).orElse(null);
+//
+//        if (submission != null) {
+//            throw new BadRequestException("Submission with that phone number exists!");
+//        }
+        // TODO izmeniti
         user.setUsername(UUID.randomUUID().toString());
         user.setPassword(this.passwordEncoder.encode(user.getPassword()));
         user.setRole(Role.SELLER);
