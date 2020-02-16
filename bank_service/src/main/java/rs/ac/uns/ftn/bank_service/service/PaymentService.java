@@ -1,18 +1,13 @@
 package rs.ac.uns.ftn.bank_service.service;
 
-
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
-import rs.ac.uns.ftn.bank_service.config.UnfinishedTransactionCheckerConfig;
 import rs.ac.uns.ftn.bank_service.dto.*;
 import rs.ac.uns.ftn.bank_service.exception.NotFoundException;
 import rs.ac.uns.ftn.bank_service.model.Merchant;
@@ -21,6 +16,7 @@ import rs.ac.uns.ftn.bank_service.model.Transaction;
 import rs.ac.uns.ftn.bank_service.model.TransactionStatus;
 import rs.ac.uns.ftn.bank_service.repository.MerchantRepository;
 import rs.ac.uns.ftn.bank_service.repository.TransactionRepository;
+import rs.ac.uns.ftn.bank_service.util.EncryptDecrypt;
 
 @Service
 public class PaymentService {
@@ -67,8 +63,8 @@ public class PaymentService {
 
         Transaction transaction = new Transaction();
         transaction.setTransactionId(UUID.randomUUID().toString());
-        transaction.setMerchantId(merchant.getMerchantId());
-        transaction.setMerchantPassword(merchant.getMerchantPassword());
+        transaction.setMerchantId(EncryptDecrypt.decrypt(merchant.getMerchantId()));
+        transaction.setMerchantPassword(EncryptDecrypt.decrypt(merchant.getMerchantPassword()));
         transaction.setAmount(cardPaymentRequestDTO.getTotalPrice());
         transaction.setMerchantOrderId(cardPaymentRequestDTO.getOrderId());
         transaction.setMerchantTimestamp(LocalDateTime.now());
@@ -134,8 +130,8 @@ public class PaymentService {
     public SimpleResponseDTO paymentRegistration(PaymentRegistrationDTO paymentRegistrationDTO) {
     	Merchant merchant = new Merchant();
     	merchant.setUsername(paymentRegistrationDTO.getUsername());
-    	merchant.setMerchantId(paymentRegistrationDTO.getMerchantId());
-    	merchant.setMerchantPassword(paymentRegistrationDTO.getMerchantPassword());
+    	merchant.setMerchantId(EncryptDecrypt.encrypt(paymentRegistrationDTO.getMerchantId()));
+    	merchant.setMerchantPassword(EncryptDecrypt.encrypt(paymentRegistrationDTO.getMerchantPassword()));
     	merchantRepository.save(merchant);
     	return new SimpleResponseDTO("Success.");
     }
