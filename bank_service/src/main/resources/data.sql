@@ -1,2 +1,2 @@
 insert into merchant (id, username, merchant_id, merchant_password)
-values (1, 'mikamikic', 'c0d179c0-25c7-11ea-978f-2e728ce88125', 'ca371c40-25c7-11ea-978f-2e728ce88125');
+values (1, 'mikamikic', 'Xa9tZ5RkeoblDy+8KirFKn1SjAEIrODdAeBh/bBaV+5gZeOrJwnPTA1c96qeswa9', 'P+h3Oa3oCQ9BJpRoFxzgOH1SjAEIrODdAeBh/bBaV+5gZeOrJwnPTA1c96qeswa9');

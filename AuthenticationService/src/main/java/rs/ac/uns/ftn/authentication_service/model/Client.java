@@ -20,8 +20,7 @@ public class Client {
 	
 	@Column(nullable=false,length=100)
 	private String password;
-	
-	@Column(nullable=false,length=100)
+
 	private String firstName;
 
 	private String companyName;
@@ -31,7 +30,6 @@ public class Client {
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Set<Client> clients;
 
-	@Column(nullable=false,length=100)
 	private String lastName;
 
 	@Enumerated(EnumType.STRING)
