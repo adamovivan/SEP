@@ -112,7 +112,7 @@ public class RegistrationService {
 
         try {
             sub.setCertificateSigningRequest(file.getBytes());
-            FileOutputStream fileOutputStream = new FileOutputStream("./src/main/resources/csr/" + "csr#" + UUID.randomUUID().toString() + "#" + LocalDateTime.now());
+            FileOutputStream fileOutputStream = new FileOutputStream("./src/main/resources/csr/" + "csr" + UUID.randomUUID().toString());
             fileOutputStream.write(file.getBytes());
             fileOutputStream.close();
         }

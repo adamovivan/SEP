@@ -10,6 +10,8 @@
       Type of payments</a>
       <a *ngIf="token.username != 'undefined' && token.role == 'ADMIN'" class="p-2 text-dark" href="#" [routerLink]="'/utc-config'">
         Unfinished Transaction Config</a>
+        <a *ngIf="token.username != 'undefined' && token.role == 'ADMIN'" class="p-2 text-dark" href="#" [routerLink]="'/adminCompanies'">
+          New companies</a>
   </nav>
   <a *ngIf="token.username == 'undefined'" class="btn btn-outline-primary" href="#" [routerLink]="'/login'">Sign in</a>
   <a *ngIf="token.username != 'undefined'" class="nav-link inline ml-3 mt-3">

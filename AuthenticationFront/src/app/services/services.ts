@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SERVER_URL } from '../app.constant';
+import { SERVER_URL, SERVER_URL_AUTH } from '../app.constant';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -74,5 +74,21 @@ export class SellerService {
 
   Subscription(item:any){
       return this.http.post(SERVER_URL + '/authentication-service/getAgreementLink',item);
+  }
+
+  registerCompany(company:any){
+    return this.http.post(SERVER_URL_AUTH + '/registerCompany',company);
+  }
+
+  getCompanies(): Observable<any> {
+    return this.http.get(SERVER_URL + '/authentication-service/getSubmissions/NONE');
+  }
+
+  acceptCompany(companyName:any){
+    return this.http.post(SERVER_URL + '/authentication-service/acceptCompany/'+companyName,"Odobreno");
+  }
+
+  declineCompany(companyName:any){
+    return this.http.post(SERVER_URL + '/authentication-service/declineCompany/'+companyName,"Nije odobreno");
   }
 }

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,6 +40,13 @@ public class ForwardController {
 	    ResponseEntity<Object> responseEntity = restTemplate.exchange("https://zuul-gateway"  + request.getRequestURI(), method, new HttpEntity<>(body, headers), Object.class);
 	    return ResponseEntity.ok(responseEntity.getBody());
 	}
+	
+//	@PostMapping(value = "multipleData/**")
+//	public ResponseEntity<Object> postForwardMultiple(@RequestAttribute Object body, @RequestHeader MultiValueMap<String, String> headers, HttpMethod method, HttpServletRequest request) throws URISyntaxException
+//	{
+//	    //ResponseEntity<Object> responseEntity = restTemplate.exchange("https://zuul-gateway"  + request.getRequestURI(), method, new HttpEntity<>(body, headers), Object.class);
+//	    return /*ResponseEntity.ok(responseEntity.getBody())*/null;
+//	}
 	
 	@PutMapping("/**")
 	public ResponseEntity<?> putForward(@RequestBody String body, @RequestHeader MultiValueMap<String, String> headers, HttpMethod method, HttpServletRequest request) throws URISyntaxException

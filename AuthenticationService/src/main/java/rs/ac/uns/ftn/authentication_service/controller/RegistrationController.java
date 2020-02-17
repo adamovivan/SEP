@@ -14,6 +14,7 @@ import rs.ac.uns.ftn.authentication_service.converter.MerchantConverter;
 import rs.ac.uns.ftn.authentication_service.converter.SubmissionConverter;
 import rs.ac.uns.ftn.authentication_service.dto.MerchantDTO;
 import rs.ac.uns.ftn.authentication_service.dto.SubmissionDTO;
+import rs.ac.uns.ftn.authentication_service.dto.SubmissionManipulationDTO;
 import rs.ac.uns.ftn.authentication_service.exceptions.BadRequestException;
 import rs.ac.uns.ftn.authentication_service.model.Client;
 import rs.ac.uns.ftn.authentication_service.model.Submission;
@@ -37,11 +38,14 @@ public class RegistrationController {
 
     @PostMapping(
             value = "/registerCompany",
-            produces = MediaType.TEXT_PLAIN_VALUE
+            produces = MediaType.TEXT_PLAIN_VALUE,
+            consumes = "multipart/form-data"
     )
     public ResponseEntity register(@RequestPart("informations") @Validated SubmissionDTO submissionDTO,
                                    @RequestPart("file") @NotNull MultipartFile file,
                                    BindingResult bindingResult) {
+    	System.out.println("evo usao sam");
+    	System.out.println(submissionDTO.getCompanyName() + "<<<<<");
 
         if(bindingResult.hasErrors()) {
             throw new BadRequestException(bindingResult.getFieldError().getDefaultMessage());
@@ -70,29 +74,27 @@ public class RegistrationController {
     }
 
     @PostMapping(
-            value = "/acceptCompany/{companyName}",
-            produces = MediaType.TEXT_PLAIN_VALUE
+            value = "/acceptCompany/{companyName}"
+            
     )
     //Authentication objekat iskljucivo posle za logovanje
-    public ResponseEntity acceptCompany(@PathVariable("companyName") String companyName) {
+    public ResponseEntity<SubmissionManipulationDTO> acceptCompany(@PathVariable("companyName") String companyName) {
 
         this.registrationService.acceptSubmission(companyName);
 
-        return new ResponseEntity<>("Registration accepted!", HttpStatus.OK);
+        return new ResponseEntity<SubmissionManipulationDTO>(new SubmissionManipulationDTO("Registration accepted!"), HttpStatus.OK);
     }
 
     @PostMapping(
-            value = "/declineCompany/{companyName}",
-            consumes = MediaType.TEXT_PLAIN_VALUE,
-            produces = MediaType.TEXT_PLAIN_VALUE
+            value = "/declineCompany/{companyName}"
     )
     //Authentication objekat iskljucivo posle za logovanje
-    public ResponseEntity rejectCompany(@PathVariable("companyName") String companyName,
+    public ResponseEntity<SubmissionManipulationDTO> rejectCompany(@PathVariable("companyName") String companyName,
                                            @RequestBody String message) {
 
         this.registrationService.declineSubmission(message, companyName);
 
-        return new ResponseEntity<>("Company " + companyName + " is rejected!", HttpStatus.OK);
+        return new ResponseEntity<SubmissionManipulationDTO>(new SubmissionManipulationDTO("Company " + companyName + " is rejected!"), HttpStatus.OK);
     }
 
     @PostMapping(

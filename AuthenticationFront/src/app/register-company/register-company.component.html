@@ -1,0 +1,166 @@
+<body class="text-center">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-6">
+            <h1 class="h3 mb-3 font-weight-normal mt-3">Registration of company</h1>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4">
+                        <label>Upload pdf</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="file" class="form-control-file" (change)="fileChange($event)" accept=".csr">
+                        <input type="hidden" [(ngModel)]="file" name="file" required>
+                        
+                    </div>
+                </div>
+            </div>
+            <form class="mt-4" [formGroup]="SingIn" (ngSubmit)="onSubmit($event)" novalidate>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Email</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+
+                            <div *ngIf="submitted && f.email.errors">
+                                <div style="color:red;">Email is incorect!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Company name</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" formControlName="companyName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.companyName.errors }" />
+
+                            <div *ngIf="submitted && f.companyName.errors">
+                                <div style="color:red;">Comapny name is incorect!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Organization</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" formControlName="organization" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.organization.errors }" />
+
+                            <div *ngIf="submitted && f.organization.errors">
+                                <div style="color:red;">Organization is incorect!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Location</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" formControlName="location" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.location.errors }" />
+
+                            <div *ngIf="submitted && f.location.errors">
+                                <div style="color:red;">Location is incorect!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-4">
+                            <label>State location</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" formControlName="stateLocation" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.stateLocation.errors }" />
+
+                            <div *ngIf="submitted && f.stateLocation.errors">
+                                <div style="color:red;">State location is incorect!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Country</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" formControlName="country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.country.errors }" />
+
+                            <div *ngIf="submitted && f.country.errors">
+                                <div style="color:red;">Country is incorect!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Usage</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" formControlName="usage" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.usage.errors }" />
+
+                            <div *ngIf="submitted && f.usage.errors">
+                                <div style="color:red;">Usage is incorect!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Phone number</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" formControlName="phoneNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" />
+
+                            <div *ngIf="submitted && f.phoneNumber.errors">
+                                <div style="color:red;">Phone number is incorect!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Password</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+
+                            <div *ngIf="submitted && f.password.errors">
+                                <div style="color:red;">Password is incorect!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-6">
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">
+                                Register
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+</body>

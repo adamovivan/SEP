@@ -8,6 +8,8 @@ import { PayingTypeComponent } from './paying-type/paying-type.component';
 import { SubscriptionPlansComponent } from './subscription-plans/subscription-plans.component';
 import { UtcConfigComponent } from './utc-config/utc-config.component';
 import { SubscriptionAgreementComponent } from './subscription-agreement/subscription-agreement.component';
+import { RegisterCompanyComponent } from './register-company/register-company.component';
+import { AdminCompaniesComponent } from './admin-companies/admin-companies.component';
 
 
 const routes: Routes = [
@@ -24,6 +26,10 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
+    path: 'registerCompany',
+    component: RegisterCompanyComponent
+  },
+  {
     path: 'typePayments',
     component: TypePaymentsComponent
   },
@@ -38,6 +44,10 @@ const routes: Routes = [
   {
     path: 'utc-config',
     component: UtcConfigComponent
+  },
+  {
+    path: 'adminCompanies',
+    component: AdminCompaniesComponent
   },
   {
     path: 'subscription-agreement/:token',

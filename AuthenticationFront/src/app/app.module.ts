@@ -17,6 +17,8 @@ import { UtcConfigComponent } from './utc-config/utc-config.component';
 import { SubscriptionAgreementComponent } from './subscription-agreement/subscription-agreement.component';
 import { AuthTokenInterceptor } from './interceptors/auth-token.interceptor';
 import { AuthenticationService } from './services/authentication.service';
+import { RegisterCompanyComponent } from './register-company/register-company.component';
+import { AdminCompaniesComponent } from './admin-companies/admin-companies.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { AuthenticationService } from './services/authentication.service';
     SubscriptionPlansComponent,
     UtcConfigComponent,
     SubscriptionPlansComponent,
-    SubscriptionAgreementComponent
+    SubscriptionAgreementComponent,
+    RegisterCompanyComponent,
+    AdminCompaniesComponent
   ],
   imports: [
     BrowserModule,
