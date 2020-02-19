@@ -2,11 +2,15 @@ package rs.ac.uns.ftn.authentication_service.model;
 
 import javax.persistence.*;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Set;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Client {
 
@@ -14,6 +18,9 @@ public class Client {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
 	private Long id;
+	
+	@Column
+	private String companyID;
 
 	@Column(nullable=false,length=100, unique = true)
 	private String username;
@@ -40,8 +47,6 @@ public class Client {
 	
 	@Column(length=100)
 	private String email;
-
-	public Client(){}
 
 	public Client(String username, String companyName, String phoneNumber, String password) {
 		this.username = username;

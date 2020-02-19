@@ -1,3 +1,3 @@
-insert into client (id, role, username, password, first_Name, last_Name, address, email) values (1, 'SELLER', 'mikamikic','$2a$10$kx6ymttdiBQ/3NAz1ssxoeOF8Vwm3LSKFnEkSADPc5x8kgaj/vKnC','Mika','Mikic','Veljka Vlahovica 38','mikamikic@gmail.com');
-insert into client (id, role, username, password, first_Name, last_Name, address, email) values (2, 'ADMIN', 'admin','$2a$10$kx6ymttdiBQ/3NAz1ssxoeOF8Vwm3LSKFnEkSADPc5x8kgaj/vKnC','Admin','Admin','Veljka Vlahovica 39','adminadmin@gmail.com');
+insert into client (id, role, username, password, first_Name, last_Name, address, email) values (1, 'SELLER', 'mikamikic','K8irssg5gxDSU1PMgg+WrDkQXWapTvmj9jzmWjbbXC8=$ryP9DKuCcQ5/eavSlbPwdjigSgLEFkMCR+Aov7yuvIM=','Mika','Mikic','Veljka Vlahovica 38','mikamikic@gmail.com');
+insert into client (id, role, username, password, first_Name, last_Name, address, email) values (2, 'ADMIN', 'admin','K8irssg5gxDSU1PMgg+WrDkQXWapTvmj9jzmWjbbXC8=$ryP9DKuCcQ5/eavSlbPwdjigSgLEFkMCR+Aov7yuvIM=','Admin','Admin','Veljka Vlahovica 39','adminadmin@gmail.com');
 insert into payments (id, payments, username) values (1, 'Paypal,Bitcoin,Bank', 'mikamikic');

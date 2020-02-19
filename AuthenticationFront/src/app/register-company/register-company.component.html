@@ -2,11 +2,11 @@
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-6">
-            <h1 class="h3 mb-3 font-weight-normal mt-3">Registration of company</h1>
+            <h1 class="h3 mb-3 font-weight-normal mt-3">Company Registration</h1>
             <div class="form-group">
                 <div class="row">
                     <div class="col-4">
-                        <label>Upload pdf</label>
+                        <label>Upload CSR</label>
                     </div>
                     <div class="col-8">
                         <input type="file" class="form-control-file" (change)="fileChange($event)" accept=".csr">
@@ -19,13 +19,27 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-4">
-                            <label>Email</label>
+                            <label>Company Email</label>
                         </div>
                         <div class="col-8">
                             <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
 
                             <div *ngIf="submitted && f.email.errors">
                                 <div style="color:red;">Email is incorect!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Common name</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" formControlName="commonName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.commonName.errors }" />
+
+                            <div *ngIf="submitted && f.commonName.errors">
+                                <div style="color:red;">Common name is incorect!</div>
                             </div>
                         </div>
                     </div>
@@ -100,7 +114,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <div class="row">
                         <div class="col-4">
                             <label>Usage</label>
@@ -113,7 +127,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="form-group">
                     <div class="row">
                         <div class="col-4">
@@ -129,7 +143,7 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <div class="row">
                         <div class="col-4">
                             <label>Password</label>
@@ -142,7 +156,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 
                 
 

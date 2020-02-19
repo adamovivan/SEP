@@ -19,6 +19,9 @@ public class SubmissionDTO {
     //@NotNull(message = "Company name can't be null!")
     @Size(min = 1, message = "Company name can't be null")
     private String companyName;
+    
+    @Size(min = 1, message = "Common name can't be null")
+    private String commonName;
 
    // @NotNull(message = "Organization can't be null!")
     @Size(min = 1, message = "Organization can't be null")
@@ -35,7 +38,7 @@ public class SubmissionDTO {
     private String country;
 
    // @NotNull(message = "Usage can't be null!")
-    @Size(min = 1, message = "Usage can't be null")
+   // @Size(min = 1, message = "Usage can't be null")
     private String usage;
 
 

@@ -3,6 +3,7 @@ import { Shared } from '../services/token';
 import { SERVER_URL } from '../app.constant';
 import { SellerService } from '../services/services';
 import { AnonymousSubject } from 'rxjs/internal/Subject';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +12,7 @@ import { AnonymousSubject } from 'rxjs/internal/Subject';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private token: Shared) { }
+  constructor(private token: Shared, private authService: AuthenticationService) { }
 
   ngOnInit() {
     this.token.username = localStorage.getItem('username');
@@ -23,5 +24,6 @@ export class NavbarComponent implements OnInit {
     localStorage.setItem('role', 'undefined'); 
     this.token.username = 'undefined';
     this.token.role = undefined;
+    this.authService.logout();
   }
 }

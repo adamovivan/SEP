@@ -24,6 +24,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
       this.SingIn = this.formBuilder.group({
+        companyID:['',Validators.compose([Validators.required, Validators.pattern('[a-zA-Z 0-9!]+')])],
         username:['',Validators.compose([Validators.required, Validators.pattern('[a-zA-Z 0-9!]+')])],
         password:['',Validators.compose([Validators.required, Validators.pattern('[a-zA-Z 0-9!]+')])],
         firstName:['',Validators.compose([Validators.required, Validators.pattern('[a-zA-Z 0-9!]+')])],
@@ -41,6 +42,9 @@ export class RegisterComponent implements OnInit {
     this.service.register(this.user).subscribe(
       data => {
         this.router.navigateByUrl("login");
+    },
+    err => {
+      
     });
   }
 

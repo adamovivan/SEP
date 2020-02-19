@@ -5,10 +5,11 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 
 import org.apache.tomcat.util.codec.binary.Base64;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.security.SecureRandom;
 
-public class Password {
+public class Password implements PasswordEncoder {
     // The higher the number of iterations the more 
     // expensive computing the hash is for us and
     // also for an attacker.
@@ -47,4 +48,28 @@ public class Password {
             password.toCharArray(), salt, iterations, desiredKeyLen));
         return Base64.encodeBase64String(key.getEncoded());
     }
+
+	@Override
+	public String encode(CharSequence rawPassword) {
+		// TODO Auto-generated method stub
+		try {
+			return this.getSaltedHash(rawPassword.toString());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public boolean matches(CharSequence rawPassword, String encodedPassword) {
+		// TODO Auto-generated method stub
+		try {
+			return check(rawPassword.toString(), encodedPassword);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
 }

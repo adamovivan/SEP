@@ -26,6 +26,7 @@ export class RegisterCompanyComponent implements OnInit {
   ngOnInit() {
       this.SingIn = this.formBuilder.group({
         email:['',Validators.compose([Validators.required, Validators.email])],
+        commonName:['',Validators.compose([Validators.required, Validators.pattern('[a-zA-Z 0-9!]+')])],
         companyName:['',Validators.compose([Validators.required, Validators.pattern('[a-zA-Z 0-9!]+')])],
         organization:['',Validators.compose([Validators.required, Validators.pattern('[a-zA-Z 0-9!]+')])],
         location:['',Validators.compose([Validators.required, Validators.pattern('[a-zA-Z 0-9!]+')])],
@@ -44,11 +45,18 @@ export class RegisterCompanyComponent implements OnInit {
     this.submitted = true;
     this.company = this.SingIn.getRawValue();
     let formData = new FormData();
+    console.log(this.company)
     formData.append('file', this.file);
     formData.append('informations', new Blob([JSON.stringify(this.company)], {type: 'application/json'}));
     this.service.registerCompany(formData).subscribe(
       data => {
         this.router.navigateByUrl("");
+    },
+    err => {
+      if(err.status === 200){
+        this.router.navigateByUrl("");
+      }
+      
     });
   }
 

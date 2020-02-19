@@ -17,6 +17,8 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
+import rs.ac.uns.ftn.authentication_service.config.Password;
+
 import java.util.Collections;
 
 @Configuration
@@ -30,9 +32,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		authenticationManagerBuilder.userDetailsService(this.userDetailsService).passwordEncoder(passwordEncoder());
 	}
 
+//	@Bean
+//	public PasswordEncoder passwordEncoder() {
+//		return new BCryptPasswordEncoder();
+//	}
+	
 	@Bean
 	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
+		return new Password();
 	}
 
 	@Bean

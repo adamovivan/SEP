@@ -4,6 +4,8 @@ package rs.ac.uns.ftn.authentication_service.repository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
+import rs.ac.uns.ftn.authentication_service.model.Client;
 import rs.ac.uns.ftn.authentication_service.model.Submission;
 import rs.ac.uns.ftn.authentication_service.model.SubmissionState;
 
@@ -12,6 +14,8 @@ import java.util.Optional;
 
 @Repository
 public interface SubmissionRepository extends CrudRepository<Submission, Long> {
+	
+	Optional<Submission> findByCompanySecretId(String id);
 
     Optional<Submission> findByCompanyNameAndState(String companyName, SubmissionState state);
 

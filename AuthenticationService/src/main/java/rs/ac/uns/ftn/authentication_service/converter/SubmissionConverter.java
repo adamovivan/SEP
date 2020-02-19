@@ -11,6 +11,7 @@ public class SubmissionConverter {
     public Submission convert(SubmissionDTO submission) {
 
         return new Submission(
+        		submission.getCommonName(),
                 submission.getEmail(),
                 submission.getCompanyName(),
                 submission.getOrganization(),
@@ -29,6 +30,7 @@ public class SubmissionConverter {
                 submission.getId(),
                 submission.getEmail(),
                 submission.getCompanyName(),
+                submission.getCommonName(),
                 submission.getOrganization(),
                 submission.getLocation(),
                 submission.getStateLocation(),

@@ -14,11 +14,14 @@ public class Submission implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    @Column(nullable = false)
+    private String commonName;
 
     @Column(nullable = false)
     private String email;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique=true)
     private String companyName;
 
     @Column(nullable = false)
@@ -39,7 +42,7 @@ public class Submission implements Serializable {
    // @Column(nullable = false)
     private String phoneNumber;
 
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private String password;
 
     @Column(nullable = false)
@@ -60,9 +63,10 @@ public class Submission implements Serializable {
 
     public Submission() {}
 
-    public Submission(String email, String companyName, String organization, String location, String stateLocation,
+    public Submission(String commonName, String email, String companyName, String organization, String location, String stateLocation,
                       String country, String usage, String phoneNumber, String password, SubmissionState state) {
-        this.email = email;
+        this.commonName = commonName;
+    	this.email = email;
         this.companyName = companyName;
         this.organization = organization;
         this.location = location;

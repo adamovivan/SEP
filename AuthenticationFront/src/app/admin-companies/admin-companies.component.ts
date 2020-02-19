@@ -22,11 +22,13 @@ export class AdminCompaniesComponent implements OnInit {
   ngOnInit() {
     this.service.getCompanies().subscribe(
       data => {
+        console.log(data)
             this.companies = data;
     });
   }
 
   approve(companuName:String){
+    console.log(companuName);
     this.service.acceptCompany(companuName).subscribe(
       data => {
         window.location.href = "https://localhost:4200/adminCompanies";

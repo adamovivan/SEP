@@ -3,7 +3,7 @@ insert into user (id, first_name, last_name, username, email, password)
 values (1, 'Pera', 'Peric', 'peraperic', 'peraperic@gmail.com', '$2a$10$kx6ymttdiBQ/3NAz1ssxoeOF8Vwm3LSKFnEkSADPc5x8kgaj/vKnC'); -- 12345
 
 insert into user (id, first_name, last_name, username, email, password)
-values (2, 'Mika', 'Mikic', 'mikamikic', 'mikamikic@gmail.com', '$2a$10$kx6ymttdiBQ/3NAz1ssxoeOF8Vwm3LSKFnEkSADPc5x8kgaj/vKnC'); -- 12345
+values (2, 'Djura', 'Djuric', 'djuradjuric', 'djuradjuric@gmail.com', '$2a$10$kx6ymttdiBQ/3NAz1ssxoeOF8Vwm3LSKFnEkSADPc5x8kgaj/vKnC'); -- 12345
 
 insert into user (id, first_name, last_name, username, email, password)
 values (3, 'Ana', 'Anic', 'anaanic', 'anaanic@gmail.com', '$2a$10$kx6ymttdiBQ/3NAz1ssxoeOF8Vwm3LSKFnEkSADPc5x8kgaj/vKnC'); -- 12345

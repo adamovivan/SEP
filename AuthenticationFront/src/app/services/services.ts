@@ -85,10 +85,10 @@ export class SellerService {
   }
 
   acceptCompany(companyName:any){
-    return this.http.post(SERVER_URL + '/authentication-service/acceptCompany/'+companyName,"Odobreno");
+    return this.http.post(SERVER_URL + '/authentication-service/acceptCompany',{"companyName": companyName});
   }
 
   declineCompany(companyName:any){
-    return this.http.post(SERVER_URL + '/authentication-service/declineCompany/'+companyName,"Nije odobreno");
+    return this.http.post(SERVER_URL + '/authentication-service/declineCompany',{"companyName": companyName, "message": "Nije odobreno"});
   }
 }

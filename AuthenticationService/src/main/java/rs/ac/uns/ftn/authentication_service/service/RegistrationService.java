@@ -45,9 +45,12 @@ public class RegistrationService {
     private PasswordEncoder passwordEncoder;
 
 	public Client save(Client client) throws Exception {
+		Submission submission = submissionRepository.findByCompanySecretId(client.getCompanyID()).orElseThrow(() -> (new BadRequestException("Bad company secret id")));
+		
 		Client newClient  = client;
 		newClient.setPassword(Password.getSaltedHash(client.getPassword()));
 		newClient.setRole(Role.SELLER);
+		newClient.setCompanyName(submission.getCompanyName());
 		try {
 			newClient = registrationRepository.save(newClient);
 			logger.info("Successfully registered new user" + newClient.getUsername() + ".");
@@ -90,8 +93,8 @@ public class RegistrationService {
 
         X500Name x500Name = csr.getSubject();
 
-        if (!Util.getX500Field(Util.COMMON_NAME, x500Name).equals(sub.getCompanyName())) {
-            throw new BadRequestException("Company name does not match the common name from the csr!");
+        if (!Util.getX500Field(Util.COMMON_NAME, x500Name).equals(sub.getCommonName())) {
+            throw new BadRequestException("Common name does not match the common name from the csr!");
         }
 
         if (!Util.getX500Field(Util.ORGANIZATION, x500Name).equals(sub.getOrganization())) {
